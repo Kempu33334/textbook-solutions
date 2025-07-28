@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Angle Chasing}{2}{section.1}%
+\contentsline {section}{\numberline {2}Circles}{20}{section.2}%
+\contentsline {section}{\numberline {3}Lengths and Ratios}{38}{section.3}%
+\contentsline {section}{\numberline {4}Assorted Configurations}{51}{section.4}%
+\contentsline {section}{\numberline {5}Computational Geometry}{71}{section.5}%
+\contentsline {section}{\numberline {6}Complex Numbers}{82}{section.6}%

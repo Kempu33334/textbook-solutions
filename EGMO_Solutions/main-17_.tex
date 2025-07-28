@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\let\paperwidthsave\paperwidth\let\paperwidth\undefined
+\usepackage{graphicx}
+\let\paperwidth\paperwidthsave
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newbox\ASYbox
+\newdimen\ASYdimen
+\def\ASYprefix{}
+\long\def\ASYbase#1#2{\leavevmode\setbox\ASYbox=\hbox{#1}%\ASYdimen=\ht\ASYbox%
+\setbox\ASYbox=\hbox{#2}\lower\ASYdimen\box\ASYbox}
+\long\def\ASYaligned(#1,#2)(#3,#4)#5#6#7{\leavevmode%
+\setbox\ASYbox=\hbox{#7}%
+\setbox\ASYbox\hbox{\ASYdimen=\ht\ASYbox%
+\advance\ASYdimen by\dp\ASYbox\kern#3\wd\ASYbox\raise#4\ASYdimen\box\ASYbox}%
+\setbox\ASYbox=\hbox{#5\wd\ASYbox 0pt\dp\ASYbox 0pt\ht\ASYbox 0pt\box\ASYbox#6}%
+\hbox to 0pt{\kern#1pt\raise#2pt\box\ASYbox\hss}}%
+\long\def\ASYalignT(#1,#2)(#3,#4)#5#6{%
+\ASYaligned(#1,#2)(#3,#4){%
+\special{pdf:q #5 0 0 cm}%
+}{%
+\special{pdf:Q}%
+}{#6}}
+\long\def\ASYalign(#1,#2)(#3,#4)#5{\ASYaligned(#1,#2)(#3,#4){}{}{#5}}
+\def\ASYraw#1{#1}
+\pdfpagewidth=265.013162bp
+\ifx\pdfhorigin\undefined
+\hoffset=-1in
+\voffset=-1in
+\pdfpageheight=182.005884bp
+\else
+\pdfhorigin=0bp
+\pdfvorigin=0bp
+\pdfpageheight=182.005884bp
+\fi
+\setlength{\unitlength}{1pt}%
+\pagestyle{empty}
+\textheight=200.005884bp
+\textwidth=283.013162bp
+\parindent=0pt
+\oddsidemargin=0pt
+\evensidemargin=\oddsidemargin
+\headheight=0pt
+\headsep=0pt
+\topmargin=0pt
+\topskip=0pt
+\begin{document}
+\makeatletter%
+\let\ASYencoding\f@encoding%
+\let\ASYfamily\f@family%
+\let\ASYseries\f@series%
+\let\ASYshape\f@shape%
+\makeatother%
+{\catcode`"=12%
+\includegraphics{main-17_0}%
+}%
+\kern -266.006961pt%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\usefont{\ASYencoding}{\ASYfamily}{\ASYseries}{\ASYshape}%
+\ASYalign(117.757246,166.087030)(-0.500000,0.000000){$A$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(234.121588,17.658995)(0.000000,-1.000000){$B$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(58.298416,17.658995)(-1.000000,-1.000000){$C$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(121.368184,65.736723)(0.000000,-0.500000){$H$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(117.757246,16.601376)(-0.500000,-1.000000){$A'$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(81.845524,81.633402)(-1.000000,0.000000){$B'$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(167.500501,106.041990)(0.000000,0.000000){$C'$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(237.855176,161.815067)(-0.000000,-0.100000){$M$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(94.846307,43.797033)(-0.500000,-1.000000){$N$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(10.706615,107.112600)(-1.000000,-0.500000){$P$}%
+\special{pdf:0.000000 g}%
+\special{pdf:0.000000 G}%
+\fontsize{12.000000}{14.400000}\selectfont%
+\ASYalign(154.475470,47.438496)(-0.500000,-0.778483){$Q$}%
+\end{document}
