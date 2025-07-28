@@ -1700,7 +1700,7 @@ We can prove this by showing that $P$ lies on the angle bisectors of quadrilater
 \end{align*}
 so $P$ does indeed lie on the angle bisector of $\angle Y$, as desired. $\square$
 
-\begin{problem}[2.35]{IMO 2009/2}
+\begin{problem}[2.35]{IMO 2009/2, synthetic}
 Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $\ol{CA}$ and $\ol{AB}$, respectively. Let $K$, $L$, and $M$ be the midpoints of the segments $\ol{BP}$, $\ol{CQ}$, and $\ol{PQ}$, respectively, and let be the circle passing through $K$, $L$, and $M$. Suppose that the line $PQ$ is tangent to the circle. Prove that $OP=OQ$.
 \end{problem}
 \begin{center}
@@ -1752,6 +1752,10 @@ First, we know that \[\triangle CQP \sim \triangle LQM\] and \[\triangle BPQ \si
 \end{proof}
 
 Thus, we know that \[\Pow_{(ABC)}(P) = \Pow_{(ABC)}(Q)\] which implies that \[OP^2-R^2 = OQ^2-R^2\] which gives the necessary result. $\square$
+
+\begin{remark*}
+A solution by complex numbers can be found as Problem 6.41.
+\end{remark*}
 
 \begin{problem}[2.36]{}
 Let $\ol{AD}$, $\ol{BE}$, $\ol{CF}$ be the altitudes of a scalene triangle $ABC$ with circumcenter $O$. Prove that $(AOD)$, $(BOE)$, and $(COF)$ intersect at point $X$ other than $O$.
@@ -4333,7 +4337,7 @@ PX\cdot PY &= \abs{p-x}\abs{p-y} \\
 }
 Now, we are in the final stretch: \[\tan^2 A+1=\sec^2 A \implies \tfrac{25}{9} = \sec^2 A \implies \cos A = \pm \tfrac{3}{5}.\] Finally, the Law of Cosines gives that \[BC^2 = AB^2+AC^2-2AB\cdot AC\cos(A) = 13^2+25^2\mp2\cdot13\cdot25\cdot\tfrac{3}{5} = \boxed{404}\text{ or }\boxed{1184}\] as required. $\square$
 
-\begin{problem}[6.39](Tangent Addition)
+\begin{problem}[6.39]{Tangent Addition}
 Consider angles $A$, $B$, $C$ in the open interval $(-90^\circ, 90^\circ)$.
 \begin{enumerate}[label=(\alph*)]
 \item Let $x = \tan A$, $y = \tan B$, $z = \tan C$. Prove that \[\tan(A + B + C) = \dfrac{(x + y + z) - xyz}{1 - (xy + yz + zx)}\] if $xy + yz + zx \neq 1$, and is undefined otherwise.
@@ -4346,4 +4350,51 @@ We solve both problems at once by immediately generalizing to $k$ variables. Let
 Let $ABC$ be a triangle with incenter $I$. Prove that the Euler lines of triangles $AIB$, $BIC$, $CIA$, and $ABC$ are concurrent (called the Schiffler point of $ABC$).
 \end{problem}
 Toss onto the complex plane, with $(ABC)$ as the unit circle. Denote $A = a^2$, and analogously for $B$ and $C$. Then, we know by the Incenter-Excenter Lemma, that the circumcenter of $\triangle AIB$ is the midpoint of arc $AB$ not containing $C$, or $-ab$. In addition, the centroid of $\triangle AIB$ is \[\tfrac{a^2+b^2-ab-bc-ac}{3}\] Now, we are trying to find the intersection of the line through $0$ and $a+b+c$, and the former two points. We omit the routine (but very annoying) calculation using the intersection of lines formula, and state the result as a symmetric polynomial in $a$, $b$, $c$. Hence, we have the required result. $\square$
+
+\begin{problem}[6.41]{IMO 2009/2, complex}
+Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$ and $AB$, respectively. Let $K$, $L$, and $M$ be the midpoints of the segments $BP$, $CQ$, and $PQ$, respectively, and let $\Gamma$ be the circle passing through $K$, $L$, and $M$. Suppose that the line $PQ$ is tangent to the circle $\Gamma$. Prove that $OP = OQ$.
+\end{problem}
+\begin{center}
+\begin{asy}
+size(6cm);
+
+pair A = dir(110);
+pair B = dir(-10);
+pair C = dir(-150);
+
+pair O = circumcenter(A,B,C);
+draw(circumcircle(A,B,C), gray);
+dot("$O$", O, dir(90));
+
+draw(A--B--C--cycle);
+
+pair P = 0.4*C + 0.6*A;
+pair Q = 0.72*A + 0.28*B;
+dot("$P$", P, dir(P));
+dot("$Q$", Q, dir(Q));
+
+draw(P--Q, heavyblue);
+draw(C--Q, dashed);
+draw(B--P, dashed);
+
+pair K = midpoint(B--P);
+pair L = midpoint(C--Q);
+pair M = midpoint(P--Q);
+
+path circleKLM = circumcircle(K,L,M);
+draw(circleKLM, red);
+
+draw(M--L--K--cycle, black);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$K$", K, dir(K));
+dot("$L$", L, dir(L));
+dot("$M$", M, dir(M));
+\end{asy}
+\end{center}
+\begin{remark*}
+A synthetic solution can be found as Problem 2.35.
+\end{remark*}
 \end{document}
