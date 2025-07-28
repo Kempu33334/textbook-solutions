@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  28 JUL 2025 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  28 JUL 2025 14:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1947,6 +1947,28 @@ Overfull \hbox (20.6073pt too wide) detected at line 4332
 
 
 [90]
+Overfull \hbox (41.79544pt too wide) detected at line 4343
+[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]a[] [] a[]\OT1/lmr/m/n/10 ) = []((1 + []
+(\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 i\OT1/lmr/m/n/10 )(1 + [
+](\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 i\OT1/lmr/m/n/10 ) [] (
+1 + [](\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 i\OT1/lmr/m/n/10 )
+) = []((1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 e[] \OT1/lmr/m/n/10 + \OML/lmm/
+m/it/10 e[] \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 ) + (\OML/lmm/m/it/10 e[] \
+OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 e[] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 e[]
+ \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 )\OML/lmm/m/it/10 i\OT1/lmr/m/n/10 )\O
+ML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (39.50357pt too wide) detected at line 4343
+[] [] \OT1/lmr/m/n/10 = [] [] = []([]((1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 
+e[] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 e[] \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n
+/10 ) + (\OML/lmm/m/it/10 e[] \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 e[] \OT1/lm
+r/m/n/10 + \OML/lmm/m/it/10 e[] \OMS/lmsy/m/n/10 ^^@ [] \OT1/lmr/m/n/10 )\OML/l
+mm/m/it/10 i\OT1/lmr/m/n/10 )) = []
+ []
+
+
 
 [91]
 
@@ -1959,10 +1981,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C95C7DBEA931EF313576C0C2CBE38C0C;766.
  ) 
 Here is how much of TeX's memory you used:
- 33634 strings out of 469626
- 664021 string characters out of 5475183
+ 33635 strings out of 469626
+ 664038 string characters out of 5475183
  1102290 words of memory out of 5000000
- 59658 multiletter control sequences out of 15000+600000
+ 59659 multiletter control sequences out of 15000+600000
  685923 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,135p,1630b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1986,10 +2008,10 @@ e1/public/lm/lmri10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy1
 025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><d:/texlive/2025/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2025/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb>
-Output written on main.pdf (92 pages, 854508 bytes).
+Output written on main.pdf (92 pages, 853849 bytes).
 PDF statistics:
- 1320 PDF objects out of 1440 (max. 8388607)
- 928 compressed objects within 10 object streams
+ 1317 PDF objects out of 1440 (max. 8388607)
+ 926 compressed objects within 10 object streams
  121 named destinations out of 1000 (max. 500000)
  535 words of extra memory for PDF output out of 10000 (max. 10000000)
 

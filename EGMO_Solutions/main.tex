@@ -4340,5 +4340,10 @@ Consider angles $A$, $B$, $C$ in the open interval $(-90^\circ, 90^\circ)$.
 \item Generalize to multiple variables.
 \end{enumerate}
 \end{problem}
-We solve both problems at once by inducting on the number of variables. We know that \[\tan(A + B) = \dfrac{\tan(A)+\tan(B)}{1-\tan(A)\tan(B)}\] by the tangent addition formula. Let $s_n(k)$ denote $\sigma_n(k)$ or the $n$th elementary symmetric polynomial for $k$ variables (the tangents). For example, $\sigma_1(3) = \tan(A)+\tan(B)+\tan(C)$. Then, we claim that \[\tan(\underbrace{A+B+C+\dots}_{k\text{ variables}}) = \dfrac{}{1+}\]
+We solve both problems at once by immediately generalizing to $k$ variables. Let \[a_n = 1+\tan(r_n)i\] for $1 \le n \le k$. Now let $e_n$ denote the $n$th elementary symmetric sum (of $k$ variables/tangents in this case). Then, note that \[\arg(a_1a_2\dots a_k) = \arg((1+\tan(r_1)i)(1+\tan(r_2)i)\dots(1+\tan(r_k)i)) = \arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i).\] Hence, \[\tan\left(\textstyle\sum_{n=1}^k r_n\right) = \tan\left(\arg(a_1a_2\dots a_k)\right) = \tan(\arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i)) = \dfrac{e_1-e_3+e_5-\dots}{1-e_2+e_4-\dots}\] so we are done. $\square$
+
+\begin{problem}[6.40]{Schiffler Point}
+Let $ABC$ be a triangle with incenter $I$. Prove that the Euler lines of triangles $AIB$, $BIC$, $CIA$, and $ABC$ are concurrent (called the Schiffler point of $ABC$).
+\end{problem}
+Toss onto the complex plane, with $(ABC)$ as the unit circle. Denote $A = a^2$, and analogously for $B$ and $C$. Then, we know by the Incenter-Excenter Lemma, that the circumcenter of $\triangle AIB$ is the midpoint of arc $AB$ not containing $C$, or $-ab$. In addition, the centroid of $\triangle AIB$ is \[\tfrac{a^2+b^2-ab-bc-ac}{3}\] Now, we are trying to find the $k$ for which $k(a+b+c)$ lies on the line through the former two points.
 \end{document}
