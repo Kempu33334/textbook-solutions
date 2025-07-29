@@ -50,6 +50,10 @@
   \stackrel{\resizebox{\wd0}{.6ex}{$\frown$}}{\mathord{#1#2}}%
 }
 
+\newcommand{\refproblem}[1]{%
+  \textcolor{red}{\hyperref[prob:#1]{Problem~#1}}%
+}
+
 \captionsetup[figure]{labelformat=empty}
 
 % Define a common theorem style
@@ -168,6 +172,7 @@
   }
 }
 
+\makeatletter
 \newtcolorbox{problem}[2][]{%
   enhanced,
   breakable,
@@ -181,6 +186,11 @@
   before skip=10pt,
   after skip=10pt,
   top=7.5mm,
+  before upper={%
+    \edef\@currentlabel{Problem~#1}%
+    \phantomsection
+    \label{prob:#1}%
+  },
   overlay unbroken={
     \node[anchor=north west, font=\bfseries\color{RawSienna}] at ([xshift=2mm,yshift=-2mm]frame.north west)
     {Problem~#1%
@@ -192,3 +202,4 @@
     \if\relax\detokenize{#2}\relax\else~(\textnormal{#2})\fi};
   },
 }
+\makeatother
