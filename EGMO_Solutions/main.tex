@@ -4058,7 +4058,7 @@ Clearly, this quadrilateral is cyclic because the Law of Cosines on $(1)$ tells 
 Show that the foot of the altitude from $Z$ to $\ol{AB}$ is given by \[\dfrac{(\ol{a}-\ol{b})z+(a-b)\ol{z}+\ol{a}b-a\ol{b}}{2(\ol{a}-\ol{b})}.\]
 \end{problem}
 
-Make the transformation $z \rightarrow \tfrac{z-a}{b-a}$. Then, the required answer is \[\dfrac{\tfrac{z-a}{b-a} + \tfrac{\ol{z}-\ol{a}}{\ol{b}-\ol{a}}}{2}.\] We then revert the transformation. Hence, the answer is:
+Make the transformation $z \mapsto \tfrac{z-a}{b-a}$. Then, the required answer is \[\dfrac{\tfrac{z-a}{b-a} + \tfrac{\ol{z}-\ol{a}}{\ol{b}-\ol{a}}}{2}.\] We then revert the transformation. Hence, the answer is:
 \begin{align*}
 \dfrac{(b-a)(\tfrac{z-a}{b-a} + \tfrac{\ol{z}-\ol{a}}{\ol{b}-\ol{a}})}{2}+a &= \dfrac{z+a+(b-a)(\tfrac{\ol{z}-\ol{a}}{\ol{b}-\ol{a}})}{2} \\
 &= \dfrac{(z+a)(\ol{b}-\ol{a})+(b-a)(\ol{z}-\ol{a})}{2(\ol{b}-\ol{a})} \\
@@ -4417,4 +4417,69 @@ so we are done. $\square$
 \begin{remark*}
 A synthetic solution can be found as \refproblem{2.35}.
 \end{remark*}
+
+\newpage
+
+\begin{problem}[6.42]{APMO 2010/4}
+Let $ABC$ be an acute triangle with $AB > BC$ and $AC > BC$. Denote by $O$ and $H$ the circumcenter and orthocenter of $ABC$. Suppose that the circumcircle of triangle $AHC$ intersects the line $AB$ at $M \neq A$, and the circumcircle of triangle $AHB$ intersects the line $AC$ at $N \neq A$. Prove that the circumcenter of triangle $MNH$ lies on line $OH$.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -6.366275491463624, xmax = 2.8694523706242374, ymin = -2.307211476470278, ymax = 3.456075622848261;
+pen zzttqq = rgb(0.6,0.2,0); pen ccqqqq = rgb(0.8,0,0); pen qqwwzz = rgb(0,0.4,0.6);
+
+pair A = (-0.8363636363636365,-0.2696969696969697);
+pair B = (-3.406060606060605,1.3484848484848486);
+pair C = (-3.957575757575756,-0.2696969696969697);
+pair O = (-2.396969696969696,0.1014867778912726);
+pair H = (-3.406060606060605,0.6061173533083641);
+pair M = (-2.7365770906845905,0.9268997102645751);
+pair N = (-2.854545454545453,-0.2696969696969697);
+pair P = (-2.8647650963041333,0.3354239379795299);
+
+draw(A--B--C--cycle, zzttqq);
+draw(H--N--M--cycle, qqwwzz);
+
+draw(circle(O, 1.6041410944408905), linetype("4 4"));
+draw(circle((-2.396969696969696,-0.6408807172852117), 1.6041410944408903), ccqqqq);
+draw(circle((-1.8454545454545448,0.9773011008966063), 1.6041410944408903), ccqqqq);
+draw(circle(P, 0.6052071992176787));
+draw(H--O);
+
+dot("$A$", A, dir(-30));
+dot("$B$", B, NW);
+dot("$C$", C, SW);
+dot("$O$", O, dir(90));
+dot("$H$", H, NW);
+dot("$M$", M, dir(90));
+dot("$N$", N, SW);
+dot("$P$", P, dir(90));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We begin with the following claim:
+\begin{claim*}
+We claim that $M$ is the reflection of $B$ across line $CH$, and $N$ is the reflection of $C$ across line $BH$.
+\end{claim*}
+\begin{proof}
+We will prove the former; the latter can be proven in a similar fashion. Let the reflection of $B$ across $CH$ be $B'$. Clearly, $B'$ lies on $AB$. In addition, we know that \[\angle CMA = 180-\angle CMB = 180-\angle B = \angle CHA\] so we have shown that $CHMA$ is cyclic. Since there is only one point other than $A$ that can satisfy both of these conditions, we know that $B' = M$, as required. $\square$
+\end{proof}
+
+We proceed by complex bash. Let $(ABC)$ be the unit circle. Then, we know that \[m = a+c-\tfrac{ab}{c} \quad \text{ and } \quad n = a+b-\tfrac{ac}{b}\] due to the claim. We now make the transformations $m \mapsto m-a-b-c$ and similarly for $n$ and $h$. Then, the circumcenter of these points can be expressed as:
+{\allowdisplaybreaks
+\begin{align*}
+\dfrac{\left(-b-\tfrac{ab}{c}\right)\left(-c-\tfrac{ac}{b}\right)\left(\ol{-b-\tfrac{ab}{c}}-\ol{-c-\tfrac{ac}{b}}\right)}{\left(\ol{-b-\tfrac{ab}{c}}\right)\left(-c-\tfrac{ac}{b}\right)-\left(-b-\tfrac{ab}{c}\right)\left(\ol{-c-\tfrac{ac}{b}}\right)} &= \dfrac{\left(b+\tfrac{ab}{c}\right)\left(c+\tfrac{ac}{b}\right)\left(\ol{c+\tfrac{ac}{b}}-\left(\ol{b+\tfrac{ab}{c}}\right)\right)}{\left(\ol{b+\tfrac{ab}{c}}\right)\left(c+\tfrac{ac}{b}\right)-\left(b+\tfrac{ab}{c}\right)\left(\ol{c+\tfrac{ac}{b}}\right)} \\
+&= \dfrac{\left(b+\tfrac{ab}{c}\right)\left(c+\tfrac{ac}{b}\right)\left(\tfrac{1}{c}+\tfrac{b}{ac}-\tfrac{1}{b}-\tfrac{c}{ab}\right)}{\left(\tfrac{1}{b}+\tfrac{c}{ab}\right)\left(c+\tfrac{ac}{b}\right)-\left(b+\tfrac{ab}{c}\right)\left(\tfrac{1}{c}+\tfrac{b}{ac}\right)} \\
+&= \dfrac{\left(a+c\right)\left(a+b\right)\left(\tfrac{1}{c}+\tfrac{b}{ac}-\tfrac{1}{b}-\tfrac{c}{ab}\right)}{\left(\tfrac{1}{b}+\tfrac{c}{ab}\right)\left(c+\tfrac{ac}{b}\right)-\left(b+\tfrac{ab}{c}\right)\left(\tfrac{1}{c}+\tfrac{b}{ac}\right)} \\
+&= \dfrac{\left(a+c\right)\left(a+b\right)\left(ab+b^2-ac-c^2\right)}{\tfrac{c}{b}\left(a+c\right)\left(bc+ac\right)-\tfrac{b}{c}\left(bc+ab\right)\left(a+b\right)} \\
+&= \dfrac{\left(a+b\right)\left(ab+b^2-ac-c^2\right)}{\tfrac{c^2}{b}\left(a+b\right)-\tfrac{b^2}{c}\left(a+b\right)} \\
+&= \dfrac{\left(ab+b^2-ac-c^2\right)}{\tfrac{c^2}{b}-\tfrac{b^2}{c}} \\
+&= \dfrac{(a+b+c)(b-c)}{\tfrac{c^3-b^3}{bc}} \\
+&= -\dfrac{bc}{b^2+bc+c^2}\cdot(a+b+c).
+\end{align*}
+}
+Now, we can write that: \[\ol{\left(\tfrac{bc}{b^2+bc+c^2}\right)} = \tfrac{\tfrac{1}{bc}}{\tfrac{1}{b^2}+\tfrac{1}{bc}+\tfrac{1}{c^2}} = \tfrac{bc}{b^2+bc+c^2}\] so this quantity is real. Hence, the circumcenter of the transformed version of $\triangle MNH$ is a scalar multiple of $a+b+c$, which implies the result. $\square$
 \end{document}
