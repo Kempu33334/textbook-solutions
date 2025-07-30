@@ -4536,4 +4536,14 @@ dot("$C_3$", C3, dir(NW));
 clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{asy}
 \end{center}
+
+Toss onto the complex plane. Then, we have that: \[a_2 = \dfrac{bb_1-cc_1}{b+b_1-c-c_1}\] and analogously for $b_2$ and $c_2$. Hence, 
+\begin{align*}
+\dfrac{a_2-b_2}{a_2-c_2} &= \dfrac{\tfrac{bb_1-cc_1}{b+b_1-c-c_1}-\tfrac{aa_1-cc_1}{a+a_1-c-c_1}}{\tfrac{bb_1-cc_1}{b+b_1-c-c_1}-\tfrac{aa_1-bb_1}{a+a_1-b-b_1}} \\
+&= \frac{\frac{bb_1-cc_1}{b+b_1-c-c_1}-\frac{cc_1-aa_1}{c+c_1-a-a_1}}{\frac{bb_1-cc_1}{b+b_1- c-c_1}-\frac{aa_1-bb_1}{a+a_1-b- b_1}} \\
+&= \frac{\frac{aa_1(b+b_1-c-c_1)+bb_1(c+c_1-a-a_1) + cc_1(a+a_1-b-b_1)}{(c+c_1-a-a_1)}}{\frac{aa_1(c+c_1-b-b_1)+bb_1(a+a_1-c-c_1)+cc_1(b+b_1-a-a_1)}{(a+a_1-b-b_1)}} \\
+&= \frac{b+b_1-a-a_1}{c+c_1-a-a_1} \\
+&= \dfrac{a_3-b_3}{a_3-b_3}
+\end{align*}
+as required. $\square$
 \end{document}
