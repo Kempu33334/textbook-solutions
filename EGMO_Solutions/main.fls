@@ -9,8 +9,8 @@ INPUT d:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT d:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT d:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT d:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
-INPUT ./kempu.sty
-INPUT kempu.sty
+INPUT d:/texlive/texmf-local/tex/latex/local/kempu.sty
+INPUT d:/texlive/texmf-local/tex/latex/local/kempu.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT d:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -795,6 +795,11 @@ INPUT ./main-66.pdf
 INPUT ./main-66.pdf
 INPUT ./main-66.pdf
 INPUT ./main-66.pdf
+OUTPUT main-67.asy
+INPUT ./main-67.pdf
+INPUT ./main-67.pdf
+INPUT ./main-67.pdf
+INPUT ./main-67.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

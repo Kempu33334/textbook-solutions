@@ -4546,4 +4546,96 @@ Toss onto the complex plane. Then, we have that: \[a_2 = \dfrac{bb_1-cc_1}{b+b_1
 &= \dfrac{a_3-b_3}{a_3-b_3}
 \end{align*}
 as required. $\square$
+
+\begin{problem}[6.44]{MOP 2006}
+Given a cyclic quadrilateral $ABCD$ with circumcenter $O$ and a point $P$ on the plane, let $O_1$, $O_2$, $O_3$, $O_4$ denote the circumcenters of triangles $PAB$, $PBC$, $PCD$, $PDA$ respectively. Prove that the midpoints of segments $\ol{O_1O_3}$, $\ol{O_2O_4}$, and $\ol{OP}$ are collinear.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -6.879558855252829, xmax = 9.855880704965523, ymin = -5.552548589245369, ymax = 4.883902956461574;
+pen wqwqwq = rgb(0.3764705882352941,0.3764705882352941,0.3764705882352941); pen ffqqtt = rgb(1,0,0.2); pen ffttww = rgb(1,0.2,0.4);
+
+pair O = (-0.79,-0.53);
+pair A = (-1.01087447301805,2.5220836271585023);
+pair B = (-3.4244914454426043,-2.0867449450342654);
+pair C = (0.36352213978057746,-3.3643229655485696);
+pair D = (2.0352892511345346,-1.7054746477162581);
+pair P = (0.20543806228253392,-0.7164104775840971);
+pair O_1 = (-2.221578743407652,0.21970954079270222);
+pair O_2 = (-1.331946672857116,-2.1368696598449937);
+pair O_3 = (0.6849701221038328,-2.0164569073953023);
+pair O_4 = (2.9418698890673203,2.1589958553370785);
+pair M_1 = (-0.7683043106519096,-0.8983736833013001);
+pair M_2 = (0.8049616081051021,0.011063097746042416);
+pair M_OP = (-0.29228096885873306,-0.6232052387920486);
+
+draw(B--P--C--cycle, ffqqtt);
+draw(P--C--D--cycle, ffqqtt);
+draw(A--P--D--cycle, ffttww);
+draw(P--A--B--cycle, ffttww);
+
+draw(circle(O, 3.0600653587791227), wqwqwq);
+draw(B--P, ffqqtt);
+draw(P--C, ffqqtt);
+draw(C--B, ffqqtt);
+draw(P--C, ffqqtt);
+draw(C--D, ffqqtt);
+draw(D--P, ffqqtt);
+draw(A--P, ffttww);
+draw(P--D, ffttww);
+draw(D--A, ffttww);
+draw(P--A, ffttww);
+draw(A--B, ffttww);
+draw(B--P, ffttww);
+draw(circle(O_2, 2.0931450289718843), linetype("2 2"));
+draw(circle(O_3, 1.385666524118021), linetype("2 2"));
+draw(circle(O_1, 2.6012941517460826), linetype("2 2"));
+draw(circle(O_4, 3.9693854337975196), linetype("2 2"));
+draw(O_1--O_3);
+draw(O_2--O_4);
+draw(O--P);
+draw(M_1--M_2, blue);
+
+dot("$O$", O, dir(120));
+dot("$A$", A, dir(120));
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", D, NE);
+dot("$P$", P, dir(37.5));
+dot("$O_1$", O_1, NW);
+dot("$O_2$", O_2, dir(240));
+dot("$O_3$", O_3, E);
+dot("$O_4$", O_4, NE);
+dot("$M_1$", M_1, dir(210));
+dot("$M_2$", M_2, E);
+dot("$M$", M_OP, dir(90));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Toss onto the complex plane with $(ABCD)$ as the unitcircle. Denote $M_1$ as the midpoint of $\ol{O_1O_3}$, $M_2$ as the midpoint of $\ol{O_2O_4}$, and $M$ as the midpoint of $\ol{OP}$. We will compute $o_1$. Using the circumcenter formula, we get that:
+{\allowdisplaybreaks
+\begin{align*}
+o_1 &= \begin{vmatrix}a&a\ol{a}&1\\b&b\ol{b}&1\\p&p\ol{p}&1\end{vmatrix} \div \begin{vmatrix}a&\ol{a}&1\\b&\ol{b}&1\\p&\ol{p}&1\end{vmatrix} \\
+&= \begin{vmatrix}a&1&1\\[3pt]b&1&1\\[3pt]p&p\ol{p}&1\end{vmatrix} \div \begin{vmatrix}a&\tfrac{1}{a}&1\\[3pt]b&\tfrac{1}{b}&1\\[3pt]p&\ol{p}&1\end{vmatrix} \\
+&= \dfrac{a-ap\ol{p}-b+bp\ol{p}}{\tfrac{a}{b}-a\ol{p}-\tfrac{b}{a}+\tfrac{p}{a}+b\ol{p}-\tfrac{p}{b}} \\
+&= \dfrac{ab(b-a)(p\ol{p}-1)}{(a-b)(a+b)+ab\ol{p}(b-a)+p(b-a)} \\
+&= \dfrac{ab(p\ol{p}-1)}{-a-b+ab\ol{p}+p}.
+\end{align*}
+}
+Hence, we know that:
+\begin{align*}
+m_1 &= \dfrac{\tfrac{ab(p\ol{p}-1)}{ab\ol{p}-a-b+p}+\tfrac{cd(p\ol{p}-1)}{cd\ol{p}-c-d+p}}{2} \\
+&= \dfrac{ab(p\ol{p}-1)}{2(ab\ol{p}-a-b+p)}+\dfrac{cd(p\ol{p}-1)}{2(cd\ol{p}-c-d+p)}.
+\end{align*}
+Similarly, \[m_2 = \dfrac{ad(p\ol{p}-1)}{2(ad\ol{p}-a-d+p)}+\dfrac{bc(p\ol{p}-1)}{2(bc\ol{p}-b-c+p)}.\] Finally, we perform the required calculation:
+\begin{align*}
+\ol{\dfrac{m_2-m}{m_1-m}} &= \ol{\dfrac{\tfrac{ad(p\ol{p}-1)}{2(ad\ol{p}-a-d+p)}+\tfrac{bc(p\ol{p}-1)}{2(bc\ol{p}-b-c+p)}-\tfrac{p}{2}}{\tfrac{ab(p\ol{p}-1)}{2(ab\ol{p}-a-b+p)}+\tfrac{cd(p\ol{p}-1)}{2(cd\ol{p}-c-d+p)}-\tfrac{p}{2}}} \\
+&= \ol{\dfrac{\tfrac{ad(p\ol{p}-1)}{ad\ol{p}-a-d+p}+\tfrac{bc(p\ol{p}-1)}{bc\ol{p}-b-c+p}-p}{\tfrac{ab(p\ol{p}-1)}{ab\ol{p}-a-b+p}+\tfrac{cd(p\ol{p}-1)}{cd\ol{p}-c-d+p}-p}} \\
+&= \ol{\dfrac{\tfrac{p\ol{p}-1}{\ol{p}-\tfrac{1}{a}-\tfrac{1}{d}+\tfrac{p}{ad}}+\tfrac{p\ol{p}-1}{\ol{p}-\tfrac{1}{b}-\tfrac{1}{c}+\tfrac{p}{bc}}-p}{\tfrac{p\ol{p}-1}{\ol{p}-\tfrac{1}{a}-\tfrac{1}{b}+\tfrac{p}{ab}}+\tfrac{p\ol{p}-1}{\ol{p}-\tfrac{1}{c}-\tfrac{1}{d}+\tfrac{p}{cd}}-p}} \\
+&= \dfrac{\tfrac{p\ol{p}-1}{p-a-d+ad\ol{p}}+\tfrac{p\ol{p}-1}{p-b-c+bc\ol{p}}-\ol{p}}{\tfrac{p\ol{p}-1}{p-a-b+ab\ol{p}}+\tfrac{p\ol{p}-1}{p-c-d+cd\ol{p}}-\ol{p}}.
+\end{align*}
+We omit the calculation, but state the result that the conjugate of the penultimate expression and last expression are equal, implying that the quantity is real. $\square$
 \end{document}
