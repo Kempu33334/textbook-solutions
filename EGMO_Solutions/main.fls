@@ -790,6 +790,11 @@ INPUT ./main-65.pdf
 INPUT ./main-65.pdf
 INPUT ./main-65.pdf
 INPUT ./main-65.pdf
+OUTPUT main-66.asy
+INPUT ./main-66.pdf
+INPUT ./main-66.pdf
+INPUT ./main-66.pdf
+INPUT ./main-66.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
