@@ -3,6 +3,6 @@
 My solutions to textbooks.
 
 The following textbooks have been added:
-- **EGMO** by _Evan Chen_.
+- [**EGMO**](main.pdf) by _Evan Chen_.
 
 **Note:** You need the ```kempu.sty``` file to use any .tex file in this repository.
