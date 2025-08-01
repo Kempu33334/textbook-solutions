@@ -63,11 +63,10 @@ Quadrilateral $ABCD$ has $\angle ABC = \angle ADC = 90^\circ$. Show that $ABCD$ 
 Since \[\angle ABC + \angle ADC = 180^\circ\] we know that $ABCD$ is cyclic. In addition, by Problem 1.6, we know that $(ABCD)$ has diameter $\ol{AC}$ as desired. $\square$
 
 \begin{problem}[1.16]{}
-In Figure 1.3A, show that $\triangle AEF$, $\triangle BFD$, and $\triangle CDE$ are each similar to $\triangle ABC$.
+In the figure below, show that $\triangle AEF$, $\triangle BFD$, and $\triangle CDE$ are each similar to $\triangle ABC$.
 
 \begin{center}
 \includegraphics[width=0.5\linewidth]{Figure 1.3A.png}
-\captionof{figure}{Figure 1.3A}
 \end{center}
 \end{problem}
 We will show the necessary result for one of them ($\triangle AEF$), as it easily generalizes. Clearly, we know that $\triangle ABC$ and $\triangle AEF$ share $\angle A$. In addition, 
@@ -87,7 +86,6 @@ Let $H$ be the orthocenter of $\triangle ABC$, as in the diagram below. Let $X$ 
 
 \begin{center}
 \includegraphics[width=0.35\linewidth]{Figure 1.3B.png}
-\captionof{figure}{Figure 1.3B}
 \end{center}
 \end{problem}
 We start with part (a). Let the foot of the altitude from $A$ be $D$, from $B$ be $E$, and the foot from $C$ be $F$. Then, we can write the following equations:
@@ -139,6 +137,8 @@ Let $A'$ be the reflection of $A$ across $O$. Then, we know that since $AA'$ is 
 &= 90 + \dangle OAC.
 \end{align*}
 This implies that \[\dangle OAC = 90+\dangle ABC\] as desired. $\square$
+
+\newpage
 
 \begin{problem}[1.33]{}
 Let $ABC$ be a triangle and let ray $AO$ meet $\ol{BC}$ at $D$. Point $K$ is selected so that $\ol{KA}$ is tangent to $(ABC)$ and $\angle KCB = 90^\circ$. Prove that $\ol{KD} \parallel \ol{AB}$.
@@ -274,7 +274,7 @@ Let $M$ be any one of these midpoints. We must show that $\angle OMP = 90^\circ$
 Note that there are a few exceptions. If $O = M$, then obviously $M$ lies on the circle with diameter $\ol{OP}$. Similarly, if $P = M$, then $M$ obviously lies on that circle.
 \end{remark*}
 
-\begin{problem}[1.42]{Russian Olympiad 1996}
+\begin{problem}[1.41]{Russian Olympiad 1996}
 Points $E$ and $F$ are on side $\ol{BC}$ of convex quadrilateral $ABCD$ (with $E$ closer than $F$ to $B$). It is known that $\angle BAE$ = $\angle CDF$ and $\angle EAF = \angle FDE$. Prove that $\angle FAC = \angle EDB$.
 \end{problem}
 
@@ -3889,7 +3889,15 @@ Hence, \[\dfrac{[RPK]}{[RQL]} = \dfrac{RP\cdot BC}{RQ\cdot AC} = \dfrac{AC\cdot 
 Quadrilateral $XABY$ is inscribed in the semicircle $\omega$ with diameter $XY$.  Segments $AY$ and $BX$ meet at $P$.  Point $Z$ is the foot of the perpendicular from $P$ to line $XY$.  Point $C$ lies on $\omega$ such that line $XC$ is perpendicular to line $AZ$.  Let $Q$ be the intersection of segments $AY$ and $XC$.  Prove that \[\dfrac{BY}{XP}+\dfrac{CY}{XQ}=\dfrac{AY}{AX}.\]
 \end{problem}
 
-Let $\angle AYX = \alpha$ and $\angle BXY = \beta$. Then, we know that $\triangle BXY \sim \triangle ZXP$, so by the Law of Sines, \[\dfrac{BY}{XP} = \dfrac{XY\sin(\beta)}{XP} = \dfrac{XY\sin(\beta)}{\tfrac{XY\sin(\alpha)}{\sin(\alpha+\beta)}} = \dfrac{\sin(\alpha+\beta)\sin(\beta)}{\sin(\alpha)}.\] Now, we know that $AXPZ$ is cyclic, so \[\angle CXY = \angle AXY - \angle AXC = 90-\alpha-(90-\angle XAZ) = 90-\alpha-(90-\angle XPZ) = 90-\alpha-(90-(90-\beta)) = 90-\alpha-\beta.\] Hence, \[CY = XY\sin(\angle CXY) = XY\sin(90-\alpha-\beta) = XY\cos(\alpha+\beta).\] In addition, \[\dfrac{XQ}{\sin(\alpha)} = \dfrac{XY}{\sin(90+\beta)} = \dfrac{XY}{\cos(\beta)}\] by the Law of Sines. Hence, \[\dfrac{CY}{XQ} = \dfrac{XY\cos(\alpha+\beta)}{\tfrac{XY\sin(\alpha)}{\cos(\beta)}} = \dfrac{\cos(\alpha+\beta)}{\tfrac{\sin(\alpha)}{\cos(\beta)}} = \dfrac{\cos(\alpha+\beta)\cos(\beta)}{\sin(\alpha)}.\] Finally, we can write that:
+Let $\angle AYX = \alpha$ and $\angle BXY = \beta$. Then, we know that $\triangle BXY \sim \triangle ZXP$, so by the Law of Sines, \[\dfrac{BY}{XP} = \dfrac{XY\sin(\beta)}{XP} = \dfrac{XY\sin(\beta)}{\tfrac{XY\sin(\alpha)}{\sin(\alpha+\beta)}} = \dfrac{\sin(\alpha+\beta)\sin(\beta)}{\sin(\alpha)}.\] Now, we know that $AXPZ$ is cyclic, so 
+\begin{align*}
+\angle CXY &= \angle AXY - \angle AXC \\
+&= 90-\alpha-(90-\angle XAZ) \\
+&= 90-\alpha-(90-\angle XPZ) \\
+&= 90-\alpha-(90-(90-\beta)) \\
+&= 90-\alpha-\beta.
+\end{align*}
+Hence, \[CY = XY\sin(\angle CXY) = XY\sin(90-\alpha-\beta) = XY\cos(\alpha+\beta).\] In addition, \[\dfrac{XQ}{\sin(\alpha)} = \dfrac{XY}{\sin(90+\beta)} = \dfrac{XY}{\cos(\beta)}\] by the Law of Sines. Hence, \[\dfrac{CY}{XQ} = \dfrac{XY\cos(\alpha+\beta)}{\tfrac{XY\sin(\alpha)}{\cos(\beta)}} = \dfrac{\cos(\alpha+\beta)}{\tfrac{\sin(\alpha)}{\cos(\beta)}} = \dfrac{\cos(\alpha+\beta)\cos(\beta)}{\sin(\alpha)}.\] Finally, we can write that:
 \begin{align*}
 \dfrac{BY}{XP}+\dfrac{CY}{XQ} &= \dfrac{\sin(\alpha+\beta)\sin(\beta)}{\sin(\alpha)} + \dfrac{\cos(\alpha+\beta)\cos(\beta)}{\sin(\alpha)} \\
 &= \dfrac{\sin(\alpha+\beta)\sin(\beta)+\cos(\alpha+\beta)\cos(\beta)}{\sin(\alpha)} \\
@@ -4035,7 +4043,7 @@ From here, it is obvious that this implies that \[\angle COP < \angle OCP = 90-\
 Let $ABC$ be a triangle. Let $AP$ bisect $\angle BAC$ and let $BQ$ bisect $\angle ABC$, with $P$ on $\ol{BC}$ and $Q$ on $\ol{AC}$. If $AB + BP = AQ + QB$ and $\angle BAC = 60^\circ$, what are the angles of the triangle?
 \end{problem}
 
-Let $\angle ABQ = \alpha$. Then, we know from the given condition \[AB+\dfrac{AB}{2\sin(150-2\alpha)} = \dfrac{AB\sin(\alpha)}{\sin(120-\alpha)}+\dfrac{AB\sin(60)}{\sin(120-\alpha)}\] so \[1+\dfrac{1}{2\sin(150-2\alpha)} = \dfrac{\sin(\alpha)+\sin(60)}{\sin(60+\alpha)} = \dfrac{2\sin(\tfrac{60+\alpha}{2})\cos(\tfrac{60-\alpha}{2})}{2\sin(\tfrac{60+\alpha}{2})\cos(\tfrac{60+\alpha}{2})} = \dfrac{\cos(\tfrac{60-\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})}.\] Now, \[\dfrac{\cos(\tfrac{60-\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} - 1 = \dfrac{\cos(\tfrac{60-\alpha}{2})-\cos(\tfrac{60+\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} = \dfrac{2\sin(30)\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} = \dfrac{\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})}.\] Hence, \[\dfrac{1}{2\sin(150-2\alpha)} = \dfrac{\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} \implies \cos(30+\tfrac{\alpha}{2}) = 2\sin(\tfrac{\alpha}{2})\sin(150-2\alpha) = \cos(\tfrac{5}{2}\alpha-150)-\cos(150-\tfrac{3}{2}\alpha)\] so \[\cos(\tfrac{1}{2}\alpha+30)+\cos(\tfrac{5}{2}\alpha+30) = \cos(\tfrac{3}{2}\alpha+30).\] Now, by sum to product, we know that \[\dfrac{\cos(\tfrac{1}{2}\alpha+30)+\cos(\tfrac{5}{2}\alpha+30)}{2} = \cos(\tfrac{3}{2}\alpha+30)\cos(\alpha) = \dfrac{\cos(\tfrac{3}{2}\alpha+30)}{2} \implies \cos(\alpha) = \dfrac{1}{2} \text{ or } \cos(\tfrac{3}{2}\alpha+30) = 0.\] It clearly must be the latter since we cannot have $\angle B = 120$, so we know that $\alpha = 40$, giving angles: $(\angle A, \angle B, \angle C) = \boxed{(60^\circ, 80^\circ, 40^\circ)}$. $\square$
+Let $\angle ABQ = \alpha$. Then, we know from the given condition \[AB+\dfrac{AB}{2\sin(150-2\alpha)} = \dfrac{AB\sin(\alpha)}{\sin(120-\alpha)}+\dfrac{AB\sin(60)}{\sin(120-\alpha)}\] so \[1+\dfrac{1}{2\sin(150-2\alpha)} = \dfrac{\sin(\alpha)+\sin(60)}{\sin(60+\alpha)} = \dfrac{2\sin(\tfrac{60+\alpha}{2})\cos(\tfrac{60-\alpha}{2})}{2\sin(\tfrac{60+\alpha}{2})\cos(\tfrac{60+\alpha}{2})} = \dfrac{\cos(\tfrac{60-\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})}.\] Now, \[\dfrac{\cos(\tfrac{60-\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} - 1 = \dfrac{\cos(\tfrac{60-\alpha}{2})-\cos(\tfrac{60+\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} = \dfrac{2\sin(30)\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})} = \dfrac{\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})}.\] Hence, \[\dfrac{1}{2\sin(150-2\alpha)} = \dfrac{\sin(\tfrac{\alpha}{2})}{\cos(\tfrac{60+\alpha}{2})}\] which means that \[\cos(30+\tfrac{\alpha}{2}) = 2\sin(\tfrac{\alpha}{2})\sin(150-2\alpha) = \cos(\tfrac{5}{2}\alpha-150)-\cos(150-\tfrac{3}{2}\alpha)\] so \[\cos(\tfrac{1}{2}\alpha+30)+\cos(\tfrac{5}{2}\alpha+30) = \cos(\tfrac{3}{2}\alpha+30).\] Now, by sum to product, we know that \[\dfrac{\cos(\tfrac{1}{2}\alpha+30)+\cos(\tfrac{5}{2}\alpha+30)}{2} = \cos(\tfrac{3}{2}\alpha+30)\cos(\alpha) = \dfrac{\cos(\tfrac{3}{2}\alpha+30)}{2}\] implying that \[\cos(\alpha) = \dfrac{1}{2} \text{ or } \cos(\tfrac{3}{2}\alpha+30) = 0.\] It clearly must be the latter since we cannot have $\angle B = 120$, so we know that $\alpha = 40$, giving angles: $(\angle A, \angle B, \angle C) = \boxed{(60^\circ, 80^\circ, 40^\circ)}$. $\square$
 
 \begin{problem}[5.30]{IMO 2001/6}
 Let $a>b>c>d$ be positive integers and suppose that \[ac + bd = (b + d + a - c)(b + d - a + c).\] Prove that $ab + cd$ is not prime.
@@ -4227,7 +4235,12 @@ Next, we will show that $\triangle O_AO_BO_C$ is equilateral. We will do this by
 o_ao_b &= \left(\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)(b-c)+c\right)\left(\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)\left(c-a\right)+a\right) \\
 &= \left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)^2(bc-ab-c^2+ac)+\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)(c^2+ab-2ac)+ac.
 \end{align*}
-Cyclicly summing this gives that \[\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)^2(ab+ac+bc-a^2-b^2-c^2)+\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)(a^2+b^2+c^2-ab-ac-bc)+ab+ac+bc = \dfrac{(a+b+c)^2}{3}\] after expanding and collecting terms. Hence, we are done. $\square$
+Cyclicly summing this gives that 
+\begin{align*}
+&\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)^2(ab+ac+bc-a^2-b^2-c^2)\\
+&+\left(\tfrac{1}{2}+\tfrac{\sqrt{3}}{6}i\right)(a^2+b^2+c^2-ab-ac-bc)+ab+ac+bc = \dfrac{(a+b+c)^2}{3}
+\end{align*}
+after expanding and collecting terms. Hence, we are done. $\square$
 
 \begin{problem}[6.35]{USAMO 2015/2, complex}
 Quadrilateral $APBQ$ is inscribed in circle $\omega$ with $\angle P = \angle Q = 90^\circ$ and $AP = AQ < BP$. Let $X$ be a variable point on segment $\ol{PQ}$. Line $AX$ meets $\omega$ again at $S$ (other than $A$). Point $T$ lies on arc $AQB$ of $\omega$ such that $XT$ is perpendicular to $AX$. Let $M$ denote the midpoint of chord $\ol{ST}$. As $X$ varies on segment $\ol{PQ}$, show that $M$ moves along a circle.
@@ -4344,7 +4357,18 @@ Consider angles $A$, $B$, $C$ in the open interval $(-90^\circ, 90^\circ)$.
 \item Generalize to multiple variables.
 \end{enumerate}
 \end{problem}
-We solve both problems at once by immediately generalizing to $k$ variables. Let \[a_n = 1+\tan(r_n)i\] for $1 \le n \le k$. Now let $e_n$ denote the $n$th elementary symmetric sum (of $k$ variables/tangents in this case). Then, note that \[\arg(a_1a_2\dots a_k) = \arg((1+\tan(r_1)i)(1+\tan(r_2)i)\dots(1+\tan(r_k)i)) = \arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i).\] Hence, \[\tan\left(\textstyle\sum_{n=1}^k r_n\right) = \tan\left(\arg(a_1a_2\dots a_k)\right) = \tan(\arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i)) = \dfrac{e_1-e_3+e_5-\dots}{1-e_2+e_4-\dots}\] so we are done. $\square$
+We solve both problems at once by immediately generalizing to $k$ variables. Let \[a_n = 1+\tan(r_n)i\] for $1 \le n \le k$. Now let $e_n$ denote the $n$th elementary symmetric sum (of $k$ variables/tangents in this case). Then, note that 
+\begin{align*}
+\arg(a_1a_2\dots a_k) &= \arg((1+\tan(r_1)i)(1+\tan(r_2)i)\dots(1+\tan(r_k)i)) \\
+&= \arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i).
+\end{align*}
+Hence, 
+\begin{align*}
+\tan\left(\textstyle\sum_{n=1}^k r_n\right) &= \tan\left(\arg(a_1a_2\dots a_k)\right) \\
+&= \tan(\arg((1-e_2+e_4-\dots)+(e_1-e_3+e_5-\dots)i)) \\
+&= \dfrac{e_1-e_3+e_5-\dots}{1-e_2+e_4-\dots}
+\end{align*}
+so we are done. $\square$
 
 \begin{problem}[6.40]{Schiffler Point}
 Let $ABC$ be a triangle with incenter $I$. Prove that the Euler lines of triangles $AIB$, $BIC$, $CIA$, and $ABC$ are concurrent (called the Schiffler point of $ABC$).
@@ -4638,4 +4662,69 @@ Similarly, \[m_2 = \dfrac{ad(p\ol{p}-1)}{2(ad\ol{p}-a-d+p)}+\dfrac{bc(p\ol{p}-1)
 &= \dfrac{\tfrac{p\ol{p}-1}{p-a-d+ad\ol{p}}+\tfrac{p\ol{p}-1}{p-b-c+bc\ol{p}}-\ol{p}}{\tfrac{p\ol{p}-1}{p-a-b+ab\ol{p}}+\tfrac{p\ol{p}-1}{p-c-d+cd\ol{p}}-\ol{p}}.
 \end{align*}
 We omit the calculation, but state the result that the conjugate of the penultimate expression and last expression are equal, implying that the quantity is real. $\square$
+
+\begin{problem}[6.45]{Shortlist 1998/G6}
+Let $ABCDEF$ be a convex hexagon such that $\angle B+\angle D+\angle F=360^\circ$ and \[\frac{AB}{BC} \cdot \frac{CD}{DE} \cdot \frac{EF}{FA} = 1.\] Prove that \[\frac{BC}{CA} \cdot \frac{AE}{EF} \cdot \frac{FD}{DB} = 1.\]
+\end{problem}
+
+Toss onto the complex plane so that $(ABCDEF)$ is the unit circle. Then, we can encompass the two conditions above in the single condition: \[\dfrac{b-a}{b-c}\cdot\dfrac{d-c}{d-e}\cdot\dfrac{f-e}{f-a} = 1.\] Now, this implies that \[-ace+acf+ade-adf+bce-bcf-bde+bdf = -abd+abe+acd-ace+bdf-bef-cdf+cef\] by expansion. Moving around terms, we have that \[-abe+abf+ade-adf+bce-bcf-cde+cdf = -abd+abf+acd-acf+bde-bef-cde+cef\] which directly implies \[\dfrac{b-c}{a-c}\cdot\dfrac{a-e}{f-e}\cdot\dfrac{f-d}{b-d} = 1\] as required. $\square$
+
+\begin{problem}[6.46]{ELMO SL 2013}
+Let $ABC$ be a triangle inscribed in circle $\omega$, and let the medians from $B$ and $C$ intersect $\omega$ at $D$ and $E$ respectively. Let $O_1$ be the center of the circle through $D$ tangent to $AC$ at $C$, and let $O_2$ be the center of the circle through $E$ tangent to $AB$ at $B$. Prove that $O_1$, $O_2$, and the nine-point center of $\triangle ABC$ are collinear.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -17.5, xmax = 10.5, ymin = -8.75, ymax = 9;
+pen zzttqq = rgb(0.6,0.2,0); pen qqzzff = rgb(0,0.6,1); pen ffttww = rgb(1,0.2,0.4); pen qqqqcc = rgb(0,0,0.8);
+
+pair A = (-5.52,6.84);
+pair B = (-9.8,-1.7);
+pair C = (2.02,-1.82);
+pair M_B = (-1.75,2.51);
+pair M_C = (-7.66,2.57);
+pair D = (1.4652359360497094,4.191508483325376);
+pair E = (-9.614644632195763,3.456455571832582);
+pair O_2 = (-15.349058945517482,1.0810271998612202);
+pair O_1 = (5.914406858512622,1.5707422301599507);
+pair N_9 = (-4.717326043502431,1.325884715010586);
+
+draw(circle((-3.8653479129951394,0.6682305699788278), 6.3897270228370004), qqzzff);
+draw(E--C);
+draw(B--D);
+draw((xmin, 1.9953271028037376*xmin + 17.85420560747663)--(xmax, 1.9953271028037376*xmax + 17.85420560747663));
+draw((xmin, -1.1485411140583557*xmin + 0.5000530503978781)--(xmax, -1.1485411140583557*xmax + 0.5000530503978781));
+draw(E--B);
+draw(circle(O_2, 6.206945099418515), ffttww);
+draw(D--C);
+draw(circle(O_1, 5.163674820418132), ffttww);
+draw(O_2--O_1, qqqqcc);
+draw(O_2--B);
+draw(O_1--C);
+
+draw(A--B--C--cycle, zzttqq);
+
+dot("$A$", A, dir(100));
+dot("$B$", B, dir(210));
+dot("$C$", C, dir(-30));
+dot("$M_B$", M_B, N);
+dot("$M_C$", M_C, N);
+dot("$D$", D, N);
+dot("$E$", E, W);
+dot("$O_2$", O_2, dir(NW));
+dot("$O_1$", O_1, NE);
+dot("$N_{9}$", N_9, N);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Toss onto the complex plane with $(ABC)$ as the unit circle. Let the midpoint of $\ol{AC}$ be $M_B$, and similarly for $\ol{AB}$. Then, we have that:
+\begin{align*}
+m_b = \dfrac{a+c}{2} &= \dfrac{ac(b+d)-bd(a+c)}{ac-bd} \\
+(a+c)(ac-bd) &= 2ac(b+d)-2bd(a+c) \\
+a^2c+ac^2-abd-bcd &= 2abc+2acd-2abd-2bcd \\
+a^2c+ac^2-2abc &= 2acd-abd-bcd \\
+\dfrac{a^2c+ac^2-2abc}{2ac-ab-bc} &= d.
+\end{align*}
 \end{document}

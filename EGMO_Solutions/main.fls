@@ -800,6 +800,11 @@ INPUT ./main-67.pdf
 INPUT ./main-67.pdf
 INPUT ./main-67.pdf
 INPUT ./main-67.pdf
+OUTPUT main-68.asy
+INPUT ./main-68.pdf
+INPUT ./main-68.pdf
+INPUT ./main-68.pdf
+INPUT ./main-68.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
