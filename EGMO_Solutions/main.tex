@@ -4688,9 +4688,10 @@ pair D = (1.4652359360497094,4.191508483325376);
 pair E = (-9.614644632195763,3.456455571832582);
 pair O_2 = (-15.349058945517482,1.0810271998612202);
 pair O_1 = (5.914406858512622,1.5707422301599507);
+pair O = (-3.8653479129951394,0.6682305699788278);
 pair N_9 = (-4.717326043502431,1.325884715010586);
 
-draw(circle((-3.8653479129951394,0.6682305699788278), 6.3897270228370004), qqzzff);
+draw(circle(O, 6.3897270228370004), qqzzff);
 draw(E--C);
 draw(B--D);
 draw((xmin, 1.9953271028037376*xmin + 17.85420560747663)--(xmax, 1.9953271028037376*xmax + 17.85420560747663));
@@ -4712,6 +4713,7 @@ dot("$M_B$", M_B, N);
 dot("$M_C$", M_C, N);
 dot("$D$", D, N);
 dot("$E$", E, W);
+dot("$O$", O, dir(S));
 dot("$O_2$", O_2, dir(NW));
 dot("$O_1$", O_1, NE);
 dot("$N_{9}$", N_9, N);
@@ -4719,12 +4721,37 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{asy}
 \end{center}
 
-Toss onto the complex plane with $(ABC)$ as the unit circle. Let the midpoint of $\ol{AC}$ be $M_B$, and similarly for $\ol{AB}$. Then, we have that:
+Toss onto the complex plane with $(ABC)$ as the unit circle and $O = 0$. Let the midpoint of $\ol{AC}$ be $M_B$, and similarly for $\ol{AB}$. Then, we have that:
 \begin{align*}
 m_b = \dfrac{a+c}{2} &= \dfrac{ac(b+d)-bd(a+c)}{ac-bd} \\
 (a+c)(ac-bd) &= 2ac(b+d)-2bd(a+c) \\
-a^2c+ac^2-abd-bcd &= 2abc+2acd-2abd-2bcd \\
 a^2c+ac^2-2abc &= 2acd-abd-bcd \\
-\dfrac{a^2c+ac^2-2abc}{2ac-ab-bc} &= d.
+\dfrac{a^2c+ac^2-2abc}{2ac-ab-bc} &= d
 \end{align*}
+and similarly, \[\dfrac{a^2b+ab^2-2abc}{2ab-ac-bc} = e.\]
+
+\begin{claim*}
+We claim that $\triangle AOD \sim \triangle CO_1D$. 
+\end{claim*}
+\begin{proof}
+Clearly, they are both isosceles. In addition, \[\angle AOD = 2\angle ABD = 2\angle ACD = 2(90-\angle DCO_1) = \angle CO_1D\] so we are done. $\square$
+\end{proof}
+
+Hence, by the claim, we know that \[\dfrac{o-d}{a-d} = \dfrac{o_1-d}{c-d} \implies o_1 = \dfrac{-d(c-d)}{a-d}+d \quad \text{and} \quad o_2 = \dfrac{-e(b-e)}{a-e}+e.\] Now, we wish to show that \[\dfrac{o_2-n_9}{o_1-n_9} = \dfrac{\tfrac{-e(b-e)}{a-e}+e-\tfrac{a+b+c}{2}}{\tfrac{-d(c-d)}{a-d}+d-\tfrac{a+b+c}{2}}\] is real. Finally,
+\begin{align*}
+\dfrac{\tfrac{-e(b-e)}{a-e}+e-\tfrac{a+b+c}{2}}{\tfrac{-d(c-d)}{a-d}+d-\tfrac{a+b+c}{2}} &= \dfrac{(a-d)\left(-e(b-e)+ae-e^2-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left(-d(c-d)+ad-d^2-\tfrac{(a+b+c)(a-d)}{2}\right)} \\
+&= \dfrac{(a-d)\left(ae-be-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left(ad-cd-\tfrac{(a+b+c)(a-d)}{2}\right)} \\
+&= \dfrac{(a-\tfrac{a^2c+ac^2-2abc}{2ac-ab-bc})\left(ae-be-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left(\tfrac{a(a^2c+ac^2-2abc)}{2ac-ab-bc}-\tfrac{c(a^2c+ac^2-2abc)}{2ac-ab-bc}-\tfrac{(a+b+c)\left(a-\tfrac{a^2c+ac^2-2abc}{2ac-ab-bc}\right)}{2}\right)} \\
+&= \dfrac{(a(2ac-ab-bc)-a^2c-ac^2+2abc)\left(ae-be-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left((a-c)(a^2c+ac^2-2abc)-\tfrac{(a+b+c)\left(a(2ac-ab-bc)-a^2c-ac^2+2abc\right)}{2}\right)} \\
+&= \dfrac{(a(a-c)(c-b))\left(ae-be-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left(ac(a-c)(a+c-2b)-\tfrac{(a+b+c)\left(a(a-c)(c-b)\right)}{2}\right)} \\
+&= \dfrac{(c-b)\left(ae-be-\tfrac{(a+b+c)(a-e)}{2}\right)}{(a-e)\left(c(a+c-2b)-\tfrac{(a+b+c)(c-b)}{2}\right)} \\
+&= \dfrac{(c-b)\left((a-b)\left(\tfrac{a^2b+ab^2-2abc}{2ab-ac-bc}\right)-\tfrac{(a+b+c)\left(a-\tfrac{a^2b+ab^2-2abc}{2ab-ac-bc}\right)}{2}\right)}{\left(a-\tfrac{a^2b+ab^2-2abc}{2ab-ac-bc}\right)\left(c(a+c-2b)-\tfrac{(a+b+c)(c-b)}{2}\right)} \\
+&= \dfrac{(c-b)\left(ab(a-b)\left(a+b-2c\right)-\tfrac{a(a+b+c)(a-b)(b-c)}{2}\right)}{a(a-b)(b-c)\left(c(a+c-2b)-\tfrac{(a+b+c)(c-b)}{2}\right)} \\
+&= -\dfrac{2b\left(a+b-2c\right)-(a+b+c)(b-c)}{2c(a+c-2b)-(a+b+c)(c-b)} \\
+&= -1
+\end{align*}
+which is a real quantity, as required. $\square$
+\begin{remark*}
+It turns out that $N_9$ is the midpoint of $\ol{O_1O_2}$.
+\end{remark*}
 \end{document}
