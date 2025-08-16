@@ -4777,4 +4777,47 @@ Now, we will find the isotomic conjugate. Denote $A'$, $B'$, and $C'$ as in the 
 Using the areal definition, show that $I = (a : b : c)$. Deduce the angle bisector theorem.
 \end{problem}
 We have that \[[PBC] : [PAC] : [PAB] = a : b : c\] due to the base and height formula for the area of a triangle. Hence, we have the first part. The second part follows because the points on the sides are of the form $(ua : vb : wc)$ where $(u, v, w)$ is some permutation of $(0, 1, 1)$. $\square$
+
+\begin{problem}[7.9]{}
+Find the barycentric coordinates for the intersection of the symmedian from $A$ and the median from $B$.
+\end{problem}
+Let the point be $P = (x : y : z)$. Then, we have that \[y : z = b^2 : c^2\] and \[x : z = 1 : 1.\] Hence, the point is \[P = \boxed{(c^2 : b^2 : c^2)}\] as required. $\square$
+
+\begin{problem}[7.17]{Barycentric Circumcircle}
+The circumcircle $(ABC)$ of the reference triangle has equation \[a^2yz + b^2zx + c^2xy = 0.\]
+\end{problem}
+The equation for any circle is \[-a^2yz-b^2zx-c^2xy+(ux+vy+wz)(x+y+z) = 0\] for some reals $u$, $v$, and $w$. Now, we have that the circle must pass through $(1, 0, 0)$, $(0, 1, 0)$, and $(0, 0, 1)$. Hence, plugging these in, we find that $u = v = w = 0$, implying the necessary conclusion. $\square$
+
+\begin{problem}[7.18]{}
+Consider a displacement vector $\overrightarrow{PQ} = (x_1, y_1, z_1)$. Show that $PQ \perp BC$ if and only if \[0 = a^2(z_1 - y_1) + x_1(c^2 - b^2).\]
+\end{problem}
+The displacement vector $\overrightarrow{BC}$ is $(0, -1, 1)$. Hence, plugging this into the criteria for perpendicular displacement vectors, we have that: \[0 = a^2(y_1-z_1)+b^2x_1-c^2x_1\] which is precisely the necessary statement. $\square$
+
+\begin{problem}[7.19]{Barycentric Perpendicular Bisector}
+The perpendicular bisector of $\ol{BC}$ has equation \[0 = a^2(z - y) + x(c^2 - b^2).\]
+\end{problem}
+
+Let $P = (x, y, z)$, and $M = \left(0, \tfrac{1}{2}, \tfrac{1}{2}\right)$ be the midpoint of $\ol{BC}$. Then, the displacement vector $\overrightarrow{PM} = \left(-x, \tfrac{1}{2}-y, \tfrac{1}{2}-z\right)$. So, by \refproblem{7.18}, we have the required conclusion. $\square$
+
+\begin{problem}[7.31]{}
+Let $ABC$ be a triangle with altitude $\ol{AL}$ and let $M$ be the midpoint of $\ol{AL}$. If $K$ is the symmedian point of triangle $ABC$, prove that $\ol{KM}$ bisects $\ol{BC}$.
+\end{problem}
+We know that if $L = (L_x, L_y, L_z)$, then \[0 = a^2(L_y-L_z)+(L_x-1)(b^2-c^2).\] However, we know that $L_x = 0$. Hence, \[0 = a^2(L_y-L_z)-(b^2-c^2) \implies L_y-L_z = \dfrac{b^2-c^2}{a^2}.\] Now, since $L_y + L_z = 1$, we can solve for both of them, getting that
+\begin{align*}
+L_z &= \dfrac{a^2+b^2-c^2}{2a^2} \\
+L_y &= \dfrac{a^2+c^2-b^2}{2a^2}.
+\end{align*}
+Now, the midpoint of $\ol{AL}$ is then \[M = \left(\tfrac{1}{2}, \tfrac{a^2+b^2-c^2}{4a^2}, \tfrac{a^2+c^2-b^2}{4a^2}\right).\] In addition, we know that $K = (a^2, b^2, c^2)$. Now, the line through $K$ and $M$ can be represented as \[ux+vy+z = 0\] for $u$, $v$ satisfying \[\dfrac{u}{2}+\dfrac{a^2v+b^2v-c^2v}{4a^2}+\dfrac{a^2+c^2-b^2}{4a^2} = 0\] and \[a^2u+b^2v+c^2 = 0 \implies u = \dfrac{-b^2v-c^2}{a^2}.\] Hence,
+\begin{align*}
+\dfrac{u}{2}+\dfrac{a^2v+b^2v-c^2v}{4a^2}+\dfrac{a^2+c^2-b^2}{4a^2} &= \dfrac{-b^2v-c^2}{2a^2}+\dfrac{a^2v+b^2v-c^2v}{4a^2}+\dfrac{a^2+c^2-b^2}{4a^2} \\
+&= \dfrac{-2b^2v-2c^2}{4a^2}+\dfrac{a^2v+b^2v-c^2v}{4a^2}+\dfrac{a^2+c^2-b^2}{4a^2} \\
+&= \dfrac{a^2v-b^2v-c^2v}{4a^2}+\dfrac{a^2-b^2-c^2}{4a^2} \\
+&= 0.
+\end{align*}
+Thus, $v = -1$, which implies the required conclusion. $\square$
+
+\begin{problem}[7.32]{}
+Let $I$ and $G$ denote the incenter and centroid of a triangle $ABC$ and let $N$ denote the Nagel point; this is the intersection of the cevians that join $A$ to the contact point of the $A$-excircle on $BC$, and similarly for $B$ and $C$. Prove that $I$, $G$, $N$ are collinear and that $NG = 2GI$.
+\end{problem}
+Call the contact point of the $A$-excircle with $BC$ as $A' = (0, A'_y, 1-A'_y)$. Then, since $I_A = \left(\tfrac{-a}{b+c-a}, \tfrac{b}{b+c-a}, \tfrac{c}{b+c-a}\right)$, we know that $\overrightarrow{I_AA'} = \left(\tfrac{a}{b+c-a}, A'_y-\tfrac{b}{b+c-a}, 1-A'_y-\tfrac{c}{b+c-a}\right)$. Hence, \[0 = a^2\left(2A_y'-1+\tfrac{c-b}{b+c-a}\right)+\tfrac{a}{b+c-a}\left(b^2-c^2\right).\] Hence, \[A_y' = \dfrac{\tfrac{c^2}{a}-\tfrac{b^2}{a}+2b-a}{2b+2c-2a}\]
 \end{document}
