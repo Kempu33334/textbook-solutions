@@ -4754,4 +4754,27 @@ which is a real quantity, as required. $\square$
 \begin{remark*}
 It turns out that $N_9$ is the midpoint of $\ol{O_1O_2}$.
 \end{remark*}
+
+\newpage
+
+\section{Barycentric Coordinates}
+
+\begin{problem}[7.5]{}
+Find the barycentric coordinates for the midpoint of $\ol{AB}$.
+\end{problem}
+It is clearly $\boxed{\left(\tfrac{1}{2}, \tfrac{1}{2}, 0\right)}$.
+
+\begin{problem}[7.6]{Barycentric Coordinates}
+Let $P = (x : y : z)$ be a point with $x$, $y$, $z \neq 0$. Show that the isogonal conjugate of $P$ is given by \[P^* =	\left(\dfrac{a^2}{x}:\dfrac{b^2}{y}:\dfrac{c^2}{z}\right)\] and the isotomic conjugate is given by \[P^t = \left(\dfrac{1}{x}:\dfrac{1}{y}:\dfrac{1}{z}\right).\]
+\end{problem}
+We begin with the first problem. Denote $A'$ as the intersection of $AP$ with $BC$ and similarly for $B'$ and $C'$. Then, we have that \[A' = (0 : y : z), \quad B' = (x : 0 : z), \quad C' = (x : y : 0).\] Now, let $A^*$ be on $BC$ so that $AA'$ is isogonal to $AA^*$. Then, by \refproblem{4.22} we know that \[\dfrac{BA'}{A'C}\cdot \dfrac{BA^*}{A^*C} = \left(\dfrac{AB}{AC}\right)^2.\] However, we have that $\tfrac{BA'}{A'C} = \tfrac{z}{y}$. Hence, we must have that \[\dfrac{BA^*}{A^*C} = \left(\dfrac{c}{b}\right)^2\cdot \dfrac{y}{z} \implies A^* = \left(0: b^2z: c^2y\right).\] We find similar equations for $B^*$ and $C^*$. Hence, we find that the point \[\left(\dfrac{a^2}{x}:\dfrac{b^2}{y}:\dfrac{c^2}{z}\right)\] can be scaled further by $yz$, $xz$, and $xy$ to show that it lies on $AA^*$, $BB^*$, and $CC^*$, respectively, so we have the required point.
+
+Now, we will find the isotomic conjugate. Denote $A'$, $B'$, and $C'$ as in the last problem. Then, let $A^t$ be a point on $BC$ such that $AA'$ and $AA^t$ are isotomic to each other, and define $B^t$ and $C^t$ respectively. Then, note that \[A^t = (0 : z : y), \quad B^t = (z : 0 : x), \quad C^t = (y : x : 0).\] Hence, we find the point that lies on all of these is the given point, $\left(\tfrac{1}{x}:\tfrac{1}{y}:\tfrac{1}{z}\right)$ so we are done. $\square$
+
+\newpage
+
+\begin{problem}[7.8]{}
+Using the areal definition, show that $I = (a : b : c)$. Deduce the angle bisector theorem.
+\end{problem}
+We have that \[[PBC] : [PAC] : [PAB] = a : b : c\] due to the base and height formula for the area of a triangle. Hence, we have the first part. The second part follows because the points on the sides are of the form $(ua : vb : wc)$ where $(u, v, w)$ is some permutation of $(0, 1, 1)$. $\square$
 \end{document}
