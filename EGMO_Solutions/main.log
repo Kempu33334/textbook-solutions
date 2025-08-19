@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  16 AUG 2025 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  18 AUG 2025 20:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1582,7 +1582,7 @@ Package pdftex.def Info: main-35.pdf  used on input line 2334.
 (pdftex.def)             Requested size: 284.52728pt x 148.92601pt.
 \openout4 = `main-36.asy'.
 
-<main-36.pdf, id=752, 199.1691pt x 179.5779pt>
+<main-36.pdf, id=753, 199.1691pt x 179.5779pt>
 File: main-36.pdf Graphic file (type pdf)
 <use main-36.pdf>
 Package pdftex.def Info: main-36.pdf  used on input line 2393.
@@ -1594,7 +1594,7 @@ Package pdftex.def Info: main-36.pdf  used on input line 2393.
 [48]
 \openout4 = `main-37.asy'.
 
-<main-37.pdf, id=788, 284.52798pt x 184.50632pt>
+<main-37.pdf, id=790, 284.52798pt x 184.50632pt>
 File: main-37.pdf Graphic file (type pdf)
 <use main-37.pdf>
 Package pdftex.def Info: main-37.pdf  used on input line 2454.
@@ -1604,7 +1604,7 @@ Package pdftex.def Info: main-37.pdf  used on input line 2454.
 [49 <./main-37.pdf>]
 \openout4 = `main-38.asy'.
 
-<main-38.pdf, id=803, 260.19609pt x 284.52798pt>
+<main-38.pdf, id=805, 260.19609pt x 284.52798pt>
 File: main-38.pdf Graphic file (type pdf)
 <use main-38.pdf>
 Package pdftex.def Info: main-38.pdf  used on input line 2520.
@@ -1614,7 +1614,7 @@ Package pdftex.def Info: main-38.pdf  used on input line 2520.
 [50 <./main-38.pdf>]
 \openout4 = `main-39.asy'.
 
-<main-39.pdf, id=819, 188.28543pt x 227.62239pt>
+<main-39.pdf, id=821, 188.28543pt x 227.62239pt>
 File: main-39.pdf Graphic file (type pdf)
 <use main-39.pdf>
 Package pdftex.def Info: main-39.pdf  used on input line 2581.
@@ -1624,7 +1624,7 @@ Package pdftex.def Info: main-39.pdf  used on input line 2581.
 [51 <./main-39.pdf>]
 \openout4 = `main-40.asy'.
 
-<main-40.pdf, id=840, 186.80591pt x 284.52798pt>
+<main-40.pdf, id=842, 186.80591pt x 284.52798pt>
 File: main-40.pdf Graphic file (type pdf)
 <use main-40.pdf>
 Package pdftex.def Info: main-40.pdf  used on input line 2656.
@@ -1634,7 +1634,7 @@ Package pdftex.def Info: main-40.pdf  used on input line 2656.
 [52 <./main-40.pdf>]
 \openout4 = `main-41.asy'.
 
-<main-41.pdf, id=863, 177.82535pt x 284.52798pt>
+<main-41.pdf, id=865, 177.82535pt x 284.52798pt>
 File: main-41.pdf Graphic file (type pdf)
 <use main-41.pdf>
 Package pdftex.def Info: main-41.pdf  used on input line 2729.
@@ -1644,7 +1644,7 @@ Package pdftex.def Info: main-41.pdf  used on input line 2729.
 [53 <./main-41.pdf>]
 \openout4 = `main-42.asy'.
 
-<main-42.pdf, id=883, 284.52798pt x 252.04062pt>
+<main-42.pdf, id=885, 284.52798pt x 252.04062pt>
 File: main-42.pdf Graphic file (type pdf)
 <use main-42.pdf>
 Package pdftex.def Info: main-42.pdf  used on input line 2788.
@@ -1654,7 +1654,7 @@ Package pdftex.def Info: main-42.pdf  used on input line 2788.
 [54 <./main-42.pdf>]
 \openout4 = `main-43.asy'.
 
-<main-43.pdf, id=903, 284.52798pt x 240.24857pt>
+<main-43.pdf, id=905, 284.52798pt x 240.24857pt>
 File: main-43.pdf Graphic file (type pdf)
 <use main-43.pdf>
 Package pdftex.def Info: main-43.pdf  used on input line 2847.
@@ -1668,14 +1668,14 @@ Package pdftex.def Info: main-43.pdf  used on input line 2847.
 [57]
 \openout4 = `main-44.asy'.
 
-<main-44.pdf, id=938, 160.6pt x 151.20891pt>
+<main-44.pdf, id=940, 160.6pt x 151.20891pt>
 File: main-44.pdf Graphic file (type pdf)
 <use main-44.pdf>
 Package pdftex.def Info: main-44.pdf  used on input line 2940.
 (pdftex.def)             Requested size: 160.5996pt x 151.20853pt.
 \openout4 = `main-45.asy'.
 
-<main-45.pdf, id=939, 159.49889pt x 160.6pt>
+<main-45.pdf, id=941, 159.49889pt x 160.6pt>
 File: main-45.pdf Graphic file (type pdf)
 <use main-45.pdf>
 Package pdftex.def Info: main-45.pdf  used on input line 2997.
@@ -1685,7 +1685,7 @@ Package pdftex.def Info: main-45.pdf  used on input line 2997.
 [58 <./main-44.pdf> <./main-45.pdf>]
 \openout4 = `main-46.asy'.
 
-<main-46.pdf, id=963, 200.75pt x 198.01678pt>
+<main-46.pdf, id=965, 200.75pt x 198.01678pt>
 File: main-46.pdf Graphic file (type pdf)
 <use main-46.pdf>
 Package pdftex.def Info: main-46.pdf  used on input line 3051.
@@ -1695,7 +1695,7 @@ Package pdftex.def Info: main-46.pdf  used on input line 3051.
 [59 <./main-46.pdf>]
 \openout4 = `main-47.asy'.
 
-<main-47.pdf, id=983, 165.86768pt x 170.7168pt>
+<main-47.pdf, id=985, 165.86768pt x 170.7168pt>
 File: main-47.pdf Graphic file (type pdf)
 <use main-47.pdf>
 Package pdftex.def Info: main-47.pdf  used on input line 3090.
@@ -1705,14 +1705,14 @@ Package pdftex.def Info: main-47.pdf  used on input line 3090.
 [60 <./main-47.pdf>]
 \openout4 = `main-48.asy'.
 
-<main-48.pdf, id=998, 189.94664pt x 199.1691pt>
+<main-48.pdf, id=1000, 189.94664pt x 199.1691pt>
 File: main-48.pdf Graphic file (type pdf)
 <use main-48.pdf>
 Package pdftex.def Info: main-48.pdf  used on input line 3135.
 (pdftex.def)             Requested size: 189.94617pt x 199.1686pt.
 \openout4 = `main-49.asy'.
 
-<main-49.pdf, id=999, 140.05626pt x 170.7168pt>
+<main-49.pdf, id=1001, 140.05626pt x 170.7168pt>
 File: main-49.pdf Graphic file (type pdf)
 <use main-49.pdf>
 Package pdftex.def Info: main-49.pdf  used on input line 3185.
@@ -1722,7 +1722,7 @@ Package pdftex.def Info: main-49.pdf  used on input line 3185.
 [61 <./main-48.pdf> <./main-49.pdf>]
 \openout4 = `main-50.asy'.
 
-<main-50.pdf, id=1032, 227.62239pt x 190.95741pt>
+<main-50.pdf, id=1034, 227.62239pt x 190.95741pt>
 File: main-50.pdf Graphic file (type pdf)
 <use main-50.pdf>
 Package pdftex.def Info: main-50.pdf  used on input line 3237.
@@ -1732,7 +1732,7 @@ Package pdftex.def Info: main-50.pdf  used on input line 3237.
 [62 <./main-50.pdf>]
 \openout4 = `main-51.asy'.
 
-<main-51.pdf, id=1046, 199.1691pt x 168.00568pt>
+<main-51.pdf, id=1048, 199.1691pt x 168.00568pt>
 File: main-51.pdf Graphic file (type pdf)
 <use main-51.pdf>
 Package pdftex.def Info: main-51.pdf  used on input line 3290.
@@ -1742,7 +1742,7 @@ Package pdftex.def Info: main-51.pdf  used on input line 3290.
 [63 <./main-51.pdf>]
 \openout4 = `main-52.asy'.
 
-<main-52.pdf, id=1060, 227.62239pt x 202.28474pt>
+<main-52.pdf, id=1062, 227.62239pt x 202.28474pt>
 File: main-52.pdf Graphic file (type pdf)
 <use main-52.pdf>
 Package pdftex.def Info: main-52.pdf  used on input line 3331.
@@ -1752,7 +1752,7 @@ Package pdftex.def Info: main-52.pdf  used on input line 3331.
 [64 <./main-52.pdf>]
 \openout4 = `main-53.asy'.
 
-<main-53.pdf, id=1074, 180.15906pt x 199.1691pt>
+<main-53.pdf, id=1076, 180.15906pt x 199.1691pt>
 File: main-53.pdf Graphic file (type pdf)
 <use main-53.pdf>
 Package pdftex.def Info: main-53.pdf  used on input line 3380.
@@ -1762,7 +1762,7 @@ Package pdftex.def Info: main-53.pdf  used on input line 3380.
 [65 <./main-53.pdf>]
 \openout4 = `main-54.asy'.
 
-<main-54.pdf, id=1089, 341.4326pt x 232.19647pt>
+<main-54.pdf, id=1091, 341.4326pt x 232.19647pt>
 File: main-54.pdf Graphic file (type pdf)
 <use main-54.pdf>
 Package pdftex.def Info: main-54.pdf  used on input line 3443.
@@ -1772,7 +1772,7 @@ Package pdftex.def Info: main-54.pdf  used on input line 3443.
 [66 <./main-54.pdf>]
 \openout4 = `main-55.asy'.
 
-<main-55.pdf, id=1103, 284.52798pt x 211.6186pt>
+<main-55.pdf, id=1105, 284.52798pt x 211.6186pt>
 File: main-55.pdf Graphic file (type pdf)
 <use main-55.pdf>
 Package pdftex.def Info: main-55.pdf  used on input line 3495.
@@ -1782,14 +1782,14 @@ Package pdftex.def Info: main-55.pdf  used on input line 3495.
 [67 <./main-55.pdf>]
 \openout4 = `main-56.asy'.
 
-<main-56.pdf, id=1122, 284.52798pt x 146.10585pt>
+<main-56.pdf, id=1124, 284.52798pt x 146.10585pt>
 File: main-56.pdf Graphic file (type pdf)
 <use main-56.pdf>
 Package pdftex.def Info: main-56.pdf  used on input line 3538.
 (pdftex.def)             Requested size: 284.52728pt x 146.10548pt.
 \openout4 = `main-57.asy'.
 
-<main-57.pdf, id=1123, 157.37796pt x 170.7168pt>
+<main-57.pdf, id=1125, 157.37796pt x 170.7168pt>
 File: main-57.pdf Graphic file (type pdf)
 <use main-57.pdf>
 Package pdftex.def Info: main-57.pdf  used on input line 3580.
@@ -1799,7 +1799,7 @@ Package pdftex.def Info: main-57.pdf  used on input line 3580.
 [68 <./main-56.pdf> <./main-57.pdf>]
 \openout4 = `main-58.asy'.
 
-<main-58.pdf, id=1150, 146.16206pt x 227.62239pt>
+<main-58.pdf, id=1152, 146.16206pt x 227.62239pt>
 File: main-58.pdf Graphic file (type pdf)
 <use main-58.pdf>
 Package pdftex.def Info: main-58.pdf  used on input line 3633.
@@ -1815,7 +1815,7 @@ Package pdftex.def Info: main-58.pdf  used on input line 3633.
 [72]
 \openout4 = `main-59.asy'.
 
-<main-59.pdf, id=1188, 284.52798pt x 148.92638pt>
+<main-59.pdf, id=1190, 284.52798pt x 148.92638pt>
 File: main-59.pdf Graphic file (type pdf)
 <use main-59.pdf>
 Package pdftex.def Info: main-59.pdf  used on input line 3735.
@@ -1827,7 +1827,7 @@ Package pdftex.def Info: main-59.pdf  used on input line 3735.
 [74]
 \openout4 = `main-60.asy'.
 
-<main-60.pdf, id=1210, 227.62239pt x 161.07275pt>
+<main-60.pdf, id=1213, 227.62239pt x 161.07275pt>
 File: main-60.pdf Graphic file (type pdf)
 <use main-60.pdf>
 Package pdftex.def Info: main-60.pdf  used on input line 3829.
@@ -1837,7 +1837,7 @@ Package pdftex.def Info: main-60.pdf  used on input line 3829.
 [75 <./main-60.pdf>]
 \openout4 = `main-61.asy'.
 
-<main-61.pdf, id=1224, 227.62239pt x 217.53973pt>
+<main-61.pdf, id=1227, 227.62239pt x 217.53973pt>
 File: main-61.pdf Graphic file (type pdf)
 <use main-61.pdf>
 Package pdftex.def Info: main-61.pdf  used on input line 3874.
@@ -1849,7 +1849,7 @@ Package pdftex.def Info: main-61.pdf  used on input line 3874.
 [77]
 \openout4 = `main-62.asy'.
 
-<main-62.pdf, id=1243, 226.07863pt x 190.06609pt>
+<main-62.pdf, id=1246, 226.07863pt x 190.06609pt>
 File: main-62.pdf Graphic file (type pdf)
 <use main-62.pdf>
 Package pdftex.def Info: main-62.pdf  used on input line 3945.
@@ -1859,7 +1859,7 @@ Package pdftex.def Info: main-62.pdf  used on input line 3945.
 [78 <./main-62.pdf>]
 \openout4 = `main-63.asy'.
 
-<main-63.pdf, id=1257, 207.57649pt x 184.58762pt>
+<main-63.pdf, id=1260, 207.57649pt x 184.58762pt>
 File: main-63.pdf Graphic file (type pdf)
 <use main-63.pdf>
 Package pdftex.def Info: main-63.pdf  used on input line 3994.
@@ -1900,7 +1900,7 @@ Overfull \hbox (20.6073pt too wide) detected at line 4349
 [92]
 \openout4 = `main-64.asy'.
 
-<main-64.pdf, id=1359, 170.7168pt x 162.40474pt>
+<main-64.pdf, id=1362, 170.7168pt x 162.40474pt>
 File: main-64.pdf Graphic file (type pdf)
 <use main-64.pdf>
 Package pdftex.def Info: main-64.pdf  used on input line 4419.
@@ -1912,7 +1912,7 @@ Package pdftex.def Info: main-64.pdf  used on input line 4419.
 [94]
 \openout4 = `main-65.asy'.
 
-<main-65.pdf, id=1378, 188.8375pt x 228.12427pt>
+<main-65.pdf, id=1381, 188.8375pt x 228.12427pt>
 File: main-65.pdf Graphic file (type pdf)
 <use main-65.pdf>
 Package pdftex.def Info: main-65.pdf  used on input line 4484.
@@ -1922,7 +1922,7 @@ Package pdftex.def Info: main-65.pdf  used on input line 4484.
 [95 <./main-65.pdf>]
 \openout4 = `main-66.asy'.
 
-<main-66.pdf, id=1392, 180.13397pt x 228.12427pt>
+<main-66.pdf, id=1395, 180.13397pt x 228.12427pt>
 File: main-66.pdf Graphic file (type pdf)
 <use main-66.pdf>
 Package pdftex.def Info: main-66.pdf  used on input line 4561.
@@ -1932,7 +1932,7 @@ Package pdftex.def Info: main-66.pdf  used on input line 4561.
 [96 <./main-66.pdf>]
 \openout4 = `main-67.asy'.
 
-<main-67.pdf, id=1414, 285.02986pt x 221.24358pt>
+<main-67.pdf, id=1417, 285.02986pt x 221.24358pt>
 File: main-67.pdf Graphic file (type pdf)
 <use main-67.pdf>
 Package pdftex.def Info: main-67.pdf  used on input line 4639.
@@ -1944,7 +1944,7 @@ Package pdftex.def Info: main-67.pdf  used on input line 4639.
 [98]
 \openout4 = `main-68.asy'.
 
-<main-68.pdf, id=1439, 284.52798pt x 180.36986pt>
+<main-68.pdf, id=1442, 284.52798pt x 180.36986pt>
 File: main-68.pdf Graphic file (type pdf)
 <use main-68.pdf>
 Package pdftex.def Info: main-68.pdf  used on input line 4721.
@@ -1960,8 +1960,50 @@ Package pdftex.def Info: main-68.pdf  used on input line 4721.
 [102]
 
 [103]
+\openout4 = `main-69.asy'.
 
-[104] (./main.aux)
+<main-69.pdf, id=1491, 217.01376pt x 246.5983pt>
+File: main-69.pdf Graphic file (type pdf)
+<use main-69.pdf>
+Package pdftex.def Info: main-69.pdf  used on input line 4874.
+(pdftex.def)             Requested size: 217.01321pt x 246.59769pt.
+
+
+[104 <./main-69.pdf>]
+\openout4 = `main-70.asy'.
+
+<main-70.pdf, id=1506, 284.52798pt x 148.92638pt>
+File: main-70.pdf Graphic file (type pdf)
+<use main-70.pdf>
+Package pdftex.def Info: main-70.pdf  used on input line 4916.
+(pdftex.def)             Requested size: 284.52728pt x 148.92601pt.
+
+
+[105 <./main-70.pdf>]
+
+[106]
+\openout4 = `main-71.asy'.
+
+<main-71.pdf, id=1527, 227.62239pt x 190.65027pt>
+File: main-71.pdf Graphic file (type pdf)
+<use main-71.pdf>
+Package pdftex.def Info: main-71.pdf  used on input line 4989.
+(pdftex.def)             Requested size: 227.62183pt x 190.6498pt.
+
+
+[107 <./main-71.pdf>]
+
+[108]
+\openout4 = `main-72.asy'.
+
+<main-72.pdf, id=1545, 253.59743pt x 163.9726pt>
+File: main-72.pdf Graphic file (type pdf)
+<use main-72.pdf>
+Package pdftex.def Info: main-72.pdf  used on input line 5036.
+(pdftex.def)             Requested size: 253.5968pt x 163.97218pt.
+
+
+[109 <./main-72.pdf>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -1970,13 +2012,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BE175D270B10380EAF3F290503CC27F1;927.
  ) 
 Here is how much of TeX's memory you used:
- 34039 strings out of 469626
- 669126 string characters out of 5475183
- 1111171 words of memory out of 5000000
- 59886 multiletter control sequences out of 15000+600000
+ 34106 strings out of 469626
+ 670277 string characters out of 5475183
+ 1111481 words of memory out of 5000000
+ 59939 multiletter control sequences out of 15000+600000
  685923 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,16n,135p,1636b,1017s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,16n,135p,1789b,1017s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2025/texmf-dis
@@ -1997,10 +2039,10 @@ e1/public/lm/lmri10.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy1
 025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><d:/texlive/2025/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2025/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb>
-Output written on main.pdf (104 pages, 921213 bytes).
+Output written on main.pdf (109 pages, 947843 bytes).
 PDF statistics:
- 1646 PDF objects out of 1728 (max. 8388607)
- 1220 compressed objects within 13 object streams
- 292 named destinations out of 1000 (max. 500000)
- 568 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1718 PDF objects out of 1728 (max. 8388607)
+ 1274 compressed objects within 13 object streams
+ 302 named destinations out of 1000 (max. 500000)
+ 588 words of extra memory for PDF output out of 10000 (max. 10000000)
 

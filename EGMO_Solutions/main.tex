@@ -2337,7 +2337,7 @@ dot("$E$", E, dir(90));
 Notice that in $\triangle EBD$, $\ol{EC}$ is a median and the centroid of $\triangle EBD$ is $A$. Hence, line $DA$ bisects $\ol{BE}$. Now, let $M$ be the midpoint of $\ol{BE}$. Then, we know that \[AM = \tfrac{1}{2}AD = \tfrac{1}{2}BE = BM = EM.\] Hence, $\triangle BAE$ is right, implying that $\triangle ABC$ is also right, as required. $\square$
 
 \begin{remark*}
-For a computational method, look to \refproblem{5.19}.
+For a computational method, look to \refproblem{5.19} and for a barycentric bash, \refproblem{7.34}.
 \end{remark*}
 
 \begin{problem}[3.27]{APMO 2004/4}
@@ -3745,7 +3745,7 @@ By the Law of Cosines, we have that \[\dfrac{EC^2+BC^2-BE^2}{2\cdot EC\cdot BC} 
 \end{align*}
 However by Stewarts Theorem, we have that \[AB^2+AD^2=2BC^2+2AC^2.\] Thus, adding this to the equation above, we have that \[3AC^2+AB^2+AD^2 = AD^2+BC^2+2AC^2 \implies AC^2+AB^2 = BC^2\] so we are done. $\square$
 \begin{remark*}
-The synthetic method can be found in \refproblem{3.26}.
+The synthetic method can be found in \refproblem{3.26}, and a barycentric bash as \refproblem{7.34}.
 \end{remark*}
 
 \begin{problem}[5.20]{HMMT 2013}
@@ -4819,5 +4819,228 @@ Thus, $v = -1$, which implies the required conclusion. $\square$
 \begin{problem}[7.32]{}
 Let $I$ and $G$ denote the incenter and centroid of a triangle $ABC$ and let $N$ denote the Nagel point; this is the intersection of the cevians that join $A$ to the contact point of the $A$-excircle on $BC$, and similarly for $B$ and $C$. Prove that $I$, $G$, $N$ are collinear and that $NG = 2GI$.
 \end{problem}
-Call the contact point of the $A$-excircle with $BC$ as $A' = (0, A'_y, 1-A'_y)$. Then, since $I_A = \left(\tfrac{-a}{b+c-a}, \tfrac{b}{b+c-a}, \tfrac{c}{b+c-a}\right)$, we know that $\overrightarrow{I_AA'} = \left(\tfrac{a}{b+c-a}, A'_y-\tfrac{b}{b+c-a}, 1-A'_y-\tfrac{c}{b+c-a}\right)$. Hence, \[0 = a^2\left(2A_y'-1+\tfrac{c-b}{b+c-a}\right)+\tfrac{a}{b+c-a}\left(b^2-c^2\right).\] Hence, \[A_y' = \dfrac{\tfrac{c^2}{a}-\tfrac{b^2}{a}+2b-a}{2b+2c-2a}\]
+Call the contact point of the $A$-excircle with $BC$ as $A' = (0, A'_y, 1-A'_y)$. Then, since $I_A = \left(\tfrac{-a}{b+c-a}, \tfrac{b}{b+c-a}, \tfrac{c}{b+c-a}\right)$, we know that $\overrightarrow{I_AA'} = \left(\tfrac{a}{b+c-a}, A'_y-\tfrac{b}{b+c-a}, 1-A'_y-\tfrac{c}{b+c-a}\right)$. Hence, \[0 = a^2\left(2A_y'-1+\tfrac{c-b}{b+c-a}\right)+\tfrac{a}{b+c-a}\left(b^2-c^2\right).\] Hence, \[A_y' = \dfrac{a-b+c}{2a}\] and we get similar equations for $B'$ and $C'$. After solving a quick system of ratios, we find that \[N = (b+c-a : a+c-b : a+b-c) = \left(1-\tfrac{2a}{a+b+c}, 1-\tfrac{2b}{a+b+c}, 1-\tfrac{2c}{a+b+c}\right).\] After more computations, we then can find the required conclusion since $I = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}, \tfrac{c}{a+b+c}\right)$ and $G = \left(\tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3}\right)$. $\square$
+
+\begin{problem}[7.33]{IMO 2014/4}
+Let $P$ and $Q$ be on segment $\ol{BC}$ of an acute triangle $ABC$ such that $\angle PAB = \angle BCA$ and $\angle CAQ = \angle ABC$. Let $M$ and $N$ be the points on $AP$ and $AQ$, respectively, such that $P$ is the midpoint of $\ol{AM}$ and $Q$ is the midpoint of $\ol{AN}$. Prove that the intersection of $BM$ and $CN$ is on the circumference of triangle $ABC$.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -8.755517809416997, xmax = 13.833992128854836, ymin = -8.714661141915444, ymax = 6.0464950446791335;
+pen zzttqq = rgb(0.6,0.2,0); pen ffqqtt = rgb(1,0,0.2); pen qqwwzz = rgb(0,0.4,0.6); pen wwzzff = rgb(0.4,0.6,1); pen ccwwff = rgb(0.8,0.4,1); pen ttttff = rgb(0.2,0.2,1);
+
+pair A = (0.42,3.8);
+pair B = (-2.34,-1.52);
+pair C = (6.5,-1.74);
+pair P = (1.7208333120188253,-1.6210614625163058);
+pair Q = (-1.1488825229557265,-1.549643195130061);
+pair M = (3.0216666240376506,-7.042122925032611);
+pair N = (-2.717765045911453,-6.899286390260122);
+pair D = (0.9109588871140336,-4.868248941548673);
+pair K = (0.5941605967915855,0.7250634861254756);
+
+draw(A--B--C--cycle, zzttqq);
+draw(B--P--A--cycle, ffqqtt);
+draw(A--Q--C--cycle, qqwwzz);
+
+draw(A--B, zzttqq);
+draw(B--C, zzttqq);
+draw(C--A, zzttqq);
+draw(B--P, ffqqtt);
+draw(P--A, ffqqtt);
+draw(A--B, ffqqtt);
+draw(A--Q, qqwwzz);
+draw(Q--C, qqwwzz);
+draw(C--A, qqwwzz);
+draw(P--M, wwzzff);
+draw(Q--N, wwzzff);
+draw(B--M, ccwwff);
+draw(N--C, ccwwff);
+draw(circle((2.1093080863212696,-0.45234780418171117), 4.5756118343058185), dotted + ttttff);
+draw(A--D, linetype("2 2"));
+
+dot("$A$", A, dir(90));
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$P$", P, NE);
+dot("$Q$", Q, NE);
+dot("$M$", M, SE);
+dot("$N$", N, SW);
+dot("$D$", D, S);
+dot("$K$", K, W);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+By similar triangles, we have that \[\dfrac{BP}{AB} = \dfrac{AB}{BC} \implies BP = \dfrac{AB^2}{BC}.\] Similarly, \[CQ = \dfrac{AC^2}{BC}.\] Hence, using barycentric coordinates, we have that \[P = \left(0, 1-\tfrac{c^2}{a^2}, \tfrac{c^2}{a^2}\right) \qquad Q = \left(0, \tfrac{b^2}{a^2}, 1-\tfrac{b^2}{a^2}\right).\] Thus, we find that \[M = \left(-1, 2-\tfrac{2c^2}{a^2}, \tfrac{2c^2}{a^2}\right) \qquad N = \left(-1, \tfrac{2b^2}{a^2}, 2-\tfrac{2b^2}{a^2}\right).\] Now, let $D = BM \cap CN = (D_x, D_y, D_z)$. Then, we find that \[D_x : D_y = -1 : \tfrac{2b^2}{a^2} \qquad D_x : D_z = -1 : \tfrac{2c^2}{a^2}\] implying that \[D = \left(-1 : \tfrac{2b^2}{a^2} : \tfrac{2c^2}{a^2}\right) = \left(\tfrac{-a^2}{2b^2+2c^2-a^2}, \tfrac{2b^2}{2b^2+2c^2-a^2}, \tfrac{2c^2}{2b^2+2c^2-a^2}\right).\] Finally, 
+\begin{align*}
+&a^2\left(\tfrac{2b^2}{2b^2+2c^2-a^2}\right)\left(\tfrac{2c^2}{2b^2+2c^2-a^2}\right)+b^2\left(\tfrac{-a^2}{2b^2+2c^2-a^2}\right)\left(\tfrac{2c^2}{2b^2+2c^2-a^2}\right)+c^2\left(\tfrac{-a^2}{2b^2+2c^2-a^2}\right)\left(\tfrac{2b^2}{2b^2+2c^2-a^2}\right) \\
+=& \left(\tfrac{1}{2b^2+2c^2-a^2}\right)^2(4a^2b^2c^2-2a^2b^2c^2-2a^2b^2c^2) \\
+=& 0
+\end{align*}
+as desired. $\square$
+\begin{remark*}
+The symmedian point $K$ lies on $AD$.
+\end{remark*}
+
+\begin{problem}[7.34]{EGMO 2013/1, barycentric}
+The side $BC$ of the triangle $ABC$ is extended beyond $C$ to $D$ so that $CD = BC$. The side $CA$ is extended beyond $A$ to $E$ so that $AE = 2CA$. Prove that if $AD = BE$ then the triangle $ABC$ is right-angled.
+\end{problem}
+\begin{center}
+\begin{asy}
+size(10cm);
+
+pair B = (0,0);
+pair C = (6.5,0);
+pair A = (2,3);
+
+pair vBC = C - B;
+pair vCA = A - C;
+
+pair D = C + vBC;
+pair E = A + 2*vCA;
+
+draw(A--B--C--cycle, heavyblue);
+
+draw(C--D, heavyred);
+draw(A--E, heavyred);
+draw(A--D, dashed+blue);
+draw(B--E, dashed+blue);
+
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(SW));
+dot("$C$", C, dir(SE));
+dot("$D$", D, dir(S));
+dot("$E$", E, dir(90));
+\end{asy}
+\end{center}
+Clearly, $D = (0, -1, 2)$ and $E = (3, 0, -2)$. Now, $\overrightarrow{AD} = (-1, -1, 2)$ and $\overrightarrow{BE} = (3, -1, -2)$. Then, \[AD = \left|a^2(-1)(2)+b^2(-1)(2)+c^2(-1)(-1)\right| = \left|c^2-2a^2-2b^2\right| \stackrel{\triangle\text{ Ineq}}{=} 2a^2+2b^2-c^2.\] Similarly, \[BE = \left|a^2(-1)(-2)+b^2(3)(-2)+c^2(3)(-1)\right| = \left|2a^2-6b^2-3c^2\right| \stackrel{\triangle\text{ Ineq}}{=} 6b^2+3c^2-2a^2.\] Equating, we have that \[a^2+b^2 = c^2\] as required. $\square$
+\begin{remark*}
+For a complex bash, look to \refproblem{5.19}, and for a synthetic method, look to \refproblem{3.26}.
+\end{remark*}
+\begin{problem}[7.35]{ELMO SL 2013/G3}
+In $\triangle ABC$, a point $D$ lies on line $BC$. The $(ABD)$ meets $AC$ at $F \neq A$, and $(ADC)$ meets $AB$ at $E \neq A$. Prove that as $D$ varies, $(AEF)$ always passes through a fixed point other than $A$, and that this point lies on the $A$-median.
+\end{problem}
+Denote $D = (0, d, 1-d)$. Then, we have that \[(ABD): -a^2yz-b^2zx-c^2xy + wz(x+y+z) = 0.\] Now, it also passes through $D$, so \[-a^2d(1-d)+w(1-d) = 0.\] Since $D \neq B$, we can divide out $1-d$ to get that $w = a^2d$. Hence, \[(ABD): -a^2yz-b^2zx-c^2xy + a^2dz(x+y+z) = 0.\] Then, let $F = (f, 0, 1-f)$ and since it lies on $(ABD)$, we have that \[-b^2f(1-f)+a^2d(1-f) = 0 \implies f = \tfrac{a^2d}{b^2}.\] Now, let \[(ADC): -a^2yz-b^2zx-c^2xy + vy(x+y+z) = 0.\] Since it passes through $D$, we then have that \[-a^2d(1-d)+vd = 0 \implies v = a^2(1-d).\] Hence, \[(ADC): -a^2yz-b^2zx-c^2xy + a^2y(1-d)(x+y+z) = 0.\] Since $E = (e, 1-e, 0)$ lies on $(ADC)$, we find that \[-c^2e(1-e)+a^2(1-e)(1-d) = 0 \implies e = \tfrac{a^2(1-d)}{c^2}.\] Now, note that \[(AEF) : -a^2yz-b^2zx-c^2xy+(my+nz)(x+y+z) = 0\] and since it passes through $E$ and $F$, we have that
+\begin{align*}
+-c^2e(1-e)+m(1-e) &= 0 \implies m = c^2e \\
+-b^2f(1-f)+n(1-f) &= 0 \implies n = b^2f.
+\end{align*}
+Hence, \[(AEF) : -a^2yz-b^2zx-c^2xy+(c^2ey+b^2fz)(x+y+z) = 0.\] Now, any point on the $A$-median can be characterized by $\left(t : \tfrac{1}{2} : \tfrac{1}{2}\right)$. Plugging this in, we have that
+\begin{align*}
+-\tfrac{a^2}{4}-\tfrac{b^2t}{2}-\tfrac{c^2t}{2}+\left(\frac{c^2e}{2}+\tfrac{b^2f}{2}\right)(t+1) &= 0 \\
+a^2+2b^2t+2c^2t &= (2c^2e+2b^2f)(t+1) \\
+a^2+2b^2t+2c^2t &= 2c^2et+2b^2ft+2c^2e+2b^2f \\
+2b^2t+2c^2t-2c^2et-2b^2ft &= 2c^2e+2b^2f-a^2 \\
+t &= \dfrac{2c^2e+2b^2f-a^2}{2b^2+2c^2-2c^2e-2b^2f} \\
+t &= \dfrac{2a^2(1-d)+2a^2d-a^2}{2b^2+2c^2-2a^2(1-d)-2a^2d} \\
+t &= \dfrac{a^2}{2b^2+2c^2-2a^2}
+\end{align*}
+which does not depend on $D$, as required. $\square$
+
+\begin{problem}[7.36]{IMO 2012/1}
+Given triangle $ABC$, the point $J$ is the center of the excircle opposite the vertex $A$. This excircle is tangent to side $\ol{BC}$ at $M$, and to lines $AB$ and $AC$ at $K$ and $L$, respectively. Lines $LM$ and $BJ$ meet at $F$, and lines $KM$ and $CJ$ meet at $G$. Let $S$ be the point of intersection of lines $AF$ and $BC$, and let $T$ be the point of intersection of lines $AG$ and $BC$. Prove that $M$ is the midpoint of $\ol{ST}$ .
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -6.47449544810409, xmax = 17.53416921907353, ymin = -17.667273855911667, ymax = 3.7808682307011616;
+pen ffttww = rgb(1,0.2,0.4); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen qqqqcc = rgb(0,0,0.8); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (2.809446608741314,1.723143860320889);
+pair B = (0.9257007355566466,-3.2795910815793654);
+pair C = (8.306278828853952,-3.295031621523502);
+pair J = (5.6503397262813735,-10.12238878718936);
+pair M = (5.664634461884546,-3.2895051688729384);
+pair K = (-0.7442524473621845,-7.714548714904778);
+pair L = (10.25721778144884,-5.076085440605913);
+pair F = (-0.8052399365315669,-0.7726319503600323);
+pair G = (9.279321044220803,-0.7937292629169216);
+pair T = (15.749195972577892,-3.3106025778911246);
+pair S = (-4.419926481804446,-3.268407761040953);
+
+draw(A--B--C--cycle, ffttww);
+
+draw(circle(J, 6.8328985709523655), xdxdff);
+draw((xmin, -0.0020920502092049926*xmin-3.277654469161883)--(xmax, -0.0020920502092049926*xmax-3.277654469161883), yqqqyq);
+draw(B--K, ffttww);
+draw(C--L, ffttww);
+draw(F--J, qqqqcc);
+draw(J--G, qqqqcc);
+draw(F--L, wwqqcc);
+draw(K--G, wwqqcc);
+draw((2.809446608741314,1.7231438603208893)--(xmin, 0.6904542840498248*xmin-0.21665058649380325), qqqqcc);
+draw(A--(xmax, -0.3890142147791594*xmax + 2.8160585267843636), qqqqcc);
+
+dot("$A$", A, dir(N));
+dot("$B$", B, dir(NW));
+dot("$C$", C, dir(NE));
+dot("$J$", J, dir(270));
+dot("$M$", M, dir(90));
+dot("$K$", K, dir(SW));
+dot("$L$", L, dir(E));
+dot("$F$", F, dir(NW));
+dot("$G$", G, dir(NE));
+dot("$T$", T, dir(NE));
+dot("$S$", S, dir(NW));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+We have that $M = (0, m, 1-m)$. Then, since $J = \left(\tfrac{-a}{b+c-a}, \tfrac{b}{b+c-a}, \tfrac{c}{b+c-a}\right)$, we have that $\overrightarrow{JM} = \left(\tfrac{a}{b+c-a}, m-\tfrac{b}{b+c-a}, 1-m-\tfrac{c}{b+c-a}\right)$. Hence, \[0 = a^2\left(2m-1+\tfrac{c-b}{b+c-a}\right)+\tfrac{a}{b+c-a}(b^2-c^2).\] So, \[m = \dfrac{a-b+c}{2a}.\] Now, we know that $AK = \tfrac{a+b+c}{2}$, and $K = (t : 1 : 0) = \left(\tfrac{t}{t+1}, \tfrac{1}{t+1}, 0\right)$ for some $t$. Hence, $\overrightarrow{KA} = \left(\tfrac{-1}{t+1}, \tfrac{1}{t+1}, 0\right)$ which means that \[c^2\left(\tfrac{1}{t+1}\right)^2 = \left(\tfrac{a+b+c}{2}\right)^2\] so \[t = \dfrac{-a-b+c}{a+b+c}.\] Hence, we have that \[K = \left(\dfrac{-a-b+c}{2c}, \dfrac{a+b+c}{2c}, 0\right).\] Now, the line through $C$ and $J$ can be expressed as \[bx+ay = 0\] and the line through $K$ and $M$ can be expressed as \[ux+vy+wz = 0.\] However, we have that \[u(-a-b+c)+v(a+b+c) = 0 \implies u = \dfrac{v(a+b+c)}{a+b-c}\] since it passes through $K$ and \[v(a-b+c)+w(a+b-c) = 0 \implies w = \dfrac{v(a-b+c)}{-a-b+c}\] since it passes through $M$. Hence, the line is \[\dfrac{x(a+b+c)}{a+b-c}+y+\dfrac{z(a-b+c)}{-a-b+c} = 0.\] Now, if $G = (G_a, G_b, G_c)$, then, \[bG_a+aG_b = 0 \qquad \dfrac{G_a(a+b+c)}{a+b-c}+G_b+\dfrac{G_c(a-b+c)}{-a-b+c} = 0 \qquad G_a+G_b+G_c = 1.\] Solving this, we find that \[G = \left(\tfrac{1}{2}, -\tfrac{b}{2a}, \tfrac{a+b}{2a}\right).\] Now, clearly, the intersection of $AG$ with $BC$ is \[T = \left(0, -\tfrac{c}{a}, \tfrac{a+c}{a}\right).\] Hence, we have that $CT = b$, which implies $MT=MS$ after some elementary addition of lengths, and the fact that due to symmetry (or the result can be replicated), we have that $BS = c$. $\square$
+
+\begin{problem}[7.38]{USA TST 2008/7}
+Let $ABC$ be a triangle with $G$ as its centroid. Let $P$ be a variable point on $\ol{BC}$. Points $Q$ and $R$ lie on sides $AC$ and $AB$ respectively, such that $PQ \parallel AB$ and $PR \parallel AC$. Prove that, as $P$ varies along $\ol{BC}$, $(AQR)$ passes through a fixed point $X$ such that $\angle BAG = \angle CAX$. 
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -18.448703986627432, xmax = 29.508377757596868, ymin = -21.342376853898696, ymax = 7.455971228688191;
+pen ffqqtt = rgb(1,0,0.2); pen wwzzff = rgb(0.4,0.6,1); pen wwqqcc = rgb(0.4,0,0.8); pen qqzzff = rgb(0,0.6,1);
+
+pair A = (4.942422881708103,0.7082411340234814);
+pair B = (2.3819003011433626,-6.431098296492305);
+pair C = (14.039808991479296,-6.4009745014268375);
+pair G = (7.121377391443587,-4.041277221298554);
+pair P = (6.012182563640741,-6.421717722170606);
+pair Q = (7.775356326861095,-1.5055744058973943);
+pair R = (3.1792491184877476,-4.207902182249728);
+pair K = (5.499487536763517,-3.4561590235499082);
+pair X = (5.683063931999714,-4.828505235628863);
+
+draw(A--B--C--cycle, ffqqtt);
+draw(R--P--Q--cycle, wwzzff);
+
+draw(A--B, ffqqtt);
+draw(B--C, ffqqtt);
+draw(C--A, ffqqtt);
+draw(R--P, wwzzff);
+draw(P--Q, wwzzff);
+draw(Q--R, wwzzff);
+draw(circle((5.031082743365575,-2.097809313892661), 2.807450745306052), wwqqcc);
+draw(A--X, linetype("2 2") + qqzzff);
+draw(A--G, qqzzff);
+
+dot("$A$", A, N);
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$G$", G, SE);
+dot("$P$", P, S);
+dot("$Q$", Q, NE);
+dot("$R$", R, W);
+dot("$K$", K, NE);
+dot("$X$", X, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+Let $K$ be the symmedian point of $\triangle ABC$. Then, we make the following claim:
+\begin{claim*}
+Point $X$ lies on the $A$-symmedian (line $AK$).
+\end{claim*}
+\begin{proof}
+Due to the given angle condition, we know that lines $AX$ and $AG$ are isogonal. However, $AK$ and $AG$ are also isogonal, implying that $A$, $K$, and $X$ are collinear.
+\end{proof}
+Now, define $P = (0, p, 1-p)$. Then, we clearly have that \[BR = \dfrac{AB\cdot BP}{BC} = \dfrac{c\sqrt{a^2(1-p)(1-p)}}{a} = c(1-p).\] Hence, $R = (1-p, p, 0)$. Similarly, we find that $Q = (p, 0, 1-p)$. Now, \[(AQR) : -a^2yz-b^2xz-c^2xy+(vy+wz)(x+y+z) = 0.\] However, since it passes through $Q$, we know that \[-b^2p(1-p)+w(1-p) = 0 \implies w = b^2p\] and since it passes through $R$, \[-c^2p(1-p)+vp = 0 \implies v = c^2(1-p).\] Hence, \[(AQR) : -a^2yz-b^2xz-c^2xy+(c^2(1-p)y+b^2pz)(x+y+z) = 0.\] Now, a point on $AK$ can be characterized as $\left(t : \tfrac{b^2}{a^2+b^2+c^2} : \tfrac{c^2}{a^2+b^2+c^2}\right) = (t(a^2+b^2+c^2) : b^2 : c^2)$. Substituting, we have that: \[-a^2b^2c^2-2b^2c^2t(a^2+b^2+c^2)+b^2c^2(t(a^2+b^2+c^2)+b^2+c^2) = 0\] so $t$ doesn't depend on $p$, as required. $\square$
 \end{document}
