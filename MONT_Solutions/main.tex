@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{kempu}
+
+\title{EGMO Solutions}
+\author{Kempu33334}
+\date{July 2025}
+
+\begin{asydef}
+size(8cm); // set a reasonable default
+usepackage("amsmath");
+usepackage("amssymb");
+settings.tex="pdflatex";
+settings.outformat="pdf";
+import geometry;
+void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen) { filldraw(pic, (path) g, fillpen, drawpen); }
+void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pic, (path) g, p); }
+pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+\end{asydef}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Fundementals of Number Theory}
+
+\subsection{Divisibility}
+
+\emph{No problems.}
+
+\subsection{Divisibility Properties}
+
+\begin{problem}[1.2.1]{}
+Show that if $n > 1$ is an integer, $n \nmid 2n^2 + 3n + 1$.
+\end{problem}
+Assume there exists such an $n$. Then, subtracting $n(2n+3)$ from the RHS of the condition, we find that $n \nmid 1$, so $n = 1$ or $-1$, which is a contradiction. $\square$
+
+\begin{problem}[1.2.2]{}
+Let $a > b$ be natural numbers. Show that $a \nmid 2a + b$.
+\end{problem}
+Assume for the sake of contradiction there exists $a > b$ where $a \mid 2a+b$. Then, $a \mid b$, implying that $a \le b$, which is a contradiction. $\square$
+
+\begin{problem}[1.2.3]{}
+For $2$ fixed integers $x$, $y$, prove that \[x-y \mid x^n-y^n\] for any non-negative integer $n$.
+\end{problem}
+Clearly, the statement is equivalent to $x^n-y^n \pmod{x-y} \equiv 0$. However, we can write that \[x^n-y^n \equiv (x-(x-y))^n-y^n \equiv 0 \pmod{x-y}\] as required. $\square$
+
+\subsection{Euclid’s Division Lemma}
+
+\emph{No problems.}
+
+\subsection{Primes}
+
+\begin{problem}[1.4.1]{}
+Find all positive integers $n$ for which $3n-4$, $4n-5$, and $5n-3$ are all prime numbers.
+\end{problem}
+In order for $5n-3$ to be prime, we must have $n$ even or $n = 1$. Hence, make the transformation $n = 2n'$. Then, $3n-4 \mapsto 6n'-4$, which can never be prime other than when $n = 2$. Trying both $n=1$ and $n=2$, we find that only $n = \boxed{2}$ works. $\square$
+
+\begin{problem}[1.4.2]{}
+If $p < q$ are two consecutive odd prime numbers, show that $p + q$ has at least $3$ prime factors (not necessarily distinct).
+\end{problem}
+Clearly, it cannot have zero or one prime factor. If it has two prime factors, then we can express \[p+q = rs\] for some primes $r$ and $s$. However, we know that one of these has to be $2$, hence WLOG assume it is $r$. Then, \[\dfrac{p+q}{2} = s\] which implies that there exists a prime between $p$ and $q$, which contradicts the fact that they are consecutive, as required. $\square$
+
+\subsection{Looking at Numbers as Multisets}
+
+\emph{No problems.}
+
+\subsection{GCD and LCM}
+
+\begin{problem}[1.6.1]{}
+Prove that $\gcd(a, b) = a$ if and only if $a \mid b$.
+\end{problem}
+We start with the if direction. Clearly, if $a = 2^{a_1}3^{a_2}\dots$ and $b = 2^{b_1}3^{b_2}\dots$, then the divisibility condition implies $a_i \le b_i$ for all $i \ge 1$. Hence, \[\min(a_i, b-i) = a_i\] which proves the claim.
+
+For the only if direction, we know that $\min(a_i, b_i) = a_i$ for any $i \ge 1$, implying that $a_i \le b_i$, which proves the desired result. $\square$
+\end{document}

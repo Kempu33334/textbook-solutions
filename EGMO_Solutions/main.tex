@@ -4335,7 +4335,6 @@ PX\cdot PY &= \abs{p-x}\abs{p-y} \\
 &= \sqrt{\ol{de}(de-bc)-\tfrac{de}{bc}+1} \\
 &= \sqrt{\ol{\left(a+c-\tfrac{ac}{b}\right)\left(a+b-\tfrac{ab}{c}\right)}\left(\left(a+c-\tfrac{ac}{b}\right)\left(a+b-\tfrac{ab}{c}\right)-bc\right)-\tfrac{de}{bc}+1} \\
 &= \sqrt{\left(\tfrac{1}{a}+\tfrac{1}{c}-\tfrac{b}{ac}\right)\left(\tfrac{1}{a}+\tfrac{1}{b}-\tfrac{c}{ab}\right)\left(\left(a+c-\tfrac{ac}{b}\right)\left(a+b-\tfrac{ab}{c}\right)-bc\right)-\tfrac{de}{bc}+1} \\
-&= \sqrt{\left(\tfrac{1}{a^2}+\tfrac{1}{ab}-\tfrac{c}{a^2b}+\tfrac{1}{ac}+\tfrac{1}{bc}-\tfrac{1}{ab}-\tfrac{b}{a^2c}-\tfrac{1}{ac}+\tfrac{1}{a^2}\right)\left(\left(a+c-\tfrac{ac}{b}\right)\left(a+b-\tfrac{ab}{c}\right)-bc\right)-\tfrac{de}{bc}+1} \\
 &= \sqrt{\left(\tfrac{2}{a^2}-\tfrac{c}{a^2b}+\tfrac{1}{bc}-\tfrac{b}{a^2c}\right)\left(a^2+ab-\tfrac{a^2b}{c}+ac+bc-ab-\tfrac{a^2c}{b}-ac+a^2-bc\right)-\tfrac{de}{bc}+1} \\
 &= \sqrt{\left(\tfrac{2}{a^2}-\tfrac{c}{a^2b}+\tfrac{1}{bc}-\tfrac{b}{a^2c}\right)\left(2a^2-\tfrac{a^2b}{c}-\tfrac{a^2c}{b}\right)-\tfrac{de}{bc}+1} \\
 &= \sqrt{4-\tfrac{2b}{c}-\tfrac{2c}{b}-\tfrac{2c}{b}+1+\tfrac{c^2}{b^2}+\tfrac{2a^2}{bc}-\tfrac{a^2}{c^2}-\tfrac{a^2}{b^2}-\tfrac{2b}{c}+\tfrac{b^2}{c^2}+1-\tfrac{de}{bc}+1} \\
@@ -5043,4 +5042,49 @@ Point $X$ lies on the $A$-symmedian (line $AK$).
 Due to the given angle condition, we know that lines $AX$ and $AG$ are isogonal. However, $AK$ and $AG$ are also isogonal, implying that $A$, $K$, and $X$ are collinear.
 \end{proof}
 Now, define $P = (0, p, 1-p)$. Then, we clearly have that \[BR = \dfrac{AB\cdot BP}{BC} = \dfrac{c\sqrt{a^2(1-p)(1-p)}}{a} = c(1-p).\] Hence, $R = (1-p, p, 0)$. Similarly, we find that $Q = (p, 0, 1-p)$. Now, \[(AQR) : -a^2yz-b^2xz-c^2xy+(vy+wz)(x+y+z) = 0.\] However, since it passes through $Q$, we know that \[-b^2p(1-p)+w(1-p) = 0 \implies w = b^2p\] and since it passes through $R$, \[-c^2p(1-p)+vp = 0 \implies v = c^2(1-p).\] Hence, \[(AQR) : -a^2yz-b^2xz-c^2xy+(c^2(1-p)y+b^2pz)(x+y+z) = 0.\] Now, a point on $AK$ can be characterized as $\left(t : \tfrac{b^2}{a^2+b^2+c^2} : \tfrac{c^2}{a^2+b^2+c^2}\right) = (t(a^2+b^2+c^2) : b^2 : c^2)$. Substituting, we have that: \[-a^2b^2c^2-2b^2c^2t(a^2+b^2+c^2)+b^2c^2(t(a^2+b^2+c^2)+b^2+c^2) = 0\] so $t$ doesn't depend on $p$, as required. $\square$
+\begin{problem}[7.39]{USAMO 2001/2}
+Let $ABC$ be a triangle and let $\omega$ be its incircle. Denote $D_1$ and $E_1$ as the points where $\omega$ is tangent to $\ol{BC}$ and $\ol{AC}$, respectively. Denote $D_2$ and $E_2$ as the points on $\ol{BC}$ and $\ol{AC}$, respectively, such that $CD_2 = BD_1$ and $CE_2 = AE_1$, and denote $P$ as the point of intersection of $\ol{AD_2}$ and $\ol{BE_2}$. Circle $\omega$ intersects segment $AD_2$ at two points, the closer of which to the vertex $A$ is denoted by $Q$. Prove that $AQ = D_2P$.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -15.44, xmax = 15.2, ymin = -9.56, ymax = 9.56;
+pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen ffttww = rgb(1,0.2,0.4); pen ffwwzz = rgb(1,0.4,0.6); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ccwwff = rgb(0.8,0.4,1);
+
+pair A = (-2.11,5.72);
+pair B = (-4.95,-1.6);
+pair C = (5.67,-1.6);
+pair I = (-1.0553208207258764,1.0664846703129858);
+pair D_1 = (-1.0553208207258764,-1.6);
+pair E_1 = (0.7718821693855402,3.0085118920434253);
+pair D_2 = (1.7753208207258764,-1.6);
+pair E_2 = (2.7881178306144596,1.111488107956574);
+pair P = (0.7206416414517535,0.38703065937402836);
+pair Q = (-1.0553208207258769,3.7329693406259716);
+
+draw(A--B--C--cycle, xdxdff);
+
+draw(circle(I, 2.666484670312986), ffttww);
+draw(I--D_1, ffwwzz);
+draw(I--E_1, ffwwzz);
+draw(E_2--D_2, yqqqyq);
+draw(E_1--D_1, yqqqyq);
+draw(B--E_2, ccwwff);
+draw(A--D_2, ccwwff);
+
+dot("$A$", A, N);
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$I$", I, NW);
+dot("$D_1$", D_1, S);
+dot("$E_1$", E_1, NE);
+dot("$D_2$", D_2, S);
+dot("$E_2$", E_2, NE);
+dot("$P$", P, NE);
+dot("$Q$", Q, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+We let $D_1 = (0, d, 1-d)$. Then, since $I = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}, \tfrac{c}{a+b+c}\right)$, we know that \[\overrightarrow{D_1I} = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}-d, \tfrac{c}{a+b+c}+d-1\right).\] Hence, because $D_1I \perp BC$, we know that \[0 = a^2\left(2d-1+\tfrac{c-b}{a+b+c}\right)+\tfrac{a}{a+b+c}(c^2-b^2) \implies d = \tfrac{a+b-c}{2a}.\] Thus, \[D_1 = \left(0, \tfrac{a+b-c}{2a}, \tfrac{a-b+c}{2a}\right).\] Similarly, we find that \[E_1 = \left(\tfrac{a+b-c}{2b}, 0, \tfrac{-a+b+c}{2b}\right).\] However, clearly then, we have that \[D_2 = \left(0, \tfrac{a-b+c}{2a}, \tfrac{a+b-c}{2a}\right)\] and \[E_2 = \left(\tfrac{-a+b+c}{2b}, 0, \tfrac{a+b-c}{2b}\right).\] Then, \[P = \left(-a+b+c : a-b+c : a+b-c\right) = \left(\tfrac{-a+b+c}{a+b+c}, \tfrac{a-b+c}{a+b+c}, \tfrac{a+b-c}{a+b+c}\right).\] Now, it is well known that if $D_2$ is contact point of the $A$-excenter to $\ol{BC}$, (which it is), then the point where $AD_2$ intersects the incircle (closer to $A$) is diametrically opposite to $D_1$. Hence, \[Q = \left(\tfrac{2a}{a+b+c}, \tfrac{2b}{a+b+c}-\tfrac{a+b-c}{2a}, \tfrac{2c}{a+b+c}-\tfrac{a-b+c}{2a}\right).\] Finally, if one computes the displacement vectors, you find that $\overrightarrow{AQ} = \overrightarrow{PD_2}$, so we are done. $\square$
 \end{document}
