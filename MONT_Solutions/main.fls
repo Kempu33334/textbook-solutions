@@ -448,12 +448,17 @@ INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT d:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT d:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT d:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT d:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
+INPUT d:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb
@@ -462,6 +467,7 @@ INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr5.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
+INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
