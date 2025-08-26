@@ -830,6 +830,11 @@ INPUT ./main-73.pdf
 INPUT ./main-73.pdf
 INPUT ./main-73.pdf
 INPUT ./main-73.pdf
+OUTPUT main-74.asy
+INPUT ./main-74.pdf
+INPUT ./main-74.pdf
+INPUT ./main-74.pdf
+INPUT ./main-74.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

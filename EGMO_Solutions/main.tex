@@ -5087,4 +5087,66 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{asy}
 \end{center}
 We let $D_1 = (0, d, 1-d)$. Then, since $I = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}, \tfrac{c}{a+b+c}\right)$, we know that \[\overrightarrow{D_1I} = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}-d, \tfrac{c}{a+b+c}+d-1\right).\] Hence, because $D_1I \perp BC$, we know that \[0 = a^2\left(2d-1+\tfrac{c-b}{a+b+c}\right)+\tfrac{a}{a+b+c}(c^2-b^2) \implies d = \tfrac{a+b-c}{2a}.\] Thus, \[D_1 = \left(0, \tfrac{a+b-c}{2a}, \tfrac{a-b+c}{2a}\right).\] Similarly, we find that \[E_1 = \left(\tfrac{a+b-c}{2b}, 0, \tfrac{-a+b+c}{2b}\right).\] However, clearly then, we have that \[D_2 = \left(0, \tfrac{a-b+c}{2a}, \tfrac{a+b-c}{2a}\right)\] and \[E_2 = \left(\tfrac{-a+b+c}{2b}, 0, \tfrac{a+b-c}{2b}\right).\] Then, \[P = \left(-a+b+c : a-b+c : a+b-c\right) = \left(\tfrac{-a+b+c}{a+b+c}, \tfrac{a-b+c}{a+b+c}, \tfrac{a+b-c}{a+b+c}\right).\] Now, it is well known that if $D_2$ is contact point of the $A$-excenter to $\ol{BC}$, (which it is), then the point where $AD_2$ intersects the incircle (closer to $A$) is diametrically opposite to $D_1$. Hence, \[Q = \left(\tfrac{2a}{a+b+c}, \tfrac{2b}{a+b+c}-\tfrac{a+b-c}{2a}, \tfrac{2c}{a+b+c}-\tfrac{a-b+c}{2a}\right).\] Finally, if one computes the displacement vectors, you find that $\overrightarrow{AQ} = \overrightarrow{PD_2}$, so we are done. $\square$
+
+\begin{problem}[7.40]{USA TSTST 2012/7}
+Let there be a triangle $ABC$ such that the angle bisector of angle $A$ intersects $\ol{BC}$ and $(ABC)$ at $D$ and $L \neq A$, respectively. Let $M$ be the midpoint of $\ol{BC}$, and $(ADM)$ intersect $\ol{AB}$ and $\ol{AC}$ again at $Q$ and $P \neq A$, respectively. In addition, let $N$ be the midpoint of $\ol{PQ}$, and let $H$ be the foot of the perpendicular from $L$ to line $ND$. Prove that line $ML$ is tangent to $(HMN)$.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -4, xmax = 8.5, ymin = -6, ymax = 6;
+pen wwzzff = rgb(0.4,0.6,1); pen ttttff = rgb(0.2,0.2,1); pen ffttww = rgb(1,0.2,0.4); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ccwwff = rgb(0.8,0.4,1); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (-0.38,3.9);
+pair B = (-1.8,-1.62);
+pair C = (7.72,-1.64);
+pair D = (1.6977842933250507,-1.627348286330515);
+pair L = (2.9529906214812387,-4.966464174930575);
+pair M = (2.96,-1.63);
+pair Q = (-1.07224817645602,1.2090070887061752);
+pair P = (5.3088918400590766,0.009078914329964771);
+pair N = (2.118321831801528,0.60904300151807);
+pair H = (1.1341998969726763,-4.624453463994349);
+
+draw(A--B--C--cycle, wwzzff);
+draw(A--D--M--cycle, ffttww);
+
+draw(circle((2.963628610770881,0.09721872693937478), 5.063694076216118), ttttff);
+draw(circle((2.336025446692786,1.7667766712394046), 3.4536120218477326), xdxdff);
+draw(Q--P, yqqqyq);
+draw((xmin, 5.317934983760497*xmin-10.656054774682895)--(xmax, 5.317934983760497*xmax-10.656054774682895), ccwwff);
+draw(circle((-0.42011408011934853,-1.622898919999752), 3.3801215392287656), dotted + wwqqcc);
+draw((xmin, 476.0000000000303*xmin-1410.5900000000897)--(xmax, 476.0000000000303*xmax-1410.5900000000897), ffttww);
+draw(N--M, ffttww);
+draw(D--L, ffttww);
+draw(H--L, wwqqcc);
+
+dot("$A$", A, dir(135));
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$D$", D, NE);
+dot("$L$", L, NE);
+dot("$M$", M, NE);
+dot("$Q$", Q, NE);
+dot("$P$", P, NE);
+dot("$N$", N, NE);
+dot("$H$", H, NE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+We make the following claim:
+\begin{claim*}
+The lines $AD$ and $NM$ are parallel.
+\end{claim*}
+\begin{proof}
+We clearly have that $M = (0, 0.5, 0.5)$, and $D = (0 : b : c) = \left(0, \tfrac{b}{b+c}, \tfrac{c}{b+c}\right)$. In addition,  \[(ADM) : -a^2yz-b^2xz-c^2xy+(vy+wz)(x+y+z) = 0\] since it passes through $A$. In addition, since it passes through $M$, we have that \[-\tfrac{a^2}{4}+0.5v+0.5w = 0 \implies v+w = \tfrac{a^2}{2}\] and since it passes through $D$, \[-a^2bc+(vb+wc)(b+c) = 0.\] Solving, we find that $v = \tfrac{a^2c}{2b+2c}$, and $w = \tfrac{a^2b}{2b+2c}$. Hence, \[(ADM) : -a^2yz-b^2xz-c^2xy+\left(\tfrac{a^2cy}{2b+2c}+\tfrac{a^2bz}{2b+2c}\right)(x+y+z) = 0.\] Now, $Q \neq A$ is the intersection of this circle with $AB$. Hence, let $Q = (1-q, q, 0)$ and substitute this into the circle equation to get that \[-c^2q(1-q)+\tfrac{a^2cq}{2b+2c} = 0 \implies 1-q = \tfrac{a^2}{2bc+2c^2}.\] So, $Q = \left(\tfrac{a^2}{2bc+2c^2}, 1-\tfrac{a^2}{2bc+2c^2}, 0\right)$. Similarly, letting $P = (1-p, 0, p)$, we have that \[-b^2p(1-p)+\tfrac{a^2bp}{2b+2c} = 0 \implies 1-p = \tfrac{a^2}{2bc+2b^2}.\] Hence, $P = \left(\tfrac{a^2}{2bc+2b^2}, 0, 1-\tfrac{a^2}{2bc+2b^2}\right)$. Thus, the midpoint of $\ol{PQ}$, \[N = \left(\tfrac{a^2}{4bc}, \tfrac{1}{2}-\tfrac{a^2}{4bc+4c^2}, \tfrac{1}{2}-\tfrac{a^2}{4bc+4b^2}\right).\] Now, consider the displacement vectors $\overrightarrow{AD} = \left(-1, \tfrac{b}{b+c}, \tfrac{c}{b+c}\right)$ and $\overrightarrow{NM} = \left(\tfrac{a^2}{4bc}, \tfrac{-a^2}{4bc+4c^2}, \tfrac{-a^2}{4bc+4b^2}\right)$. They are clearly scalar multiples of each other, proving the desired statement.
+\end{proof}
+
+Now, since $\angle DML + \angle DHL = 90 + 90 = 180$, we know that $DMLH$ is cyclic. Thus, \[\angle HNM \hspace{0.1em}\stackrel{AD \parallel NM}{=} \hspace{0.1em}\angle HDL \hspace{0.1em}\stackrel{(DMLH)}{=} \hspace{0.1em}\angle HML\] implying the tangency, as required. $\square$
+
+\begin{problem}[7.41]{}
+Let $ABC$ be a triangle with incenter $I$. Let $P$ and $Q$ denote the reflections of $B$ and $C$ across $CI$ and $BI$, respectively. Show that $PQ \perp OI$ , where $O$ is the circumcenter of $ABC$.
+\end{problem}
+Due to the definition of the angle bisector, $P$ is the point on $\overrightarrow{CA}$ such that $BC = BP$. Similarly, $Q$ is the point on $\overrightarrow{BA}$ such that $BQ = BC$. Hence, $P = (a : 0 : b-a) = \left(\tfrac{a}{b}, 0, 1-\tfrac{a}{b}\right)$ and $Q = \left(\frac{a}{c}, 1-\tfrac{a}{c}, 0\right)$. We have the displacement vector \[\overrightarrow{PQ} = \left(\tfrac{a}{c}-\tfrac{a}{b}, 1-\tfrac{a}{c}, \tfrac{a}{b}-1\right) = \left(\tfrac{a}{c}-\tfrac{a}{b}\right)\overrightarrow{A}+\left(1-\tfrac{a}{c}\right)\overrightarrow{B}+\left(\tfrac{a}{b}-1\right)\overrightarrow{C}\] and the psuedo-displacment vector \[\overrightarrow{OI} = \overrightarrow{I}-\overrightarrow{O} = a\overrightarrow{A}+b\overrightarrow{B}+c\overrightarrow{C}\] after scaling. Now, the quantity that we need to check is: \[a^2\left(c\left(1-\tfrac{a}{c}\right)+b\left(\tfrac{a}{b}-1\right)\right)+b^2\left(c\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(\tfrac{a}{b}-1\right)\right)+c^2\left(b\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(1-\tfrac{a}{c}\right)\right)\] which is indeed equal to zero after expanding. $\square$
 \end{document}
