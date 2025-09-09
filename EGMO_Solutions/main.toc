@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {5}Computational Geometry}{71}{section.5}%
 \contentsline {section}{\numberline {6}Complex Numbers}{83}{section.6}%
 \contentsline {section}{\numberline {7}Barycentric Coordinates}{101}{section.7}%
+\contentsline {section}{\numberline {8}Inversion}{115}{section.8}%

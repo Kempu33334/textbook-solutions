@@ -10,3 +10,4 @@ The following chapters have completed solutions:
 
 The following chapters are in progress:
 - **Chapter 7**: Barycentric Coordinates
+- **Chapter 8**: Inversion

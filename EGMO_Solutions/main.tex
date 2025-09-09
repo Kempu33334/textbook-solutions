@@ -5149,4 +5149,59 @@ Now, since $\angle DML + \angle DHL = 90 + 90 = 180$, we know that $DMLH$ is cyc
 Let $ABC$ be a triangle with incenter $I$. Let $P$ and $Q$ denote the reflections of $B$ and $C$ across $CI$ and $BI$, respectively. Show that $PQ \perp OI$ , where $O$ is the circumcenter of $ABC$.
 \end{problem}
 Due to the definition of the angle bisector, $P$ is the point on $\overrightarrow{CA}$ such that $BC = BP$. Similarly, $Q$ is the point on $\overrightarrow{BA}$ such that $BQ = BC$. Hence, $P = (a : 0 : b-a) = \left(\tfrac{a}{b}, 0, 1-\tfrac{a}{b}\right)$ and $Q = \left(\frac{a}{c}, 1-\tfrac{a}{c}, 0\right)$. We have the displacement vector \[\overrightarrow{PQ} = \left(\tfrac{a}{c}-\tfrac{a}{b}, 1-\tfrac{a}{c}, \tfrac{a}{b}-1\right) = \left(\tfrac{a}{c}-\tfrac{a}{b}\right)\overrightarrow{A}+\left(1-\tfrac{a}{c}\right)\overrightarrow{B}+\left(\tfrac{a}{b}-1\right)\overrightarrow{C}\] and the psuedo-displacment vector \[\overrightarrow{OI} = \overrightarrow{I}-\overrightarrow{O} = a\overrightarrow{A}+b\overrightarrow{B}+c\overrightarrow{C}\] after scaling. Now, the quantity that we need to check is: \[a^2\left(c\left(1-\tfrac{a}{c}\right)+b\left(\tfrac{a}{b}-1\right)\right)+b^2\left(c\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(\tfrac{a}{b}-1\right)\right)+c^2\left(b\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(1-\tfrac{a}{c}\right)\right)\] which is indeed equal to zero after expanding. $\square$
+
+\begin{problem}[7.42]{}
+Let $ABC$ be a triangle with circumcircle $\Omega$ and let $T_A$ denote the tangency points of the $A$-mixtilinear incircle to $\Omega$. Define $T_B$ and $T_C$ similarly. Prove that lines $AT_A$, $BT_B$, $CT_C$, $IO$ are concurrent, where $I$ and $O$ denote the incenter and circumcenter of $\triangle ABC$. 
+\end{problem}
+We know that all of the lines $AT_A$, $BT_B$, and $CT_C$ pass through the isogonal conjugate of the Nagel Point since $AT_A$ is isogonal to the cevian through $A$ and the contact point of the $A$-excircle and likewise for the other lines. Hence, all we have to show is that $IO$ passes through this point as well. The Nagel Point is just $\left(s-a : s-b : s-c\right)$. The isogonal conjugate of this point is \[\left(\tfrac{a^2}{s-a} : \tfrac{b^2}{s-b} : \tfrac{c^2}{s-c}\right).\] Thus, all we have to show is that the determinant \[\begin{vmatrix}a&b&c\\a^2S_a&b^2S_b&c^2S_c\\\tfrac{a^2}{s-a}&\tfrac{b^2}{s-b}&\tfrac{c^2}{s-c}\end{vmatrix}\] is zero. If it is zero, then we divide each of the columns by their $\gcd$ to get the determinant \[\begin{vmatrix}1&1&1\\aS_a&bS_b&cS_c\\\tfrac{a}{s-a}&\tfrac{b}{s-b}&\tfrac{c}{s-c}\end{vmatrix}.\] Expanding, we have that:
+\begin{align*}
+\begin{vmatrix}1&1&1\\aS_a&bS_b&cS_c\\\tfrac{a}{s-a}&\tfrac{b}{s-b}&\tfrac{c}{s-c}\end{vmatrix} &= \dfrac{bcS_b}{s-c}-\dfrac{bcS_c}{s-b}-\dfrac{acS_a}{s-c}+\dfrac{acS_c}{s-a}+\dfrac{abS_a}{s-b}-\dfrac{abS_b}{s-a} \\
+&= \dfrac{a}{s-a}(cS_c-bS_b)+\dfrac{b}{s-b}(aS_a-cS_c)+\dfrac{c}{s-c}(bS_b-aS_a) \\
+&= \dfrac{a}{s-a}\left(\dfrac{a^2c+b^2c-c^3}{2}-\dfrac{a^2b+bc^2-b^3}{2}\right)+\dfrac{b}{s-b}\left(\dfrac{ab^2+ac^2-a^3}{2}-\dfrac{a^2c+b^2c-c^3}{2}\right) \\
+&\quad+\dfrac{c}{s-c}\left(\dfrac{a^2b+bc^2-b^3}{2}-\dfrac{ab^2+ac^2-a^3}{2}\right).
+\end{align*}
+Now, we multiply by a factor of four to get rid of the denominators and the $s$ term which means that the last expression is equal to:
+\begin{align*}
+&\dfrac{a}{-a+b+c}(a^2c+b^2c-c^3-a^2b-bc^2+b^3)+\dfrac{b}{a-b+c}(ab^2+ac^2-a^3-a^2c-b^2c+c^3) \\
+&+\dfrac{c}{a+b-c}(a^2b+bc^2-b^3-ab^2-ac^2+a^3) \\
+= &-a(-ab+ac-b^2+c^2)-b(ab-bc+a^2-c^2)-c(bc-ac+b^2-a^2) \\
+= &0
+\end{align*}
+so they are indeed collinear. $\square$
+\begin{problem}[7.43]{USA December TST for IMO 2012}
+In acute triangle $ABC$, $\angle A < \angle B$ and $\angle A < \angle C$. Let $P$ be a variable point on $\ol{BC}$. Points $D$ and $E$ lie on $\ol{AB}$ and $\ol{AC}$, respectively, such that $BP = PD$ and $CP = PE$. Prove that as $P$ moves along $\ol{BC}$, the $(ADE)$ passes through a fixed point other than $A$.
+\end{problem}
+We claim this fixed point is the orthocenter $H$.
+
+Since $PB = PD$, \[BD = 2BP\sin\left(\tfrac{\angle BPD}{2}\right) = 2BP\sin(90-B) = 2BP\cos(B)\] and similarly \[CE = 2CP\cos(C) = 2a\cos(C)-2BP\cos(C).\] Hence, \[D = (2BP\cos(B): c-2BP\cos(B) : 0)\] and \[E = (2a\cos(C)-2BP\cos(C) : 0 : b-2a\cos(C)+2BP\cos(C)).\] Now, since $(ADE)$ passes through $A$, we know that \[(ADE) : -a^2yz-b^2xz-c^2xy+(vy+wz)(x+y+z) = 0.\] Since it passes through $D$, \[-c^2(2BP\cos(B))(c-2BP\cos(B))+cv(c-2BP\cos(B)) = 0\] implying that \[v = 2cBP\cos(B).\] In addition, since it passes through $E$, \[-b^2(2a\cos(C)-2BP\cos(C))(b-2a\cos(C)+2BP\cos(C))+bw(b-2a\cos(C)+2BP\cos(C)) = 0\] implying \[w = b(2a\cos(C)-2BP\cos(C)) = 2ab\cos(C)-2bBP\cos(C).\] Hence, \[(ADE) : -a^2yz-b^2xz-c^2xy+((2cBP\cos(B))y+(2ab\cos(C)-2bBP\cos(C))z)(x+y+z) = 0.\] Now, since $H = (\tan(A), \tan(B), \tan(C))$,
+\begin{align*}
+&-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B) \\
+&+ ((2cBP\cos(B))\tan(B)+(2ab\cos(C)-2bBP\cos(C))\tan(C))(\tan(A)+\tan(B)+\tan(C)) \\
+= &-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B) \\
+&+\tan(A)\tan(B)\tan(C)(2cBP\sin(B)+2ab\sin(C)-2bBP\sin(C)) \\
+= &-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B) \\
+&+\tan(A)\tan(B)\tan(C)(2cBP\sin(B)+2ab\sin(C)-2bBP\sin(C)) \\
+= &-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B)+2ab\sin(C)\tan(A)\tan(B)\tan(C) \\
+= &-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B)+4K\tan(A)\tan(B)\tan(C) \\
+= &-a^2\tan(B)\tan(C)-b^2\tan(A)\tan(C)-c^2\tan(A)\tan(B)+\dfrac{abc\tan(A)\tan(B)\tan(C)}{R}.
+\end{align*}
+Dividing by $\tan(A)\tan(B)\tan(C)$, we have that
+\begin{align*}
+-\dfrac{a^2}{\tan(A)}-\dfrac{b^2}{\tan(B)}-\dfrac{c^2}{\tan(C)}+\dfrac{abc}{R} &= -\dfrac{a^2\cos(A)}{\sin(A)}-\dfrac{b^2\cos(B)}{\sin(B)}-\dfrac{c^2\cos(C)}{\sin(C)}+\dfrac{abc}{R} \\
+&= -2(aR\cos(A)+bR\cos(B)+cR\cos(C))+\dfrac{abc}{R} \\
+&= -2(2R^2\sin(A)\cos(A)+2R^2\sin(B)\cos(B)+2R^2\sin(C)\cos(C))+\dfrac{abc}{R} \\
+&= -2(R^2\sin(2A)+R^2\sin(2B)+R^2\sin(2C))+\dfrac{abc}{R} \\
+&= -8R^2(\sin(A)\sin(B)\sin(C))+\dfrac{abc}{R} \\
+&= 0
+\end{align*}
+as required, where the fourth line follows from sum to product. $\square$
+
+\newpage
+
+\section{Inversion}
+
+\begin{problem}[8.9]{Inverting an Orthocenter}
+Let $ABC$ be a triangle with orthocenter $H$ and altitudes $\ol{AD}$, $\ol{BE}$, $\ol{CF}$. Perform an inversion around $C$ with radius $\sqrt{CH \cdot CF}$. Where do the six points each go?
+\end{problem}
+The points $H$ and $F$ swap places, as do $A$ and $E$, as do $C$ and $F$.
 \end{document}
