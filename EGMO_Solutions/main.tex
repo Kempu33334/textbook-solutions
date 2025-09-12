@@ -5203,5 +5203,30 @@ as required, where the fourth line follows from sum to product. $\square$
 \begin{problem}[8.9]{Inverting an Orthocenter}
 Let $ABC$ be a triangle with orthocenter $H$ and altitudes $\ol{AD}$, $\ol{BE}$, $\ol{CF}$. Perform an inversion around $C$ with radius $\sqrt{CH \cdot CF}$. Where do the six points each go?
 \end{problem}
-The points $H$ and $F$ swap places, as do $A$ and $E$, as do $C$ and $F$.
+The points $H$ and $F$ swap places, as do $A$ and $E$, as do $C$ and $F$ by Power of a Point. $\square$
+
+\begin{problem}[8.10]{Inverting a Circumcenter}
+Let $ABC$ be a triangle with circumcenter $O$. Invert around $C$ with radius $1$. What is the relation between $O^*$, $C$, $A^*$, and $B^*$?
+\end{problem}
+We claim that $A^*B^*$ has the property that $C$ and $O^*$ are reflections about this line. Clearly, $\angle CA^*B^* = \angle CBA$ and \[\angle O^*A^*B^* = \angle CA^*O^* - \angle CA^*B^* = \angle COA - \angle CBA = \angle CBA\] as required. We can get similar results for the other set of angles ($\angle CB^*A^*$ and $\angle O^*B^*A^*$), so we are done. $\square$
+
+\begin{problem}[8.11]{Inverting an Incircle}
+Let $ABC$ be a triangle with circumcircle $\Gamma$ and contact triangle $DEF$. Consider an inversion with respect to the incircle of triangle $ABC$. Show that $\Gamma$ is sent to the nine-point circle of triangle $DEF$.
+\end{problem}
+Since $AE$ and $AF$ are tangent to the incircle, we know that $A^*$ is just the midpoint of $\ol{EF}$ and similarly for $B^*$ and $C^*$. Hence, the circumcircle of these points is just the nine-point circle, as required. $\square$
+
+\begin{problem}[8.17]{Force-Overlayed Inversion}
+Let $ABC$ be a triangle. Consider the transformation consisting of an inversion about $A$ with radius $\sqrt{AB \cdot AC}$, followed by a reflection around the angle bisector of $\angle BAC$. Show that this transformation fixes $B$ and $C$.
+\end{problem}
+Clearly, the distance $AB^* = AC$ and since $B^*$ lies on $AB$, we know that $B^*$ and $C$ are reflections about the angle bisector of $\angle BAC$. A similar argument suffices for $C^*$. $\square$
+
+\begin{problem}[8.19]{Inversion Distance Formula}
+Let $A$ and $B$ be points other than $O$ and consider an inversion about $O$ with radius $r$. Then show that: \[A^*B^* = \dfrac{r^2}{OA \cdot OB} \cdot AB.\]
+\end{problem}
+We know that \[OA\cdot OA^* = r^2\] and \[\dfrac{AB}{A^*B^*} = \dfrac{OB}{OA^*}\] by similar triangles. Hence, \[\dfrac{r^2}{OA \cdot OB} \cdot AB = \dfrac{OA^*}{OB} \cdot AB = A^*B^*\] as required. $\square$
+
+\begin{problem}[8.20]{Ptolemy's Inequality}
+For any four distinct points $A$, $B$, $C$, and $D$ in a plane, no three collinear, prove that \[AB \cdot CD + BC \cdot DA \ge AC \cdot BD.\] Moreover, show that equality holds if and only if $A$, $B$, $C$, $D$ lie on a circle in that order.
+\end{problem}
+Invert about a circle centered at $D$ with radius $DA$. Then, by the triangle inequality, \[A^*B^*+B^*C^*\ge A^*C^*\] with equality if and only if the points are collinear. Now applying the inversion distance formula, \[\dfrac{DA^2}{DA\cdot DB}\cdot AB + \dfrac{DA^2}{DB\cdot DC}\cdot BC \ge \dfrac{DA^2}{DA\cdot DC}\cdot AC.\] Simplifying, \[\dfrac{1}{DB}\cdot AB + \dfrac{DA}{DB\cdot DC}\cdot BC \ge \dfrac{1}{DC}\cdot AC\] and multiplying both sides by $DB\cdot DC$, we find that \[DC\cdot AB + DA\cdot BC \ge DB\cdot AC\] as required. $\square$
 \end{document}
