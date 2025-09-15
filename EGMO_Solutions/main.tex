@@ -5229,4 +5229,104 @@ We know that \[OA\cdot OA^* = r^2\] and \[\dfrac{AB}{A^*B^*} = \dfrac{OB}{OA^*}\
 For any four distinct points $A$, $B$, $C$, and $D$ in a plane, no three collinear, prove that \[AB \cdot CD + BC \cdot DA \ge AC \cdot BD.\] Moreover, show that equality holds if and only if $A$, $B$, $C$, $D$ lie on a circle in that order.
 \end{problem}
 Invert about a circle centered at $D$ with radius $DA$. Then, by the triangle inequality, \[A^*B^*+B^*C^*\ge A^*C^*\] with equality if and only if the points are collinear. Now applying the inversion distance formula, \[\dfrac{DA^2}{DA\cdot DB}\cdot AB + \dfrac{DA^2}{DB\cdot DC}\cdot BC \ge \dfrac{DA^2}{DA\cdot DC}\cdot AC.\] Simplifying, \[\dfrac{1}{DB}\cdot AB + \dfrac{DA}{DB\cdot DC}\cdot BC \ge \dfrac{1}{DC}\cdot AC\] and multiplying both sides by $DB\cdot DC$, we find that \[DC\cdot AB + DA\cdot BC \ge DB\cdot AC\] as required. $\square$
+
+\begin{problem}[8.23]{}
+Let $ABC$ be a right triangle with $\angle C = 90^\circ$ and let $X$ and $Y$ be points in the interiors of $\ol{CA}$ and $\ol{CB}$, respectively. Construct four circles passing through $C$, centered at $A$, $B$, $X$, $Y$. Prove that the four points lying on at exactly two of these four circles are concyclic.
+\end{problem}
+Consider inverting about a circle with radius $1$, centered at $C$. Then, all of the circles will be sent to lines perpendicular to the side that they are on. This means that the required intersections just make a rectangle, which is indeed cyclic. $\square$
+
+\begin{problem}[8.24]{}
+Let $\omega_1$, $\omega_2$, $\omega_3$, $\omega_4$ be circles with consecutive pairs tangent at $A$, $B$, $C$, $D$. Prove that quadrilateral $ABCD$ is cyclic.
+\end{problem}
+Consider an inversion about $A$. Then, the conclusion is clear by noticing the similar triangles. $\square$
+
+\begin{problem}[8.25]{}
+Let $A$, $B$, $C$ be three collinear points and $P$ be a point not on this line. Prove that the circumcenters of $\triangle PAB$, $\triangle PBC$, and $\triangle PCA$ lie on a circle passing through $P$.
+\end{problem}
+Inverting about $P$, it suffices to show by \refproblem{7.10}, that the reflections of $P$ across $A^*B^*$, $B^*C^*$, and $A^*C^*$ are collinear, where $A^*$, $B^*$, $C^*$, and $P$ are concyclic. Then, by the existence of the Simson Line, we can just consider a homothety of scale factor $2$ centered at $P$, which takes the Simson Line to the necessary points, so we are done. $\square$
+
+\begin{problem}[8.26]{BAMO 2008/6}
+A point $D$ lies inside triangle $ABC$. Let $A_1$, $B_1$, $C_1$ be the second intersection points of the lines $AD$, $BD$, and $CD$ with $(BDC)$, $(CDA)$, and $(ADB)$, respectively. Prove that \[\dfrac{AD}{AA_1}+\dfrac{BD}{BB_1}+\dfrac{CD}{CC_1} = 1.\]
+\end{problem}
+Inverting about $D$ with a radius of $1$, we find that \[\dfrac{AD}{AA_1} = \dfrac{\tfrac{1}{A^*D}}{\tfrac{A^*B^*}{DA^*\cdot DB^*}} = \dfrac{DB^*}{A^*B^*}\] by the distance formula. So, the problem is in fact equivalent to \refproblem{3.18}, and we are done. $\square$
+
+\begin{problem}[8.27]{Iran Olympiad 1996}
+Consider a semicircle with center $O$ and diameter $\ol{AB}$. A line intersects line $AB$ at $M$ and the semicircle at $C$ and $D$ such that $MC > MD$ and $MB < MA$. Suppose $(AOC)$ and $(BOD)$ meet at a point $K \neq O$. Prove that $\angle MKO = 90^\circ$.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -3.358449390393843, xmax = 13.671420780771244, ymin = -4.185116974847158, ymax = 6.370434362182181;
+pen qqzzff = rgb(0,0.6,1); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen wwqqcc = rgb(0.4,0,0.8); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ffqqtt = rgb(1,0,0.2);
+
+pair A = (-2.5616179587527417,0.8130444909437305);
+pair B = (5.11302,0.813);
+pair C = (-0.41848402953010955,4.256095576932081);
+pair D = (4.539345321067233,2.8313489856601204);
+pair M = (11.562920797727344,0.8129626090279434);
+pair O = (1.275701020623629,0.8130222454718652);
+pair K = (1.5617074055079536,2.5042673568975014);
+
+draw(A--M--C, qqzzff);
+draw(circle((-0.6429515457851321,2.007291314029801), 2.2599792651042545), xdxdff);
+draw(circle((3.1943636717931376,1.3583631098169713), 1.9946586242556583), xdxdff);
+draw(shift((6.419310909175486,0.8129924272499043))*xscale(5.143609888638288)*yscale(5.143609888638288)*arc((0,0),1,-0.00033215160324039864,179.99966784839677), yqqqyq+dashed);
+draw(circle(O, 3.837318979440851), ffqqtt);
+
+draw(K--O--M--cycle, wwqqcc);
+
+dot("$A$", A, NE);
+dot("$B$", B, NE);
+dot("$C$", C, N);
+dot("$D$", D, NE);
+dot("$M$", M, NE);
+dot("$O$", O, NE);
+dot("$K$", K, NE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+We invert about the circle centered at $O$ with diameter $\ol{AB}$. Then, we wish to show that $\angle K^*M^*O$ is right, in the diagram below:
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -7.678048071730215, xmax = 14.483278369354109, ymin = -3.858992138054801, ymax = 11;
+pen ffqqtt = rgb(1,0,0.2); pen zzwwff = rgb(0.6,0.4,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen qqzzff = rgb(0,0.6,1);
+
+pair A = (-2.5616179587527417,0.8130444909437305);
+pair B = (5.11302,0.813);
+pair C = (-0.41848402953010955,4.256095576932081);
+pair D = (4.539345321067233,2.8313489856601204);
+pair O = (1.275701020623629,0.8130222454718652);
+pair K1 = (2.70713945241218,9.277564920098897);
+pair M1 = (2.7070903822328414,0.8130139475086406);
+
+draw(circle(O, 3.837318979440851), ffqqtt);
+draw(A--K1--B--cycle, zzwwff);
+draw(circle((1.9914101393585786,3.3035449090049256), 2.591320644036969), yqqqyq);
+
+draw(O--M1--K1--cycle, qqzzff);
+
+dot("$A$", A, SW);
+dot("$B$", B, E);
+dot("$C$", C, NW);
+dot("$D$", D, NE);
+dot("$O$", O, S);
+dot("$K^*$", K1, N);
+dot("$M^*$", M1, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+However, notice that since $C$ is the foot of the $B$-altitude of $\triangle ABK^*$, $D$ is the foot of the $C$-altitude, and $O$ is the midpoint of $\ol{AB}$, the circle $(COD)$ is the nine-point circle of $\triangle ABK^*$. Hence, $M^*$ is the foot of the $K^*$-altitude, and we are done. $\square$
+
+\begin{problem}[8.28]{ISL 2003/G4}
+Let $\Gamma_1$, $\Gamma_2$, $\Gamma_3$, $\Gamma_4$ be distinct circles such that $\Gamma_1$, $\Gamma_3$ are externally tangent at $P$, and $\Gamma_2$, $\Gamma_4$ are externally tangent at the same point $P$. Suppose that $\Gamma_1$ and $\Gamma_2$; $\Gamma_2$ and $\Gamma_3$; $\Gamma_3$ and $\Gamma_4$; $\Gamma_4$ and $\Gamma_1$ meet at $A$, $B$, $C$, $D$, respectively, and that all these points are different from $P$. Prove that \[\frac{AB\cdot BC}{AD\cdot DC}=\frac{PB^2}{PD^2}.\]
+\end{problem}
+Invert about $P$. Then, $A^*B^*C^*D^*$ is a parallelogram. Hence, by \refproblem{8.19}, we have that \[\frac{AB}{PA \cdot PB} = \frac{CD}{PC \cdot PD}\] and \[\frac{AD}{PA \cdot PD} = \frac{BC}{PB \cdot PD}.\] Taking the quotient suffices. $\square$
+
+\begin{problem}[8.29]{}
+Let $ABC$ be a triangle with incenter $I$ and circumcenter $O$. Prove that line $IO$ passes through the centroid $G_1$ of the contact triangle.
+\end{problem}
+Consider an inversion about its incircle. We know that $O$, $I$, and $O^*$ are collinear. However, by \refproblem{8.11}, $O^*$ is the nine-point center of the contact triangle. Hence, by the properties of the Euler line, we know that $I$, $G_1$ and $O^*$ are also collinear, which implies the necessary conclusion. $\square$
 \end{document}
