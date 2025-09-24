@@ -31,5 +31,10 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 \begin{problem}[1.A]
 What is the joke in this: ``Baby, my love for you has a proper subgroup isomorphic to itself.''
 \end{problem}
-A proper subgroup can only be isomorphic to itself if has infinite order.
+A proper subgroup can only be isomorphic to itself if has infinite order. Hence, the joke is that ``Baby, my love for you is infinite''.
+
+\begin{problem}[1.B]
+Prove Lagrange's theorem for orders in the special case that $G$ is a finite abelian group.
+\end{problem}
+We show that \[x^{|G|} = 1_G\] if $x \in G$. Consider taking $\prod_{i=1}^{|G|}G_i$. Notice that a multiplication by $x$ simply reorders the elements of $G$. Hence, \[\prod_{i=1}^{|G|}(xG_i) = x^{|G|}\prod_{i=1}^{|G|}G_i = \prod_{i=1}^{|G|}G_i\] since $G$ is abelian. Thus, we find that \[x^{|G|} = 1_G\] as required. $\square$
 \end{document}
