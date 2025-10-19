@@ -4077,7 +4077,7 @@ Make the transformation $z \mapsto \tfrac{z-a}{b-a}$. Then, the required answer 
 so we are done. $\square$
 
 \begin{problem}[6.8]{}
-Prove that complex numbers $z$, $a$, $b$ are collinear if and only if \[\dfrac{z - a}{z - b} =\overline{\left(\dfrac{z - a}{z - b}\right)}.\]
+Prove that complex numbers $z$, $a$, $b$ are collinear if and only if \[\dfrac{z - a}{z - b} = \ol{\left(\dfrac{z - a}{z - b}\right)}.\]
 \end{problem}
 
 If they are collinear, then we know that the quantity \[\dfrac{z-a}{z-b}\] is real, since it describes sending the point $a$ to $0$, and sending $z$, $b$ onto the real axis (if and only if they are collinear). The finish is clear. $\square$
@@ -4160,7 +4160,7 @@ Give a proof of the inscribed angle theorem using complex numbers.
 
 Let $A$, $B$, and $C$ be points on the unit circle with center $O$. Then, we wish to show that \[\arg\left(\tfrac{a}{b}\right) = 2\arg\left(\tfrac{a-c}{b-c}\right) = \arg\left(\left(\tfrac{a-c}{b-c}\right)^2\right).\] This is equivalent to showng that $0$, $\tfrac{a}{b}$, and $(\tfrac{a-c}{b-c})^2$ are collinear. Indeed, 
 \begin{align*}
-\overline{\left(\dfrac{(\tfrac{a-c}{b-c})^2}{\tfrac{a}{b}}\right)} &= \overline{\left(\dfrac{b(a-c)^2}{a(b-c)^2}\right)} \\
+\ol{\left(\dfrac{(\tfrac{a-c}{b-c})^2}{\tfrac{a}{b}}\right)} &= \ol{\left(\dfrac{b(a-c)^2}{a(b-c)^2}\right)} \\
 &= \dfrac{\tfrac{1}{b}(\tfrac{1}{a}-\tfrac{1}{c})^2}{\tfrac{1}{a}(\tfrac{1}{b}-\tfrac{1}{c})^2} \\
 &= \dfrac{a(\tfrac{1}{a}-\tfrac{1}{c})^2}{b(\tfrac{1}{b}-\tfrac{1}{c})^2} \\
 &= \dfrac{a\left(\tfrac{1}{a^2}-\tfrac{2}{ac}+\tfrac{1}{c^2}\right)}{b\left(\tfrac{1}{b^2}-\tfrac{2}{bc}+\tfrac{1}{c^2}\right)} \\
@@ -4216,7 +4216,7 @@ x &= a+b+c+p-bc\ol{p} \\
 y &= a+b+c+p-ac\ol{p} \\
 z &= a+b+c+p-ab\ol{p}.
 \end{align*}
-This means it suffices to show that the triangle formed by $a$, $b$, $c$ and $ab$, $ac$, $bc$ are similar. Now, the condition for oppositely similar triangles is the same as directly similar, but showing it is equal to the conjugate of the other side. Hence: \[\overline{\dfrac{b-a}{c-a}} = \dfrac{\tfrac{1}{b}-\tfrac{1}{a}}{\tfrac{1}{c}-\tfrac{1}{a}} = \dfrac{ac(a-b)}{ab(a-c)} = \dfrac{c(a-b)}{b(a-c)} = \dfrac{ac-bc}{ab-bc} = \dfrac{bc-ac}{bc-ab}\] so we are done. $\square$
+This means it suffices to show that the triangle formed by $a$, $b$, $c$ and $ab$, $ac$, $bc$ are similar. Now, the condition for oppositely similar triangles is the same as directly similar, but showing it is equal to the conjugate of the other side. Hence: \[\ol{\dfrac{b-a}{c-a}} = \dfrac{\tfrac{1}{b}-\tfrac{1}{a}}{\tfrac{1}{c}-\tfrac{1}{a}} = \dfrac{ac(a-b)}{ab(a-c)} = \dfrac{c(a-b)}{b(a-c)} = \dfrac{ac-bc}{ab-bc} = \dfrac{bc-ac}{bc-ab}\] so we are done. $\square$
 
 \begin{problem}[6.34]{Napoleon's Theorem}
 Let $ABC$ be a triangle and erect equilateral triangles on sides $\ol{BC}$, $\ol{CA}$, $\ol{AB}$ outside of $ABC$ with centers $O_A$, $O_B$, $O_C$. Prove that $\triangle O_AO_BO_C$ is equilateral and that its center coincides with the centroid of triangle $ABC$.
@@ -5420,4 +5420,59 @@ Consider a force-overlay inversion $\Psi$ about $A$ (a $\sqrt{bc}$ inversion fol
 \begin{problem}[8.33]{ISL 1997/9}
 Let $A_1A_2A_3$ be a scalene triangle with incenter $I$. Let $C_i$, $i = 1$, $2$, $3$, be the smaller circle through $I$ tangent to $A_iA_{i+1}$ and $A_iA_{i+2}$ (taken modulo $3$). Let $B_i$, $i = 1$, $2$, $3$, be the second point of intersection of $C_{i+1}$ and $C_{i+2}$. Prove that the circumcenters of the triangles $A_1B_1I$, $A_2B_2I$, $A_3B_3I$ are collinear.
 \end{problem}
+By an inversion about the incircle of $\triangle A_1B_1C_1$, it suffices to show that $\triangle A_1'A_2'A_3'$ and $\triangle B_1'B_2'B_3'$ are homothetic where $X'$ is the image of point $X$ after the inversion. We know that $\triangle A_1'A_2'A_3'$ is the medial triangle of the contact triangle of $\triangle A_1A_2A_3$. In addition, because of perpendicularity, we know that $\triangle B_1'B_2'B_3'$ is homothetic to the contact triangle. Thus, $\triangle A_1'A_2'A_3'$ and $\triangle B_1'B_2'B_3'$ are homothetic, which implies the required conclusion. $\square$
+
+\begin{problem}[8.34]{IMO 1993/2}
+Let $A$, $B$, $C$, $D$ be four points in the plane, with $C$ and $D$ on the same side of the line $AB$, such that $AC \cdot BD = AD \cdot BC$ and $\angle ADB = 90^\circ + \angle ACB$. Find the ratio $\tfrac{AB\cdot CD}{AC \cdot BD}$, and prove that $(ACD)$ and $(BCD)$ are orthogonal.
+\end{problem}
+Invert about $A$ with radius $r$. Then, the conditions change to $B^*D^*\perp B^*C^*$ and $B^*D^* = B^*C^*$.
+
+We start with the first part. We note that \[\dfrac{AB\cdot CD}{AC \cdot BD} = \dfrac{AC^* \cdot CD}{AB^* \cdot BD} = \dfrac{AC^* \cdot AB^* \cdot C^*D^*}{AB^* \cdot AC^*\cdot B^*D^*} = \dfrac{C^*D^*}{B^*D^*} = \sqrt{2}\] as required. $\square$
+
+We finish with the second part. We wish to show that the line $C^*D^*$ passes through the center of circle $(B^*C^*D^*)$. However, this is clear, since $B^*D^*\perp B^*C^*$, implying that $\ol{C^*D^*}$ is the diameter of this circle, as required. $\square$
+
+\begin{problem}[8.35]{IMO 1996/2}
+Let $P$ be a point inside $\triangle ABC$ such that \[\angle APB - \angle ACB = \angle APC - \angle ABC.\] Let $D$, $E$ be the incenters of triangles $APB$, $APC$, respectively. Show that the lines $AP$, $BD$, $CE$ concur.
+\end{problem}
+Invert about $A$ with a radius of $r$. Then, the angle condition translates to $\angle C^*B^*P^* = \angle B^*C^*P^*$, so $B^*P^* = C^*P^*$. Hence, \[\dfrac{r^2}{AB \cdot AP}\cdot BP = \dfrac{r^2}{AC \cdot AP}\cdot CP \implies \dfrac{BP}{AB} = \dfrac{CP}{AC}.\] Hence, the angle bisectors of $\angle ABP$ and $\angle ACP$ concur at the same point on $AP$, by the Angle Bisector Theorem, so we are done. $\square$
+
+\begin{problem}[8.36]{IMO 2015/3}
+Let $ABC$ be an acute triangle with $AB > AC$. Let $H$ be its orthocenter, and $F$ the foot of the altitude from $A$. Let $M$ be the midpoint of $\ol{BC}$. Let $Q$ be the point on $(ABC)$ such that $\angle HQA = 90^\circ$ and let $K$ be the point on $(ABC)$ such that $\angle HKQ = 90^\circ$. Assume that the points $A$, $B$, $C$, $K$, and $Q$ are all different and lie on $(ABC)$ in this order. Prove that $(KQH)$ and $(FKM)$ are tangent to each other.
+\end{problem}
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -2.2740675560792454, xmax = 2.585902435885857, ymin = -6.514941502313417, ymax = 0.4299483516753705;
+pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255);
+
+pair A = (-1.4763482095919265,-3.591177584686755);
+pair B = (1.77947,-3.5912);
+pair C = (-0.3948779588505968,-1.465442745175504);
+pair H = (-0.3948849781506938,-2.484994193088567);
+pair F = (0.11476400884329398,-1.9636956148592564);
+pair M = (0.6922960205747016,-2.5283213725877522);
+pair Q = (-1.4306187344387362,-2.4437173289558514);
+pair K = (-1.1879690064257522,-2.025188858090599);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((0.15156440485408545,-3.0814130683868464), 1.705860293913581), ffttww);
+draw(A--F, wwzzff);
+draw(H--Q, wwzzff);
+draw(circle((-0.9356165938713101,-3.038085888887661), 0.7734992593414333), xdxdff);
+draw(circle((-0.912751856294715,-2.464355761022209), 0.518277964375095), yqqqyq);
+draw(circle((-0.48197365648088647,-3.1517530681036097), 1.329502295382002), yqqqyq);
+
+dot("$A$", A, SW);
+dot("$B$", B, SE);
+dot("$C$", C, N);
+dot("$H$", H, NE);
+dot("$F$", F, NE);
+dot("$M$", M, NE);
+dot("$Q$", Q, NW);
+dot("$K$", K, NW);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
 \end{document}

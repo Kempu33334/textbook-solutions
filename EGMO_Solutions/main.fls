@@ -855,6 +855,11 @@ INPUT ./main-78.pdf
 INPUT ./main-78.pdf
 INPUT ./main-78.pdf
 INPUT ./main-78.pdf
+OUTPUT main-79.asy
+INPUT ./main-79.pdf
+INPUT ./main-79.pdf
+INPUT ./main-79.pdf
+INPUT ./main-79.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
