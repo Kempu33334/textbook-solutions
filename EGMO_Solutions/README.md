@@ -7,7 +7,7 @@ The following chapters have completed solutions:
 - **Chapter 4**: Assorted Configurations
 - **Chapter 5**: Computational Geometry
 - **Chapter 6**: Complex Numbers
+- **Chapter 8**: Inversion
 
 The following chapters are in progress:
 - **Chapter 7**: Barycentric Coordinates
-- **Chapter 8**: Inversion
