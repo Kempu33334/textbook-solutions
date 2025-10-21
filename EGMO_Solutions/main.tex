@@ -31,11 +31,13 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 \begin{problem}[1.5]{}
 Solve the first part of Example 1.1.
 \end{problem}
+
 Let the intersections of the diagonals of $WXYZ$ be $A$. Then, we have that \[\angle AZY = 180-(90+\angle AYZ) = 40^\circ.\] Hence, \[\angle Z =\angle AZW + \angle AZY = \boxed{70^\circ}.\]
 
 \begin{problem}[1.6]{}
 Let $ABC$ be a triangle inscribed in a circle $\omega$. Show that $\ol{AC}\perp \ol{CB}$ if and only if $\ol{AB}$ is a diameter of $\omega$.
 \end{problem}
+
 Let the center of $\omega$ be $O$. We start with the if direction. Given that $\ol{AB}$ is a diameter of $\omega$, we know that \[\angle AOB = 180^\circ.\] Thus, because of the Inscribed Angle Theorem, we know that $\angle ACB$ must be equal to $90^\circ$ as desired. 
 
 Now for the only if direction. If $\ol{AC} \perp \ol{CB}$, then we know that \[\angle ACB = 90^\circ.\] By the Inscribed Angle Theorem, this implies that \[\angle AOB = 180^\circ\] which means that $\ol{AB}$ is a diameter of $\omega$ as desired. $\square$
@@ -43,6 +45,7 @@ Now for the only if direction. If $\ol{AC} \perp \ol{CB}$, then we know that \[\
 \begin{problem}[1.7]{}
 Let $O$ and $H$ denote the circumcenter and orthocenter of an acute $\triangle ABC$, respectively. Show that $\angle BAH = \angle CAO$.
 \end{problem}
+
 By the Inscribed Angle Theorem, \[2\angle ABC = \angle AOC.\] Negating both sides and adding $180$, we get that
 \begin{align*}
 180-2\angle ABC &= 2(90-\angle ABC) \\
@@ -53,6 +56,7 @@ and \[180-\angle AOC = 2\angle CAO\] since $\triangle AOC$ is isosceles ($OA = O
 \begin{problem}[1.10]{}
 Show that a trapezoid is cyclic if and only if it is isosceles.
 \end{problem}
+
 Let the aforementioned trapezoid be $ABCD$ where $\ol{BC} \parallel \ol{AD}$. We start with the if direction. Since $ABCD$ is isosceles, we know that \[\angle BAD = \angle CDA = 180-\angle BCD\] so the opposite angles add up to $180^\circ$, implying that $ABCD$ is cyclic. 
 
 Now, we do the only if direction. Since $ABCD$ is cyclic, we know that \[\angle BAD = 180-\angle BCD = \angle CDA\] which means that $ABCD$ is isosceles as desired. $\square$
@@ -60,6 +64,7 @@ Now, we do the only if direction. Since $ABCD$ is cyclic, we know that \[\angle 
 \begin{problem}[1.11]{}
 Quadrilateral $ABCD$ has $\angle ABC = \angle ADC = 90^\circ$. Show that $ABCD$ is cyclic, and that $(ABCD)$ (that is, the circumcircle of $ABCD$) has diameter $\ol{AC}$.
 \end{problem}
+
 Since \[\angle ABC + \angle ADC = 180^\circ\] we know that $ABCD$ is cyclic. In addition, by Problem 1.6, we know that $(ABCD)$ has diameter $\ol{AC}$ as desired. $\square$
 
 \begin{problem}[1.16]{}
@@ -69,6 +74,7 @@ In the figure below, show that $\triangle AEF$, $\triangle BFD$, and $\triangle 
 \includegraphics[width=0.5\linewidth]{Figure 1.3A.png}
 \end{center}
 \end{problem}
+
 We will show the necessary result for one of them ($\triangle AEF$), as it easily generalizes. Clearly, we know that $\triangle ABC$ and $\triangle AEF$ share $\angle A$. In addition, 
 \begin{align*}
 \angle B &= 90-\angle BAD \\
@@ -5172,8 +5178,9 @@ We know that all of the lines $AT_A$, $BT_B$, and $CT_C$ pass through the isogon
 \begin{align*}
 \begin{vmatrix}1&1&1\\aS_a&bS_b&cS_c\\\tfrac{a}{s-a}&\tfrac{b}{s-b}&\tfrac{c}{s-c}\end{vmatrix} &= \dfrac{bcS_b}{s-c}-\dfrac{bcS_c}{s-b}-\dfrac{acS_a}{s-c}+\dfrac{acS_c}{s-a}+\dfrac{abS_a}{s-b}-\dfrac{abS_b}{s-a} \\
 &= \dfrac{a}{s-a}(cS_c-bS_b)+\dfrac{b}{s-b}(aS_a-cS_c)+\dfrac{c}{s-c}(bS_b-aS_a) \\
-&= \dfrac{a}{s-a}\left(\dfrac{a^2c+b^2c-c^3}{2}-\dfrac{a^2b+bc^2-b^3}{2}\right)+\dfrac{b}{s-b}\left(\dfrac{ab^2+ac^2-a^3}{2}-\dfrac{a^2c+b^2c-c^3}{2}\right) \\
-&\quad+\dfrac{c}{s-c}\left(\dfrac{a^2b+bc^2-b^3}{2}-\dfrac{ab^2+ac^2-a^3}{2}\right).
+&= \dfrac{a}{s-a}\left(\dfrac{a^2c+b^2c-c^3}{2}-\dfrac{a^2b+bc^2-b^3}{2}\right) \\
+&\phantom{=}+\dfrac{b}{s-b}\left(\dfrac{ab^2+ac^2-a^3}{2}-\dfrac{a^2c+b^2c-c^3}{2}\right) \\
+&\phantom{=}+\dfrac{c}{s-c}\left(\dfrac{a^2b+bc^2-b^3}{2}-\dfrac{ab^2+ac^2-a^3}{2}\right).
 \end{align*}
 Now, we multiply by a factor of four to get rid of the denominators and the $s$ term which means that the last expression is equal to:
 \begin{align*}
@@ -5204,13 +5211,50 @@ Dividing by $\tan(A)\tan(B)\tan(C)$, we have that
 \begin{align*}
 -\dfrac{a^2}{\tan(A)}-\dfrac{b^2}{\tan(B)}-\dfrac{c^2}{\tan(C)}+\dfrac{abc}{R} &= -\dfrac{a^2\cos(A)}{\sin(A)}-\dfrac{b^2\cos(B)}{\sin(B)}-\dfrac{c^2\cos(C)}{\sin(C)}+\dfrac{abc}{R} \\
 &= -2(aR\cos(A)+bR\cos(B)+cR\cos(C))+\dfrac{abc}{R} \\
-&= -2(2R^2\sin(A)\cos(A)+2R^2\sin(B)\cos(B)+2R^2\sin(C)\cos(C))+\dfrac{abc}{R} \\
+&= -2(2R^2\sin(A)\cos(A)+2R^2\sin(B)\cos(B) \\
+&\phantom{=} +2R^2\sin(C)\cos(C))+\dfrac{abc}{R} \\
 &= -2(R^2\sin(2A)+R^2\sin(2B)+R^2\sin(2C))+\dfrac{abc}{R} \\
 &= -8R^2(\sin(A)\sin(B)\sin(C))+\dfrac{abc}{R} \\
 &= 0
 \end{align*}
 as required, where the fourth line follows from sum to product. $\square$
 
+\begin{problem}[7.44]{Sharygin 2013}
+Let $C_1$ be an arbitrary point on side $\ol{AB}$ of $\triangle ABC$. Points $A_1$ and $B_1$ are on rays $BC$ and $AC$ such that $\angle AC_1B_1 = \angle BC_1A_1 = \angle ACB$. The lines $AA_1$ and $BB_1$ meet in point $C_2$. Prove that all the lines $C_1C_2$ have a common point.
+\end{problem}
+
+Let $C_1 = (c_1, 1-c_1, 0)$. Then, notice that $A_1$ is just the intersection of $(AC_1C)$ with $BC$, and similarly for $B_1$. Computing, we find that \[(AC_1C): -a^2yz-b^2xz-c^2xy+c^2c_1y(x+y+z) = 0.\] Hence, $A_1 = \left(0, 1-\tfrac{c^2c_1}{a^2},\tfrac{c^2c_1}{a^2}\right)$. Similarly, we find that $B_1 = \left(1-\tfrac{c^2(1-c_1)}{b^2}, 0, \tfrac{c^2(1-c_1)}{b^2}\right)$. Now, we have that $C_2$ is just \[C_2 = \left(\dfrac{b^2}{c^2(1-c_1)} - 1 : \dfrac{a^2}{c^2c_1} - 1 : 1\right).\] Now, we wish to show that there exists a point $P = (x, y, z)$ such that:
+\begin{align*}
+\begin{vmatrix}
+x&y&z\\
+c_1 & 1-c_1 & 0\\
+\dfrac{b^2}{c^2(1-c_1)} - 1 & \dfrac{a^2}{c^2c_1} - 1 & 1 \\
+\end{vmatrix}
+&= x(1-c_1)-yc_1+z\left(\dfrac{a^2}{c^2}-\dfrac{b^2}{c^2}\right) \\
+&= 0.
+\end{align*}
+Now, notice that the point $P = (a^2-b^2-c^2 : b^2+c^2-a^2 : c^2)$ annihilates all the terms, so we have the required point. $\square$
+
+\begin{problem}[7.45]{APMO 2013/5}
+Let $ABCD$ be a quadrilateral inscribed in a circle $\omega$, and let $P$ be a point on $AC$ such that $\ol{PB}$ and $\ol{PD}$ are tangent to $\omega$. The tangent at $C$ intersects $PD$ at $Q$ and the line $AD$ at $R$. Let $E \neq A$ be the intersection between $AQ$ and $\omega$. Prove that $B$, $E$, $R$ are collinear.
+\end{problem}
+
+We use barycentrics on $\triangle BCD$, where $B = (1, 0, 0)$, $C = (0, 1, 0)$, and $D = (0, 0, 1)$. Notice that $CA$ is a symmedian, so $A = (b^2 : \lambda : d^2)$, and since $A$ lies on $(BCD): b^2yz+c^2xz+d^2xy = 0$, we know that $A = (2b^2 : -c^2 : 2d^2)$. In addition, we may compute that $P = (b^2 : -c^2 : d^2)$. Since $Q$ is the intersection of $PD$ and the tangent at $C$, we know that $Q = (b^2 : -c^2 : -d^2)$. Similarly, since $R$ is the intersection of $AD$ and the tangent at $C$, we know that $R = (-2b^2 : -c^2 : 2d^2)$. Now, the line $AQ$ ($ux+vy+wz = 0$) satisfies \[2b^2u-c^2v+2d^2w = 0\] and \[b^2u-c^2v-d^2w = 0.\] Solving, we get that: \[AQ : \dfrac{3x}{b^2} + \dfrac{4y}{c^2} - \dfrac{z}{d^2} = 0.\] Now, \[(BCD): \dfrac{yz}{c^2d^2}+\dfrac{xz}{b^2d^2}+\dfrac{xy}{b^2c^2} = 0.\] We can let $\alpha = \dfrac{x}{b^2}$ and similar, to get that:
+\begin{align*}
+3\alpha+4\beta-\gamma &= 0 \\
+\alpha+\beta+\gamma &= 0.
+\end{align*}
+Solving this, we find that $E = (2b^2 : -3c^2 : 6d^2)$. We can then write out the relevant collinearity equation:
+\begin{align*}
+\dfrac{1}{b^2c^2d^2}\begin{vmatrix}
+2b^2&-c^2&2d^2 \\
+-2b^2&-c^2&2d^2 \\
+2b^2&-3c^2&6d^2 \\
+\end{vmatrix}
+&= -12+12-12+4+6+2 \\
+&= 0
+\end{align*}
+as required. $\square$
 \newpage
 
 \section{Inversion}
@@ -5547,5 +5591,5 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{asy}
 \end{center}
 
-We wish to show that $\angle OGB = \angle OFB = 90^\circ$. Consider an inversion $\Phi$ about $\omega_1$. If $X$ and $Y$ are the intersection points of $\omega_1$ and $\omega_2$, then they stay fixed under $\Phi$. Now, we wish to show that $F^*G^*$ passes through $B$. However, notice that $F^*$ and $G^*$ are just the tangency points of the tangents from $A$ to $\omega_2$. Now, let the midpoint of $AF^*$ be $M$, and the midpoint of $AG^*$ be $N$. Then, $MN$ is the radical axis of $\omega_2$ and the circle with radius $0$ centered at $A$. Now, if $O$ lies on this radical axis, then, \[OO_2^2 - O_2Y^* ^2 = OY^2\] where $O_2$ is the center of $\omega_2$, which is obviously true, as desired. $\square$
+We wish to show that $\angle OGB = \angle OFB = 90^\circ$. Consider an inversion $\Phi$ about $\omega_1$. If $X$ and $Y$ are the intersection points of $\omega_1$ and $\omega_2$, then they stay fixed under $\Phi$. Now, we wish to show that $F^*G^*$ passes through $B$. However, notice that $F^*$ and $G^*$ are just the tangency points of the tangents from $A$ to $\omega_2$. Now, let the midpoint of $AF^*$ be $M$, and the midpoint of $AG^*$ be $N$. Then, $MN$ is the radical axis of $\omega_2$ and the circle with radius $0$ centered at $A$. Now, if $O$ lies on this radical axis, then, \[OO_2^2 - {O_2Y^*}^2 = OY^2\] where $O_2$ is the center of $\omega_2$, which is obviously true, as desired. $\square$
 \end{document}
