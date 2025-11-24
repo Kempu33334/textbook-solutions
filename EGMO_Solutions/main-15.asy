@@ -20,67 +20,27 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
-import geometry;
+import graph;
 
-pair A = (-1,3.5);
-pair B = (-2,0);
-pair C = (2,0);
+pair O = (0,0);
+real R = 4;
+draw(circle(O,R), deepcyan);
 
-real a = length(B - C);
-real b = length(C - A);
-real c = length(A - B);
+pair A = R*dir(168.5);
+pair B = R*dir(11.5);
+pair D = R*dir(110);
+pair C = reflect(O, A+B)*(D);
 
-pair I = incenter(A,B,C);
-real r = inradius(A,B,C);
-path incircle = circle(I,r);
+draw(A--B--C--D--cycle, blue+linewidth(1));
 
-pair IA = (-a*A + b*B + c*C)/(-a + b + c);
+pair O2 = (A + B)/2;
+real r = 2.93;
+draw(circle(O2, r), orange);
 
-pair X = foot(IA,B,C);
-real R = abs(IA - X);
-path excircle = circle(IA,R);
-
-pair D = foot(I,B,C);
-pair E = foot(I,A,C);
-pair F = foot(I,A,B);
-
-draw(A--B--C--cycle);
-
-draw(incircle);
-draw(excircle, dashed);
-
-draw(A--IA, dashed);
-draw(IA--B, dashed);
-draw(IA--C, dashed);
-
-pair[] bInts = intersectionpoints(excircle, A--B + 10*(B - A));
-pair B1 = (abs(bInts[0]-B)>abs(bInts[1]-B)) ? bInts[0] : bInts[1];
-
-pair[] cInts = intersectionpoints(excircle, A--C + 10*(C - A));
-pair C1 = (abs(cInts[0]-C)>abs(cInts[1]-C)) ? cInts[0] : cInts[1];
-
-draw(B1--A--C1);
-
-label("$A$",A,dir(90));
-label("$B$",B,W);
-label("$C$",C,E);
-label("$I$",I,NE);
-label("$I_A$",IA,S);
-label("$D$",D,N);
-label("$E$",E,NE);
-label("$F$",F,NW);
-label("$X$",X,N);
-label("$B_1$",B1,W);
-label("$C_1$",C1,E);
-
-dot(A);
-dot(B);
-dot(C);
-dot(I);
-dot(IA);
-dot(D);
-dot(E);
-dot(F);
-dot(X);
-dot(B1);
-dot(C1);
+dot("$A$", A, dir(150));
+dot("$B$", B, dir(30));
+dot("$C$", C, dir(C));
+dot("$D$", D, dir(D));
+dot("$O$", O, dir(90));
+dot("$O'$", O2, dir(60));
+dot("$P$", O2-(0.1, 0), dir(270));

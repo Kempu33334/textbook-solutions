@@ -20,38 +20,56 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
+import geometry;
 
-pair A = dir(110);
-pair B = dir(-10);
-pair C = dir(-150);
+pair O = (0,0);
 
-pair O = circumcenter(A,B,C);
-draw(circumcircle(A,B,C), gray);
-dot("$O$", O, dir(90));
+real R1 = 5;
+real R2 = 3;
 
-draw(A--B--C--cycle);
+draw(circle(O, R1), black+1bp);
+draw(circle(O, R2), gray+0.8bp);
 
-pair P = 0.4*C + 0.6*A;
-pair Q = 0.72*A + 0.28*B;
-dot("$P$", P, dir(P));
-dot("$Q$", Q, dir(Q));
+pair A = dir(100)*R1;
+pair B = dir(100+180/pi*asin(0.8))*R2;
+pair C = 2*B - A;
+pair D = (A + B)/2;
 
-draw(P--Q, heavyblue);
-draw(C--Q, dashed);
-draw(B--P, dashed);
+pair dirLine = dir(-98.5);
+path lineAEF = A -- (A + 10*dirLine);
 
-pair K = midpoint(B--P);
-pair L = midpoint(C--Q);
-pair M = midpoint(P--Q);
+pair[] inters = intersectionpoints(lineAEF, circle(O, R2));
+pair E, F;
+if (inters.length == 2) {
+E = inters[0];
+F = inters[1];
+} else {
+E = R2*dir(30);
+F = R2*dir(210);
+}
 
-path circleKLM = circumcircle(K,L,M);
-draw(circleKLM, red);
+pair M = 0.625*C + 0.375*A;
 
-draw(M--L--K--cycle, black);
+void drawPerpBisector(pair P, pair Q, pen p=black) {
+pair M = (P + Q)/2;
+pair v = rotate(90)*(Q - P);
+draw(M + 5*unit(v) -- M - 5*unit(v), p);
+}
+
+draw(A--B);
+draw(B--C, dashed);
+draw(lineAEF, dotted);
+draw(D--E, dotted);
+draw(C--F, dotted);
+
+drawPerpBisector(D, E, blue+dashed);
+drawPerpBisector(C, F, red+dashed);
 
 dot("$A$", A, dir(A));
 dot("$B$", B, dir(B));
-dot("$C$", C, dir(C));
-dot("$K$", K, dir(K));
-dot("$L$", L, dir(L));
-dot("$M$", M, dir(M));
+dot("$C$", C, dir(-90));
+dot("$D$", D, dir(B));
+dot("$E$", E, dir(60));
+dot("$F$", F, dir(-60));
+dot("$M$", M, dir(B));
+dot("$O$", O, dir(45));

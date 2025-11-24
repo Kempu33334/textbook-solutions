@@ -19,40 +19,41 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-import graph;
-size(10.46cm);
-pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps);
-pen dotstyle = black;
-real xmin = -5.9, xmax = 14.56, ymin = -3.95, ymax = 11.77;
-pen zzttqq = rgb(0.6,0.2,0);
+size(10cm);
 
-pair A = (2.72,5.22);
-pair B = (1.18,3.1);
-pair C = (5.42,2.82);
-pair P = (1.97,4.19);
-pair Q = (3.67,4.37);
-pair R = (3.9,2.92);
-pair S = (1.84,3.06);
+pair A = dir(110);
+pair B = 1.5*dir(5);
+pair C = dir(-130);
+real a = length(B - C);
+real b = length(C - A);
+real c = length(A - B);
 
-draw(A--B--C--cycle, zzttqq);
-draw(circle((2.91,3.51), 1.16), black+dotted+1);
+pair I = incenter(A,B,C);
 
-dot(A,dotstyle);
-label("$A$", A, dir(90));
-dot(B,dotstyle);
-label("$B$", B, dir(180));
-dot(C,dotstyle);
-label("$C$", C, dir(0));
-dot(P,dotstyle);
-label("$P$", P, dir(135));
-dot(Q,dotstyle);
-label("$Q$", Q, dir(45));
-dot(R,dotstyle);
-label("$R$", R, dir(45));
-dot(S,dotstyle);
-label("$S$", S, dir(135));
+pair I_A = (-a*A + b*B + c*C)/(-a + b + c);
+pair I_B = (a*A - b*B + c*C)/(a - b + c);
+pair I_C = (a*A + b*B - c*C)/(a + b - c);
 
-draw(S--P--R, blue+dashed);
-draw(R--Q--S, deepblue+dashed);
+draw(A--B--C--cycle, black+1);
+draw(I_A--I_B--I_C--cycle, blue+1);
 
-clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+dot("$I$", I, dir(90));
+
+dot("$I_A$", I_A, dir(I_A));
+dot("$I_B$", I_B, dir(I_B));
+dot("$I_C$", I_C, dir(I_C));
+
+pair Ha = foot(I, I_B, I_C);
+pair Hb = foot(I, I_C, I_A);
+pair Hc = foot(I, I_A, I_B);
+
+dot("$A$", Ha, dir(Ha));
+dot("$B$", Hb, dir(Hb));
+dot("$C$", Hc, dir(Hc));
+
+draw(I--Ha, dashed+red);
+draw(I--Hb, dashed+red);
+draw(I--Hc, dashed+red);
+draw(I--I_A, dashed+red);
+draw(I--I_B, dashed+red);
+draw(I--I_C, dashed+red);

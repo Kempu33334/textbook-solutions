@@ -19,82 +19,31 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-import geometry;
-unitsize(1cm);
-
-pair A = (2,5);
-pair B = (6,0);
-pair C = (0,0);
-pair H = orthocenter(A,B,C);
-
-pair A_ = extension(A,H,B,C);
-pair B_ = extension(B,H,A,C);
-pair C_ = extension(C,H,A,B);
-
-pair O = (A + B)/2;
-real R = length(A - B)/2;
-path circ = circle(O,R);
-
-pair O2 = (A + C)/2;
-real R2 = length(A - C)/2;
-path circ2 = circle(O2,R2);
-
-// Construct an extended line through C and C'
-path longLine = C + 5*(C_ - C) -- C - 5*(C_ - C);
-
-// Intersections
-pair[] X = intersectionpoints(circ, longLine);
-
-// M and N
-pair M, N;
-if (X.length >= 2) {
-M = X[0];
-N = X[1];
-} else {
-// Fallback in case tangent
-M = N = X[0];
-}
-
-// Construct an extended line through C and C'
-path longLine2 = B + 5*(B_ - B) -- B - 5*(B_ - B);
-
-// Intersections
-pair[] Y = intersectionpoints(circ2, longLine2);
-
-// M and N
-pair P, Q;
-if (Y.length >= 2) {
-P = Y[0];
-Q = Y[1];
-} else {
-// Fallback in case tangent
-P = Q = Y[0];
-}
-
-// Draw triangle
+unitsize(4cm);
+pair A = (-0.22,1.6);
+pair B = (-1,0);
+pair C = (1,0);
+pair M = (B + C)/2;
+pair P = 0.38*A + 0.62*M;
+pair O1 = circumcenter(A,B,P);
+pair O2 = circumcenter(A,C,P);
+real widen = 15;
+real thetaA1 = degrees(dir(A - O1));
+real thetaB1 = degrees(dir(B - O1));
+real start1 = thetaA1 + widen;
+real end1 = thetaB1 - widen;
+if (start1 < end1) start1 += 360;
+draw(arc(O1, abs(A - O1), start1, end1, CW));
+real thetaA2 = degrees(dir(A - O2));
+real thetaC2 = degrees(dir(C - O2));
+real start2 = thetaA2 - widen;
+real end2 = thetaC2 + widen;
+if (start2 > end2) end2 += 360;
+draw(arc(O2, abs(A - O2), start2, end2, CCW));
 draw(A--B--C--cycle);
-
-// Draw altitudes
-draw(A--A_, blue);
-draw(B--B_, blue);
-draw(C--C_, blue);
-
-draw(C_--M, blue+dotted);
-draw(B_--P, blue+dotted);
-
-// Draw circles
-draw(circ, dashed+purple);
-draw(circ2, dashed+purple);
-
-// Draw points
-dot("$A$", A, dir(90));
-dot("$B$", B, SE);
-dot("$C$", C, SW);
-dot("$H$", H, E);
-dot("$A'$", A_, S);
-dot("$B'$", B_, NW);
-dot("$C'$", C_, NE);
-dot("$M$", M, dir(M));
-dot("$N$", N, dir(270));
-dot("$P$", P, dir(180));
-dot("$Q$", Q, dir(270));
+draw(A--M, dashed);
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$P$", P, E);
+dot("$M$", M, S);

@@ -20,29 +20,39 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 import graph;
-size(10cm);
-real xmin = -7.678048071730215, xmax = 14.483278369354109, ymin = -3.858992138054801, ymax = 11;
-pen ffqqtt = rgb(1,0,0.2); pen zzwwff = rgb(0.6,0.4,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen qqzzff = rgb(0,0.6,1);
+size(8cm);
+real xmin = -15.44, xmax = 15.2, ymin = -9.56, ymax = 9.56;
+pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen ffttww = rgb(1,0.2,0.4); pen ffwwzz = rgb(1,0.4,0.6); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ccwwff = rgb(0.8,0.4,1);
 
-pair A = (-2.5616179587527417,0.8130444909437305);
-pair B = (5.11302,0.813);
-pair C = (-0.41848402953010955,4.256095576932081);
-pair D = (4.539345321067233,2.8313489856601204);
-pair O = (1.275701020623629,0.8130222454718652);
-pair K1 = (2.70713945241218,9.277564920098897);
-pair M1 = (2.7070903822328414,0.8130139475086406);
+pair A = (-2.11,5.72);
+pair B = (-4.95,-1.6);
+pair C = (5.67,-1.6);
+pair I = (-1.0553208207258764,1.0664846703129858);
+pair D_1 = (-1.0553208207258764,-1.6);
+pair E_1 = (0.7718821693855402,3.0085118920434253);
+pair D_2 = (1.7753208207258764,-1.6);
+pair E_2 = (2.7881178306144596,1.111488107956574);
+pair P = (0.7206416414517535,0.38703065937402836);
+pair Q = (-1.0553208207258769,3.7329693406259716);
 
-draw(circle(O, 3.837318979440851), ffqqtt);
-draw(A--K1--B--cycle, zzwwff);
-draw(circle((1.9914101393585786,3.3035449090049256), 2.591320644036969), yqqqyq);
+draw(A--B--C--cycle, xdxdff);
 
-draw(O--M1--K1--cycle, qqzzff);
+draw(circle(I, 2.666484670312986), ffttww);
+draw(I--D_1, ffwwzz);
+draw(I--E_1, ffwwzz);
+draw(E_2--D_2, yqqqyq);
+draw(E_1--D_1, yqqqyq);
+draw(B--E_2, ccwwff);
+draw(A--D_2, ccwwff);
 
-dot("$A$", A, SW);
-dot("$B$", B, E);
-dot("$C$", C, NW);
-dot("$D$", D, NE);
-dot("$O$", O, S);
-dot("$K^*$", K1, N);
-dot("$M^*$", M1, S);
+dot("$A$", A, N);
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$I$", I, NW);
+dot("$D_1$", D_1, S);
+dot("$E_1$", E_1, NE);
+dot("$D_2$", D_2, S);
+dot("$E_2$", E_2, NE);
+dot("$P$", P, NE);
+dot("$Q$", Q, S);
 clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);

@@ -19,27 +19,24 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
-pair A = (0,4);
-pair B = (0,0);
-pair C = (5,0);
-pair D = (4,3);
-pair E = B + 0.3*(C - B);
-pair F = B + 0.6*(C - B);
-draw(A--B--C--D--cycle, linewidth(0.8));
+import geometry;
+
+size(7cm);
+pair A = dir(100);
+pair B = dir(210);
+pair C = dir(-30);
+pair O = circumcenter(A, B, C);
+pair D = intersectionpoint(A--2*O-A, B--C);
+pair K = intersectionpoint(D--3*(A-B+D)-2*D, C--3*((B-C)*dir(-90)+C)-2*C);
+
 dot("$A$", A, N);
 dot("$B$", B, SW);
 dot("$C$", C, SE);
-dot("$D$", D, NE);
-dot("$E$", E, S);
-dot("$F$", F, S);
-draw(A--E, dashed);
-draw(A--F, dashed);
-draw(D--E, dashed);
-draw(D--F, dashed);
-draw(A--C, dotted);
-draw(D--B, dotted);
-markangle(B,A,E, radius=15);
-markangle(F,D,C, radius=15);
-markangle(E,A,F, radius=25, n=2);
-markangle(E,D,F, radius=25, n=2);
+dot("$O$", O, NE);
+dot("$D$", D, S);
+dot("$K$", K, NE);
+
+draw(A--B--C--cycle);
+draw(A--D);
+draw(A--K--D--K--C);
+draw(circumcircle(A,B,C));

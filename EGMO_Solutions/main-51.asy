@@ -21,36 +21,34 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(7cm);
 
-pair A = dir(110);
+pair A = dir(115);
 pair B = dir(210);
 pair C = dir(-30);
-pair D = foot(A, B, C);
-pair E = foot(B, C, A);
-pair F = foot(C, A, B);
-pair H = orthocenter(A, B, C);
-pair EF = extension(E, F, A, A + (F - E) * dir(90));
-pair P = foot(A, E, F);
-pair Q = foot(H, E, F);
-pair R = extension(D, P, Q, H);
+pair O = circumcenter(A, B, C);
+pair I = incenter(A, B, C);
+pair O1 = circumcenter(I, A, B);
+pair O2 = circumcenter(I, B, C);
+pair O3 = circumcenter(I, C, A);
+path gamma = circumcircle(O1, O2, O3);
 
-filldraw(A--B--C--cycle, invisible, black+1);
-draw(A--D, gray);
-draw(B--E, gray);
-draw(C--F, gray);
+draw(circle(O, 1), lightblue);
+draw(circumcircle(A, C, I), dashed+deepgreen);
+draw(circumcircle(A, B, I), dashed+deepgreen);
+draw(circumcircle(B, C, I), dashed+deepgreen);
 
-draw(E--F, lightgray);
-draw(A--P, blue);
-draw(R--Q, red);
-draw(D--P, dashed+blue);
-draw(Q--H, dashed+red);
+draw(A--B--C--cycle);
+draw(I--A--B--cycle, gray);
+draw(I--B--C--cycle, gray);
+draw(I--C--A--cycle, gray);
+draw(O--O1, dotted);
+draw(O--O2, dotted);
+draw(O--O3, dotted);
 
+dot("$I$", I, dir(-90));
 dot("$A$", A, dir(A));
 dot("$B$", B, dir(B));
 dot("$C$", C, dir(C));
-dot("$D$", D, dir(D));
-dot("$E$", E, dir(E));
-dot("$F$", F, dir(F));
-dot("$H$", H, dir(80));
-dot("$P$", P, dir(P));
-dot("$Q$", Q, dir(Q));
-dot("$R$", R, dir(270));
+dot("$O$", O, dir(90));
+dot("$O_1$", O1, dir(O1));
+dot("$O_2$", O2, dir(O2));
+dot("$O_3$", O3, dir(O3));

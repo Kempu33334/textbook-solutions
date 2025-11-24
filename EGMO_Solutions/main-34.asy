@@ -20,41 +20,32 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
+import geometry;
 
-pair reflectLine(pair P, pair A, pair B) {
-return 2*foot(P,A,B)-P;
-}
+pair A = (0,0);
+pair B = (6,0);
+pair C = (2,5);
+pair H = orthocenter(A,B,C);
 
-pair A = (0,-1);
-pair B = (5,1);
-pair C = (4,5);
-C = 1.1*C - 0.1*A;
-pair D = reflectLine(B,A,C);
-D = 1.3*D - 0.3*B;
-pair E = intersectionpoint(A--C, B--D);
+draw(A--B--C--cycle, heavyblue);
+draw(A--foot(A,B,C), dashed+gray);
+draw(B--foot(B,C,A), dashed+gray);
+draw(C--foot(C,A,B), dashed+gray);
 
-pair EA = reflectLine(E, A,B);
-pair EB = reflectLine(E, B,C);
-pair EC = reflectLine(E, C,D);
-pair ED = reflectLine(E, D,A);
+pair O_C = circumcenter(A,B,H);
+pair O_A = circumcenter(B,C,H);
+pair O_B = circumcenter(C,A,H);
 
-draw(A--B--C--D--cycle, heavyblue);
-draw(A--C, dashed+gray);
-draw(B--D, dashed+gray);
-draw(E--EA, dotted);
-draw(E--EB, dotted);
-draw(E--EC, dotted);
-draw(E--ED, dotted);
-draw(EA--EB--EC--ED--cycle, gray+dashed);
+draw(circle(A,B,H), dashed);
+draw(circle(B,C,H), dashed);
+draw(circle(C,A,H), dashed);
 
-draw(circumcircle(EA,EB,EC), purple+dashed);
+draw(O_A--O_B--O_C--cycle, red+1.2);
 
-dot("$A$", A, dir(SW));
-dot("$B$", B, dir(SE));
-dot("$C$", C, dir(45));
-dot("$D$", D, dir(NW));
-dot("$E$", E, dir(90));
-dot("$E_A$", EA, dir(-45));
-dot("$E_B$", EB, dir(0));
-dot("$E_C$", EC, dir(90));
-dot("$E_D$", ED, dir(180));
+dot("$A$", A, dir(-90));
+dot("$B$", B, dir(-90));
+dot("$C$", C, dir(90));
+dot("$H$", H, dir(90));
+dot("$O_A$", O_A, dir(90));
+dot("$O_B$", O_B, dir(90));
+dot("$O_C$", O_C, dir(90));

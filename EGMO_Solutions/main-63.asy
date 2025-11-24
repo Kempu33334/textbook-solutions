@@ -19,33 +19,37 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-import graph;
-size(7cm);
-real labelscalefactor = 0.5;
-real xmin = -16.65704336007145, xmax = 17.22341991180641, ymin = -9.932939644779548, ymax = 10.363800653067488;
-pen rvwvcq = rgb(0.08235294117647059,0.396078431372549,0.7529411764705882); pen wewdxt = rgb(0.43137254901960786,0.42745098039215684,0.45098039215686275);
+size(8cm);
 
-pair A = (-9.28,-2.91);
-pair B = (-0.24,6.57);
-pair C = (4.58,-3.23);
-pair L = (2.1016783415546167,1.8089112557603226);
-pair C_ = (1.9867222065314467,-3.1701263424307404);
-pair B_ = (-1.502621775800476,5.245923182014545);
-pair O = (-2.291222349976468,-0.5241930333557728);
+pair A = (3,-1);
+pair B = (0,1);
+pair C = (0,-1);
+path g1 = circle((0,0),1);
+path g2 = circle((1.5,0),sqrt(3.25));
 
-draw(A--B--C--cycle, rvwvcq);
-draw(L--A, wewdxt);
-draw(B_--L, wewdxt);
-draw(L--C_, wewdxt);
-draw(circle(L, 4.980364476339026), wewdxt);
-draw(circle(O, 7.384787601790356), wewdxt);
+pair[] E = intersectionpoints(g1, A--B);
+pair[] F = intersectionpoints(g2, C--3*E[0] - 2*C);
+pair H = 0.4*A + 0.6*F[0];
+pair[] G = intersectionpoints(g1, 3*E[0] - 2*H--H);
+pair D = extension(A,C,B,G[1]);
 
-dot("$A$", A, SW);
-dot("$B$", B, NE);
-dot("$C$", C, SE);
-dot("$L$", L, NE);
-dot("$C'$", C_, S);
-dot("$B'$", B_, NW);
-dot("$O$", O, SW);
+draw(g1, blue);
+draw(g2, red);
 
-clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+draw(A--B, black);
+draw(B--C, black);
+draw(C--F[0], orange);
+draw(A--F[0], orange);
+draw(B--F[0], black);
+
+draw(H--G[1], purple);
+draw(B--D--A, heavygray);
+
+dot("$A$", A, S);
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$D$", D, S);
+dot("$E$", E[0], S);
+dot("$F$", F[0], dir(F[0]));
+dot("$G$", G[1], NW);
+dot("$H$", H, NE);

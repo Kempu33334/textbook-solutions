@@ -20,43 +20,50 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
+import geometry;
 
-pair A = (1.5,5);
-pair B = (0,0);
-pair C = (6,0);
-pair P = (3,1.8);
+pair A = (-2,7);
+pair B = (-4,0);
+pair C = (5,0);
 
-pair angleBisector(pair V, pair VA, pair VB) {
-pair u = (VA - V)/length(VA - V);
-pair v = (VB - V)/length(VB - V);
-return u + v;
-}
+pair I = incenter(A,B,C);
+real r = inradius(A,B,C);
+pair IA = excenter(B,C,A);
+real ra = exradius(B,C,A);
+path incircle = circle(I,r);
+path excircle = circle(IA,ra);
 
-pair dirA = angleBisector(A,B,C);
-pair dirB = angleBisector(B,C,A);
-pair dirC = angleBisector(C,A,B);
+pair D = foot(I,B,C);
+pair Bp = A*0.685 + B*0.315;
+pair Cp = A*0.685 + C*0.315;
+pair X = foot(IA,B,C);
 
-pair reflAP = reflect(A, A + dirA)*P;
-pair reflBP = reflect(B, B + dirB)*P;
-pair reflCP = reflect(C, C + dirC)*P;
+pair dirBC = dir(B--C);
+pair dirPerp = rotate(90)*dirBC;
+pair E = I + r * unit(dirPerp);
 
-pair Pstar = extension(A, reflAP, B, reflBP);
+draw(A--B--C--cycle, heavyblue);
 
-draw(A--B--C--cycle);
-draw(A--P, gray+0.4);
-draw(B--P, gray+0.4);
-draw(C--P, gray+0.4);
+draw(incircle, black);
+draw(excircle, dotted);
 
-draw(A--Pstar, dashed+blue);
-draw(B--Pstar, dashed+blue);
-draw(C--Pstar, dashed+blue);
+draw(Bp--Cp, black);
+draw(B--C, black);
 
-dot(A); dot(B); dot(C);
-dot(P, red);
-dot(Pstar, blue);
+draw(A--X, dashed);
+draw(B--foot(IA,A,B));
+draw(C--foot(IA,A,C));
 
-label("$A$", A, N);
-label("$B$", B, SW);
-label("$C$", C, SE);
-label("$P$", P, NE);
-label("$P^*$", Pstar, NW);
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(0));
+dot("$I$", I, dir(SW));
+dot("$I_A$", IA, dir(-90));
+dot("$D$", D, dir(-90));
+dot("$X$", X, dir(-90));
+dot("$B'$", Bp, dir(180));
+dot("$C'$", Cp, dir(0));
+dot("$E$", E, dir(240));
+
+draw(B--D, black);
+draw(C--D, black);

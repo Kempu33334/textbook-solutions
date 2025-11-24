@@ -20,32 +20,31 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 import graph;
-size(8cm);
-real xmin = -6.5114032381716385, xmax = 7.421152943124423, ymin = -5.288411647426961, ymax = 3.4057944291520323;
-pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ccwwff = rgb(0.8,0.4,1); pen ffzzcc = rgb(1,0.6,0.8);
+size(10cm);
+real xmin = -3.358449390393843, xmax = 13.671420780771244, ymin = -4.185116974847158, ymax = 6.370434362182181;
+pen qqzzff = rgb(0,0.6,1); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen wwqqcc = rgb(0.4,0,0.8); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ffqqtt = rgb(1,0,0.2);
 
-pair A = (-2.71,2.64);
-pair B = (-3.89,-2.62);
-pair C = (3.17,-2.62);
-pair D = (-1.0241635699543983,-2.62);
-pair E = (-0.36,-4.692265325210487);
-pair F = (-1.2422846270423993,-4.5948158035076725);
-pair M = (B+C)/2;
+pair A = (-2.5616179587527417,0.8130444909437305);
+pair B = (5.11302,0.813);
+pair C = (-0.41848402953010955,4.256095576932081);
+pair D = (4.539345321067233,2.8313489856601204);
+pair M = (11.562920797727344,0.8129626090279434);
+pair O = (1.275701020623629,0.8130222454718652);
+pair K = (1.5617074055079536,2.5042673568975014);
 
-draw(A--B--C--cycle, ffttww);
-draw(circle((-0.36,-0.6495437262357414), 4.042721598974746), wwzzff);
-draw(circle((-0.6920817849771992,-3.656132662605243), 1.0880483474694833), wwzzff);
-draw(A--F, yqqqyq);
-draw(A--M, yqqqyq);
-draw(A--E, ccwwff);
-draw(F--D, ffzzcc);
-draw(F--E, ffzzcc);
+draw(A--M--C, qqzzff);
+draw(circle((-0.6429515457851321,2.007291314029801), 2.2599792651042545), xdxdff);
+draw(circle((3.1943636717931376,1.3583631098169713), 1.9946586242556583), xdxdff);
+draw(shift((6.419310909175486,0.8129924272499043))*xscale(5.143609888638288)*yscale(5.143609888638288)*arc((0,0),1,-0.00033215160324039864,179.99966784839677), yqqqyq+dashed);
+draw(circle(O, 3.837318979440851), ffqqtt);
 
-dot("$A$", A, N);
-dot("$B$", B, SW);
-dot("$C$", C, SE);
+draw(K--O--M--cycle, wwqqcc);
+
+dot("$A$", A, NE);
+dot("$B$", B, NE);
+dot("$C$", C, N);
 dot("$D$", D, NE);
-dot("$E$", E, S);
-dot("$F$", F, SW);
 dot("$M$", M, NE);
+dot("$O$", O, NE);
+dot("$K$", K, NE);
 clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);

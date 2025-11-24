@@ -19,36 +19,26 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(8cm);
+size(6cm);
 
-pair A = dir(115);
-pair B = dir(210);
-pair C = dir(-30);
-pair O = circumcenter(A, B, C);
-pair X = dir(240);
-pair P = foot(X, C, A);
-pair Q = foot(X, C, B);
-pair Bfoot = foot(B, A, C);
-pair R = intersectionpoint(10*P-9*Q--10*Q-9*P, 10*B-9*Bfoot--10*Bfoot-9*B);
-draw(circle(O, abs(O - A)), gray);
+pair P = dir(-70);
+pair Q = dir(50);
+pair R = dir(110);
+pair S = dir(190);
+pair H = foot(Q,P,R);
+pair K = foot(Q,P,S);
 
-pair dirXR = R - X;
-pair l = P + dirXR;
+draw(unitcircle);
+draw(P--Q--R--S--cycle);
+draw(P--R, dashed);
+draw(Q--H, dotted);
+draw(Q--K, dotted);
+draw(Q--S);
+draw(H--K, dashed);
 
-draw(A--B--C--cycle, deepblue);
-draw(X--P, orange);
-draw(X--Q, orange);
-draw(R--Bfoot, dashed+gray);
-draw(P--R, red);
-draw(P--l, heavygreen);
-draw(R--X, black);
-
-label("$\ell$", midpoint(P--l), dir(60), heavygreen);
-
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(W));
-dot("$C$", C, dir(C));
 dot("$P$", P, dir(P));
-dot("$Q$", Q, SW);
-dot("$X$", X, dir(X));
+dot("$Q$", Q, dir(Q));
 dot("$R$", R, dir(R));
+dot("$S$", S, dir(S));
+dot("$H$", H, dir(150));
+dot("$K$", K, dir(K));

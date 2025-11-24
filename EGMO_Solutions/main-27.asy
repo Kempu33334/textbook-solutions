@@ -19,66 +19,56 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(12cm);
+size(10cm);
 
-pair A = (0,5);
-pair B = (-3,0);
-pair C = (4,0);
+pair O1 = (-2,0);
+pair O2 = (2,1);
+real r1 = 4;
+real r2 = 2;
 
-draw(A--B--C--cycle);
+draw(circle(O1, r1), heavyblue);
+draw(circle(O2, r2), heavyred);
 
-pair I = incenter(A,B,C);
-real r = length(foot(I,B,C)-I);
-draw(circle(I,r), gray);
+pair Dvec = O2 - O1;
+real d = length(Dvec);
+real theta = acos((r1 - r2)/d)*180/pi;
+pair u = Dvec / d;
+pair v = rotate(theta)*u;
 
-pair D = foot(I,B,C);
-pair E = foot(I,C,A);
-pair F = foot(I,A,B);
+pair A = O1 + r1 * v;
+pair B = O2 + r2 * v;
 
-path omega = circumcircle(A,B,C);
-draw(omega, lightgray);
+draw(A--B, black+1bp);
+label("$A$", A, dir(A));
+label("$B$", B, dir(B));
 
-path omega1 = circumcircle(A,E,F);
-path omega2 = circumcircle(B,D,F);
-path omega3 = circumcircle(C,D,E);
+pair[] circleIntersections = intersectionpoints(circle(O1, r1), circle(O2, r2));
+pair M = circleIntersections[0];
+pair N = circleIntersections[1];
 
-draw(omega1, heavyblue);
-draw(omega2, heavyred);
-draw(omega3, heavygreen);
+dot("$M$", M, dir(90));
+dot("$N$", N, dir(-90));
 
-pair[] pP = intersectionpoints(omega, omega1);
-pair[] pQ = intersectionpoints(omega, omega2);
-pair[] pR = intersectionpoints(omega, omega3);
+pair dirAB = unit(B - A);
 
-pair P;
-if(pP.length==2)
-P = ( abs(pP[0]-A)>0.01 ? pP[0]: pP[1] );
-else
-P = pP[0];
+pair C = intersectionpoint(M - 1*dirAB -- M - 10*dirAB, circle(O1, r1));
+pair D = intersectionpoint(M -- M + 10*dirAB, circle(O2, r2));
+draw(C--D, black+1bp);
+label("$C$", C, dir(135));
+label("$D$", D, dir(45));
 
-pair Q;
-if(pQ.length==2)
-Q = ( abs(pQ[0]-B)>0.01 ? pQ[0]: pQ[1] );
-else
-Q = pQ[0];
+pair E = extension(A, C, B, D);
+draw(C--E, dashed);
+draw(D--E, dashed);
+dot("$E$", E, dir(90));
 
-pair R;
-if(pR.length==2)
-R = ( abs(pR[0]-C)>0.01 ? pR[0]: pR[1] );
-else
-R = pR[0];
+pair P = extension(A, N, C, D);
+pair Q = extension(B, N, C, D);
+draw(A--N, gray+dashed);
+draw(B--N, gray+dashed);
+draw(D--P, gray+dashed);
+dot("$P$", P, dir(-90));
+dot("$Q$", Q, dir(-90));
 
-draw(P--D, dashed+blue);
-draw(Q--E, dashed+red);
-draw(R--F, dashed+darkgreen);
-
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(210));
-dot("$C$", C, dir(330));
-dot("$D$", D, dir(D));
-dot("$E$", E, dir(E));
-dot("$F$", F, dir(F));
-dot("$P$", P, dir(P));
-dot("$Q$", Q, dir(Q));
-dot("$R$", R, dir(R));
-dot("$I$", I, dir(90));
+draw(E--P, blue);
+draw(E--Q, blue);

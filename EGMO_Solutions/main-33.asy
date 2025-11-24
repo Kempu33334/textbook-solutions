@@ -19,41 +19,42 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
-import geometry;
+size(7cm);
 
-pair A = (2,5);
-pair B = (0,0);
-pair C = (6,0);
-path omega = circumcircle(A,B,C);
+pair A = (0,0);
+pair B = (0,-5);
+pair C = (4,-6);
 
-pair dirBC = C - B;
+real theta = degrees(angle(C - A) - angle(B - A));
 
-pair[] Xcand = intersectionpoints(omega, A--(A + 10*dirBC));
+// Scale factor
+real scale_factor = abs(C - A)/abs(B - A);
 
-pair X = (abs(Xcand[0]-A) > 1e-3) ? Xcand[0] : Xcand[1];
+// Rotate AC by theta about A and rescale
+pair D = scale_factor * (rotate(theta,A)*C);
+pair E = scale_factor * (rotate(theta,A)*D);
 
-pair G = (A + B + C)/3;
-pair K = foot(A, B, C);
+pair P = intersectionpoint(B--D, C--E);
+pair M = 0.5*(C+D);
 
-pair D = midpoint(B--C);
-pair E = midpoint(C--A);
-pair F = midpoint(A--B);
+draw(A--B--C--D--E--cycle, black);
+draw(B--D, blue);
+draw(C--E, blue);
 
-draw(A--B--C--cycle, heavyblue);
-draw(omega, gray+dashed);
-draw(A--X, red);
-draw(A--K, dashed);
-draw(K--X, heavygreen);
+pair X = intersectionpoint(B--D, A--C);
+pair Y = intersectionpoint(C--E, A--D);
 
-draw(D--E--F--cycle, purple+1);
+draw(A--P, red);
+draw(C--D, dashed);
+draw(A--M, gray+dashed);
+draw(C--A--D, dashed);
 
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(SW));
-dot("$C$", C, dir(SE));
-dot("$X$", X, dir(90));
-dot("$G$", G, dir(90));
-dot("$K$", K, dir(-90));
-dot("$D$", D, dir(-90));
-dot("$E$", E, dir(135));
-dot("$F$", F, dir(135));
+dot("$A$", A, dir(135));
+dot("$B$", B, dir(-90));
+dot("$C$", C, dir(270));
+dot("$D$", D, dir(0));
+dot("$E$", E, dir(90));
+dot("$P$", P, dir(90));
+dot("$M$", M, dir(-45));
+dot("$X$", X, dir(150));
+dot("$Y$", Y, dir(90));

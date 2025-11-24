@@ -20,38 +20,28 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 import geometry;
+
 size(6cm);
-pair A = (0,0);
-pair B = (6,0);
-pair C = (2,5);
-real a = length(B - C);
-real b = length(C - A);
-real c = length(A - B);
-pair I = (a*A + b*B + c*C) / (a + b + c);
-real s = (a + b + c)/2;
-real area = sqrt(s * (s - a) * (s - b) * (s - c));
-real r = area / s;
-path incircle = circle(I, r);
-pair foot(pair P, pair X, pair Y) {
-pair v = Y - X;
-return X + v * dot(P - X, v) / length(v)^2;
-}
-pair D = foot(I, A, B);
-pair E = foot(I, A, C);
-pair O = circumcenter(B, C, I);
-draw(A--B--C--cycle, black);
-draw(incircle, blue);
-draw(circumcircle(B, C, I), dashed + gray);
-dot("$A$", A, SW);
-dot("$B$", B, SE);
-dot("$C$", C, N);
-dot("$I$", I, dir(180));
-dot("$D$", D, S);
-dot("$E$", E, NE);
-dot("$O$", O, dir(90));
-draw(O--D, red);
-draw(D--B, red);
-draw(O--E, red);
-draw(E--C, red);
-draw(I--D, gray + dotted);
-draw(I--E, gray + dotted);
+pair A = dir(100);
+pair B = dir(210);
+pair C = dir(-30);
+pair Dp = foot(A,B,C);
+pair Ep = foot(B,A,C);
+pair Fp = foot(C,A,B);
+pair H = intersectionpoint(A -- Dp, B -- Ep);
+pair X = 2 * Dp - H;
+pair Y = B + C - H;
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$H$", H, dir(70));
+dot("$X$", X, S);
+dot("$Y$", Y, S);
+
+draw(A--B--C--cycle);
+draw(A--X);
+draw(B--Ep);
+draw(C--Fp);
+draw(H--Y);
+draw(circumcircle(A,B,C));

@@ -19,39 +19,38 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(6cm);
+size(8cm);
 
-pair A = dir(110);
-pair B = dir(-10);
-pair C = dir(-150);
-
-pair O = circumcenter(A,B,C);
-draw(circumcircle(A,B,C), gray);
-dot("$O$", O, dir(90));
+pair A = dir(120);
+pair B = dir(210);
+pair C = dir(-30);
 
 draw(A--B--C--cycle);
 
-pair P = 0.4*C + 0.6*A;
-pair Q = 0.72*A + 0.28*B;
-dot("$P$", P, dir(P));
-dot("$Q$", Q, dir(Q));
+path omega = circumcircle(A, B, C);
+draw(omega, gray);
 
-draw(P--Q, heavyblue);
-draw(C--Q, dashed);
-draw(B--P, dashed);
+pair R = intersectionpoint( C -- (100*incenter(B,C,A) - 99*C), omega );
 
-pair K = midpoint(B--P);
-pair L = midpoint(C--Q);
-pair M = midpoint(P--Q);
+pair K = midpoint(B--C);
+pair L = midpoint(A--C);
 
-path circleKLM = circumcircle(K,L,M);
-draw(circleKLM, red);
+pair dir1 = rotate(90)*(C - B);
+pair dir2 = rotate(90)*(C - A);
 
-draw(M--L--K--cycle, black);
+pair P = extension(R, C, K, K + dir1);
+pair Q = extension(R, C, L, L + dir2);
+
+draw(C--R);
+draw(R--P--K--cycle, red);
+draw(R--Q--L--cycle, blue);
+draw(B--R--A, dashed);
 
 dot("$A$", A, dir(A));
 dot("$B$", B, dir(B));
 dot("$C$", C, dir(C));
+dot("$R$", R, dir(R));
+dot("$P$", P, dir(Q));
+dot("$Q$", Q, dir(Q));
 dot("$K$", K, dir(K));
 dot("$L$", L, dir(L));
-dot("$M$", M, dir(M));

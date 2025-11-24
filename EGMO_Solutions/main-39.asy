@@ -19,46 +19,48 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(8cm);
+size(7cm);
 import geometry;
 
-pair A = dir(110);
-pair B = dir(190);
-pair C = dir(-10);
-pair D = foot(A,B,C);
+pair A = (1,5);
+pair B = (0,0);
+pair C = (6,0);
+pair O = circumcenter(A,B,C);
 pair H = orthocenter(A,B,C);
-pair P = dir(60);
-pair X = foot(P,B,C);
-pair Y = foot(P,A,C);
-pair Z = foot(P,A,B);
-pair L = extension(A,D,X,Y);
+pair A2 = foot(A,H,O);
+pair B2 = foot(B,H,O);
+pair C2 = foot(C,H,O);
+pair G = (2*O + H)/3;
 
-path ABC = circumcircle(A,B,C);
+draw(A--B--C--cycle, heavyblue);
 
-pair[] K = intersectionpoints(ABC, X-(0,2)--P-(0,0.1));
-pair KX = 2*X-K[0];
+draw(3*O-2*H--2*H-O, dashed+gray);
+draw(O--A, gray);
+draw(O--B, gray);
+draw(O--C, gray);
+draw(H--A, gray);
+draw(H--B, gray);
+draw(H--C, gray);
 
-dot("$A$", A, dir(NW));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(C));
-dot("$D$", D, dir(NW));
-dot("$H$", H, dir(SW));
-dot("$K$", K[0], dir(SE));
-dot("$K'$", KX, dir(KX));
-dot("$L$", L, dir(L));
-dot("$P$", P, dir(P));
-dot("$X$", X, dir(NE));
-dot("$Y$", Y, dir(SW));
-dot("$Z$", Z, dir(NE));
+draw(circumcircle(A,B,C), purple+dashed);
 
-draw(A--B--C--cycle);
-draw(P--K[0]);
-draw(P--Y);
-draw(P--Z);
-draw(A--D);
-draw(A--K[0]);
-draw(P--H);
-draw(X--L);
-draw(A--Z, dotted);
-draw(A--L);
-draw(ABC);
+filldraw(A--O--H--cycle, rgb(1,0.8,0.8)+opacity(0.4), red+1);
+filldraw(B--O--H--cycle, rgb(0.8,1,0.8)+opacity(0.4), green+1);
+filldraw(C--O--H--cycle, rgb(0.8,0.8,1)+opacity(0.4), blue+1);
+
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(270));
+dot("$C$", C, dir(SE));
+dot("$O$", O, dir(90));
+dot("$H$", H, dir(135));
+dot("$A'$", A2, dir(-30));
+dot("$B'$", B2, dir(164));
+dot("$C'$", C2, dir(150));
+dot("$G$", G, dir(150));
+dot("$M$", (B + C)/2, dir(270));
+
+draw(A--foot(A,H,O), dotted+0.5);
+draw(B--foot(B,H,O), dotted+0.5);
+draw(C--foot(C,H,O), dotted+0.5);
+draw(B--extension(H,O,B,C), dashed+gray);
+draw(A--(B + C)/2);

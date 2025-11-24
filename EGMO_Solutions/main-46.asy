@@ -19,35 +19,44 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(200);
+size(10cm);
 
-pair A = dir(115);
-pair B = dir(210);
-pair C = dir(-30);
-pair K = 0.26*A + 0.74*B;
-pair L = 0.42*A + 0.58*C;
-pair T = (-0.41,-sqrt(1-0.41^2));
-pair I = incenter(A, B, C);
-pair S = dir(90);
-pair MB = dir(85/2);
-pair MC = dir(325/2);
+pair A = (1.5,5);
+pair B = (0,0);
+pair C = (6,0);
+pair P = (3,1.8);
 
-draw(circle((0,0),1));
-draw(circle((-0.143,-0.332),0.6335));
+pair angleBisector(pair V, pair VA, pair VB) {
+pair u = (VA - V)/length(VA - V);
+pair v = (VB - V)/length(VB - V);
+return u + v;
+}
+
+pair dirA = angleBisector(A,B,C);
+pair dirB = angleBisector(B,C,A);
+pair dirC = angleBisector(C,A,B);
+
+pair reflAP = reflect(A, A + dirA)*P;
+pair reflBP = reflect(B, B + dirB)*P;
+pair reflCP = reflect(C, C + dirC)*P;
+
+pair Pstar = extension(A, reflAP, B, reflBP);
 
 draw(A--B--C--cycle);
-draw(MC--MB--T--cycle);
-draw(B--C);
-draw(T--S, dashed);
-draw(K--L);
+draw(A--P, gray+0.4);
+draw(B--P, gray+0.4);
+draw(C--P, gray+0.4);
 
-dot("$A$", A, dir(A));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(C));
-dot("$K$", K, dir(K));
-dot("$L$", L, dir(L));
-dot("$T$", T, dir(T));
-dot("$I$", I, dir(NW));
-dot("$S$", S, dir(90));
-dot("$M_B$", MB, dir(MB));
-dot("$M_C$", MC, dir(MC));
+draw(A--Pstar, dashed+blue);
+draw(B--Pstar, dashed+blue);
+draw(C--Pstar, dashed+blue);
+
+dot(A); dot(B); dot(C);
+dot(P, red);
+dot(Pstar, blue);
+
+label("$A$", A, N);
+label("$B$", B, SW);
+label("$C$", C, SE);
+label("$P$", P, NE);
+label("$P^*$", Pstar, NW);

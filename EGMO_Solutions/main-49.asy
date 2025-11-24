@@ -19,43 +19,35 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(6cm);
+size(200);
 
 pair A = dir(115);
 pair B = dir(210);
-pair C = dir(-20);
+pair C = dir(-30);
+pair K = 0.26*A + 0.74*B;
+pair L = 0.42*A + 0.58*C;
+pair T = (-0.41,-sqrt(1-0.41^2));
+pair I = incenter(A, B, C);
+pair S = dir(90);
+pair MB = dir(85/2);
+pair MC = dir(325/2);
 
-pair A1 = midpoint(B--C);
-pair B1 = midpoint(C--A);
-pair C1 = midpoint(A--B);
+draw(circle((0,0),1));
+draw(circle((-0.143,-0.332),0.6335));
 
-pair O = circumcenter(A, B, C);
-
-real kA = abs(O - A)^2 / abs(O - A1)^2;
-real kB = abs(O - B)^2 / abs(O - B1)^2;
-real kC = abs(O - C)^2 / abs(O - C1)^2;
-
-pair A2 = O + kA * (A1 - O);
-pair B2 = O + kB * (B1 - O);
-pair C2 = O + kC * (C1 - O);
-
-draw(circle(O, abs(O - A)), lightblue);
 draw(A--B--C--cycle);
-draw(O--A1, gray+dashed);
-draw(O--B1, gray+dashed);
-draw(O--C1, gray+dashed);
-
-draw(A--A2, heavygreen);
-draw(B--B2, heavygreen);
-draw(C--C2, heavygreen);
+draw(MC--MB--T--cycle);
+draw(B--C);
+draw(T--S, dashed);
+draw(K--L);
 
 dot("$A$", A, dir(A));
 dot("$B$", B, dir(B));
 dot("$C$", C, dir(C));
-dot("$O$", O, dir(90));
-dot("$A_1$", A1, dir(A1));
-dot("$B_1$", B1, dir(B1));
-dot("$C_1$", C1, dir(C1));
-dot("$A_2$", A2, dir(A2));
-dot("$B_2$", B2, dir(B2));
-dot("$C_2$", C2, dir(C2));
+dot("$K$", K, dir(K));
+dot("$L$", L, dir(L));
+dot("$T$", T, dir(T));
+dot("$I$", I, dir(NW));
+dot("$S$", S, dir(90));
+dot("$M_B$", MB, dir(MB));
+dot("$M_C$", MC, dir(MC));

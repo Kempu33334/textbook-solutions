@@ -19,47 +19,68 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-import geometry;
 size(10cm);
-unitsize(1cm);
+import geometry;
 
-pair A = (0, 0);
-pair B = (6, 0);
-pair M = (2.5, 0);
-pair C = rotate(-60, M)*A;
-pair D = rotate(60, M)*B;
-pair K = rotate(60, B)*A;
+pair A = (-1,3.5);
+pair B = (-2,0);
+pair C = (2,0);
 
-path circ1 = circumcircle(A, M, C);
-path circ2 = circumcircle(B, M, D);
+real a = length(B - C);
+real b = length(C - A);
+real c = length(A - B);
 
-pair[] X = intersectionpoints(circ1, circ2);
+pair I = incenter(A,B,C);
+real r = inradius(A,B,C);
+path incircle = circle(I,r);
 
-pair N;
-if (X.length == 2) {
-N = (X[0] == M) ? X[1] : X[0];
-} else {
-N = X[0];
-}
+pair IA = (-a*A + b*B + c*C)/(-a + b + c);
 
-draw(A--B, black+1);
-draw(A--C--M--cycle, blue);
-draw(B--D--M--cycle, blue);
-draw(A--K--B, black);
+pair X = foot(IA,B,C);
+real R = abs(IA - X);
+path excircle = circle(IA,R);
 
-draw(circ1, dashed+blue);
-draw(circ2, dashed+blue);
+pair D = foot(I,B,C);
+pair E = foot(I,A,C);
+pair F = foot(I,A,B);
 
-draw(A--D, red);
-draw(B--C, red);
-draw(M--N, heavygray+1);
-draw(M--K, heavygray+1+dotted);
-draw(C--D,blue+dotted+1);
+draw(A--B--C--cycle);
 
-dot("$A$", A, SW);
-dot("$B$", B, SE);
-dot("$M$", M, S);
-dot("$C$", C, NW);
-dot("$D$", D, NE);
-dot("$K$", K, S);
-dot("$N$", N, dir(N));
+draw(incircle);
+draw(excircle, dashed);
+
+draw(A--IA, dashed);
+draw(IA--B, dashed);
+draw(IA--C, dashed);
+
+pair[] bInts = intersectionpoints(excircle, A--B + 10*(B - A));
+pair B1 = (abs(bInts[0]-B)>abs(bInts[1]-B)) ? bInts[0] : bInts[1];
+
+pair[] cInts = intersectionpoints(excircle, A--C + 10*(C - A));
+pair C1 = (abs(cInts[0]-C)>abs(cInts[1]-C)) ? cInts[0] : cInts[1];
+
+draw(B1--A--C1);
+
+label("$A$",A,dir(90));
+label("$B$",B,W);
+label("$C$",C,E);
+label("$I$",I,NE);
+label("$I_A$",IA,S);
+label("$D$",D,N);
+label("$E$",E,NE);
+label("$F$",F,NW);
+label("$X$",X,N);
+label("$B_1$",B1,W);
+label("$C_1$",C1,E);
+
+dot(A);
+dot(B);
+dot(C);
+dot(I);
+dot(IA);
+dot(D);
+dot(E);
+dot(F);
+dot(X);
+dot(B1);
+dot(C1);

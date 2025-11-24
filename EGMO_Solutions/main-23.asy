@@ -19,57 +19,50 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
 import geometry;
+size(10cm);
+unitsize(1cm);
 
-pair O = (0,0);
+pair A = (2,5);
+pair B = (0,0);
+pair C = (6,0);
+pair H = orthocenter(A,B,C);
 
-real R1 = 5;
-real R2 = 3;
+pair M_A = midpoint(B--C);
+pair M_B = midpoint(A--C);
+pair M_C = midpoint(A--B);
 
-draw(circle(O, R1), black+1bp);
-draw(circle(O, R2), gray+0.8bp);
+path circA = circle(M_A, abs(H - M_A));
+path circB = circle(M_B, abs(H - M_B));
+path circC = circle(M_C, abs(H - M_C));
 
-pair A = dir(100)*R1;
-pair B = dir(100+180/pi*asin(0.8))*R2;
-pair C = 2*B - A;
-pair D = (A + B)/2;
+pair[] A_pts = intersectionpoints(circA, B--C);
+pair A1 = A_pts[0], A2 = A_pts[1];
 
-pair dirLine = dir(-98.5);
-path lineAEF = A -- (A + 10*dirLine);
+pair[] B_pts = intersectionpoints(circB, A--C);
+pair B1 = B_pts[0], B2 = B_pts[1];
 
-pair[] inters = intersectionpoints(lineAEF, circle(O, R2));
-pair E, F;
-if (inters.length == 2) {
-E = inters[0];
-F = inters[1];
-} else {
-E = R2*dir(30);
-F = R2*dir(210);
-}
+pair[] C_pts = intersectionpoints(circC, A--B);
+pair C1 = C_pts[0], C2 = C_pts[1];
 
-pair M = 0.625*C + 0.375*A;
+draw(A--B--C--cycle, black+1);
 
-void drawPerpBisector(pair P, pair Q, pen p=black) {
-pair M = (P + Q)/2;
-pair v = rotate(90)*(Q - P);
-draw(M + 5*unit(v) -- M - 5*unit(v), p);
-}
+draw(circA, dashed+red);
+draw(circB, dashed+red);
+draw(circC, dashed+red);
+draw(circumcircle(A1,A2,C2),blue+dotted+1);
 
-draw(A--B);
-draw(B--C, dashed);
-draw(lineAEF, dotted);
-draw(D--E, dotted);
-draw(C--F, dotted);
+draw(B--C, gray);
+draw(A--C, gray);
+draw(A--B, gray);
 
-drawPerpBisector(D, E, blue+dashed);
-drawPerpBisector(C, F, red+dashed);
-
-dot("$A$", A, dir(A));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(-90));
-dot("$D$", D, dir(B));
-dot("$E$", E, dir(60));
-dot("$F$", F, dir(-60));
-dot("$M$", M, dir(B));
-dot("$O$", O, dir(45));
+dot("$A$", A, dir(90));
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$H$", H, dir(H));
+dot("$A_1$", A1, S);
+dot("$A_2$", A2, S);
+dot("$B_1$", B1, dir(B1));
+dot("$B_2$", B2, dir(B2));
+dot("$C_1$", C1, NW);
+dot("$C_2$", C2, dir(C2));

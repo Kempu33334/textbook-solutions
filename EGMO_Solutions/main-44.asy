@@ -19,37 +19,52 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(160);
+size(10cm);
 import geometry;
 
-pair A = dir(165);
-pair B = dir(15);
-pair O = (0,0);
-real R = 1;
-draw(circle(O, R));
+pair A = (-2,7);
+pair B = (-4,0);
+pair C = (5,0);
 
-pair M = dir(270);
+pair I = incenter(A,B,C);
+real r = inradius(A,B,C);
+pair IA = excenter(B,C,A);
+real ra = exradius(B,C,A);
+path incircle = circle(I,r);
+path excircle = circle(IA,ra);
 
-draw(A--B);
-draw(A--M, dotted);
-draw(B--M, dotted);
+pair D = foot(I,B,C);
+pair X = foot(IA,B,C);
+pair K = foot(A,B,C);
+pair M = midpoint(A--K);
+pair Y = 2*IA-X;
 
-real r = 0.31;
-pair K = 0.3*A + 0.7*B;
+pair dirBC = dir(B--C);
+pair dirPerp = rotate(90)*dirBC;
+pair E = I + r * unit(dirPerp);
 
-pair dir_perp = rotate(90)*(B - A);
-dir_perp = dir_perp / length(dir_perp);
-pair P = K + r * dir_perp;
+draw(incircle, black);
+draw(excircle, dotted);
 
-pair T = (0.56,sqrt(1-0.56^2));
+draw(A--B--C--cycle, heavyblue);
+draw(B--C, black);
+draw(A--X);
+draw(A--K);
+draw(A--Y);
+draw(X--M--IA, dashed);
+draw(B--foot(IA,A,B));
+draw(C--foot(IA,A,C));
+draw(B--D, black);
+draw(C--D, black);
 
-draw(circle(P, r));
-draw(M--T, dashed);
-
-dot("$A$", A, dir(A));
+dot("$A$", A, dir(90));
 dot("$B$", B, dir(B));
-dot("$M$", M, dir(270));
-dot("$O$", O, dir(-90));
-dot("$P$", P, dir(135));
-dot("$K$", K, dir(-45));
-dot("$T$", T, dir(T));
+dot("$C$", C, dir(0));
+dot("$I$", I, dir(N));
+dot("$I_A$", IA, dir(-90));
+dot("$D$", D, dir(225));
+dot("$X$", X, dir(-90));
+dot("$E$", E, dir(240));
+dot("$K$", K, dir(225));
+dot("$M$", M, dir(235));
+dot("$Y$", Y, dir(270));

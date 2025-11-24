@@ -20,47 +20,30 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(6cm);
-defaultpen(fontsize(10pt));
-pair foot(pair P, pair A, pair B) {
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair O = (0,0);
+pair X = dir((degrees(B)+degrees(C))/2);
+pair Y = -dir((degrees(C)+degrees(A))/2);
+pair Z = dir((degrees(A)+degrees(B))/2);
+pair I = incenter(A,B,C);
+pair foot(pair P, pair A, pair B)
+{
 pair v = B - A;
 return A + v * dot(P - A, v)/dot(v,v);
 }
-pair intersect(pair A, pair v, pair B, pair w) {
-real t = cross(B - A, w)/cross(v, w);
-return A + t*v;
-}
-pair A = (-1,3);
-pair B = (-2,0);
-pair C = (2,0);
-real a = length(B - C);
-real b = length(C - A);
-real c = length(A - B);
-real s = (a+b+c)/2;
-pair I = (a*A + b*B + c*C) / (a+b+c);
-real r = sqrt((s - a)*(s - b)*(s - c)/s);
-pair D = foot(I, B, C);
-pair E = foot(I, C, A);
-pair F = foot(I, A, B);
-pair M = (B+C)/2;
-pair N = (A+C)/2;
-pair dirEF = F - E;
-pair dirBI = I - B;
-pair K = intersect(B, dirBI, E, dirEF);
+draw(unitcircle, gray);
 draw(A--B--C--cycle, black+1);
-draw(circle(I,r), deepblue);
-draw(K--F, dashed+blue);
-draw(B--K, dashed+red);
-draw(B--K, red);
-draw(C--K, red);
-draw(M--N, purple);
-draw(N--K, dashed+purple);
+draw(X--Y--Z--cycle, blue);
+draw(X--foot(X,Y,Z), dashed+red);
+draw(Y--foot(Y,Z,X), dashed+red);
+draw(Z--foot(Z,X,Y), dashed+red);
 dot("$A$", A, dir(90));
-dot("$B$", B, dir(225));
-dot("$C$", C, dir(315));
-dot("$I$", I, dir(90));
-dot("$D$", D, dir(270));
-dot("$E$", E, dir(E));
-dot("$F$", F, dir(F));
-dot("$M$", M, dir(270));
-dot("$N$", N, dir(45));
-dot("$K$", K, dir(45));
+dot("$B$", B, dir(210));
+dot("$C$", C, dir(330));
+dot("$X$", X, dir(X));
+dot("$Y$", Y, dir(Y));
+dot("$Z$", Z, dir(Z));
+dot("$I$", I, dir(270));
+dot(I, red+1.5);

@@ -19,42 +19,66 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(7cm);
+size(12cm);
 
-pair A = (0,0);
-pair B = (0,-5);
-pair C = (4,-6);
+pair A = (0,5);
+pair B = (-3,0);
+pair C = (4,0);
 
-real theta = degrees(angle(C - A) - angle(B - A));
+draw(A--B--C--cycle);
 
-// Scale factor
-real scale_factor = abs(C - A)/abs(B - A);
+pair I = incenter(A,B,C);
+real r = length(foot(I,B,C)-I);
+draw(circle(I,r), gray);
 
-// Rotate AC by theta about A and rescale
-pair D = scale_factor * (rotate(theta,A)*C);
-pair E = scale_factor * (rotate(theta,A)*D);
+pair D = foot(I,B,C);
+pair E = foot(I,C,A);
+pair F = foot(I,A,B);
 
-pair P = intersectionpoint(B--D, C--E);
-pair M = 0.5*(C+D);
+path omega = circumcircle(A,B,C);
+draw(omega, lightgray);
 
-draw(A--B--C--D--E--cycle, black);
-draw(B--D, blue);
-draw(C--E, blue);
+path omega1 = circumcircle(A,E,F);
+path omega2 = circumcircle(B,D,F);
+path omega3 = circumcircle(C,D,E);
 
-pair X = intersectionpoint(B--D, A--C);
-pair Y = intersectionpoint(C--E, A--D);
+draw(omega1, heavyblue);
+draw(omega2, heavyred);
+draw(omega3, heavygreen);
 
-draw(A--P, red);
-draw(C--D, dashed);
-draw(A--M, gray+dashed);
-draw(C--A--D, dashed);
+pair[] pP = intersectionpoints(omega, omega1);
+pair[] pQ = intersectionpoints(omega, omega2);
+pair[] pR = intersectionpoints(omega, omega3);
 
-dot("$A$", A, dir(135));
-dot("$B$", B, dir(-90));
-dot("$C$", C, dir(270));
-dot("$D$", D, dir(0));
-dot("$E$", E, dir(90));
-dot("$P$", P, dir(90));
-dot("$M$", M, dir(-45));
-dot("$X$", X, dir(150));
-dot("$Y$", Y, dir(90));
+pair P;
+if(pP.length==2)
+P = ( abs(pP[0]-A)>0.01 ? pP[0]: pP[1] );
+else
+P = pP[0];
+
+pair Q;
+if(pQ.length==2)
+Q = ( abs(pQ[0]-B)>0.01 ? pQ[0]: pQ[1] );
+else
+Q = pQ[0];
+
+pair R;
+if(pR.length==2)
+R = ( abs(pR[0]-C)>0.01 ? pR[0]: pR[1] );
+else
+R = pR[0];
+
+draw(P--D, dashed+blue);
+draw(Q--E, dashed+red);
+draw(R--F, dashed+darkgreen);
+
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(210));
+dot("$C$", C, dir(330));
+dot("$D$", D, dir(D));
+dot("$E$", E, dir(E));
+dot("$F$", F, dir(F));
+dot("$P$", P, dir(P));
+dot("$Q$", Q, dir(Q));
+dot("$R$", R, dir(R));
+dot("$I$", I, dir(90));

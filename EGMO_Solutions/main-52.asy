@@ -19,32 +19,43 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(8cm);
+size(6cm);
 
-pair A = dir(180/pi * atan(4/3) + 90);
-pair B = dir(180/pi * atan(4/3));
-pair C = dir(180/pi * atan(4/3) - 90);
-pair D = dir(-18);
-pair E = 2*(0.3,0.4)-B;
-pair F = 0.7*C + 0.3*E;
-pair M = -1*B;
-pair P = extension(A,C,B,D);
-pair Z = (0.58,-0.015);
+pair A = dir(115);
+pair B = dir(210);
+pair C = dir(-20);
 
-draw(unitcircle);
-draw(circle((0.3,0.4),0.5));
-draw(circle((0.714,-0.224),0.2459));
-draw(Z--E--B--cycle, dashed);
+pair A1 = midpoint(B--C);
+pair B1 = midpoint(C--A);
+pair C1 = midpoint(A--B);
 
-draw(A--P);
-draw(B--P);
+pair O = circumcenter(A, B, C);
+
+real kA = abs(O - A)^2 / abs(O - A1)^2;
+real kB = abs(O - B)^2 / abs(O - B1)^2;
+real kC = abs(O - C)^2 / abs(O - C1)^2;
+
+pair A2 = O + kA * (A1 - O);
+pair B2 = O + kB * (B1 - O);
+pair C2 = O + kC * (C1 - O);
+
+draw(circle(O, abs(O - A)), lightblue);
+draw(A--B--C--cycle);
+draw(O--A1, gray+dashed);
+draw(O--B1, gray+dashed);
+draw(O--C1, gray+dashed);
+
+draw(A--A2, heavygreen);
+draw(B--B2, heavygreen);
+draw(C--C2, heavygreen);
 
 dot("$A$", A, dir(A));
-dot("$C$", B, dir(B));
-dot("$B$", C, dir(S));
-dot("$D$", D, dir(D));
-dot("$E$", E, dir(SW));
-dot("$F$", F, dir(SW));
-dot("$M$", M, dir(M));
-dot("$P$", P, dir(P));
-dot("$Z$", Z, dir(NW));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$O$", O, dir(90));
+dot("$A_1$", A1, dir(A1));
+dot("$B_1$", B1, dir(B1));
+dot("$C_1$", C1, dir(C1));
+dot("$A_2$", A2, dir(A2));
+dot("$B_2$", B2, dir(B2));
+dot("$C_2$", C2, dir(C2));

@@ -19,28 +19,25 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
-import graph;
-
-pair O = (0,0);
-real R = 4;
-draw(circle(O,R), deepcyan);
-
-pair A = R*dir(168.5);
-pair B = R*dir(11.5);
-pair D = R*dir(110);
-pair C = reflect(O, A+B)*(D);
-
-draw(A--B--C--D--cycle, blue+linewidth(1));
-
-pair O2 = (A + B)/2;
-real r = 2.93;
-draw(circle(O2, r), orange);
-
-dot("$A$", A, dir(150));
-dot("$B$", B, dir(30));
-dot("$C$", C, dir(C));
-dot("$D$", D, dir(D));
-dot("$O$", O, dir(90));
-dot("$O'$", O2, dir(60));
-dot("$P$", O2-(0.1, 0), dir(270));
+size(6cm);
+defaultpen(fontsize(10pt));
+pair A = (-1,3);
+pair B = (-2,0);
+pair C = (2,0);
+real a = length(B - C);
+real b = length(C - A);
+real c = length(A - B);
+pair I = (a*A + b*B + c*C)/(a + b + c);
+pair P = (0.3,1.1);
+draw(A--B--C--cycle, black+1);
+draw(A--I, deepgreen+1.2);
+draw(B--I, dotted);
+draw(C--I, dotted);
+draw(A--P, orange+1.2+dashed);
+draw(P--B, black+dashed);
+draw(P--C, black+dashed);
+dot("$A$", A, dir(90));
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$I$", I, dir(180));
+dot("$P$", P, dir(270));

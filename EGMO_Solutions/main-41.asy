@@ -22,49 +22,46 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 size(10cm);
 import geometry;
 
-pair A = (-2,7);
-pair B = (-4,0);
-pair C = (5,0);
+pair O = (0,0);
+real R = 5;
+pair A = R*dir(270);
+pair B = R*dir(90);
+pair P = R*dir(150);
+pair Q = R*dir(30);
 
-pair I = incenter(A,B,C);
-real r = inradius(A,B,C);
-pair IA = excenter(B,C,A);
-real ra = exradius(B,C,A);
-path incircle = circle(I,r);
-path excircle = circle(IA,ra);
+path omega = circle(O,R);
 
-pair D = foot(I,B,C);
-pair X = foot(IA,B,C);
-pair K = foot(A,B,C);
-pair M = midpoint(A--K);
-pair Y = 2*IA-X;
+real lenAP = abs(A-P);
+real lenAQ = abs(A-Q);
 
-pair dirBC = dir(B--C);
-pair dirPerp = rotate(90)*dirBC;
-pair E = I + r * unit(dirPerp);
+pair X = 0.4*P + 0.6*Q;
 
-draw(incircle, black);
-draw(excircle, dotted);
+pair[] Ssol = intersectionpoints(omega, A--(A + 10*(X - A)));
+pair S = (abs(Ssol[0]-A)>1e-3 ? Ssol[0] : Ssol[1]);
 
-draw(A--B--C--cycle, heavyblue);
-draw(B--C, black);
-draw(A--X);
-draw(A--K);
-draw(A--Y);
-draw(X--M--IA, dashed);
-draw(B--foot(IA,A,B));
-draw(C--foot(IA,A,C));
-draw(B--D, black);
-draw(C--D, black);
+pair dirAX = X - A;
+pair perpDir = rotate(90)*dirAX;
+pair[] Tsol = intersectionpoints(omega, X--(X - 10*perpDir));
 
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(0));
-dot("$I$", I, dir(N));
-dot("$I_A$", IA, dir(-90));
-dot("$D$", D, dir(225));
+pair T = Tsol[0];
+pair M = midpoint(S--T);
+
+draw(omega, gray+dashed);
+draw(A--P--B--Q--cycle, heavyblue);
+draw(P--Q, heavyblue);
+draw(A--S, red);
+draw(X--T, dashed+purple);
+draw(S--T, heavygreen);
+draw(A--B, dashed);
+
+dot("$A$", A, dir(270));
+dot("$B$", B, dir(90));
+dot("$P$", P, dir(150));
+dot("$Q$", Q, dir(30));
 dot("$X$", X, dir(-90));
-dot("$E$", E, dir(240));
-dot("$K$", K, dir(225));
-dot("$M$", M, dir(235));
-dot("$Y$", Y, dir(270));
+dot("$S$", S, dir(60));
+dot("$T$", T, dir(0));
+dot("$M$", M, dir(45));
+
+label("$P$", P, dir(P));
+label("$Q$", Q, dir(Q));

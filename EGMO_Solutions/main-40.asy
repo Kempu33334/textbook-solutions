@@ -22,48 +22,43 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 size(10cm);
 import geometry;
 
-pair A = (-2,7);
-pair B = (-4,0);
-pair C = (5,0);
+pair A = (2,6);
+pair B = (0,0);
+pair C = (7,0);
+pair O = circumcenter(A,B,C);
+pair H = orthocenter(A,B,C);
+pair M = midpoint(A--B);
+pair N = midpoint(A--C);
+path omega = circumcircle(A,B,C);
 
-pair I = incenter(A,B,C);
-real r = inradius(A,B,C);
-pair IA = excenter(B,C,A);
-real ra = exradius(B,C,A);
-path incircle = circle(I,r);
-path excircle = circle(IA,ra);
+pair[] X = intersectionpoints(omega, M--(M + 5*(H - M)));
+pair[] Y = intersectionpoints(omega, N--(N + 5*(H - N)));
+pair P = ( abs(X[0]-M) > 1e-3 ? X[0] : X[1] );
+pair Q = ( abs(Y[0]-N) > 1e-3 ? Y[0] : Y[1] );
 
-pair D = foot(I,B,C);
-pair Bp = A*0.685 + B*0.315;
-pair Cp = A*0.685 + C*0.315;
-pair X = foot(IA,B,C);
+pair R = extension(M,N, P,Q);
 
-pair dirBC = dir(B--C);
-pair dirPerp = rotate(90)*dirBC;
-pair E = I + r * unit(dirPerp);
+draw(omega, gray+dashed);
 
 draw(A--B--C--cycle, heavyblue);
 
-draw(incircle, black);
-draw(excircle, dotted);
-
-draw(Bp--Cp, black);
-draw(B--C, black);
-
-draw(A--X, dashed);
-draw(B--foot(IA,A,B));
-draw(C--foot(IA,A,C));
+draw(A--M, gray);
+draw(A--N, gray);
+draw(P--M, gray+dotted);
+draw(Q--N, gray+dotted);
+draw(P--Q, purple+1);
+draw(M--N, purple+1);
+draw(O--A, heavygreen);
+draw(A--R, dashed+red);
+draw(Q--R--M, dashed+gray);
 
 dot("$A$", A, dir(90));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(0));
-dot("$I$", I, dir(SW));
-dot("$I_A$", IA, dir(-90));
-dot("$D$", D, dir(-90));
-dot("$X$", X, dir(-90));
-dot("$B'$", Bp, dir(180));
-dot("$C'$", Cp, dir(0));
-dot("$E$", E, dir(240));
-
-draw(B--D, black);
-draw(C--D, black);
+dot("$B$", B, dir(240));
+dot("$C$", C, dir(SE));
+dot("$O$", O, dir(270));
+dot("$H$", H, dir(135));
+dot("$M$", M, dir(135));
+dot("$N$", N, dir(0));
+dot("$P$", P, dir(315));
+dot("$Q$", Q, dir(210));
+dot("$R$", R, dir(135));

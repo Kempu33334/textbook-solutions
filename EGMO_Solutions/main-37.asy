@@ -20,45 +20,41 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
-import geometry;
 
-pair A = (2,6);
-pair B = (0,0);
-pair C = (7,0);
-pair O = circumcenter(A,B,C);
-pair H = orthocenter(A,B,C);
-pair M = midpoint(A--B);
-pair N = midpoint(A--C);
-path omega = circumcircle(A,B,C);
+pair reflectLine(pair P, pair A, pair B) {
+return 2*foot(P,A,B)-P;
+}
 
-pair[] X = intersectionpoints(omega, M--(M + 5*(H - M)));
-pair[] Y = intersectionpoints(omega, N--(N + 5*(H - N)));
-pair P = ( abs(X[0]-M) > 1e-3 ? X[0] : X[1] );
-pair Q = ( abs(Y[0]-N) > 1e-3 ? Y[0] : Y[1] );
+pair A = (0,-1);
+pair B = (5,1);
+pair C = (4,5);
+C = 1.1*C - 0.1*A;
+pair D = reflectLine(B,A,C);
+D = 1.3*D - 0.3*B;
+pair E = intersectionpoint(A--C, B--D);
 
-pair R = extension(M,N, P,Q);
+pair EA = reflectLine(E, A,B);
+pair EB = reflectLine(E, B,C);
+pair EC = reflectLine(E, C,D);
+pair ED = reflectLine(E, D,A);
 
-draw(omega, gray+dashed);
+draw(A--B--C--D--cycle, heavyblue);
+draw(A--C, dashed+gray);
+draw(B--D, dashed+gray);
+draw(E--EA, dotted);
+draw(E--EB, dotted);
+draw(E--EC, dotted);
+draw(E--ED, dotted);
+draw(EA--EB--EC--ED--cycle, gray+dashed);
 
-draw(A--B--C--cycle, heavyblue);
+draw(circumcircle(EA,EB,EC), purple+dashed);
 
-draw(A--M, gray);
-draw(A--N, gray);
-draw(P--M, gray+dotted);
-draw(Q--N, gray+dotted);
-draw(P--Q, purple+1);
-draw(M--N, purple+1);
-draw(O--A, heavygreen);
-draw(A--R, dashed+red);
-draw(Q--R--M, dashed+gray);
-
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(240));
-dot("$C$", C, dir(SE));
-dot("$O$", O, dir(270));
-dot("$H$", H, dir(135));
-dot("$M$", M, dir(135));
-dot("$N$", N, dir(0));
-dot("$P$", P, dir(315));
-dot("$Q$", Q, dir(210));
-dot("$R$", R, dir(135));
+dot("$A$", A, dir(SW));
+dot("$B$", B, dir(SE));
+dot("$C$", C, dir(45));
+dot("$D$", D, dir(NW));
+dot("$E$", E, dir(90));
+dot("$E_A$", EA, dir(-45));
+dot("$E_B$", EB, dir(0));
+dot("$E_C$", EC, dir(90));
+dot("$E_D$", ED, dir(180));

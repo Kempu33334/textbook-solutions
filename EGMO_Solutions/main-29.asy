@@ -21,35 +21,37 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
 
-pair A = dir(130);
-pair B = dir(170);
-pair C = dir(260);
-pair D = dir(20);
-pair X = orthocenter(A,B,C);
-pair Y = orthocenter(B,C,D);
+pair A = dir(110);
+pair B = dir(-10);
+pair C = dir(-150);
 
-pair Xr = 2*foot(X,B,C) - X;
-pair Yr = 2*foot(Y,B,C) - Y;
+pair O = circumcenter(A,B,C);
+draw(circumcircle(A,B,C), gray);
+dot("$O$", O, dir(90));
 
-draw(circumcircle(A,B,C), gray+dashed);
+draw(A--B--C--cycle);
 
-draw(A--B--C--D--cycle, black+1);
-draw(A--C, gray+dashed);
-draw(B--D, gray+dashed);
+pair P = 0.4*C + 0.6*A;
+pair Q = 0.72*A + 0.28*B;
+dot("$P$", P, dir(P));
+dot("$Q$", Q, dir(Q));
 
-draw(A--Y, blue);
-draw(Y--D, blue);
-draw(D--X, blue);
-draw(X--A, blue);
+draw(P--Q, heavyblue);
+draw(C--Q, dashed);
+draw(B--P, dashed);
 
-draw(X--Xr, red+dashed);
-draw(Y--Yr, red+dashed);
+pair K = midpoint(B--P);
+pair L = midpoint(C--Q);
+pair M = midpoint(P--Q);
 
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(180));
-dot("$C$", C, dir(270));
-dot("$D$", D, dir(30));
-dot("$X$", X, dir(180));
-dot("$Y$", Y, dir(270));
-dot("$X'$", Xr, dir(90));
-dot("$Y'$", Yr, dir(225));
+path circleKLM = circumcircle(K,L,M);
+draw(circleKLM, red);
+
+draw(M--L--K--cycle, black);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$K$", K, dir(K));
+dot("$L$", L, dir(L));
+dot("$M$", M, dir(M));

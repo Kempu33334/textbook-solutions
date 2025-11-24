@@ -19,44 +19,46 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(160);
-import geometry;
+size(8cm);
 
-pair A = dir(195);
-pair B = dir(-15);
-pair C = dir(103);
-pair D = 0.65*A+0.35*B;
-pair L = 0.51*D+0.49*C;
-pair O = (0,0);
-real R = 1;
-draw(circle(O, R));
+pair A = (1,7);
+pair B = (0,0);
+pair C = (8,0);
 
-pair M = dir(270);
+pair I = incenter(A,B,C);
+real r = inradius(A,B,C);
+
+pair D = foot(I,B,C);
+pair E = foot(I,A,C);
+pair F = foot(I,A,B);
+pair M = (B + C)/2;
+pair X = extension(D,D+(0,10),E,F);
+
+pair dirBC = C - B;
+pair Bp = intersectionpoint((X - dirBC)--(X + dirBC), A--B);
+pair Cp = intersectionpoint((X - dirBC)--(X + dirBC), A--C);
 
 draw(A--B--C--cycle);
-draw(C--D);
+draw(circle(I, r));
 
-real r = 0.57;
-pair K = 0.34*A + 0.66*B;
+draw(A--M, dashed);
+draw(Bp--Cp, dotted);
+draw(E--F);
+draw(F--I--E, dotted);
+draw(D--X);
 
-pair dir_perp = rotate(90)*(B - A);
-dir_perp = dir_perp / length(dir_perp);
-pair P = K + r * dir_perp;
+dot(A); dot(B); dot(C);
+dot(D); dot(E); dot(F);
+dot(I); dot(M); dot(Bp); dot(Cp); dot(X);
 
-pair T = (0.68,sqrt(1-0.68^2));
-pair I = extension(C,M,L,K);
-
-draw(circle(P, r));
-draw(M--T, dashed);
-draw(L--K, dotted);
-draw(C--M, dashed);
-
-dot("$A$", A, dir(A));
-dot("$B$", B, dir(B));
-dot("$C$", C, dir(C));
-dot("$D$", D, dir(D));
-dot("$I$", I, dir(NE));
-dot("$L$", L, dir(L));
-dot("$M$", M, dir(270));
-dot("$K$", K, dir(-45));
-dot("$T$", T, dir(T));
+label("$A$", A, N);
+label("$B$", B, SW);
+label("$C$", C, SE);
+label("$D$", D, S);
+label("$E$", E, NE);
+label("$F$", F, dir(150));
+label("$I$", I, dir(225));
+label("$M$", M, S);
+label("$B'$", Bp, W);
+label("$C'$", Cp, dir(15));
+label("$X$", X, dir(60));

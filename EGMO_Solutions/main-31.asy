@@ -19,33 +19,38 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
-import geometry;
+size(12cm);
 
-pair A = (0,0);
-pair B = (6,0);
-pair C = (2,5);
-pair H = orthocenter(A,B,C);
+pair A = (0,5);
+pair B = (-3,0);
+pair C = (6,0);
+draw(A--B--C--cycle);
 
-draw(A--B--C--cycle, heavyblue);
-draw(A--foot(A,B,C), dashed+gray);
-draw(B--foot(B,C,A), dashed+gray);
-draw(C--foot(C,A,B), dashed+gray);
+pair M = midpoint(B--C);
 
-pair O_C = circumcenter(A,B,H);
-pair O_A = circumcenter(B,C,H);
-pair O_B = circumcenter(C,A,H);
+pair E = foot(B,A,C);
+pair F = foot(C,A,B);
+draw(B--E, dashed+gray);
+draw(C--F, dashed+gray);
 
-draw(circle(A,B,H), dashed);
-draw(circle(B,C,H), dashed);
-draw(circle(C,A,H), dashed);
+pair K = midpoint(M--E);
+pair L = midpoint(M--F);
 
-draw(O_A--O_B--O_C--cycle, red+1.2);
+pair vKL = L - K;
+pair dirBC = C - B;
+real t_inter = cross(A - K, dirBC) / cross(vKL, dirBC);
+pair T = K + t_inter * vKL;
 
-dot("$A$", A, dir(-90));
-dot("$B$", B, dir(-90));
-dot("$C$", C, dir(90));
-dot("$H$", H, dir(90));
-dot("$O_A$", O_A, dir(90));
-dot("$O_B$", O_B, dir(90));
-dot("$O_C$", O_C, dir(90));
+draw(A--T--M, heavygreen);
+draw(F--M--E, dashed);
+draw(L--T, heavyblue);
+
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(210));
+dot("$C$", C, dir(330));
+dot("$M$", M, dir(-90));
+dot("$E$", E, dir(E));
+dot("$F$", F, dir(F));
+dot("$K$", K, dir(-45));
+dot("$L$", L, dir(240));
+dot("$T$", T, dir(-90));

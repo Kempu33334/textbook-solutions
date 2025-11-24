@@ -71,7 +71,30 @@ Since \[\angle ABC + \angle ADC = 180^\circ\] we know that $ABCD$ is cyclic. In 
 In the figure below, show that $\triangle AEF$, $\triangle BFD$, and $\triangle CDE$ are each similar to $\triangle ABC$.
 
 \begin{center}
-\includegraphics[width=0.5\linewidth]{Figure 1.3A.png}
+\begin{asy}
+size(6cm);
+pair A = dir(100);
+pair B = dir(210);
+pair C = dir(-30);
+pair Dp = foot(A,B,C);
+pair Ep = foot(B,A,C);
+pair Fp = foot(C,A,B);
+pair H = intersectionpoint(A -- Dp, B -- Ep);
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", Dp, S);
+dot("$E$", Ep, NE);
+dot("$F$", Fp, NW);
+dot("$H$", H, dir(70));
+
+draw(A--B--C--cycle);
+draw(Dp--Ep--Fp--cycle);
+draw(A--Dp);
+draw(B--Ep);
+draw(C--Fp);
+\end{asy}
 \end{center}
 \end{problem}
 
@@ -91,7 +114,34 @@ Let $H$ be the orthocenter of $\triangle ABC$, as in the diagram below. Let $X$ 
 \end{enumerate}
 
 \begin{center}
-\includegraphics[width=0.35\linewidth]{Figure 1.3B.png}
+\begin{asy}
+import geometry;
+
+size(6cm);
+pair A = dir(100);
+pair B = dir(210);
+pair C = dir(-30);
+pair Dp = foot(A,B,C);
+pair Ep = foot(B,A,C);
+pair Fp = foot(C,A,B);
+pair H = intersectionpoint(A -- Dp, B -- Ep);
+pair X = 2 * Dp - H;
+pair Y = B + C - H;
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$H$", H, dir(70));
+dot("$X$", X, S);
+dot("$Y$", Y, S);
+
+draw(A--B--C--cycle);
+draw(A--X);
+draw(B--Ep);
+draw(C--Fp);
+draw(H--Y);
+draw(circumcircle(A,B,C));
+\end{asy}
 \end{center}
 \end{problem}
 We start with part (a). Let the foot of the altitude from $A$ be $D$, from $B$ be $E$, and the foot from $C$ be $F$. Then, we can write the following equations:
@@ -150,7 +200,29 @@ This implies that \[\dangle OAC = 90+\dangle ABC\] as desired. $\square$
 Let $ABC$ be a triangle and let ray $AO$ meet $\ol{BC}$ at $D$. Point $K$ is selected so that $\ol{KA}$ is tangent to $(ABC)$ and $\angle KCB = 90^\circ$. Prove that $\ol{KD} \parallel \ol{AB}$.
 \end{problem}
 \begin{center}
-\includegraphics[width=0.4\linewidth]{Figure 1.6B.png}
+\begin{asy}
+import geometry;
+
+size(7cm);
+pair A = dir(100);
+pair B = dir(210);
+pair C = dir(-30);
+pair O = circumcenter(A, B, C);
+pair D = intersectionpoint(A--2*O-A, B--C);
+pair K = intersectionpoint(D--3*(A-B+D)-2*D, C--3*((B-C)*dir(-90)+C)-2*C);
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$O$", O, NE);
+dot("$D$", D, S);
+dot("$K$", K, NE);
+
+draw(A--B--C--cycle);
+draw(A--D);
+draw(A--K--D--K--C);
+draw(circumcircle(A,B,C));
+\end{asy}
 \end{center}
 Since \[\angle KAD = \angle KCD = 90^\circ\] we know that quadrilateral $KADC$ is cyclic. Because of this, we can write that:
 \begin{align*}
@@ -1014,9 +1086,7 @@ dot(C1);
 \end{asy}
 \end{center}
 
-Clearly, \[\triangle AFI \sim \triangle AB_1I_A.\] Thus, we have that \[\dfrac{AB_1}{B_1I_A} = \dfrac{AF}{FI} = \dfrac{s-a}{r}.\] So, we know that \[\dfrac{s-a}{r} = \dfrac{AB_1}{B_1I_A} = \dfrac{s}{r_a}\] as required. $\square$
-
-\newpage
+Clearly, $\triangle AFI \sim \triangle AB_1I_A$. Thus, we have that \[\dfrac{AB_1}{B_1I_A} = \dfrac{AF}{FI} = \dfrac{s-a}{r}.\] So, we know that \[\dfrac{s-a}{r} = \dfrac{AB_1}{B_1I_A} = \dfrac{s}{r_a}\] as required. $\square$
 
 \begin{problem}[2.20]{}
 Let $ABC$ be a triangle. Suppose its incircle and $A$-excircle are tangent to $\ol{BC}$ at $X$ and $D$, respectively. Show that $BX = CD$ and $BD = CX$.
@@ -1086,6 +1156,8 @@ We already know that any vertex is collinear with the incenter and its correspon
 &= 90
 \end{align*}
 as claimed. $\square$
+
+\newpage
 
 \begin{problem}[2.25]{Pitot's Theorem}
 Let $ABCD$ be a quadrilateral. If a circle can be inscribed in it, prove that $AB+CD = BC+DA$.
@@ -1182,6 +1254,8 @@ dot("$Q$", Q, dir(270));
 Clearly, lines $MN$ and $PQ$ intersect on the radical axis of the two circles ($\ol{AA'}$), since they intersect at $H$. Thus, we know that $M$, $N$, $P$, and $Q$ lie on a common circle by the Radical Center of Intersecting Circles. 
 
 We can write this out if necessary: Let $\omega_1$ be the circle with diameter $\ol{AB}$, and $\omega_2$ the circle with diameter $\ol{AC}$. Then, \[HP \cdot HQ = \Pow_{\omega_2}(H) = \Pow_{\omega_1}(H) = HM \cdot HN\] so $M$, $N$, $P$, and $Q$ are indeed concyclic by the Converse of Power of a Point. $\square$
+
+\newpage
 
 \begin{problem}[2.27]{BAMO 2012/4}
 Given a segment $\ol{AB}$ in the plane, choose on it a point $M$ different from $A$ and $B$. Two equilateral triangles $AMC$ and $BMD$ in the plane are constructed on the same side of segment $\ol{AB}$. The circumcircles of the two triangles intersect in point $M$ and another point $N$. 
@@ -5592,4 +5666,22 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{center}
 
 We wish to show that $\angle OGB = \angle OFB = 90^\circ$. Consider an inversion $\Phi$ about $\omega_1$. If $X$ and $Y$ are the intersection points of $\omega_1$ and $\omega_2$, then they stay fixed under $\Phi$. Now, we wish to show that $F^*G^*$ passes through $B$. However, notice that $F^*$ and $G^*$ are just the tangency points of the tangents from $A$ to $\omega_2$. Now, let the midpoint of $AF^*$ be $M$, and the midpoint of $AG^*$ be $N$. Then, $MN$ is the radical axis of $\omega_2$ and the circle with radius $0$ centered at $A$. Now, if $O$ lies on this radical axis, then, \[OO_2^2 - {O_2Y^*}^2 = OY^2\] where $O_2$ is the center of $\omega_2$, which is obviously true, as desired. $\square$
+
+\section{Projective Geometry}
+\begin{problem}[9.3]{}
+Check that \[(A,B;X,Y) = (B,A;X,Y)^{-1}=(A,B;Y,X)^{-1} = (X,Y;A,B)\] for any four distinct, collinear points $A$, $B$, $X$, $Y$.
+\end{problem}
+We may write the corresponding equations:
+\begin{align*}
+(A,B;X,Y) &= \dfrac{XA}{XB}\div \dfrac{YA}{YB} \\
+(B,A;X,Y)^{-1} &= \left(\dfrac{XB}{XA}\div \dfrac{YB}{YA}\right)^{-1} = \dfrac{XA}{XB}\div \dfrac{YA}{YB} \\
+(A,B;Y,X)^{-1} &= \left(\dfrac{YA}{YB}\div \dfrac{XA}{XB}\right)^{-1} = \dfrac{XA}{XB}\div \dfrac{YA}{YB} \\
+(X,Y;A,B) &= \dfrac{XA}{YA}\div \dfrac{XB}{YB} = \dfrac{XA}{XB}\div \dfrac{YA}{YB}
+\end{align*}
+as desired. $\square$
+
+\begin{problem}[9.4]{}
+Let $A$, $B$, $X$ be distinct collinear points and $k$ a real number. Prove that there is exactly one point $Y$ (possibly the point at infinity) such that $(A, B; X, Y ) = k$.
+\end{problem}
+Plop onto the number line, from which, the finish is trivial. $\square$
 \end{document}

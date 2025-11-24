@@ -19,31 +19,68 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-unitsize(4cm);
-pair A = (-0.22,1.6);
-pair B = (-1,0);
-pair C = (1,0);
-pair M = (B + C)/2;
-pair P = 0.38*A + 0.62*M;
-pair O1 = circumcenter(A,B,P);
-pair O2 = circumcenter(A,C,P);
-real widen = 15;
-real thetaA1 = degrees(dir(A - O1));
-real thetaB1 = degrees(dir(B - O1));
-real start1 = thetaA1 + widen;
-real end1 = thetaB1 - widen;
-if (start1 < end1) start1 += 360;
-draw(arc(O1, abs(A - O1), start1, end1, CW));
-real thetaA2 = degrees(dir(A - O2));
-real thetaC2 = degrees(dir(C - O2));
-real start2 = thetaA2 - widen;
-real end2 = thetaC2 + widen;
-if (start2 > end2) end2 += 360;
-draw(arc(O2, abs(A - O2), start2, end2, CCW));
-draw(A--B--C--cycle);
-draw(A--M, dashed);
-dot("$A$", A, N);
-dot("$B$", B, SW);
-dot("$C$", C, SE);
-dot("$P$", P, E);
-dot("$M$", M, S);
+size(10cm);
+
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair H = orthocenter(A,B,C);
+pair M = foot(B, A, C);
+pair N = foot(C, A, B);
+pair W = (5*B + 3*C)/8;
+
+pair O1 = circumcenter(B,W,N);
+real r1 = abs(O1 - B);
+pair O2 = circumcenter(C,W,M);
+real r2 = abs(O2 - C);
+
+pair X = 2*O1 - W;
+pair Y = 2*O2 - W;
+
+pair[] inter = intersectionpoints(circle(O1,r1), circle(O2,r2));
+
+pair P;
+if (abs(inter[0]-W) < 1e-6)
+P = inter[1];
+else
+P = inter[0];
+
+// Draw triangle
+draw(A--B--C--cycle, blue);
+
+draw(B--M, dotted+gray);
+draw(C--N, dotted+gray);
+
+draw(B--C);
+
+pair O3 = circumcenter(A,H,P);
+real r3 = abs(O3 - A);
+
+draw(circle(O1, r1), orange);
+draw(circle(O2, r2), purple);
+draw(circle(O3, r3), gray+dashed);
+
+draw(W--X, orange+linewidth(1));
+draw(W--Y, purple+linewidth(1));
+
+draw(H--X, dashed+red);
+draw(H--Y, dashed+red);
+
+draw(A--P, gray);
+
+dot(A); dot(B); dot(C); dot(H); dot(W);
+dot(M); dot(N);
+dot(X, blue);
+dot(Y, blue);
+dot(P, red);
+
+label("$A$", A, dir(90));
+label("$B$", B, SW);
+label("$C$", C, SE);
+label("$H$", H, dir(140));
+label("$W$", W, dir(-90));
+label("$M$", M, dir(M));
+label("$N$", N, dir(N));
+label("$X$", X, dir(X));
+label("$Y$", Y, dir(Y));
+label("$P$", P, dir(NE));

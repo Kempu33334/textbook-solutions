@@ -19,9 +19,39 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
+import geometry;
 size(6cm);
-pair A,B,C,D,M,O,P,E; A = dir(130); B = dir(52.5); E = dir(200); D = dir(300); C = dir(10); M = (A+C)/2; O = (0,0); P = (1.8,-0.12);
-
-dot("$A$",A,dir(A)); dot("$B$",B,dir(B)); dot("$C$",C,dir(C)); dot("$D$",D,dir(D)); dot("$E$",E,dir(E)); dot("$M$",M,dir(100)); dot("$P$",P,dir(P)); dot("$O$",O,NE);
-
-draw(unitcircle); draw(A--C); draw(E--D); draw(P--D); draw(P--B); draw(E--B); draw(A--P); draw(A--B--C--D--cycle, dashed);
+pair A = (0,0);
+pair B = (6,0);
+pair C = (2,5);
+real a = length(B - C);
+real b = length(C - A);
+real c = length(A - B);
+pair I = (a*A + b*B + c*C) / (a + b + c);
+real s = (a + b + c)/2;
+real area = sqrt(s * (s - a) * (s - b) * (s - c));
+real r = area / s;
+path incircle = circle(I, r);
+pair foot(pair P, pair X, pair Y) {
+pair v = Y - X;
+return X + v * dot(P - X, v) / length(v)^2;
+}
+pair D = foot(I, A, B);
+pair E = foot(I, A, C);
+pair O = circumcenter(B, C, I);
+draw(A--B--C--cycle, black);
+draw(incircle, blue);
+draw(circumcircle(B, C, I), dashed + gray);
+dot("$A$", A, SW);
+dot("$B$", B, SE);
+dot("$C$", C, N);
+dot("$I$", I, dir(180));
+dot("$D$", D, S);
+dot("$E$", E, NE);
+dot("$O$", O, dir(90));
+draw(O--D, red);
+draw(D--B, red);
+draw(O--E, red);
+draw(E--C, red);
+draw(I--D, gray + dotted);
+draw(I--E, gray + dotted);

@@ -21,23 +21,52 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(6cm);
 defaultpen(fontsize(10pt));
-pair A = (-1,3);
-pair B = (-2,0);
-pair C = (2,0);
-real a = length(B - C);
-real b = length(C - A);
-real c = length(A - B);
-pair I = (a*A + b*B + c*C)/(a + b + c);
-pair P = (0.3,1.1);
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair E = foot(B, A, C);
+pair F = foot(C, A, B);
+pair M = (B + C)/2;
+pair foot(pair P, pair A, pair B)
+{
+pair v = B - A;
+return A + v * dot(P - A, v)/dot(v,v);
+}
+pair O;
+real R;
+{
+pair midAE = (A + E)/2;
+pair vAE = E - A;
+pair perpAE = rotate(90)*vAE;
+
+pair midAF = (A + F)/2;
+pair vAF = F - A;
+pair perpAF = rotate(90)*vAF;
+
+real t = cross(midAF - midAE, perpAF) / cross(perpAE, perpAF);
+O = midAE + t * perpAE;
+R = length(O - A);
+}
+pair dirBC = C - B;
+pair Q = A + dirBC;
 draw(A--B--C--cycle, black+1);
-draw(A--I, deepgreen+1.2);
-draw(B--I, dotted);
-draw(C--I, dotted);
-draw(A--P, orange+1.2+dashed);
-draw(P--B, black+dashed);
-draw(P--C, black+dashed);
+draw(B--E, gray);
+draw(C--F, gray);
+draw(circle(O,R), deepblue);
+draw(M--E, red+dashed);
+draw(M--F, red+dashed);
+pair v = (C - B)/3;
+draw(A - v -- A + v, dashed+blue);
 dot("$A$", A, dir(90));
-dot("$B$", B, SW);
-dot("$C$", C, SE);
-dot("$I$", I, dir(180));
-dot("$P$", P, dir(270));
+dot("$B$", B, dir(210));
+dot("$C$", C, dir(330));
+dot("$E$", E, dir(E));
+dot("$F$", F, dir(F));
+dot("$M$", M, dir(270));
+pair intersect(pair A, pair v, pair B, pair w)
+{
+real t = cross(B - A, w) / cross(v, w);
+return A + t * v;
+}
+pair H = intersect(B, E - B, C, F - C);
+dot("$H$", H, dir(270));

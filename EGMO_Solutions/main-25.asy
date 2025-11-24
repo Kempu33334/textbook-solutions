@@ -19,44 +19,49 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-size(10cm);
+unitsize(1cm);
 
-pair A = dir(30);
-pair B = dir(100);
-pair C = dir(180);
-pair D = dir(270);
+pair A = (-3, 0);
+pair B = (-1, 0);
+pair C = (2, 0);
+pair D = (5, 0);
 
-draw(unitcircle);
-draw(A--B--C--D--cycle);
+dot("$A$", A, W);
+dot("$B$", B, NW);
+dot("$C$", C, NE);
+dot("$D$", D, E);
+draw(A--B--C--D);
 
-draw(A--C, dashed);
-draw(B--D, dashed);
+path circleAC = circle((A+C)/2, (C-A).x/2);
+path circleBD = circle((B+D)/2, (D-B).x/2);
+draw(circleAC);
+draw(circleBD);
 
-pair[] Parray = intersectionpoints(A--C, B--D);
-pair P = Parray[0];
+pair[] circleIntersects = intersectionpoints(circleAC, circleBD);
+pair X = circleIntersects[0];
+pair Y = circleIntersects[1];
 
-dot("A", A, dir(A));
-dot("B", B, dir(B));
-dot("C", C, dir(C));
-dot("D", D, dir(D));
-dot("P", P, dir(135));
+dot("$X$", X, NW);
+dot("$Y$", Y, S);
+draw(X--Y);
 
-pair W = foot(P, A, B);
-pair X = foot(P, B, C);
-pair Y = foot(P, C, D);
-pair Z = foot(P, D, A);
+pair[] Z = intersectionpoints(X--Y, B--C);
+dot("$Z$", Z[0], NE);
 
-dot("W", W, dir(W));
-dot("X", X, dir(X));
-dot("Y", Y, dir(Y));
-dot("Z", Z, dir(Z));
+pair P = 0.75*X+0.25*Y;
+dot("$P$", P, W);
 
-draw(W--X, blue+dashed);
-draw(X--Y, blue+dashed);
-draw(Y--Z, blue+dashed);
-draw(W--Z, blue+dashed);
+pair CPlong = 3*P+(-2*C);
+draw(CPlong--C);
+pair[] M = intersectionpoints(CPlong--C, circleAC);
+dot("$M$", M[0], N);
 
-draw(P--W, dotted);
-draw(P--X, dotted);
-draw(P--Y, dotted);
-draw(P--Z, dotted);
+pair BPlong = 3.5*P+(-2.5*B);
+draw(BPlong--B);
+pair[] N = intersectionpoints(BPlong--B, circleBD);
+dot("$N$", N[0], dir(90));
+
+pair E = extension(A,M[0],D,N[0]);
+dot("$E$", E, dir(90));
+draw(A--E--X, black+dashed);
+draw(E--D, black+dashed);

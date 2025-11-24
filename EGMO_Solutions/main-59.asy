@@ -21,25 +21,32 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
 
-pair B = (0,0);
-pair C = (6.5,0);
-pair A = (2,3);
+pair A = dir(210);
+pair B = dir(-30);
+pair C = dir(120);
+pair I = incenter(A, B, C);
+pair A1 = foot(I, B, C);
+pair B1 = foot(I, C, A);
+pair C1 = foot(I, A, B);
+pair M = (A + B)/2;
+pair H = foot(I, C, M);
+pair K = extension(I, H, A1, B1);
 
-pair vBC = C - B;
-pair vCA = A - C;
+path inc = incircle(A, B, C);
 
-pair D = C + vBC;
-pair E = A + 2*vCA;
+draw(A--B--C--cycle);
+draw(inc, orange);
+draw(B1--K, deepgreen);
+draw(C--K, red);
+draw(I--K, gray+dashed);
+draw(C--M, gray+dashed);
 
-draw(A--B--C--cycle, heavyblue);
-
-draw(C--D, heavyred);
-draw(A--E, heavyred);
-draw(A--D, dashed+blue);
-draw(B--E, dashed+blue);
-
-dot("$A$", A, dir(90));
-dot("$B$", B, dir(SW));
-dot("$C$", C, dir(SE));
-dot("$D$", D, dir(S));
-dot("$E$", E, dir(90));
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$I$", I, dir(210));
+dot("$M$", M, dir(270));
+dot("$A_1$", A1, dir(270));
+dot("$B_1$", B1, dir(180));
+dot("$C_1$", C1, dir(270));
+dot("$K$", K, dir(90));

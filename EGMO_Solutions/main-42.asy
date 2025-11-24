@@ -20,45 +20,45 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(8cm);
+import geometry;
 
-pair A = (1,7);
-pair B = (0,0);
-pair C = (8,0);
+pair A = dir(110);
+pair B = dir(190);
+pair C = dir(-10);
+pair D = foot(A,B,C);
+pair H = orthocenter(A,B,C);
+pair P = dir(60);
+pair X = foot(P,B,C);
+pair Y = foot(P,A,C);
+pair Z = foot(P,A,B);
+pair L = extension(A,D,X,Y);
 
-pair I = incenter(A,B,C);
-real r = inradius(A,B,C);
+path ABC = circumcircle(A,B,C);
 
-pair D = foot(I,B,C);
-pair E = foot(I,A,C);
-pair F = foot(I,A,B);
-pair M = (B + C)/2;
-pair X = extension(D,D+(0,10),E,F);
+pair[] K = intersectionpoints(ABC, X-(0,2)--P-(0,0.1));
+pair KX = 2*X-K[0];
 
-pair dirBC = C - B;
-pair Bp = intersectionpoint((X - dirBC)--(X + dirBC), A--B);
-pair Cp = intersectionpoint((X - dirBC)--(X + dirBC), A--C);
+dot("$A$", A, dir(NW));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$D$", D, dir(NW));
+dot("$H$", H, dir(SW));
+dot("$K$", K[0], dir(SE));
+dot("$K'$", KX, dir(KX));
+dot("$L$", L, dir(L));
+dot("$P$", P, dir(P));
+dot("$X$", X, dir(NE));
+dot("$Y$", Y, dir(SW));
+dot("$Z$", Z, dir(NE));
 
 draw(A--B--C--cycle);
-draw(circle(I, r));
-
-draw(A--M, dashed);
-draw(Bp--Cp, dotted);
-draw(E--F);
-draw(F--I--E, dotted);
-draw(D--X);
-
-dot(A); dot(B); dot(C);
-dot(D); dot(E); dot(F);
-dot(I); dot(M); dot(Bp); dot(Cp); dot(X);
-
-label("$A$", A, N);
-label("$B$", B, SW);
-label("$C$", C, SE);
-label("$D$", D, S);
-label("$E$", E, NE);
-label("$F$", F, dir(150));
-label("$I$", I, dir(225));
-label("$M$", M, S);
-label("$B'$", Bp, W);
-label("$C'$", Cp, dir(15));
-label("$X$", X, dir(60));
+draw(P--K[0]);
+draw(P--Y);
+draw(P--Z);
+draw(A--D);
+draw(A--K[0]);
+draw(P--H);
+draw(X--L);
+draw(A--Z, dotted);
+draw(A--L);
+draw(ABC);

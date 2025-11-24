@@ -19,53 +19,48 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-import geometry;
-size(10cm);
-pair A = (-4,0), B = (4,0), O = (0,0);
-path semicirc = arc(O,4,0,180);
-draw(semicirc);
-draw(A--B, gray);
-
-pair X = 4*dir(135);
-pair Y = 4*dir(80);
-pair Z = 4*dir(30);
-
-draw(A--X--Y--Z--B--cycle, blue+linewidth(1));
-
-pair P = foot(Y, A, X);
-pair Q = foot(Y, B, X);
-pair R = foot(Y, A, Z);
-pair S = foot(Y, B, Z);
-pair T = intersectionpoint(line(P,Q), line(R,S));
-
-dot(T, blue);
-
-draw(Y--P, gray+dotted);
-draw(Y--Q, gray+dotted);
-draw(Y--R, gray+dotted);
-draw(Y--S, gray+dotted);
-draw(X--P, gray+dashed);
-draw(B--X, gray+dashed);
-draw(A--Z, gray+dashed);
-draw(Z--S, gray+dashed);
-
-draw(P--Q, red+linewidth(1.2));
-draw(R--S, red+linewidth(1.2));
-
-draw(O--X, dashed+gray);
-draw(O--Z, dashed+gray);
-
-draw(Q--T, red+dashed);
-draw(R--T, red+dashed);
-
-label("$A$", A, SW);
-label("$B$", B, SE);
-label("$O$", O, dir(270));
-label("$X$", X, dir(X));
-label("$Y$", Y, dir(Y));
-label("$Z$", Z, dir(Z));
-label("$P$", P, dir(P-Y));
-label("$Q$", Q, dir(Q-Y));
-label("$R$", R, dir(R-Y));
-label("$S$", S, dir(S-Y));
-label("$T$", T, dir(270));
+size(6cm);
+defaultpen(fontsize(10pt));
+pair foot(pair P, pair A, pair B) {
+pair v = B - A;
+return A + v * dot(P - A, v)/dot(v,v);
+}
+pair intersect(pair A, pair v, pair B, pair w) {
+real t = cross(B - A, w)/cross(v, w);
+return A + t*v;
+}
+pair A = (-1,3);
+pair B = (-2,0);
+pair C = (2,0);
+real a = length(B - C);
+real b = length(C - A);
+real c = length(A - B);
+real s = (a+b+c)/2;
+pair I = (a*A + b*B + c*C) / (a+b+c);
+real r = sqrt((s - a)*(s - b)*(s - c)/s);
+pair D = foot(I, B, C);
+pair E = foot(I, C, A);
+pair F = foot(I, A, B);
+pair M = (B+C)/2;
+pair N = (A+C)/2;
+pair dirEF = F - E;
+pair dirBI = I - B;
+pair K = intersect(B, dirBI, E, dirEF);
+draw(A--B--C--cycle, black+1);
+draw(circle(I,r), deepblue);
+draw(K--F, dashed+blue);
+draw(B--K, dashed+red);
+draw(B--K, red);
+draw(C--K, red);
+draw(M--N, purple);
+draw(N--K, dashed+purple);
+dot("$A$", A, dir(90));
+dot("$B$", B, dir(225));
+dot("$C$", C, dir(315));
+dot("$I$", I, dir(90));
+dot("$D$", D, dir(270));
+dot("$E$", E, dir(E));
+dot("$F$", F, dir(F));
+dot("$M$", M, dir(270));
+dot("$N$", N, dir(45));
+dot("$K$", K, dir(45));

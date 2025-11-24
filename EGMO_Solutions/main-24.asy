@@ -21,54 +21,68 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 size(10cm);
 
-pair O1 = (-2,0);
-pair O2 = (2,1);
-real r1 = 4;
-real r2 = 2;
+pair A = (-2,0), B = (2,0), C = (-1.5,3);
+pair M_AB = (A + B)/2;
+pair M_BC = (B + C)/2;
+pair M_CA = (C + A)/2;
 
-draw(circle(O1, r1), heavyblue);
-draw(circle(O2, r2), heavyred);
+pair dir_AB = rotate(90)*(B - A);
+pair dir_BC = rotate(90)*(C - B);
+pair dir_CA = rotate(90)*(A - C);
 
-pair Dvec = O2 - O1;
-real d = length(Dvec);
-real theta = acos((r1 - r2)/d)*180/pi;
-pair u = Dvec / d;
-pair v = rotate(theta)*u;
+pair pAB1 = M_AB - dir_AB;
+pair pAB2 = M_AB + dir_AB;
+pair pBC1 = M_BC - dir_BC;
+pair pBC2 = M_BC + dir_BC;
+pair pCA1 = M_CA - dir_CA;
+pair pCA2 = M_CA + dir_CA;
 
-pair A = O1 + r1 * v;
-pair B = O2 + r2 * v;
+draw(A--B--C--cycle, black+1.2bp);
 
-draw(A--B, black+1bp);
-label("$A$", A, dir(A));
-label("$B$", B, dir(B));
+draw(pAB1--pAB2, gray+dashed+0.7bp);
+draw(pBC1--pBC2, gray+dashed+0.7bp);
+draw(pCA1--pCA2, gray+dashed+0.7bp);
 
-pair[] circleIntersections = intersectionpoints(circle(O1, r1), circle(O2, r2));
-pair M = circleIntersections[0];
-pair N = circleIntersections[1];
+pair D = M_BC + dir_BC;
+pair E = M_CA + dir_CA;
+pair F = M_AB + dir_AB;
 
-dot("$M$", M, dir(90));
-dot("$N$", N, dir(-90));
+dot(D, blue+3bp); label("$D$", D, dir(270));
+dot(E, blue+3bp); label("$E$", E, dir(0));
+dot(F, blue+3bp); label("$F$", F, dir(90));
 
-pair dirAB = unit(B - A);
+draw(E--F--D--cycle, blue);
 
-pair C = intersectionpoint(M - 1*dirAB -- M - 10*dirAB, circle(O1, r1));
-pair D = intersectionpoint(M -- M + 10*dirAB, circle(O2, r2));
-draw(C--D, black+1bp);
-label("$C$", C, dir(135));
-label("$D$", D, dir(45));
+pair dir_EF = F - E;
+pair dir_FD = D - F;
+pair dir_DE = E - D;
 
-pair E = extension(A, C, B, D);
-draw(C--E, dashed);
-draw(D--E, dashed);
-dot("$E$", E, dir(90));
+pair perp_EF = rotate(90)*dir_EF;
+pair perp_FD = rotate(90)*dir_FD;
+pair perp_DE = rotate(90)*dir_DE;
 
-pair P = extension(A, N, C, D);
-pair Q = extension(B, N, C, D);
-draw(A--N, gray+dashed);
-draw(B--N, gray+dashed);
-draw(D--P, gray+dashed);
-dot("$P$", P, dir(-90));
-dot("$Q$", Q, dir(-90));
+pair EF1 = E - 0.25*dir_EF;
+pair EF2 = F + 0.25*dir_EF;
+pair FD1 = F - 0.25*dir_FD;
+pair FD2 = D + 0.25*dir_FD;
+pair DE1 = D - 0.25*dir_DE;
+pair DE2 = E + 0.25*dir_DE;
 
-draw(E--P, blue);
-draw(E--Q, blue);
+pair A_line_far = A + 10*perp_EF;
+pair B_line_far = B + 10*perp_FD;
+pair C_line_far = C + 10*perp_DE;
+pair A_intersect = extension(A, A_line_far, EF1, EF2);
+pair B_intersect = extension(B, B_line_far, FD1, FD2);
+pair C_intersect = extension(C, C_line_far, DE1, DE2);
+
+draw(A--A_intersect, red+dotted+1bp);
+draw(B--B_intersect, red+dotted+1bp);
+draw(C--C_intersect, red+dotted+1bp);
+
+pair P = extension(A, A_intersect, B, B_intersect);
+dot(P, heavyred+4bp);
+label("$P$", P, dir(60));
+
+label("$A$", A, dir(180));
+label("$B$", B, dir(-90));
+label("$C$", C, dir(90));

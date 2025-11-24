@@ -19,49 +19,40 @@ void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pi
 pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
-unitsize(1cm);
+import graph;
+size(10.46cm);
+pen dps = linewidth(0.7) + fontsize(10); defaultpen(dps);
+pen dotstyle = black;
+real xmin = -5.9, xmax = 14.56, ymin = -3.95, ymax = 11.77;
+pen zzttqq = rgb(0.6,0.2,0);
 
-pair A = (-3, 0);
-pair B = (-1, 0);
-pair C = (2, 0);
-pair D = (5, 0);
+pair A = (2.72,5.22);
+pair B = (1.18,3.1);
+pair C = (5.42,2.82);
+pair P = (1.97,4.19);
+pair Q = (3.67,4.37);
+pair R = (3.9,2.92);
+pair S = (1.84,3.06);
 
-dot("$A$", A, W);
-dot("$B$", B, NW);
-dot("$C$", C, NE);
-dot("$D$", D, E);
-draw(A--B--C--D);
+draw(A--B--C--cycle, zzttqq);
+draw(circle((2.91,3.51), 1.16), black+dotted+1);
 
-path circleAC = circle((A+C)/2, (C-A).x/2);
-path circleBD = circle((B+D)/2, (D-B).x/2);
-draw(circleAC);
-draw(circleBD);
+dot(A,dotstyle);
+label("$A$", A, dir(90));
+dot(B,dotstyle);
+label("$B$", B, dir(180));
+dot(C,dotstyle);
+label("$C$", C, dir(0));
+dot(P,dotstyle);
+label("$P$", P, dir(135));
+dot(Q,dotstyle);
+label("$Q$", Q, dir(45));
+dot(R,dotstyle);
+label("$R$", R, dir(45));
+dot(S,dotstyle);
+label("$S$", S, dir(135));
 
-pair[] circleIntersects = intersectionpoints(circleAC, circleBD);
-pair X = circleIntersects[0];
-pair Y = circleIntersects[1];
+draw(S--P--R, blue+dashed);
+draw(R--Q--S, deepblue+dashed);
 
-dot("$X$", X, NW);
-dot("$Y$", Y, S);
-draw(X--Y);
-
-pair[] Z = intersectionpoints(X--Y, B--C);
-dot("$Z$", Z[0], NE);
-
-pair P = 0.75*X+0.25*Y;
-dot("$P$", P, W);
-
-pair CPlong = 3*P+(-2*C);
-draw(CPlong--C);
-pair[] M = intersectionpoints(CPlong--C, circleAC);
-dot("$M$", M[0], N);
-
-pair BPlong = 3.5*P+(-2.5*B);
-draw(BPlong--B);
-pair[] N = intersectionpoints(BPlong--B, circleBD);
-dot("$N$", N[0], dir(90));
-
-pair E = extension(A,M[0],D,N[0]);
-dot("$E$", E, dir(90));
-draw(A--E--X, black+dashed);
-draw(E--D, black+dashed);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
