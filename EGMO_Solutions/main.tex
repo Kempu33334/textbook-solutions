@@ -479,6 +479,10 @@ Let $O$ be the center of $\omega$. Since $\ol{DE} \parallel \ol{AC}$, we have th
 \end{align*}
 Thus, quadrilateral $POMB$ is cyclic. Thus, we have that \[\angle OMC = \angle OMP = \angle OBP = 90^\circ\] so $M$ is the midpoint of $\ol{AC}$, as required. $\square$
 
+\begin{remark*}
+For a projective solution, refer to \refproblem{9.16}
+\end{remark*}
+
 \newpage
 
 \begin{problem}[1.44]{Three Tangents}
@@ -5684,4 +5688,63 @@ as desired. $\square$
 Let $A$, $B$, $X$ be distinct collinear points and $k$ a real number. Prove that there is exactly one point $Y$ (possibly the point at infinity) such that $(A, B; X, Y ) = k$.
 \end{problem}
 Plop onto the number line, from which, the finish is trivial. $\square$
+
+\begin{problem}[9.5]{}
+If the points $A$, $X$, $B$, $Y$ are collinear in that order, is $P(A, B; X, Y)$ positive or negative?
+\end{problem}
+Negative, since neither segment is contained within the other, and they are not disjoint. $\square$
+
+\begin{problem}[9.6]{}
+Let $A$, $B$, $X$ be collinear points and $P_{\infty}$ a point at infinity along their common line. What is $(A, B; X, P_{\infty})$?
+\end{problem}
+We may evaulate as follows: \[(A, B; X, P_{\infty}) = \dfrac{XA}{XB} \div \dfrac{P_{\infty}A}{P_{\infty}B} = \dfrac{XA}{XB}\] as required. $\square$
+
+\newpage
+
+\begin{problem}[9.7]{}
+Let $A$, $B$, $X$, $Y$ be concyclic. Prove that if $P$ is any point on its circumcircle, then $P(A, B; X, Y)$ does not depend on $P$. Moreover, \[P(A, B; X, Y ) = \pm\dfrac{XA}{XB} \div \dfrac{YA}{YB}\] where the sign is positive if $AB$ and $XY$ do not intersect, and negative otherwise.
+\end{problem}
+Let the line $PA$ be denoted $a$ and similarly for $PB$, $PX$, and $PY$. Then, notice that: \[P(A, B; X, Y ) = \dfrac{\sin(\angle(x, a))}{\sin(\angle(x, b))}\div \dfrac{\sin(\angle(y, a))}{\sin(\angle(y, b))}.\] Now, we know that \[\dfrac{\sin(\angle(x, a))}{XA} = \dfrac{\sin(\angle PAX)}{PX} = \dfrac{\sin(\angle(x, b))}{XB}\] and applying similar logic to the other ratio finishes. $\square$
+
+\begin{problem}[9.14]{}
+Let $ABC$ be a triangle with concurrent cevians $AD$, $BE$, $CF$ (possibly on the extensions of the sides). Line $EF$ meets $BC$ at $X$ (possibly at a point at infinity). Show that $(X, D;B,C)$ is a harmonic bundle.
+\end{problem}
+Clearly, it is negative, so it suffices to show that \[\dfrac{BX}{BD}\cdot \dfrac{CD}{CX} = 1.\] However, we may get that
+\begin{align*}
+\dfrac{BX}{CX}\cdot\dfrac{FA}{BF}\cdot\dfrac{EC}{AE} &= 1 \\
+\dfrac{CD}{DB}\cdot\dfrac{BF}{FA}\cdot\dfrac{AE}{EC} &= 1
+\end{align*}
+where the first is by undirected Menalaus' and the second by Ceva. These two clearly give the required conclusion. $\square$
+\begin{problem}[9.15]{}
+In the coordinate plane, the points $A = (-1, 0)$, $B = (1, 0)$, $X = \left(\tfrac{1}{100}, 0\right)$ and $Y = (m, 0)$ form a harmonic bundle $(A, B; X, Y ) = -1$. What is $m$?
+\end{problem}
+We write the required equation: \[\dfrac{XA}{XB}\div\dfrac{YA}{YB} = -\dfrac{\tfrac{101}{100}}{\tfrac{99}{100}}\div\dfrac{m+1}{m-1} = -1.\] Solving, we find that $m = 100$. $\square$
+
+\begin{problem}[9.16]{JMO 2011/5}
+Points $A$, $B$, $C$, $D$, $E$ lie on a circle $\omega$ and point $P$ lies outside the circle. The given points are such that:
+\begin{enumerate}[label={(\roman*)}]
+    \item  lines $PB$ and $PD$ are tangent to $\omega$
+    \item  $P$, $A$, $C$ are collinear
+    \item  $\ol{DE} \parallel \ol{AC}$
+\end{enumerate}
+Prove that $\ol{BE}$ bisects $\ol{AC}$. 
+\end{problem}
+\begin{center}
+\begin{asy}
+size(6cm);
+pair A,B,C,D,M,O,P,E; A = dir(130); B = dir(52.5); E = dir(200); D = dir(300); C = dir(10); M = (A+C)/2; O = (0,0); P = (1.8,-0.12);
+
+dot("$A$",A,dir(A)); dot("$B$",B,dir(B)); dot("$C$",C,dir(C)); dot("$D$",D,dir(D)); dot("$E$",E,dir(E)); dot("$M$",M,dir(100)); dot("$P$",P,dir(P)); dot("$O$",O,NE);
+
+draw(unitcircle); draw(A--C); draw(E--D); draw(P--D); draw(P--B); draw(E--B); draw(A--P); draw(A--B--C--D--cycle, dashed);
+\end{asy}
+\end{center}
+Start by noticing that quadrilateral $ABCD$ is harmonic. Now, taking perspectivity at $E$, we find that: \[(A,C;B,D) \stackrel{E}{=} (A,M;C,P_{\infty}) = -1\] so $M$ is the midpoint of $\ol{AC}$, and we are done. $\square$
+\begin{remark*}
+For a synthetic solution, refer to \refproblem{1.43}.
+\end{remark*}
+\begin{problem}[9.17]{Midpoint Lengths}
+Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = −1$. Let $M$ be the midpoint of $\overline{AB}$. Show that $MX \cdot MP = \left(\tfrac{1}{2}AB^2\right)$ and $P X \cdot PM = P A \cdot P B$. 
+\end{problem}
+Construct the circle with diameter $\ol{AB}$. Then, let $N$ be a point of tangency from $P$ to the circle. We then find that $\triangle MXN \sim \triangle MNP$, so we have the ratio \[\dfrac{MX}{MN} = \dfrac{MN}{MP} \implies MX\cdot MP = MN^2 = \tfrac{1}{4}AB^2$ as required. Furthermore, we know that $\triangle NXP \sim \triangle MNP$, so we may write \[\dfrac{PX}{PN} = \dfrac{PN}{PM} \implies PX\cdot PM = PN^2 = PA\cdot PB\] where the last equation is by Power of a Point. $\square$
 \end{document}
