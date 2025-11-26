@@ -5744,7 +5744,24 @@ Start by noticing that quadrilateral $ABCD$ is harmonic. Now, taking perspectivi
 For a synthetic solution, refer to \refproblem{1.43}.
 \end{remark*}
 \begin{problem}[9.17]{Midpoint Lengths}
-Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = −1$. Let $M$ be the midpoint of $\overline{AB}$. Show that $MX \cdot MP = \left(\tfrac{1}{2}AB^2\right)$ and $P X \cdot PM = P A \cdot P B$. 
+Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = -1$. Let $M$ be the midpoint of $\overline{AB}$. Show that $MX \cdot MP = \tfrac{1}{4}AB^2$ and $P X \cdot PM = P A \cdot P B$. 
 \end{problem}
 Construct the circle with diameter $\ol{AB}$. Then, let $N$ be a point of tangency from $P$ to the circle. We then find that $\triangle MXN \sim \triangle MNP$, so we have the ratio \[\dfrac{MX}{MN} = \dfrac{MN}{MP} \implies MX\cdot MP = MN^2 = \tfrac{1}{4}AB^2$ as required. Furthermore, we know that $\triangle NXP \sim \triangle MNP$, so we may write \[\dfrac{PX}{PN} = \dfrac{PN}{PM} \implies PX\cdot PM = PN^2 = PA\cdot PB\] where the last equation is by Power of a Point. $\square$
+
+\newpage
+
+\begin{problem}[9.20]{}
+Let $\ol{AB}$ be a line segment and $\Omega$ the set of all points $P$ satisfying $\tfrac{PA}{PB} = k$. Let the intersection of $\Omega$ with $AB$ outside $\ol{AB}$ be $X$, and the other intersection $Y$ so that $(A,B;X,Y)$ is a harmonic bundle. What is the Apollonian circle of $\ol{XY}$ through $A$?
+\end{problem}
+We claim it is the circle with diameter $\ol{AB}$. Notice that $(X,Y;A,B)$ is also a harmonic bundle from \refproblem{9.3}. As a result, we know that the Apollonian circle with respect to $\ol{XY}$ through $A$ also passes through $B$, and since they are collinear, we have the required conclusion. $\square$
+
+\begin{problem}[9.21]{}
+Let $P$ be a point such that $\tfrac{PA}{PB} = k$, and let $\Omega$ be the set of all points satisfying this (a circle). Check that as $k$ varies, the $\Omega$ are all coaxial.
+\end{problem}
+We prove the stronger condition that the radical axis of the pencil is the perpendicular bisector of $\ol{AB}$. Now, let $M$ be the midpoint of $\ol{AB}$. By \refproblem{9.17}, the power of $M$ to any $\Omega$ is just $\tfrac{1}{4}AB^2$, which is constant. In addition, since all the centers are collinear, we know that all points on the perpendicular bisector of $\ol{AB}$ also have the same property, so we have the required conclusion (as they share a radical axis). $\square$
+
+\begin{problem}[9.22]{Harmonic Bundles on the Bisector}
+Let $ABC$ be a triangle with incenter $I$ and $A$-excenter $I_A$. In addition, let $AI \cap BC = D$. Prove that \[(I,I_A; A, D) = -1.\]
+\end{problem}
+Notice that since $CI$ bisects $\angle ACD$, and $\angle ICI_A$ is right, $(I,I_A; A, D) = -1$ is a harmonic bundle, as required. $\square$
 \end{document}
