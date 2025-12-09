@@ -230,4 +230,8 @@ Let $m$ and $n$ be two positive integers where $\gcd(m, n) = 1$. Prove that for 
 We start with the only if direction. Since \[n^2+km^2 \equiv m^2+km^2 \equiv (k+1)m^2 \equiv 0 \pmod{m+n}\] and as $\gcd(m, m+n) = 1$, we know that $m+n$ divides $k+1$.
 
 We proceed with the if direction. Since \[0 \equiv k+1 \equiv (k+1)m^2 \equiv m^2+km^2 \equiv n^2+km^2 \pmod{m+n}\] as required. $\square$
+\begin{problem}[1.12.10]{Japan 2020 Junior Finals P3}
+Find all tuples of positive integers $(a, b, c)$ such that \[4\lcm(a, b, c) = ab + bc + ca.\]
+\end{problem}
+WLOG let $a \le b \le c$. Then, we know that $a \mid bc$, $b \mid ac$, and $c \mid ab$. As a result, we know that \[c \le \lcm(a, b, c) \le ab.\] Hence, 
 \end{document}
