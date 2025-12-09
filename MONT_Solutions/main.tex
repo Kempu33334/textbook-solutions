@@ -227,5 +227,7 @@ As a result, we know that $m^2+mn+n^2 \mid d$, so $m^2+mn+n^2 \le d$. Hence, \[|
 \begin{problem}[1.12.9]{Germany}
 Let $m$ and $n$ be two positive integers where $\gcd(m, n) = 1$. Prove that for every positive integer $k$, $n + m$ is a divisor of $n^2 + km^2$ if and only if $n + m$ is a divisor of $k + 1$.
 \end{problem}
-We start with the only if direction. Since \[n^2+km^2 \equiv m^2+km^2 \equiv (k+1)m^2 \equiv 0 \pmod{m+n}.\] 
+We start with the only if direction. Since \[n^2+km^2 \equiv m^2+km^2 \equiv (k+1)m^2 \equiv 0 \pmod{m+n}\] and as $\gcd(m, m+n) = 1$, we know that $m+n$ divides $k+1$.
+
+We proceed with the if direction. Since \[0 \equiv k+1 \equiv (k+1)m^2 \equiv m^2+km^2 \equiv n^2+km^2 \pmod{m+n}\] as required. $\square$
 \end{document}
