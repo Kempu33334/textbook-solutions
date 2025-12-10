@@ -2,6 +2,7 @@
 \usepackage{kempu}
 
 \newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\noproblems}{\emph{No problems.}}
 
 \title{EGMO Solutions}
 \author{Kempu33334}
@@ -32,7 +33,8 @@ pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 \subsection{Divisibility}
 
-\emph{No problems.}
+
+oproblems
 
 \subsection{Divisibility Properties}
 
@@ -53,7 +55,8 @@ Clearly, the statement is equivalent to $x^n-y^n \pmod{x-y} \equiv 0$. However, 
 
 \subsection{Euclid’s Division Lemma}
 
-\emph{No problems.}
+
+oproblems
 
 \subsection{Primes}
 
@@ -69,7 +72,8 @@ Clearly, it cannot have zero or one prime factor. If it has two prime factors, t
 
 \subsection{Looking at Numbers as Multisets}
 
-\emph{No problems.}
+
+oproblems
 
 \subsection{GCD and LCM}
 
@@ -159,7 +163,8 @@ Substitute $a = pq$, $b = rs$, $c = pr$, and $d = qs$. Then, \[a+b+c+d = pq+pr+q
 
 \subsection{Example Problems}
 
-\emph{No problems.}
+
+oproblems
 
 \subsection{Practice Problems}
 
@@ -351,4 +356,62 @@ Since they all leave the same remainder when divided by $n$, we know that they f
 Show that the set of integers $a$ such that $a \equiv 0 \pmod{n}$ is the set of multiples of $n$.
 \end{problem}
 Clearly, this is just all numbers which are divisible by $n$. $\square$
+
+\subsection{Remainder Idea}
+
+\noproblems
+
+\subsection{Residue Classes}
+
+\begin{problem}[2.3.1]{}
+Guess why the above classes are called ``residue'' classes.
+\end{problem}
+Residue is just what is left behind.
+
+\begin{problem}[2.3.2]{}
+Show that the number of the classes modulo $n$ is exactly $n$.
+\end{problem}
+There is a clear bijection between the numbers $0$, $1$, $\dots$, $n-1$ and each residue class.
+
+\subsection{Basic Properties}
+
+\begin{problem}[2.4.1]{}
+Show that $ab$ has remainder $rs \mod n$ by writing $a = nx+r$ and $b = ny+s$ and evaluating $ab$.
+\end{problem}
+We may write that \[ab \equiv (nx+r)(ny+s) \equiv n(\cdots)+rs \equiv rs \pmod{n}\] as required. $\square$
+
+\begin{problem}[2.4.2]{}
+Find the remainder when $2^{10}$ is divided by $10$.
+\end{problem}
+We know $2^10 = 1024$, so the answer is $4$.
+
+\begin{problem}[2.4.3]{}
+Find $1002 \times 560 \pmod{7}$.
+\end{problem}
+Since $7 \mid 560$, the answer is $0$.
+
+\begin{problem}[2.4.4]
+Show that if $a \equiv b \pmod{n}$, then $ka \equiv kb \pmod{n}$ for any integer $k$.
+\end{problem}
+We are given that $a-b$ is a multiple of $n$, so $k(a-b)$ is too. $\square$
+
+\begin{problem}[2.4.5]
+Show that $a - b \mid a^n - b^n$ for any integer n.
+\end{problem}
+We write the following: \[a^n-b^n \equiv b^n-b^n \equiv 0\pmod{a-b}\] as required. $\square$
+
+\begin{problem}[2.4.6]
+If $p$ is an odd prime, and $a$, $b$ are coprime, show that \[\gcd\left(\dfrac{a^p + b^p}{a + b}, a + b\right) \in \{1, p\}.\]
+\end{problem}
+We may write that \[\dfrac{a^p+b^p}{a+b} \equiv a^{p-1}-a^{p-2}b+\dots+b^{p-1} \equiv pa^{p-1} \pmod{a+b}\] and since $\gcd(a, b) = 1$, we clearly have the necessary conclusion. $\square$
+
+\begin{problem}[2.4.7]
+Let $f$ be a polynomial with integer coefficients. Show that $a - b | f(a) - f(b)$ for any integers $a$, $b$ is the same as saying $f(a + d) \equiv f(a) \pmod{d}$.
+\end{problem}
+Let $b = a-d$. Then, we find that \[d \mid f(a)-f(a-d)\] which is the required conclusion. $\square$
+
+\begin{problem}[2.4.8]
+Show that $ka \equiv kb \pmod{n}$ implies $a \equiv b \pmod{n}$ if and only if $\gcd(k, n) = 1$.
+\end{problem}
+Clearly, an inverse $k^{-1}$ with respect to modulo $n$ exists if and only if $\gcd(k, n) = 1$, so both directions are trivial. $\square$
 \end{document}
