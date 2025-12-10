@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {1.6}GCD and LCM}{3}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Euclid’s Division Algorithm}{4}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}B\'ezout's Theorem}{4}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Base Systems}{4}{subsection.1.9}%
-\contentsline {subsection}{\numberline {1.10}Extra Results as Problems}{5}{subsection.1.10}%
-\contentsline {subsection}{\numberline {1.11}Example Problems}{5}{subsection.1.11}%
-\contentsline {subsection}{\numberline {1.12}Practice Problems}{5}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.9}Base Systems}{5}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Extra Results as Problems}{6}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Example Problems}{6}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Practice Problems}{6}{subsection.1.12}%

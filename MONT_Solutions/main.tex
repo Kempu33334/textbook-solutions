@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{kempu}
 
+\newcommand{\lcm}{\operatorname{lcm}}
+
 \title{EGMO Solutions}
 \author{Kempu33334}
 \date{July 2025}
@@ -166,8 +168,6 @@ Show that any composite number $n$ has a prime factor $\le \sqrt{n}$.
 \end{problem}
 Assume not. Then, since $n$ has at least two prime factors, consider any two of them, say $p$ and $q$. Since $pq \le n$, we know that $p$ and $q$ cannot both be greater than $\sqrt{n}$, so at least one of them is $\le \sqrt{n}$, contradiction. $\square$
 
-\newpage
-
 \begin{problem}[1.12.2]{IMO 1959/1}
 Prove that for any natural number $n$, the fraction \[\dfrac{21n + 4}{14n + 3}\] is irreducible.
 \end{problem}
@@ -233,5 +233,49 @@ We proceed with the if direction. Since \[0 \equiv k+1 \equiv (k+1)m^2 \equiv m^
 \begin{problem}[1.12.10]{Japan 2020 Junior Finals P3}
 Find all tuples of positive integers $(a, b, c)$ such that \[4\lcm(a, b, c) = ab + bc + ca.\]
 \end{problem}
-WLOG let $a \le b \le c$. Then, we know that $a \mid bc$, $b \mid ac$, and $c \mid ab$. As a result, we know that \[c \le \lcm(a, b, c) \le ab.\] Hence, 
+WLOG let $a \le b \le c$. Then, we know that $a \mid bc$, $b \mid ac$, and $c \mid ab$. Now, since $\lcm(a, b, c) \mid ab$, we may make the following claim.
+\begin{claim*}
+We claim that $\lcm(a, b, c) = ab$.
+\end{claim*}
+\begin{proof}
+Clearly, if it is not equal to $ab$, then $\lcm(a, b, c) \le \tfrac{ab}{2}$. Then, substituting gives that \[ab = bc+ac\] which cannot work. Hence, we have the required conclusion.
+\end{proof}
+Hence, substituting $\lcm(a, b, c) = ab$, we find that \[3ab = bc+ac\] and from the claim above, $\gcd(a, b) = 1$. Hence, we find that either $c \mid 3$, $c \mid a$, or $c \mid b$. We now case.
+\begin{itemize}
+\item If $c \mid 3$, then either $c = 3$ or $c = 1$. If it is the latter, then we must have $a = b = c = 1$, which clearly does not work. If it is the former, then we wish to find solutions to $ab = a+b$ which factors as $(a-1)(b-1) = 1$, so we must have $a = b = 2$. Trying this, we see that this does not work.
+\item If $c \mid a$, then we know that $a = b = c$, so trying this, \[4a = 3a^2 \implies a = \dfrac{4}{3}\] which does not work.
+\item If $c \mid b$, then we know that $b = c$, so the equation reduces to \[4\lcm(a, b) = 2ab+b^2.\] Now, if $\lcm(a, b) = ab$, then we know that $2ab = b^2$ so $2a = b$, but then we must have $b = c = 2$, so $a = 1$. Trying this, we see that this is indeed a solution. Else, we know that $\lcm(a, b) = \tfrac{ab}{2}$, but this cannot lead to solutions.
+\end{itemize}
+Hence, the only solution is $\boxed{(1, 2, 2)}$ and permutations. $\square$
+\newpage
+\begin{problem}[1.12.11]{Iran MO 2017 Round 2/1}
+Prove the following:
+\begin{enumerate}
+\item There doesn’t exist a sequence $a_1, a_2, a_3, \dots$ of positive integers such that for all $i < j$, we have $\gcd(a_i + j, a_j + i) = 1$.
+\item Let $p$ be an odd prime number. Prove that there exists a sequence $a_1, a_2, a_3, \dots$ of positive integers such that for all $i < j$, $p \nmid \gcd(a_i + j, a_j + i)$.
+\end{enumerate}
+\end{problem}
+\begin{problem}[1.12.12]{All Russian Olympiad 2017 Day 1 Grade 10 P5}
+Suppose $n$ is a composite positive integer. Let $1 < a_1 < a_2 < \dots < a_k < n$ be all the divisors of $n$. It is known, that $a_1 + 1, \dots , a_k + 1$ are all divisors for some $m$ (except $1$, $m$). Find all such $n$.
+\end{problem}
+We find that we must have \[(a_1+1)(a_k+1) = (a_2+1)(a_{k-1}+1) = \dots\] and as a result, \[a_1+a_k = a_2+a_{k-1} = \dots.\] Now, looking at the first equality, we must have that \[a_1+\dfrac{n}{a_1} = a_2+\dfrac{n}{a_2} \implies a_1-a_2 = n\left(\dfrac{1}{a_2}-\dfrac{1}{a_1}\right) = \dfrac{n(a_1-a_2)}{a_1a_2}.\] Hence, either $a_1 = a_2$ or $a_1a_2 = n$. Clearly, we cannot have the latter, so $\tau(n) \le 4$. We now case.
+\begin{itemize}
+\item If $\tau(n) = 2$, then it must be prime, which contradicts the problem statement.
+\item If $\tau(n) = 3$, then $n = p^2$ for some prime $p$. Then, we require for $p+1$ to be the all the divisors of some $m$, but $2 \mid p+1$ unless $p = 2$, for which we find the solution $n = 4$.
+\item If $\tau(n) = 4$, then either $n = p^3$ or $n = pq$ for primes $p$, $q$. If it is the former, then there must exist $m$ such that all the divisors of $m$ are $p+1$ and $p^2+1$. However, notice that unless $p = 2$, both are divisible by two, so this is impossible. If $p = 2$, then notice that $m = 15$ works, so this is satisfactory. On the other hand, if $n = pq$, then WLOG $p < q$. In that case, $p+1$ and $q+1$ must be all the divisors of $m$, however this is impossible for the same reason as the previous case.
+\end{itemize}
+Hence, in the end, our only solutions are $n = \boxed{4, 8}$, as required. $\square$
+\begin{problem}[1.12.13]{IMO 2002/4}
+Let $n \ge 2$ be a positive integer, with divisors $1 = d_1 < d_2 < \dots < d_k = n$. Prove that $d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k$ is always less than $n^2$, and determine when it is a divisor of $n^2$.
+\end{problem}
+We first prove the first part. Notice that $\max(d_i) = \tfrac{n}{k-i+1}$. Hence, we wish to show that \[\dfrac{n}{1}\cdot \dfrac{n}{2}+\dfrac{n}{2}\cdot\dfrac{n}{3}+\dots+\dfrac{n}{k-1}\cdot\dfrac{n}{k} < n^2\] which is clear by telescoping.
+
+We now show the second part. We start with a claim.
+\begin{claim*}
+In order for $d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k \mid n^2$, $n$ cannot be composite.
+\end{claim*}
+\begin{proof}
+Suppose for the sake of contradiction that there exists composite $n$ that works. Let $p$ be the smallest prime dividing $n$. Then, notice that \[d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k > d_{k-1}d_k = \dfrac{n^2}{p}\] so it cannot work, as required.
+\end{proof}
+Trying primes $n = p$, we find that we must have $p+1 \mid p^2$, or \[\gcd(p^2, p+1) = p+1.\] Solving this, we require for $1 = p+1$, which has no solutions. Hence, there exist no solutions. $\square$
 \end{document}
