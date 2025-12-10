@@ -290,5 +290,14 @@ Trying primes $n = p$, we find that we must have $p+1 \mid p^2$, or \[\gcd(p^2, 
 \begin{problem}[1.12.14]{Russia 2001 Grade 10 Day 2/4}
 Find all odd positive integers $n > 1$ such that if $a$ and $b$ are relatively prime divisors of $n$, then $a + b - 1$ divides $n$.
 \end{problem}
+We claim the answer is $n = p^k$ for all odd primes $p$ and positive integers $k$, which clearly works.
 
+We begin with a claim.
+\begin{claim*}
+We claim $n$ cannot have more than one prime factor.
+\end{claim*}
+\begin{proof}
+Assume there exists, for the sake of contradiction, satisfactory $n$ which contains more than one prime factor. Then, we write $n = p^km$, where $p \nmid m$ and $m \neq 1$. In that case, notice that $p + m - 1$ must divide $n$. Now, since all the prime factors of $m$ are greater than $p$, we know that $\gcd(p-1, m) = 1$, so \[p+m-1 = p^{\ell}\] for some non-negative integer $\ell$. In addition, we know that $p^{\ell}+m-1 = 2p^{\ell}-p$ must divide $n$ and as a result, we know that $2p^{\ell-1}-1$ must divide $m$. As a result, \[2p^{\ell-1}-1 \mid p^{\ell}-p+1 \implies \gcd(2p^{\ell-1}-1, p^{\ell}-p+1) = \gcd(2p^{\ell-1}-1, p^{\ell-1}-(p-1)/2) = 2p^{\ell-1}-1.\] However, we must have that \[p^{\ell-1}+(p-1)/2 \le 1\] which is clearly impossible.
+\end{proof}
+As a result, we take $n = p^k$, which clearly works. $\square$
 \end{document}
