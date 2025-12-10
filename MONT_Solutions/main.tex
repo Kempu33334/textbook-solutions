@@ -332,4 +332,23 @@ Since the equation is homogeneous, assume that $\gcd(a_1, a_2, \dots, a_n) = 1$.
 Let $a > b > c > d$ be positive integers and suppose that \[ac + bd = (b + d + a - c)(b + d - a + c).\] Prove that $ab + cd$ is not prime.
 \end{problem}
 We know that $b+d+a-c \mid ac+bd$, so \[\gcd(ac+bd, b+d+a-c) = \gcd((a+b)(a+d), b+d+a-c) = b+d+a-c\] so \[b+d+a-c \mid (a+b)(a+d).\] Similarly, we know that $b+d-a+c \mid ac+bd$, so \[\gcd(ac+bd, b+d-a+c) = \gcd((b+c)(c+d), b+d-a+c) = b+d-a+c\] so \[b+d-a+c \mid (b+c)(c+d).\] Hence, we find that \[ac+bd \mid (a+b)(a+d)(b+c)(c+d) = ((ac+bd)+(ad+bc))((ab+cd)+(ac+bd))\] implying that \[ac+bd \mid (ad+bc)(ab+cd).\] We know that \[ab+cd > ac+bc > ad+bc\] by the Rearrangment Inequality. Hence, if $ab+cd$ were to be prime, then $ac+bd \mid ad+bc$ which isn't possible, so we have the required conclusion. $\square$
+
+\section{Modular Arithmetic Basics}
+
+\subsection{Motivation}
+
+\begin{problem}[2.1.1]{}
+Show that $a + n \equiv a \pmod{n}$.
+\end{problem}
+This is clear, since $n \equiv 0 \pmod{n}$. $\square$
+
+\begin{problem}[2.1.2]{}
+Let $a$, $n$ be fixed integers. Show that the set of integers $b$ such that $b \equiv a \pmod{n}$ form an arithmetic progression. What is the common difference?
+\end{problem}
+Since they all leave the same remainder when divided by $n$, we know that they form an arithmetic progress with common difference $n$. $\square$
+
+\begin{problem}[2.1.3]{}
+Show that the set of integers $a$ such that $a \equiv 0 \pmod{n}$ is the set of multiples of $n$.
+\end{problem}
+Clearly, this is just all numbers which are divisible by $n$. $\square$
 \end{document}
