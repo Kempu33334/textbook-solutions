@@ -366,12 +366,12 @@ Clearly, this is just all numbers which are divisible by $n$. $\square$
 \begin{problem}[2.3.1]{}
 Guess why the above classes are called ``residue'' classes.
 \end{problem}
-Residue is just what is left behind.
+Residue is just what is left behind. $\square$
 
 \begin{problem}[2.3.2]{}
 Show that the number of the classes modulo $n$ is exactly $n$.
 \end{problem}
-There is a clear bijection between the numbers $0$, $1$, $\dots$, $n-1$ and each residue class.
+There is a clear bijection between the numbers $0$, $1$, $\dots$, $n-1$ and each residue class. $\square$
 
 \subsection{Basic Properties}
 
@@ -383,12 +383,12 @@ We may write that \[ab \equiv (nx+r)(ny+s) \equiv n(\cdots)+rs \equiv rs \pmod{n
 \begin{problem}[2.4.2]{}
 Find the remainder when $2^{10}$ is divided by $10$.
 \end{problem}
-We know $2^10 = 1024$, so the answer is $4$.
+We know $2^10 = 1024$, so the answer is $4$. $\square$
 
 \begin{problem}[2.4.3]{}
 Find $1002 \times 560 \pmod{7}$.
 \end{problem}
-Since $7 \mid 560$, the answer is $0$.
+Since $7 \mid 560$, the answer is $0$. $\square$
 
 \begin{problem}[2.4.4]{}
 Show that if $a \equiv b \pmod{n}$, then $ka \equiv kb \pmod{n}$ for any integer $k$.
@@ -435,4 +435,102 @@ By Fermat's Little Theorem, \[ab^p-a^pb \equiv ab-ab \equiv 0 \pmod{p}\] as requ
 Find \[2^{50} \pmod{7}.\]
 \end{problem}
 By FLT, \[2^{50} \equiv 2^2 \equiv 4 \pmod{7}\] as desired. $\square$
+
+\subsection{Inverses}
+
+\begin{problem}[2.7.1]{}
+Show that inverses multiply like fractions.
+\end{problem}
+Follows since multiplication is commutative. $\square$
+
+\begin{problem}[2.7.2]{}
+Find the inverse of all $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$ modulo $11$.
+\end{problem}
+This is just the set $\{1, 6, 4, 3, 9, 2, 8, 7, 5, 10\}$ where each number is mapped to the respective number in the other set. $\square$
+
+\begin{problem}[2.7.3]{}
+Show that $0$ does not have an inverse modulo $p$. What about $p$?
+\end{problem}
+Since $0$ times anything is $0$, it cannot equal $1$ at any point. Similarly, since $p$ is equivalent to $0$ in $\mathbb{F}_p$, we have the required conclusion. $\square$
+
+\begin{problem}[2.7.4]{}
+Prove that if $a \neq 0 \pmod{p}$, then \[a^{p-2} \equiv a^{-1} \pmod{p}\].
+\end{problem}
+Follows by dividing FLT by $a$. $\square$
+
+\begin{problem}[2.7.5]{}
+Prove that the inverse of $a^n$ is the $n$th power of the inverse of $a$. That is, \[(a^{-1})^n \equiv (a^n)^{-1} \pmod{p}.\]
+
+Using this, find the inverse of $256$ modulo $47$.
+\end{problem}
+The first part follows by exponent rules. The second, \[256^{-1} \equiv (2^8)^{-1} \equiv (2^{-1})^8 \equiv 24^8 \equiv 9 \pmod{47}\] as required. $\square$
+
+\subsection{Simple Properties of Inverses and Wilson's Theorem}
+
+\begin{problem}[2.8.1]{}
+Prove that if $n$ is any natural satisfying $(n - 1)! \equiv -1 \pmod{n}$, then $n$ must be a prime.
+\end{problem}
+Follows by CRT and decomposition if $n$ is composite. $\square$
+
+\begin{problem}[2.8.2]{}
+Let $p$ be a prime. Show that the remainder when $(p - 1)!$ is divided by $p(p - 1)$ is $p - 1$.
+\end{problem}
+Follows by CRT and Wilson's Theorem. $\square$
+
+\begin{problem}[2.8.3]{}
+Let $n$ be an integer. Calculate \[\gcd(n! + 1,(n + 1)!).\]
+\end{problem}
+We split into cases based on if $n+1$ is prime.
+
+If $n+1$ is prime, then it suffices to calculate $\gcd(n!+1, n+1)$. However, by Wilson's Theorem, this is just $n+1$, so we have the required answer.
+
+If $n+1$ is composite, then let $q$ be a prime dividing $(n+1)!$. Then, we know that $q \le n$, so it divides $n!$ but not $n!+1$, so $\gcd(n!+1,(n+1)!) = 1$. $\square$
+
+\subsection{General Equal Sets}
+
+\noproblems
+
+\subsection{Euler's Theorem}
+
+\begin{problem}[2.10.1]{}
+Find $2^{98} \pmod{33}$
+\end{problem}
+Since $\phi(33) = 20$, this reduces to \[2^{-2} \equiv 4^{-1} \equiv 25 \pmod{33}\] as required. $\square$
+
+\begin{problem}[2.10.2]{}
+Find $5^{30} \pmod{62}$.
+\end{problem}
+Since $\phi(62) = 30$, this is just $1 \pmod{62}$. $\square$
+
+\begin{problem}[2.10.3]{}
+What happens if $\gcd(a, n) \neq 1$? Does there exist any integer $m$ such that $a^m \neq 1 \pmod{n}$?
+\end{problem}
+No, since $a^m$ and $n$ will share a common factor. $\square$
+
+\begin{problem}[2.10.4]{}
+Show that $n \mid 2^{n!} - 1$ for all odd $n$.
+\end{problem}
+Notice that $\phi(n)$ will only have prime factors that are less than $n$, and $\phi(n) < n$, so we apply Euler's Theorem to win. $\square$
+
+\subsection{General Inverses}
+
+\begin{problem}[2.11.1]{}
+Find the inverse of all $\{1, 3, 5, 7\}$ modulo $8$. What do you observe? Can you explain this?
+\end{problem}
+It is the set $\{1, 5, 3, 7\}$. It is just a permutation of the original set, but this is clear, since in order for it not to be, it would have to contain some number divisible by $2$, which cannot work. $\square$
+
+\begin{problem}[2.11.2]{}
+Does there exist an inverse for $5$ modulo $10$? What about $4$?
+\end{problem}
+No for both. $\square$
+
+\begin{problem}[2.11.3]{}
+Show that $\gcd(a^{-1}, n)$ is also $1$.
+\end{problem}
+Because $aa^{-1} \equiv 1 \pmod{n}$, if $\gcd(a^{-1}, n) \neq 1$, then they must share a common prime factor, which means that we cannot have $a$, contradiction. $\square$
+
+\begin{problem}[2.11.4]{}
+Prove that if $\gcd(a, n) \neq 1$, then a cannot have an inverse.
+\end{problem}
+Then, $a$ and $n$ must share a common prime factor, which means that there cannot exist an inverse. $\square$
 \end{document}
