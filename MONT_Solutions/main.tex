@@ -300,4 +300,11 @@ We claim $n$ cannot have more than one prime factor.
 Assume there exists, for the sake of contradiction, satisfactory $n$ which contains more than one prime factor. Then, we write $n = p^km$, where $p \nmid m$ and $m \neq 1$. In that case, notice that $p + m - 1$ must divide $n$. Now, since all the prime factors of $m$ are greater than $p$, we know that $\gcd(p-1, m) = 1$, so \[p+m-1 = p^{\ell}\] for some non-negative integer $\ell$. In addition, we know that $p^{\ell}+m-1 = 2p^{\ell}-p$ must divide $n$ and as a result, we know that $2p^{\ell-1}-1$ must divide $m$. As a result, \[2p^{\ell-1}-1 \mid p^{\ell}-p+1 \implies \gcd(2p^{\ell-1}-1, p^{\ell}-p+1) = \gcd(2p^{\ell-1}-1, p^{\ell-1}-(p-1)/2) = 2p^{\ell-1}-1.\] However, we must have that \[p^{\ell-1}+(p-1)/2 \le 1\] which is clearly impossible.
 \end{proof}
 As a result, we take $n = p^k$, which clearly works. $\square$
+
+\begin{problem}[1.12.15]{INMO 2019/3}
+Let $m$, $n$ be distinct positive integers. Prove that \[\gcd(m, n) + \gcd(m + 1, n + 1) + \gcd(m + 2, n + 2) \le 2|m − n| + 1.\] Further, determine when equality holds.
+\end{problem}
+WLOG let $m \ge n$, and notice that \[\gcd(m, n) + \gcd(m + 1, n + 1) + \gcd(m + 2, n + 2) = \gcd(m-n, n) + \gcd(m-n, n + 1) + \gcd(m-n, n + 2).\] Then, we know that at most one of $\gcd(m-n, n)$, $\gcd(m-n, n+1)$, and $\gcd(m-n, n+2)$ can be exactly $m-n$, while the others must be less than or equal to $\tfrac{m-n}{2}$ (as long as $m-n > 1$). As a result, we find that \[\gcd(m-n, n) + \gcd(m-n, n + 1) + \gcd(m-n, n + 2) \le m-n + \dfrac{m-n}{2} + \dfrac{m-n}{2} = 2(m-n) < 2(m-n)+1\] which is good. On the other hand, we have equality if and only if $m-n = 1$, since then both sides are equal to $3$. $\square$
+
+
 \end{document}
