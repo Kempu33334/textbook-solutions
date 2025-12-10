@@ -230,6 +230,7 @@ Let $m$ and $n$ be two positive integers where $\gcd(m, n) = 1$. Prove that for 
 We start with the only if direction. Since \[n^2+km^2 \equiv m^2+km^2 \equiv (k+1)m^2 \equiv 0 \pmod{m+n}\] and as $\gcd(m, m+n) = 1$, we know that $m+n$ divides $k+1$.
 
 We proceed with the if direction. Since \[0 \equiv k+1 \equiv (k+1)m^2 \equiv m^2+km^2 \equiv n^2+km^2 \pmod{m+n}\] as required. $\square$
+
 \begin{problem}[1.12.10]{Japan 2020 Junior Finals P3}
 Find all tuples of positive integers $(a, b, c)$ such that \[4\lcm(a, b, c) = ab + bc + ca.\]
 \end{problem}
@@ -247,7 +248,9 @@ Hence, substituting $\lcm(a, b, c) = ab$, we find that \[3ab = bc+ac\] and from 
 \item If $c \mid b$, then we know that $b = c$, so the equation reduces to \[4\lcm(a, b) = 2ab+b^2.\] Now, if $\lcm(a, b) = ab$, then we know that $2ab = b^2$ so $2a = b$, but then we must have $b = c = 2$, so $a = 1$. Trying this, we see that this is indeed a solution. Else, we know that $\lcm(a, b) = \tfrac{ab}{2}$, but this cannot lead to solutions.
 \end{itemize}
 Hence, the only solution is $\boxed{(1, 2, 2)}$ and permutations. $\square$
+
 \newpage
+
 \begin{problem}[1.12.11]{Iran MO 2017 Round 2/1}
 Prove the following:
 \begin{enumerate}
@@ -255,6 +258,10 @@ Prove the following:
 \item Let $p$ be an odd prime number. Prove that there exists a sequence $a_1, a_2, a_3, \dots$ of positive integers such that for all $i < j$, $p \nmid \gcd(a_i + j, a_j + i)$.
 \end{enumerate}
 \end{problem}
+We start with the first part. Notice that by selecting $i = 2m$ and $j = 2n$, we find that any even indexed term must be odd. Then, by taking $i = 2m$ and $j = 2n-1$, we find that all odd indexed terms must be odd also. However, selecting $i = 2m-1$ and $j = 2n-1$ then gives a contradiction since $2$ must divide it.
+
+We finish with the second part. Notice that $\gcd(a_i + j, a_j + 1) = \gcd((a_i+i)+(a_j+j), a_j+1)$. Hence, it suffices to find a sequence $\{a\}$ where \[p \nmid (a_i+i)+(a_j+j).\] However, we can just select the sequence where $a_i = (i-1)p+2-i$, so that \[\{a\} = 1, p, 2p-1, 3p-2, \dots.\] Then, notice that the sum of any two terms must be $4 \pmod{p}$, as required. $\square$
+
 \begin{problem}[1.12.12]{All Russian Olympiad 2017 Day 1 Grade 10 P5}
 Suppose $n$ is a composite positive integer. Let $1 < a_1 < a_2 < \dots < a_k < n$ be all the divisors of $n$. It is known, that $a_1 + 1, \dots , a_k + 1$ are all divisors for some $m$ (except $1$, $m$). Find all such $n$.
 \end{problem}
@@ -265,6 +272,7 @@ We find that we must have \[(a_1+1)(a_k+1) = (a_2+1)(a_{k-1}+1) = \dots\] and as
 \item If $\tau(n) = 4$, then either $n = p^3$ or $n = pq$ for primes $p$, $q$. If it is the former, then there must exist $m$ such that all the divisors of $m$ are $p+1$ and $p^2+1$. However, notice that unless $p = 2$, both are divisible by two, so this is impossible. If $p = 2$, then notice that $m = 15$ works, so this is satisfactory. On the other hand, if $n = pq$, then WLOG $p < q$. In that case, $p+1$ and $q+1$ must be all the divisors of $m$, however this is impossible for the same reason as the previous case.
 \end{itemize}
 Hence, in the end, our only solutions are $n = \boxed{4, 8}$, as required. $\square$
+
 \begin{problem}[1.12.13]{IMO 2002/4}
 Let $n \ge 2$ be a positive integer, with divisors $1 = d_1 < d_2 < \dots < d_k = n$. Prove that $d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k$ is always less than $n^2$, and determine when it is a divisor of $n^2$.
 \end{problem}
@@ -278,4 +286,9 @@ In order for $d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k \mid n^2$, $n$ cannot be comp
 Suppose for the sake of contradiction that there exists composite $n$ that works. Let $p$ be the smallest prime dividing $n$. Then, notice that \[d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k > d_{k-1}d_k = \dfrac{n^2}{p}\] so it cannot work, as required.
 \end{proof}
 Trying primes $n = p$, we find that we must have $p+1 \mid p^2$, or \[\gcd(p^2, p+1) = p+1.\] Solving this, we require for $1 = p+1$, which has no solutions. Hence, there exist no solutions. $\square$
+
+\begin{problem}[1.12.14]{Russia 2001 Grade 10 Day 2/4}
+Find all odd positive integers $n > 1$ such that if $a$ and $b$ are relatively prime divisors of $n$, then $a + b - 1$ divides $n$.
+\end{problem}
+
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  9 DEC 2025 22:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  10 DEC 2025 08:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1201,7 +1201,7 @@ dvips/lm/lm-mathsy.enc}]
 
 [8]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-45.
+46.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1219,13 +1219,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1BD01398A1CD0F1A7E16E75A64B9D9A6;2046.
  ) 
 Here is how much of TeX's memory you used:
- 32790 strings out of 467747
- 648723 string characters out of 5431120
- 1088074 words of memory out of 5000000
- 60815 multiletter control sequences out of 15000+600000
+ 32793 strings out of 467747
+ 648764 string characters out of 5431120
+ 1086131 words of memory out of 5000000
+ 60817 multiletter control sequences out of 15000+600000
  690182 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,9n,135p,552b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,9n,135p,552b,1007s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/
 type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lm
@@ -1240,10 +1240,10 @@ texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2025/texmf-
 dist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (11 pages, 286261 bytes).
+Output written on main.pdf (11 pages, 287769 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 314 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
