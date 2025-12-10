@@ -390,28 +390,49 @@ Find $1002 \times 560 \pmod{7}$.
 \end{problem}
 Since $7 \mid 560$, the answer is $0$.
 
-\begin{problem}[2.4.4]
+\begin{problem}[2.4.4]{}
 Show that if $a \equiv b \pmod{n}$, then $ka \equiv kb \pmod{n}$ for any integer $k$.
 \end{problem}
 We are given that $a-b$ is a multiple of $n$, so $k(a-b)$ is too. $\square$
 
-\begin{problem}[2.4.5]
+\begin{problem}[2.4.5]{}
 Show that $a - b \mid a^n - b^n$ for any integer n.
 \end{problem}
 We write the following: \[a^n-b^n \equiv b^n-b^n \equiv 0\pmod{a-b}\] as required. $\square$
 
-\begin{problem}[2.4.6]
+\begin{problem}[2.4.6]{}
 If $p$ is an odd prime, and $a$, $b$ are coprime, show that \[\gcd\left(\dfrac{a^p + b^p}{a + b}, a + b\right) \in \{1, p\}.\]
 \end{problem}
 We may write that \[\dfrac{a^p+b^p}{a+b} \equiv a^{p-1}-a^{p-2}b+\dots+b^{p-1} \equiv pa^{p-1} \pmod{a+b}\] and since $\gcd(a, b) = 1$, we clearly have the necessary conclusion. $\square$
 
-\begin{problem}[2.4.7]
+\begin{problem}[2.4.7]{}
 Let $f$ be a polynomial with integer coefficients. Show that $a - b | f(a) - f(b)$ for any integers $a$, $b$ is the same as saying $f(a + d) \equiv f(a) \pmod{d}$.
 \end{problem}
 Let $b = a-d$. Then, we find that \[d \mid f(a)-f(a-d)\] which is the required conclusion. $\square$
 
-\begin{problem}[2.4.8]
+\begin{problem}[2.4.8]{}
 Show that $ka \equiv kb \pmod{n}$ implies $a \equiv b \pmod{n}$ if and only if $\gcd(k, n) = 1$.
 \end{problem}
 Clearly, an inverse $k^{-1}$ with respect to modulo $n$ exists if and only if $\gcd(k, n) = 1$, so both directions are trivial. $\square$
+
+\subsection{Two Special Equal Sets}
+
+\noproblems
+
+\subsection{Fermat's Little Theorem}
+
+\begin{problem}[2.6.1]{}
+Show that $a^p \equiv a \pmod{p}$ holds in the case when $\gcd(a, p) \neq 1$.
+\end{problem}
+Notice that by simply multiplying $a^{p-1} \equiv 1 \pmod{p}$ by $a$, we take care of the case when $a \equiv 0\pmod{p}$ and extend it, as required. $\square$
+
+\begin{problem}[2.6.2]{}
+Let $a$, $b$ be integers and $p$ a prime. Show that $p$ divides $ab^p - a^pb$.
+\end{problem}
+By Fermat's Little Theorem, \[ab^p-a^pb \equiv ab-ab \equiv 0 \pmod{p}\] as required. $\square$
+
+\begin{problem}[2.6.3]{}
+Find \[2^{50} \pmod{7}.\]
+\end{problem}
+By FLT, \[2^{50} \equiv 2^2 \equiv 4 \pmod{7}\] as desired. $\square$
 \end{document}
