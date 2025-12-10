@@ -331,5 +331,5 @@ Since the equation is homogeneous, assume that $\gcd(a_1, a_2, \dots, a_n) = 1$.
 \begin{problem}[1.12.19]{IMO 2001/6}
 Let $a > b > c > d$ be positive integers and suppose that \[ac + bd = (b + d + a - c)(b + d - a + c).\] Prove that $ab + cd$ is not prime.
 \end{problem}
-We know that $b+d+a-c \mid ac+bd$, so \[\gcd(ac+bd, b+d+a-c) = \gcd((a+b)(a+d), b+d+a-c) = b+d+a-c\] so \[b+d+a-c \mid (a+b)(a+d).\] Similarly, we know that $b+d-a+c \mid ac+bd$, so \[\gcd(ac+bd, b+d-a+c) = \gcd((b+c)(c+d), b+d-a+c) = b+d-a+c\] so \[b+d-a+c \mid (b+c)(c+d).\] Hence, we find that \[ac+bd \mid (a+b)(a+d)(b+c)(c+d) = ((ac+bd)+(ad+bc))((ab+cd)+(ac+bd))\] implying that \[ac+bd \mid (ad+bc)(ab+cd).\]
+We know that $b+d+a-c \mid ac+bd$, so \[\gcd(ac+bd, b+d+a-c) = \gcd((a+b)(a+d), b+d+a-c) = b+d+a-c\] so \[b+d+a-c \mid (a+b)(a+d).\] Similarly, we know that $b+d-a+c \mid ac+bd$, so \[\gcd(ac+bd, b+d-a+c) = \gcd((b+c)(c+d), b+d-a+c) = b+d-a+c\] so \[b+d-a+c \mid (b+c)(c+d).\] Hence, we find that \[ac+bd \mid (a+b)(a+d)(b+c)(c+d) = ((ac+bd)+(ad+bc))((ab+cd)+(ac+bd))\] implying that \[ac+bd \mid (ad+bc)(ab+cd).\] We know that \[ab+cd > ac+bc > ad+bc\] by the Rearrangment Inequality. Hence, if $ab+cd$ were to be prime, then $ac+bd \mid ad+bc$ which isn't possible, so we have the required conclusion. $\square$
 \end{document}
