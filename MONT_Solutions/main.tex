@@ -540,4 +540,30 @@ Then, $a$ and $n$ must share a common prime factor, which means that there canno
 Use Freshman's dream and induction to prove Fermat's Little Theorem.
 \end{problem}
 We proceed using induction. For the base case, it is clearly true for $0$: \[0^p \equiv 0 \pmod{p}.\] Now, assume it is true for some $k$. Then, by Freshman's Dream, \[(k+1)^p \equiv k^p + 1 \equiv k+1 \pmod{p}\] as required. Hence, we are done. $\square$
+
+\begin{problem}[2.12.1]{}
+Use induction to show that \[(a + b)^{p^i} \equiv a^{p^i} + b^{p^i} \pmod{p}\] for any prime $p$ and any non-negative integer $i$.
+\end{problem}
+For the base case, it is clearly true for $i=0$. Hence, assume it is true for some $i$. Then, we will show that it is correct for $i+1$. Notice that \[(a+b)^{p^{i+1}} \equiv \left((a+b)^{p^i}\right)^p \equiv \left(a^{p^i}+b^{p^i}\right)^p \equiv a^{p+(i+1)}+b^{p+(i+1)} \pmod{p}\] as required. $\square$
+
+\subsection{Example Problems}
+
+\noproblems
+
+\section{Practice Problems}
+
+\begin{problem}[2.14.1]{}
+How many prime numbers $p$ are there such that $29^p + 1$ is a multiple of $p$?
+\end{problem}
+We have that \[29^p + 1\equiv 30 \pmod{p}\] so the answer is $p = \boxed{2, 3, 5}$, which we can check to work. $\square$
+
+\begin{problem}[2.14.2]{}
+Let $p$ be a prime and $0 \le k \le p-1$ be an intger. Prove that \[\binom{p - 1}{k} \equiv (-1)^k \pmod{p}.\]
+\end{problem}
+We may write that \[\binom{p-1}{k} \equiv \dfrac{(p-1)!}{k!(p-1-k)!} \equiv \dfrac{-1}{k!(p-1-k)!} \equiv \dfrac{-1}{(-1)^k(p-1)!} \equiv (-1)^k \pmod{p}.\]
+
+\begin{problem}[2.14.3]{IMO 1979/1}
+Let $a$ and $b$ be natural numbers such that \[\dfrac{a}{b} = 1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + \cdots - \dfrac{1}{1318} + \dfrac{1}{1319}.\] Prove that $a$ is divisible by $1979$. (Note: $1979$ is a prime)
+\end{problem}
+We know that \[\dfrac{a}{b} = \left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{1319}\right) - \left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{659}\right) = \dfrac{1}{660} + \dfrac{1}{661} + \cdots + \dfrac{1}{1319}.\] Now, by combining opposite fractions, each one is divisible by $1979$, so we have the required conclusion (and the number of fractions is even). $\square$
 \end{document}
