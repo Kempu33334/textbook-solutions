@@ -550,7 +550,7 @@ For the base case, it is clearly true for $i=0$. Hence, assume it is true for so
 
 \noproblems
 
-\section{Practice Problems}
+\subsection{Practice Problems}
 
 \begin{problem}[2.14.1]{}
 How many prime numbers $p$ are there such that $29^p + 1$ is a multiple of $p$?
@@ -595,5 +595,27 @@ Let $a$ and $b$ be two relatively prime positive integers, and consider the arit
 \item Prove that there are infinitely many pairwise relatively prime terms in the arithmetic progression.
 \end{enumerate}
 \end{problem}
-We begin with the first part. Clearly, for any prime $p$, the terms that it divides is periodic modulo $p$, and it must be achieved at least once. Hence, we are done. 
+We begin with the first part. Clearly, for any prime $p$, the terms that it divides is periodic modulo $p$, and it must be achieved at least once. Hence, we are done.
+
+We finish with the second part. Suppose that there are finitely pany pairwise relatively prime terms in the arithmetic progression, and let them be $r_1$, $r_2$, $\dots$, $r_n$. Then, let $P = r_1r_2\cdots r_n$.
+\begin{claim*}
+There exists a non-negative integer $k$ such that for any prime $p \mid P$, $p \nmid a+kb$.
+\end{claim*}
+\begin{proof}
+This is equivalent to \[kb \not\equiv -a \pmod{p}.\] Now, since $\gcd(b, p) = 1$, $b$ is invertible modulo $p$, so \[k \not\equiv -\dfrac{a}{b} \pmod{p}.\] Now, by CRT, we can construct such an $k$, so we are done.
+\end{proof}
+Hence, this contradicts the fact that we only have finitely many $r$, so we are done. $\square$
+
+\begin{problem}[2.14.9]{}
+Prove that:
+\begin{enumerate}
+\item Every positive integer has at least as many divisors of the form $4k + 1$ as divisors of the
+form $4k + 3$.
+\item There exist infinitely many positive integers which have as many divisors of the form
+$4k + 1$ as divisors of the form $4k + 3$.
+\item There exist infinitely many positive integers which have more divisors of the form $4k+1$
+than divisors of the form $4k + 3$.
+\end{enumerate}
+\end{problem}
+
 \end{document}
