@@ -533,4 +533,11 @@ Because $aa^{-1} \equiv 1 \pmod{n}$, if $\gcd(a^{-1}, n) \neq 1$, then they must
 Prove that if $\gcd(a, n) \neq 1$, then a cannot have an inverse.
 \end{problem}
 Then, $a$ and $n$ must share a common prime factor, which means that there cannot exist an inverse. $\square$
+
+\subsection{Extra Results as Problems}
+
+\begin{problem}[2.12.1]{}
+Use Freshman's dream and induction to prove Fermat's Little Theorem.
+\end{problem}
+We proceed using induction. For the base case, it is clearly true for $0$: \[0^p \equiv 0 \pmod{p}.\] Now, assume it is true for some $k$. Then, by Freshman's Dream, \[(k+1)^p \equiv k^p + 1 \equiv k+1 \pmod{p}\] as required. Hence, we are done. $\square$
 \end{document}
