@@ -8,19 +8,6 @@
 \author{Kempu33334}
 \date{July 2025}
 
-\begin{asydef}
-size(8cm); // set a reasonable default
-usepackage("amsmath");
-usepackage("amssymb");
-settings.tex="pdflatex";
-settings.outformat="pdf";
-import geometry;
-void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen) { filldraw(pic, (path) g, fillpen, drawpen); }
-void fill(picture pic = currentpicture, conic g, pen p=defaultpen) { filldraw(pic, (path) g, p); }
-pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
-pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
-\end{asydef}
-
 \begin{document}
 
 \maketitle
