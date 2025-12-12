@@ -11,3 +11,18 @@
 \contentsline {subsection}{\numberline {1.10}Extra Results as Problems}{6}{subsection.1.10}%
 \contentsline {subsection}{\numberline {1.11}Example Problems}{6}{subsection.1.11}%
 \contentsline {subsection}{\numberline {1.12}Practice Problems}{6}{subsection.1.12}%
+\contentsline {section}{\numberline {2}Modular Arithmetic Basics}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivation}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Remainder Idea}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Residue Classes}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Basic Properties}{14}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Two Special Equal Sets}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Fermat's Little Theorem}{16}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Inverses}{16}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Simple Properties of Inverses and Wilson's Theorem}{17}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}General Equal Sets}{18}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Euler's Theorem}{18}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}General Inverses}{18}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Extra Results as Problems}{19}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Example Problems}{19}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Practice Problems}{20}{subsection.2.14}%
