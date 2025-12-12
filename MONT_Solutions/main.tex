@@ -605,6 +605,27 @@ than divisors of the form $4k + 3$.
 \end{enumerate}
 \end{problem}
 
+We begin with the first part and perform an strong induction. Clearly, the statement is true for $n = 1$. We now make a claim.
+\begin{claim*}
+If the statement is true for some $n$ and all $d$ dividing it, then it is true for any $np$ where $p$ is a prime.
+\end{claim*}
+\begin{proof}
+We split into cases. If $p \nmid n$, then split into further cases.
+\begin{itemize}
+\item If $p \equiv 1 \pmod{4}$, then the result is clear.
+\item If $p \equiv 3 \pmod{4}$, then the number of divisors that are $1 \pmod{4}$ and divide $n$ (call it $d_1$) is at least the number of divisors that are $3 \pmod{4}$ and divide $n$ (call it $d_3$). On the other hand, if the number of divisors that don't divide $n$ but do divide $pn$ and are congruent to $1 \pmod{4}$ is equal to $d_3$, while the number congruent to $3 \pmod{4}$ and divide $pn$ but not $n$ is $d_1$. Hence, the total amounts are equal.
+\end{itemize}
+Now, if $p \mid n$, then we can apply the same logic on $n = p^{\nu_p(n)+1}\cdot \tfrac{n}{p^{\nu_p(n)}}$ since $\tfrac{n}{p^{\nu_p(n)}} \mid n$ (by the strong induction). Hence, we are done.
+\end{proof}
+
+This then shows that all positive integers work.
+
+We finish with the second and third part. Notice that the number $n = 3^{\ell}$ has $\left\lfloor\dfrac{1}{2}\ell\right\rfloor+1$ divisors congruent to $1 \pmod{4}$, while it has $\ell+1-\left\lfloor\dfrac{1}{2}\ell\right\rfloor$ divisors congruent to $3 \pmod{4}$. Now, these two are equal as long as $\ell$ is odd, and the first is greater than the second as long as $\ell$ is even, so we have the required conclusion. $\square$
+
+\begin{remark*}
+The second and third parts follow directly from Dirichlet's Theorem on Arithmetic Progressions on the sequences $a_i = 4i+1$ and $b_i = 4i+3$.
+\end{remark*}
+
 \begin{problem}[2.14.10]{Iberoamerican 2005/3}
 Let $p > 3$ be a prime. Prove that if \[\sum_{i=1}^{p-1}\dfrac{1}{i^p} = \dfrac{m}{n}\] with $\gcd(m, n) = 1$, then $p^3 \mid m$.
 \end{problem}
