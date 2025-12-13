@@ -617,10 +617,9 @@ We split into cases. If $p \nmid n$, then split into further cases.
 \end{itemize}
 Now, if $p \mid n$, then we can apply the same logic on $n = p^{\nu_p(n)+1}\cdot \tfrac{n}{p^{\nu_p(n)}}$ since $\tfrac{n}{p^{\nu_p(n)}} \mid n$ (by the strong induction). Hence, we are done.
 \end{proof}
-
 This then shows that all positive integers work.
 
-We finish with the second and third part. Notice that the number $n = 3^{\ell}$ has $\left\lfloor\dfrac{1}{2}\ell\right\rfloor+1$ divisors congruent to $1 \pmod{4}$, while it has $\ell+1-\left\lfloor\dfrac{1}{2}\ell\right\rfloor$ divisors congruent to $3 \pmod{4}$. Now, these two are equal as long as $\ell$ is odd, and the first is greater than the second as long as $\ell$ is even, so we have the required conclusion. $\square$
+We finish with the second and third part. Notice that the number $n = 3^{\ell}$ has $\left\lfloor\tfrac{1}{2}\ell\right\rfloor+1$ divisors congruent to $1 \pmod{4}$, while it has $\ell+1-\left\lfloor\tfrac{1}{2}\ell\right\rfloor$ divisors congruent to $3 \pmod{4}$. Now, these two are equal as long as $\ell$ is odd, and the first is greater than the second as long as $\ell$ is even, so we have the required conclusion. $\square$
 
 \begin{remark*}
 The second and third parts follow directly from Dirichlet's Theorem on Arithmetic Progressions on the sequences $a_i = 4i+1$ and $b_i = 4i+3$.
@@ -649,19 +648,36 @@ Notice that it suffices to find a sequence $\{a\}$ of non-negative distinct inte
 Let $p \ge 5$ be a prime number. Prove that there exists an integer $a$ with $1 \le a \le p - 2$ such that neither $a^{p-1} - 1$ nor $(a + 1)^{p-1} - 1$ is divisible by $p^2$.
 \end{problem}
 
-Notice that there are exactly $p-1$ numbers $1 \le a \le p^2$ such that \[a^{p-1} \equiv 1 \pmod{p^2}\] so let these make the set $\mathcal{A}$. In addition, let $m$ be the largest integer such that $a_m \le p-1$. Then, if the given claim is false, then in each pair $\{1, 2\}$, $\{3, 4\}$, $\dots$, $\{p-2, p-1\}$, at least one of the numbers must be in $\mathcal{A}$. As a result, notice that $m \ge \tfrac{p-1}{2}$.
+Notice that there are exactly $p-1$ numbers $1 \le a \le p^2$ such that \[a^{p-1} \equiv 1 \pmod{p^2}\] so let these make the set $\mathcal{A}$. In addition, let $m$ be the largest integer such that $a_m \le p-1$. Then, if the given claim is false, then in each pair $\{1, 2\}$, $\{3, 4\}$, $\dots$, $\{p-2, p-1\}$, at least one of the numbers must be in $\mathcal{A}$. As a result, notice that $m \ge \tfrac{p-1}{2}$. However, if $a$ is a solution, so it $-a$, so all the solutions in $\mathbb{A}$ must lie in the interval $[1, p-1] \cup [p^2-p+1, p^2-1]$. However, we can clearly give a construction for a number not in this range, simply take the product of the two solutions in the pairs \[\left\{\dfrac{p-3}{2}, \dfrac{p-1}{2}\right\}, \left\{\dfrac{p+1}{2}, \dfrac{p+3}{2}\right\}\] which suffices as long as $p \ge 7$, contradiction. We may manually verify for $p = 5$ that the given assertion is true, so we are done. $\square$
 
 \begin{problem}[2.14.13]{USAMO 2018/4}
 Let $p$ be a prime, and let $a_1$, $\dots$ , $a_p$ be integers. Show that there exists an integer $k$ such that the numbers \[a_1 + k, a_2 + 2k, \dots , a_p + pk\] produce at least $\tfrac{1}{2}p$ distinct remainders upon division by $p$.
 \end{problem}
 
+Consider the graph $G_k$ where we join two nodes $\{i, j\}$ if and only if \[k \equiv \dfrac{a_i-a_j}{j-i} \pmod{p}.\] Then, it is equivalent to show that there exists some $G_k$ such that there exists at most $\tfrac{1}{2}p$ edges. Now, notice that the each $\{i, j\}$ will only be counted in one of the graphs $\{G_0, G_1, \cdots, G_{p-1}\}$. As a result, there exists some graph with at most $\tfrac{1}{p}\tbinom{p}{2} = \tfrac{p-1}{2}$ edges, so we find the required conclusion. $\square$
+
 \begin{problem}[2.14.14]{Balkan 2016/3}
 Find all monic polynomials $f$ with integer coefficients satisfying the following condition: there exists a positive integer $N$ such that $p$ divides $2(f(p)!) + 1$ for every prime $p > N$ for which $f(p)$ is a positive integer. (A monic polynomial has a leading coefficient equal to $1$.)
 \end{problem}
 
+We claim that the only solution is $f(x) = \boxed{x-3}$, which we may verify explicitly easily.
+
+Start by noticing that if $\deg(f) > 1$, then for sufficiently large $n$, $f(k) > k$ for $n > k$, which should not be allowed. Hence, $f$ is either linear or constant. Clearly, it cannot be constant, so assume it is linear, so that $f(x) = x-c$ for some positive integer $c$. Now, notice that for any $p$, we must have that \[(p-c)! \equiv -\dfrac{1}{2} \equiv \dfrac{(p-1)!}{2} \equiv \dfrac{(p-1)(p-2)(p-3)!}{2} \equiv (p-3)! \pmod{p}.\] Thus, $c = 1$ and $c = 2$ do not work, while $c = 3$ does work. Henceforth, assume that $c \ge 4$. Then, we know for large primes $p$, that \[(p-c)!((p-3)(p-4)\cdots(p-c+1)-1) \equiv 0 \pmod{p} \implies (-3)(-4)\cdots(-c+1)\equiv 1 \pmod{p}.\] However, the LHS is constant, and since the RHS expects the LHS to increase, we cannot have this. Hence, the only solution is $f(x) = x+3$, as required. $\square$
+
 \begin{problem}[2.14.15]{Iran MO 2017 Round 3/Final/NT/1}
 Let $x$ and $y$ be integers and let $p$ be a prime number. Suppose that there exist relatively prime positive integers $m$ and $n$ such that \[x^m \equiv y^n \pmod{p}.\] Prove that there exists an unique integer $z$ modulo $p$ such that \[x \equiv z^n \pmod{p} \quad \text{and} \quad y \equiv z^m \pmod{p}.\]
 \end{problem}
+
+Let $g$ be a primitive root modulo $p$. Then, let $x = g^k$, $y = g^{\ell}$, and $z = g^r$ so that \[g^{km} \equiv g^{\ell n} \pmod{p} \implies km \equiv \ell n \pmod{p-1}\] and we wish to show that there is exactly one $r$ satisfying \[k \equiv rn \pmod{p-1} \quad \text{and} \quad \ell \equiv rm \pmod{p-1}.\] Now, since $\gcd(m, n) = 1$, there exists $a$ and $b$ such that $ma+nb = 1$. 
+
+We first show that there exists at most one $r$. Assume there exist at least two, $r_1$ and $r_2$. Then, we know that \[k \equiv r_1n \equiv r_2n \pmod{p-1} \quad \text{and} \quad \ell \equiv r_1m \equiv r_2m \pmod{p-1}.\] As a result,
+\begin{align*}
+(r_1-r_2)n &\equiv 0 \pmod{p-1} \\
+(r_1-r_2)m &\equiv 0 \pmod{p-1}.
+\end{align*}
+Now, multiplying the first equation by $b$ and the second by $a$ and adding, we find that \[r_1 \equiv r_2 \pmod{p-1}\] so we have the required conclusion.
+
+We now show that there exists an $r$. 
 
 \begin{problem}[2.14.16]{ISL 2015/N3}
 Let $m$ and $n$ be positive integers such that $m > n$. Define \[x_k = \dfrac{m + k}{n + k}\] for $k = 1$, $2$, $\dots$ , $n + 1$. Prove that if all the numbers $x_1$, $x_2$, $\dots$, $x_{n+1}$ are integers, then $x_1x_2\cdots x_{n+1} - 1$ is divisible by an odd prime.
