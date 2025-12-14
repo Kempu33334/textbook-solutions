@@ -450,6 +450,9 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

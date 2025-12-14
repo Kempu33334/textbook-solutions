@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Fundementals of Number Theory}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Divisibility}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Divisibility Properties}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Euclid’s Division Lemma}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Euclid's Division Lemma}{2}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Primes}{2}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Looking at Numbers as Multisets}{3}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}GCD and LCM}{3}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Euclid’s Division Algorithm}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.7}Euclid's Division Algorithm}{4}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}B\'ezout's Theorem}{4}{subsection.1.8}%
 \contentsline {subsection}{\numberline {1.9}Base Systems}{5}{subsection.1.9}%
 \contentsline {subsection}{\numberline {1.10}Extra Results as Problems}{6}{subsection.1.10}%
@@ -26,3 +26,8 @@
 \contentsline {subsection}{\numberline {2.12}Extra Results as Problems}{19}{subsection.2.12}%
 \contentsline {subsection}{\numberline {2.13}Example Problems}{19}{subsection.2.13}%
 \contentsline {subsection}{\numberline {2.14}Practice Problems}{20}{subsection.2.14}%
+\contentsline {section}{\numberline {3}Arithmetic Functions}{28}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Number of Divisors}{28}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sum of Divisors}{28}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Euler's Totient Function}{28}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Multiplicative Functions}{30}{subsection.3.4}%
