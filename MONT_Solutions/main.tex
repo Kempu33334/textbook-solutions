@@ -648,7 +648,7 @@ Notice that it suffices to find a sequence $\{a\}$ of non-negative distinct inte
 Let $p \ge 5$ be a prime number. Prove that there exists an integer $a$ with $1 \le a \le p - 2$ such that neither $a^{p-1} - 1$ nor $(a + 1)^{p-1} - 1$ is divisible by $p^2$.
 \end{problem}
 
-Notice that there are exactly $p-1$ numbers $1 \le a \le p^2$ such that \[a^{p-1} \equiv 1 \pmod{p^2}\] so let these make the set $\mathcal{A}$. In addition, let $m$ be the largest integer such that $a_m \le p-1$. Then, if the given claim is false, then in each pair $\{1, 2\}$, $\{3, 4\}$, $\dots$, $\{p-2, p-1\}$, at least one of the numbers must be in $\mathcal{A}$. As a result, notice that $m \ge \tfrac{p-1}{2}$. However, if $a$ is a solution, so it $-a$, so all the solutions in $\mathbb{A}$ must lie in the interval $[1, p-1] \cup [p^2-p+1, p^2-1]$. However, we can clearly give a construction for a number not in this range, simply take the product of the two solutions in the pairs \[\left\{\dfrac{p-3}{2}, \dfrac{p-1}{2}\right\}, \left\{\dfrac{p+1}{2}, \dfrac{p+3}{2}\right\}\] which suffices as long as $p \ge 7$, contradiction. We may manually verify for $p = 5$ that the given assertion is true, so we are done. $\square$
+Notice that there are exactly $p-1$ numbers $1 \le a \le p^2$ such that \[a^{p-1} \equiv 1 \pmod{p^2}\] so let these make the set $\mathcal{A}$. In addition, let $m$ be the largest integer such that $a_m \le p-1$. Then, if the given claim is false, then in each pair $\{1, 2\}$, $\{3, 4\}$, $\dots$, $\{p-2, p-1\}$, at least one of the numbers must be in $\mathcal{A}$. As a result, notice that $m \ge \tfrac{p-1}{2}$. However, if $a$ is a solution, so it $-a$, so all the solutions in $\mathcal{A}$ must lie in the interval $[1, p-1] \cup [p^2-p+1, p^2-1]$. However, we can clearly give a construction for a number not in this range, simply take the product of the two solutions in the pairs \[\left\{\dfrac{p-3}{2}, \dfrac{p-1}{2}\right\}, \left\{\dfrac{p+1}{2}, \dfrac{p+3}{2}\right\}\] which suffices as long as $p \ge 7$, contradiction. We may manually verify for $p = 5$ that the given assertion is true, so we are done. $\square$
 
 \begin{problem}[2.14.13]{USAMO 2018/4}
 Let $p$ be a prime, and let $a_1$, $\dots$ , $a_p$ be integers. Show that there exists an integer $k$ such that the numbers \[a_1 + k, a_2 + 2k, \dots , a_p + pk\] produce at least $\tfrac{1}{2}p$ distinct remainders upon division by $p$.
@@ -677,13 +677,49 @@ We first show that there exists at most one $r$. Assume there exist at least two
 \end{align*}
 Now, multiplying the first equation by $b$ and the second by $a$ and adding, we find that \[r_1 \equiv r_2 \pmod{p-1}\] so we have the required conclusion.
 
-We now show that there exists an $r$. 
+We now show that there exists an $r$. We claim that $r = \ell a + kb$ works. Observe: \[k \equiv \ell an + kbn \equiv kam + kbn \equiv k \pmod{p-1}\] and similarly for the other one, as required. $\square$
 
 \begin{problem}[2.14.16]{ISL 2015/N3}
 Let $m$ and $n$ be positive integers such that $m > n$. Define \[x_k = \dfrac{m + k}{n + k}\] for $k = 1$, $2$, $\dots$ , $n + 1$. Prove that if all the numbers $x_1$, $x_2$, $\dots$, $x_{n+1}$ are integers, then $x_1x_2\cdots x_{n+1} - 1$ is divisible by an odd prime.
 \end{problem}
 
+Notice that it suffices to show that $x_1x_2\cdots x_{n+1} - 1$ cannot be of the form $2^{\alpha}$ for some integer $\alpha$. Now, since \[n+k \mid m+k \implies n+k \mid m-n\] over all $k \in \{1, 2, \cdots, n+1\}$, we know that \[\lcm(n+1, n+2, \cdots, 2n+1) \mid m-n.\] Now, there exists $k$ such that $\tfrac{m-n}{n+k}$ has no factors of two, so it must be odd. Adding one, we find that it is even, so the product $x_1x_2\cdots x_{n+1}$ must be even as well, and subtracting one makes it odd, as required. 
+
+All that is left is to show that it cannot be equal to $1$, however this is clear, so we are done. $\square$
+
 \begin{problem}[2.14.17]{ELMO 2019/5}
 Let $\mathcal{S}$ be a nonempty set of positive integers such that, for any (not necessarily distinct) integers $a$ and $b$ in $\mathcal{S}$, the number $ab + 1$ is also in $\mathcal{S}$. Show that the set of primes that do not divide any element of $\mathcal{S}$ is finite.
 \end{problem}
+
+We begin with a claim.
+\begin{claim*}
+Let $\mathcal{S}_p$ be the set $\mathcal{S}$ when reduced modulo $p$, where $p$ is a prime that does not divide any element of $\mathcal{S}$. We claim that $|S_p| = 1$.
+\end{claim*}
+\begin{proof}
+Assume otherwise. Then, let $\mathcal{S}_p = \{s_1, s_2, \cdots, s_n\}$. Notice that for any $a \in \mathcal{S}_p$, \[\mathcal{S}_p = \{s_1, s_2, \cdots, s_n\} = \mathcal{S}_p = \{as_1+1, as_2+1, \cdots, as_n+1\}.\] As a result, we must have that \[s_1+s_2+\cdots+s_n \equiv a(s_1+s_2+\cdots+s_n)+n \pmod{p} \implies (a-1)(s_1+s_2+\cdots+s_n) \equiv -n \pmod{p}\] which needs to be true over all $a$, which clearly cannot hold, if $n > 2$, as required.
+\end{proof}
+Hence, if the starting term is $x$, then we find that \[x \equiv x^2+1 \pmod{p} \implies p \mid x^2-x+1\] so there are finitely many, as desired. $\square$
+
+\begin{problem}[2.14.18]{}
+Let $a$, $b \in \mathbb{N}$ and $p$ be a prime. Prove that \[\binom{pa}{pb} \equiv \binom{a}{b} \pmod{p}.\]
+\end{problem}
+This directly follows from Lucas' Theorem. $\square$
+
+\begin{problem}[2.14.19]{}
+Find a formula for the number of entries in the $n$th row of Pascal's triangle that are not divisible by $p$, in terms of the base-$p$ expansion of $n$.
+\end{problem}
+
+If $n = (n_k\cdots n_1n_0)_p$ then the required answer is: \[\boxed{\prod_{i=0}^k (n_i+1)}\] which we can show easily by considering digit by digit. $\square$
+
+\begin{problem}[2.14.20]{ELMO 2009/6}
+Let $p$ be an odd prime and $x$ be an integer such that $p \mid x^3 - 1$ but $p \nmid x - 1$. Prove that \[p \mid (p - 1)!\left(x -\dfrac{x^2}{2} +\dfrac{x^3}{3} - \cdots - \dfrac{x^{p-1}}{p-1}\right).\]
+\end{problem}
+
+Notice that the given condition is equivalent to $\operatorname{ord}_p(x) = 3$, so $3 \mid p-1$ and $p \mid x^2+x+1$. Then, since \[\dfrac{1}{k} \equiv (-1)^{k-1}\dfrac{1}{p}\binom{p}{k} \pmod{p}\] we find that \[x -\dfrac{x^2}{2} +\dfrac{x^3}{3} - \cdots - \dfrac{x^{p-1}}{p-1} \equiv \dfrac{x}{p}\binom{p}{1}+\dfrac{x^2}{p}\binom{p}{2}+\cdots +\dfrac{x^{p-1}}{p}\binom{p}{p-1} \pmod{p}.\] Hence, it remains to show that \[x\binom{p}{1}+x^2\binom{p}{2}+\cdots+x^{p-1}\binom{p}{p-1} \equiv 0 \pmod{p^2}\] or \[(x+1)^p \equiv x^p+1 \pmod{p^2}.\] Let $x^2+x+1 = kp$ for some integer $k$. Then, \[(kp-x^2)^p \equiv -x^{2p} \equiv x^p + 1\pmod{p^2}\] so we need to show \[x^{2p}+x^p+1 \equiv \dfrac{x^{3p}-1}{x^p-1} \equiv 0 \pmod{p^2}.\] However, this is clear, since $x^3 \equiv 1 \pmod{p}$ implies $x^{3p} \equiv 1 \pmod{p^2}$, and since $x^p \not\equiv 1 \pmod{p}$, we have the required conclusion. $\square$
+
+\begin{problem}[2.14.21]{ISL 2011/N7}
+Let $p$ be an odd prime number. For every integer $a$, define the number \[S_a = \dfrac{a}{1}+\dfrac{a^2}{2}+\cdots+\dfrac{a^{p-1}}{p-1}.\] Let $m$, $n \in \mathbb{Z}$, such that \[S_3 + S_4 - 3S_2 = \dfrac{m}{n}.\] Prove that $p \mid m$.
+\end{problem}
+
+Since \[\dfrac{1}{k} \equiv (-1)^{k-1}\dfrac{1}{p}\binom{p}{k} \pmod{p}\] we know that \[S_a \equiv \dfrac{a}{p}\binom{p}{1} - \dfrac{a^2}{p}\binom{p}{2} + \cdots - \dfrac{a^{p-1}}{p}\binom{p}{p-1} \equiv \dfrac{(a-1)^p - a^p + 1}{p}\pmod{p}.\] Then, it suffices to show that \[(2^p-3^p+1)+(3^p-4^p+1)-3(1-2^p+1) \equiv -2^{2p}+4\cdot 2^p-4 \equiv 0 \pmod{p^2}.\] However, this can further be simplified to \[(2^p-2)^2 \equiv 0 \pmod{p^2} \implies 2^p - 2 \equiv 0 \pmod{p}\] which is obviously true, as required. $\square$
 \end{document}

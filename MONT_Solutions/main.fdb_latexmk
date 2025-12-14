@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765648200.26536 "main.tex" "main.pdf" "main" 1765648202.96945 0
+["pdflatex"] 1765682027.01458 "main.tex" "main.pdf" "main" 1765682029.78675 0
   "c:/Users/aatmi/.texlive2025/texmf-config/tex/latex/kempu.sty" 1753896020 4758 8349be4e58560330e9cdb104fa4885d1 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1761613107 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1761613107 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -259,11 +259,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761618814 5574153 af86687748baf417d9e7d549313527be ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761618925 3629597 ac58ee2cfc104b250d0293d40de1dcae ""
   "c:/texlive/2025/texmf.cnf" 1761618790 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1765648202 10813 b76060f777e925b0f559f7359a0ee6c0 "pdflatex"
-  "main.out" 1765648202 4432 709bc464f4c783f2a67e6217626b40ea "pdflatex"
-  "main.pre" 1765648201 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1765648199 46141 e23a80d30c54b8bbbf50578a8897995a ""
-  "main.toc" 1765648202 2403 0e757a5e9d970acb73a9d6090cf1f803 "pdflatex"
+  "main.aux" 1765682029 11137 887a14e4283540c19f1d18de8fcfaaab "pdflatex"
+  "main.out" 1765682029 4432 709bc464f4c783f2a67e6217626b40ea "pdflatex"
+  "main.pre" 1765682027 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1765682023 50362 70a443671f0c06a559340140e7121138 ""
+  "main.toc" 1765682029 2403 0e757a5e9d970acb73a9d6090cf1f803 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
