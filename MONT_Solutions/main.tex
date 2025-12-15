@@ -932,4 +932,20 @@ Let $n$ be a natural number. Prove that \[\floor{\dfrac{n}{1}}+\floor{\dfrac{n}{
 \end{problem}
 
 It is equivalent to show that \[\tau(1)+\tau(2)+\cdots+\tau(n)+\floor{\sqrt{n}}\] is even. Suppose that $\floor{\sqrt{n}}$ is odd. Then, we know that $(2k+1)^2 \le n < (2k+2)^2$ for some non-negative integer $k$. In that case, notice that the number of $\tau(i)$ where $i \le n$ that are odd is just the number of perfect squares less than or equal to $n$, of which there are an odd number. Hence, the total sum will be even. Now, suppose that $\floor{\sqrt{n}}$ is even. Then, $(2k)^2 \le n < (2k+2)^2$ for some non-negative integer $k$, and the total number of squares less than or equal to $n$ will be even, as desired. Thus, we are done. $\square$
+
+\begin{problem}[3.7.8]{}
+Prove that for any integer $n \ge 1$: \[\sum_{d \mid n}\tau(d)^3 = \left(\sum_{d \mid n}\tau(d)\right)^2.\]
+\end{problem}
+
+\begin{problem}[3.7.9]{Belarus 1999/B/2}
+For $n \ge 2$, \[\sigma(n) < n\sqrt{2\tau(n)}.\]
+\end{problem}
+
+\begin{problem}[3.7.10]{Ireland 1998/6}
+Find all positive integers $d$ that have exactly $16$ positive integral divisors $d_1, d_2, \cdots , d_{16}$ such that $1 = d_1 < d_2 < \cdots < d_{16} = d$, $d_6 = 18$ and $d_9 - d_8 = 17$.
+\end{problem}
+
+\begin{problem}[3.7.11]{IMO 1991/2}
+Let $n > 6$ be an integer and $a_1$, $a_2$, $\cdots$, $a_k$ be all the natural numbers less than $n$ and relatively prime to $n$. If \[a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k−1} > 0\] prove that $n$ must be either a prime number or a power of $2$.
+\end{problem}
 \end{document}
