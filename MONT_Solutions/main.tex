@@ -909,15 +909,27 @@ Notice that $\zeta = \mu$, so the condition is equivalent to showing that $G = \
 Show that for all positive integers $n$, \[\floor{\sqrt{n}+\sqrt{n+1}} = \floor{\sqrt{4n+1}} = \floor{\sqrt{4n+2}} = \floor{\sqrt{4n+3}}.\]
 \end{problem}
 
+Suppose that $k^2 \le 4n+1 < (k+1)^2$. Then, suppose that $4n+2 = (k+1)^2$. We find that this is impossible due to the factor of two in the LHS. Suppose that $4n+3 = (k+1)^2$, but this is impossible since squares cannot be $3 \pmod{4}$. Hence, they all must lie in this range, so they are all equal. Now, we know that \[\dfrac{k^2-1}{4} \le n < \dfrac{(k+1)^2-1}{4}.\] If $k$ is even, then notice that the LHS is not an integer, and the ceiling of this is just $\tfrac{k^2}{4}$. Now, we know that $n < \tfrac{(k+1)^2}{4}$ by the upper-bound, so we find that \[\dfrac{k}{2} \le \sqrt{n} < \dfrac{k+1}{2}.\] Similarly, if $k$ is odd, then the upper bound is not an integer, so taking the ceiling, we find that $n < \tfrac{(k+1)^2}{4}$, and we get the same conclusion as above. Applying the same logic on $\sqrt{n+1}$, we get that \[\dfrac{k}{2} \le \sqrt{n+1} < \dfrac{k+1}{2}\] so adding the two inequalities and taking floors gives the desired result. $\square$
+
+\begin{remark*}
+The better way to do this is to note that $\sqrt{4n+1}<\sqrt{n}+\sqrt{n+1}<\sqrt{4n+3}$.
+\end{remark*}
+
 \begin{problem}[3.7.5]{}
 Prove that for any $n \in \mathbb{N}$, \[\dfrac{\sigma(n)}{\tau(n)} \ge \sqrt{n}.\]
 \end{problem}
+
+Let the divisors of $n$ be $d_1$, $d_2$, $\cdots$, $d_{\tau(n)}$. Then, the given statement is just that \[\dfrac{d_1+d_2+\cdots+d_{\tau(n)}}{\tau(n)} \ge \sqrt[\tau(n)]{n^{\tau(n)/2}}\] which is just a result of AM-GM. $\square$
 
 \begin{problem}[3.7.6]{IMO 1968/6}
 Prove that for any positive integer $n$, \[\floor{\dfrac{n + 1}{2}} + \floor{\dfrac{n + 2}{4}} + \floor{\dfrac{n + 4}{8}} + \floor{\dfrac{n + 8}{16}} + \cdots = n.\]
 \end{problem}
 
+Consider the binary representation of $n = (b_kb_{k-1}\cdots b_0)_2$. We know that this sum is just equivalent to the following: \[b_0+b_1+\cdots+b_k+\overline{b_kb_{k-1}\cdots b_1}+\overline{b_kb_{k-1}\cdots b_2} + \cdots + b_k.\] Now, notice that any singular digit $b_i$ is going to be counted \[1+2^{i-1}+2^{i-2}+\cdots+2^0 = 2^i\] times (for lack of a better term, we also consider the place value it's in in each number), so it will fall into the correct place value in $n$, and we have the desired conclusion. $\square$
+
 \begin{problem}[3.7.7]{INMO 2014/2}
 Let $n$ be a natural number. Prove that \[\floor{\dfrac{n}{1}}+\floor{\dfrac{n}{2}}+\cdots+\floor{\dfrac{n}{n}}+\floor{\sqrt{n}}\] is even.
 \end{problem}
+
+It is equivalent to show that \[\tau(1)+\tau(2)+\cdots+\tau(n)+\floor{\sqrt{n}}\] is even. Suppose that $\floor{\sqrt{n}}$ is odd. Then, we know that $(2k+1)^2 \le n < (2k+2)^2$ for some non-negative integer $k$. In that case, notice that the number of $\tau(i)$ where $i \le n$ that are odd is just the number of perfect squares less than or equal to $n$, of which there are an odd number. Hence, the total sum will be even. Now, suppose that $\floor{\sqrt{n}}$ is even. Then, $(2k)^2 \le n < (2k+2)^2$ for some non-negative integer $k$, and the total number of squares less than or equal to $n$ will be even, as desired. Thus, we are done. $\square$
 \end{document}
