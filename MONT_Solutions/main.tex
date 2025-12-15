@@ -955,7 +955,9 @@ For $n \ge 2$, \[\sigma(n) < n\sqrt{2\tau(n)}.\]
 Find all positive integers $d$ that have exactly $16$ positive integral divisors $d_1$, $d_2$, $\cdots$, $d_{16}$ such that $1 = d_1 < d_2 < \cdots < d_{16} = d$, $d_6 = 18$ and $d_9 - d_8 = 17$.
 \end{problem}
 
-Since $d_6 = 18$, we know that $d_1 = 1$, $d_2 = 2$, $d_3 = 3$, $d_4 = 6$, $d_5 = 9$ as well. 
+We claim the answers are $\boxed{3942} = 2\cdot 3^3\cdot 73$ and 
+
+Since $d_6 = 18$, we know that $d_1 = 1$, $d_2 = 2$, $d_3 = 3$, $d_4 = 6$, $d_5 = 9$ as well. Now, clearly $d$ cannot have just one prime factor. If $d$ has two prime factors then it must be of the form $p^7q$ or $p^3q^3$. If it is the former, then it must be $2\cdot 3^7 = 4374$ which does not work. If it is of the latter form, then it must be $2^3\cdot 3^3 = 216$ which does not work either. If $d$ has $3$ prime divisors, then it must be of the form $p^3qr$, so it must be of the form $54r$ for a prime $r$. Now, if $r > 54$, then we know that $d_8 = 54$, so $d_9 = r = 73$, which indeed works. CONTINUE
 
 \begin{problem}[3.7.11]{IMO 1991/2}
 Let $n > 6$ be an integer and $a_1$, $a_2$, $\cdots$, $a_k$ be all the natural numbers less than $n$ and relatively prime to $n$. If \[a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k−1} > 0\] prove that $n$ must be either a prime number or a power of $2$.
