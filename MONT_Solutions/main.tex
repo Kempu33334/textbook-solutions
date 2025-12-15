@@ -2,6 +2,7 @@
 \usepackage{kempu}
 
 \newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\id}{\operatorname{id}}
 \newcommand{\noproblems}{\emph{No problems.}}
 
 \title{EGMO Solutions}
@@ -786,8 +787,8 @@ Prove that:
 \begin{enumerate}
 \item $\mu * \mathbf{1} = \delta$
 \item $\mathbf{1} * \mathbf{1} = \tau$
-\item $\operatorname{id} * \mathbf{1} = \sigma$
-\item $\phi * \mathbf{1} = \operatorname{id}$.
+\item $\id * \mathbf{1} = \sigma$
+\item $\phi * \mathbf{1} = \id$.
 \end{enumerate}
 In addition, show that:
 \begin{enumerate}
@@ -817,8 +818,106 @@ It suffices to show that $f = g * \mu$ implies $f * 1 = g$. However, \[f = g * \
 \begin{problem}[3.4.6]{}
 The idea in Example 3.4.2 is the fact the following: \[\left\{\dfrac{1}{n}, \dfrac{2}{n}, \cdots, \dfrac{n}{n}\right\} = \left\{\left\{\dfrac{k}{d}:1\le k \le d, \gcd(k, d) = 1\right\} : d \mid n\right\}.\] Remember this idea and use it to prove for any $n$, \[\sum_{d \mid n}\sum_{\substack{1 \le k \le d\\ \gcd(k, d) = 1}} \mathbf{1} = n.\]
 
-Use the above to show $\phi * \mathbf{1} = \operatorname{id}$. Is this the same proof as the one we gave in 3.3.1?
+Use the above to show $\phi * \mathbf{1} = \id$. Is this the same proof as the one we gave in 3.3.1?
 \end{problem}
 
-This problem is trivial by the given lemma, as it is counting over the exact same things. In addition, it is the same as the given proof of $\phi * \mathbf{1} = \operatorname{id}$ since \[\sum_{\substack{1 \le k \le d\\ \gcd(k, d) = 1}} \mathbf{1} = \phi(d).\] Hence, we are done. $\square$
+This problem is trivial by the given lemma, as it is counting over the exact same objects.
+
+For the second statement, it is the same as the proof given in the book of the fact that $\phi * \mathbf{1} = \id$ since \[\sum_{\substack{1 \le k \le d\\ \gcd(k, d) = 1}} \mathbf{1} = \phi(d).\] Hence, we are done. $\square$
+
+\subsection{Floor and Ceiling Functions}
+
+\begin{problem}[3.5.1]{}
+One result we will use again and again throughout the book is the following: If $n \in \mathbb{N}$ and $x \in \mathbb{R}$, then \[n \le x \implies n \le \floor{x}.\]
+
+This helps to strengthen our bounds. Keep this in mind whenever you have real numbers in integer type inequalities!
+\end{problem}
+
+Since $n$ has no fractional part, we may remove the fractional part from $x$ and the inequality will still hold. Hence, we are done. $\square$
+
+\begin{problem}[3.5.2]{}
+Let $p$, $q \in \mathbb{Z}$, $q \neq 0$, and $r$ be the remainder when $p$ is divided by $q$. Show that \[\floor{\dfrac{p}{q}} = \dfrac{p - r}{q}.\]
+\end{problem}
+
+If $m = \floor{\dfrac{p}{q}}$ is the greatest number less than $\dfrac{p}{q}$, then we know that \[p = qm+r\] so subtracting $r$ from both sides and dividing by $q$ finishes. $\square$
+
+\begin{problem}[3.5.3]{}
+Prove for odd $n$ \[\floor{\dfrac{k^n}{p}} +\floor{\dfrac{(p - k)^n}{p}} = \dfrac{k^n + (p - k)^n}{p}-1.\]
+\end{problem}
+
+We rewrite as follows: \[\floor{\dfrac{k^n}{p}} +\floor{\dfrac{(p - k)^n}{p}} = \floor{\dfrac{k^n}{p}} +\floor{\dfrac{((p - k)^n+k^n) - k^n}{p}}.\] However, this is just equal to \[\floor{\dfrac{k^n}{p}} +\floor{\dfrac{-k^n}{p}}+\dfrac{(p - k)^n+k^n}{p} = \dfrac{(p - k)^n+k^n}{p}-1\] as required. $\square$
+
+\newpage
+
+\begin{problem}[3.5.4]{}
+The function $\tau(n)$ doesn’t have a nice formula, and is far from continuous. It is very large at some points and very small at just the next input. However, the average function \[f(n) = \dfrac{\tau(1) + \tau(2) + \cdots + \tau(n)}{n}\] is more stable. Show that $\ln n - 1 \le f(n) \le \ln n + 1$. In other words, $f(n) = \Theta(\ln n)$, i.e. growth-wise it behaves like $\ln n$.
+\end{problem}
+
+We know that \[\tau(1) + \tau(2) + \cdots + \tau(n) = \floor{\dfrac{n}{1}}+\floor{\dfrac{n}{2}}+\cdots+\floor{\dfrac{n}{n}}.\] Now, we first show the lower bound:
+\begin{align*}
+\floor{\dfrac{n}{1}}+\floor{\dfrac{n}{2}}+\cdots+\floor{\dfrac{n}{n}} &\ge \dfrac{n}{1}+\dfrac{n}{2}+\cdots+\dfrac{n}{n}-n \\
+&= nH_n-n \\
+&> n\ln(n)-n
+\end{align*}
+as required. We now show the upper bound:
+\begin{align*}
+\floor{\dfrac{n}{1}}+\floor{\dfrac{n}{2}}+\cdots+\floor{\dfrac{n}{n}} &\le \dfrac{n}{1}+\dfrac{n}{2}+\cdots+\dfrac{n}{n} \\
+&= nH_n \\
+&\le n\ln(n)+n
+\end{align*}
+so we are done. $\square$
+
+\begin{problem}[3.5.5]{}
+Prove that \[\sigma(1) + \sigma(2) + \cdots + \sigma(n) \le n^2.\]
+\end{problem}
+
+This follows from the fact that \[\sigma(1) + \sigma(2) + \cdots + \sigma(n) \le \sum_{i=1}^n i\floor{\dfrac{n}{i}} \le \sum_{i=1}^n n = n^2\] so we are done. $\square$
+
+\begin{problem}[3.5.6]{}
+Prove that $\sigma(n) < n \ln n$.
+\end{problem}
+
+Not true; consider $n = 6$. $\square$
+
+\subsection{Example Problems}
+
+\noproblems
+
+\newpage
+
+\subsection{Practice Problems}
+
+\begin{problem}[3.7.1]{}
+Find all $n \in \mathbb{N}$ such that $\floor{\sqrt{n}}\mid n$.
+\end{problem}
+
+Let $k$ be the integer such that \[k^2 \le n < k^2+2k+1.\] Then, the condition reduces to $k \mid n$, so $n$ must be of the form $k^2$, $k^2+k$, or $k^2+2k$ for some positive integer $k$. $\square$
+
+\begin{problem}[3.7.2]{}
+Let $a$, $b$, $n$ be positive integers with $\gcd(a, n) = 1$. Prove that \[\sum_k\left\{\dfrac{ak+b}{n}\right\} = \dfrac{n-1}{2}\] where $k$ runs through a complete system of residues modulo $n$.
+\end{problem}
+
+Notice that since $a$ will just permute the elements of $k$, and so will $b$, each of \[\left\{0, \dfrac{1}{n}, \cdots, \dfrac{n-1}{n}\right\}\] will occur exactly once, giving a total of $\dfrac{n(n-1)/2}{n} = \boxed{\dfrac{n-1}{2}}$ as required. $\square$
+
+\begin{problem}[3.7.3]{}
+Let $f(x)$ be defined for all rationals $x \in [0, 1]$. If \[F(n) = \sum_{k=1}^n f\left(\dfrac{k}{n}\right), \quad G(n) = \sum_{\substack{k=1 \\ \gcd(k, n) = 1}}^n f\left(\dfrac{k}{n}\right)\] then prove that $G = \zeta * F$, where $\zeta(n)$ is the sum of the primitive $n$th roots of unity.
+\end{problem}
+
+Notice that $\zeta = \mu$, so the condition is equivalent to showing that $G = \mu * F$. However, undoing the Mobius inversion yields that it is equivalent to show that $G * \mathbf{1} = F$. However, this is clear (as $G$ simply does casework on the simplest form of the fraction), so we are done. $\square$
+
+\begin{problem}[3.7.4]{}
+Show that for all positive integers $n$, \[\floor{\sqrt{n}+\sqrt{n+1}} = \floor{\sqrt{4n+1}} = \floor{\sqrt{4n+2}} = \floor{\sqrt{4n+3}}.\]
+\end{problem}
+
+\begin{problem}[3.7.5]{}
+Prove that for any $n \in \mathbb{N}$, \[\dfrac{\sigma(n)}{\tau(n)} \ge \sqrt{n}.\]
+\end{problem}
+
+\begin{problem}[3.7.6]{IMO 1968/6}
+Prove that for any positive integer $n$, \[\floor{\dfrac{n + 1}{2}} + \floor{\dfrac{n + 2}{4}} + \floor{\dfrac{n + 4}{8}} + \floor{\dfrac{n + 8}{16}} + \cdots = n.\]
+\end{problem}
+
+\begin{problem}[3.7.7]{INMO 2014/2}
+Let $n$ be a natural number. Prove that \[\floor{\dfrac{n}{1}}+\floor{\dfrac{n}{2}}+\cdots+\floor{\dfrac{n}{n}}+\floor{\sqrt{n}}\] is even.
+\end{problem}
 \end{document}
