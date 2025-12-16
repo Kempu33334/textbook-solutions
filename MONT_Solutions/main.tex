@@ -995,6 +995,8 @@ Prove that the sequence $\tau(n^2+1)$ does not become monotonic from any given p
 Determine all positive integers $k$ such that \[\dfrac{\tau(n^2)}{\tau(n)} = k\] for some $n \in \mathbb{N}$.
 \end{problem}
 
+We claim the only answer is all $k$. Let $n = p_1^{e_1}p_2^{e_2}\cdots p_{\ell}^{e_{\ell}}$. Then, the equation is equivalent to \[\dfrac{(2e_1+1)(2e_2+1)\cdots(2e_{\ell}+1)}{(e_1+1)(e_2+1)\cdots(e_{\ell}+1)} = k.\] Now, since the numerator is odd, we know that $2 \mid e_i$ over all $i$, so take the map $e_i \mapsto 2e_i$, transforming the equation into \[\dfrac{(4e_1+1)(4e_2+1)\cdots(4e_{\ell}+1)}{(2e_1+1)(2e_2+1)\cdots(2e_{\ell}+1)} = k.\] Clearly, this cannot be even, so we set to constructing odd $k$.
+
 \begin{problem}[3.7.15]{ISL 2004/N2}
 The function $f: \mathbb{N} \mapsto \mathbb{N}$ is defined by the equality \[f(n) = \sum_{k=1}^n \gcd(k, n), \qquad n \in \mathbb{N}.\]
 \begin{enumerate}
