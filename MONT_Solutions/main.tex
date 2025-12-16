@@ -1033,6 +1033,14 @@ Thus, having shown sufficiency and necessity, we are done. $\square$
 An integer $n > 2$ is called \emph{tasty} if for every ordered pair of positive integers $(a, b)$ with $a+b = n$, at least one of $\tfrac{a}{b}$ and $\tfrac{b}{a}$ is a terminating decimal. Do there exist infinitely many tasty integers?
 \end{problem}
 
+We claim the answer is $\boxed{\text{no}}$.
+
+Notice that $n$ must be of the form $n = 2^m5^n+3$, due to selecting $a = 3$. In addition, by selecting $a = 6$, we must have that $n = 2^e5^f + 6$. Hence, it suffices to see if there exist infinite tuples $(m, n, e, f)$ satisfying \[2^m5^n = 2^e5^f+3.\] Clearly, one of $m$ or $e$ must be zero, so we case.
+
+If $m = 0$, then we must have that $e \ge 1$ by modulo $2$. Hence, we now must solve \[5^n = 2^e5^f + 3.\] Clearly, one of $n$ or $f$ must be $0$. If $n = 0$, then there are clearly no solutions, so assume that $f = 0$. Then, we wish to find solutions to \[5^n = 2^e+3.\] If $e = 1$, then we clearly have a solution, so assume $e \ge 2$. Then, by taking modulo $4$, we reach a contradiction. Hence, there is only one solution.
+
+If $e = 0$, then we know that $n$ is of the form $n = 5^f+6$. Furthermore, from $a = 7$, we find that $n = 2^x5^y+7$, so we wish to solve \[5^f = 2^x5^y+1.\] Clearly, one of $f$ or $y$ must be zero. If $f = 0$, then we find a solution. If $y = 0$, then it suffices to find solutions to \[5^f - 2^x = 1.\] Now, notice that if $f$ and $x$ are greater than $1$, then there exist no solutions by Catalan's Conjecture. Hence, there are finitely many solutions $n$, as required. $\square$
+
 \begin{problem}[3.7.18]{USA TSTST 2016/4}
 Suppose that $n$ and $k$ are positive integers such that \[1 = \underbrace{\phi(\phi(\cdots \phi(}_{k\text{ times}}n)\cdots)).\] Prove that $n \le 3^k$.
 \end{problem}
