@@ -951,15 +951,97 @@ Thus, it suffices to verify this on prime powers, but this is obvious since \[(1
 For $n \ge 2$, \[\sigma(n) < n\sqrt{2\tau(n)}.\]
 \end{problem}
 
+We case on $\nu_2(n)$.
+
+\begin{itemize}
+\item Suppose that $\nu_2(n) = 0$. Then, we wish to show the stricter inequality \[\sigma(n) < n\sqrt{\tau(n)}.\] Notice that both sides are multiplicative, so it suffices to show it for prime powers. Let $n = p^k$, so that it suffices to show that \[\dfrac{p^{k+1}-1}{p-1} < p^k\sqrt{k+1}.\] However, notice that \[\dfrac{p-\tfrac{1}{p^k}}{p-1} < 1 < \sqrt{k+1}\] so we are done.
+\item Suppose that $\nu_2(n) \ge 1$. Then, let $k = \tfrac{n}{2^{\nu_2(n)}}$. The above conclusion still holds for $k$, so we know that \[\sigma(k) < k\sqrt{\tau(k)}.\] Thus, it suffices to show that \[2^{k+1}-1 < 2^k\sqrt{2\cdot 2}\] but this is clear. Hence, multiplying the two inequalities then gives the required conclusion with $n$.
+\end{itemize}
+
+Thus, we are done. $\square$
+
 \begin{problem}[3.7.10]{Ireland 1998/6}
 Find all positive integers $d$ that have exactly $16$ positive integral divisors $d_1$, $d_2$, $\cdots$, $d_{16}$ such that $1 = d_1 < d_2 < \cdots < d_{16} = d$, $d_6 = 18$ and $d_9 - d_8 = 17$.
 \end{problem}
 
-We claim the answers are $\boxed{3942} = 2\cdot 3^3\cdot 73$ and 
+We claim the answers are $\boxed{3834} = 2\cdot 3^3\cdot 71$, and $\boxed{1998} = 2\cdot 3^3\cdot 37$, which we may easily verify. 
 
-Since $d_6 = 18$, we know that $d_1 = 1$, $d_2 = 2$, $d_3 = 3$, $d_4 = 6$, $d_5 = 9$ as well. Now, clearly $d$ cannot have just one prime factor. If $d$ has two prime factors then it must be of the form $p^7q$ or $p^3q^3$. If it is the former, then it must be $2\cdot 3^7 = 4374$ which does not work. If it is of the latter form, then it must be $2^3\cdot 3^3 = 216$ which does not work either. If $d$ has $3$ prime divisors, then it must be of the form $p^3qr$, so it must be of the form $54r$ for a prime $r$. Now, if $r > 54$, then we know that $d_8 = 54$, so $d_9 = r = 73$, which indeed works. CONTINUE
+Since $d_6 = 18$, we know that $d_1 = 1$, $d_2 = 2$, $d_3 = 3$, $d_4 = 6$, $d_5 = 9$ as well. Now, clearly $d$ cannot have just one prime factor. If $d$ has two prime factors then it must be of the form $p^7q$ or $p^3q^3$. If it is the former, then it must be $2\cdot 3^7 = 4374$ which does not work. If it is of the latter form, then it must be $2^3\cdot 3^3 = 216$ which does not work either. If $d$ has $3$ prime divisors, then it must be of the form $p^3qr$, so it must be of the form $54r$ for a prime $r$.
+\begin{itemize}
+\item If $r > 54$, then we know that $d_8 = 54$, so $d_9 = r = 71$, which indeed works, giving $3834$.
+\item If $27 < r < 54$, then we know that $d_8 = r$, so $d_9 = 54$, which gives the solution $r = 37$, so we get the solution $1998$.
+\item If $18 < r < 27$, then we know that $2r-27 = 17$, so $r = 22$, but this does not work.
+\item If $r < 18$, then this cannot work, as we must have that $d_6 = 18$.
+\end{itemize}
+Hence, having exhausted all cases, we are done. $\square$
 
 \begin{problem}[3.7.11]{IMO 1991/2}
-Let $n > 6$ be an integer and $a_1$, $a_2$, $\cdots$, $a_k$ be all the natural numbers less than $n$ and relatively prime to $n$. If \[a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k−1} > 0\] prove that $n$ must be either a prime number or a power of $2$.
+Let $n > 6$ be an integer and $a_1$, $a_2$, $\cdots$, $a_k$ be all the natural numbers less than $n$ and relatively prime to $n$. If \[a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k-1} > 0\] prove that $n$ must be either a prime number or a power of $2$.
+\end{problem}
+
+We know that $\{a\}$ forms a non-trivial arithmetic progression and that $k = \phi(n)$. In addition, $a_1 = 1$ and $a_{\phi(n)} = n-1$, so \[a_i = \dfrac{(i-1)(n-2)}{\phi(n)-1}+1.\] Now, suppose that $p \mid n$ is a prime. If $p \mid \tfrac{n-2}{\phi(n)-1}$, then we would be able to solve for $i$ in the congruence \[\dfrac{(i-1)(n-2)}{\phi(n)-1} \equiv -1 \pmod{p}.\] Hence, it must be false, or $n = p$. For now, assume it is the former, because the latter obviously works. We know that \[\dfrac{n-2}{\phi(n)-1} \equiv 0 \pmod{p}.\] Now, if $p \nmid \phi(n)-1$, then we must have that $p \mid n-2$, but $p \mid n$ also. Thus, we must have the $p = 2$, so $n$ is a power of $2$, as required. On the other hand, if $p \mid \phi(n)-1$, then write $n = p^{\alpha}\beta$. Notice that \[\phi(n) \equiv \phi(p^{\alpha})\phi(\beta) \equiv (p^{\alpha}-p^{\alpha-1})\phi(\beta) \equiv 1\pmod{p}.\] Now, if $\alpha \ge 2$, then it is congruent to $0$ instead, so we must have that $\alpha = 1$. Hence, $n = p\beta$ where $\gcd(p, \beta) = 1$. However, now note that $n = cp^d+2$ for some $c$ and $d$, but we are suppose to have that $p \mid cp^d+2$, so $p = 2$, and the case reduces back to the previous one.
+
+Thus, the only solutions that work are $n$ prime and when $n$ is a power of two, as required. $\square$
+
+\begin{problem}[3.7.12]{ISL 2016/C2}
+Find all positive integers $n$ for which all positive divisors of $n$ can be put into the cells of a rectangular table under the following constraints: each cell contains a distinct divisor; the sums of all rows are equal; and the sums of all columns are equal.
+\end{problem}
+
+\begin{problem}[3.7.13]{St. Petersburg 1998}
+Prove that the sequence $\tau(n^2+1)$ does not become monotonic from any given point onwards.
+\end{problem}
+
+\begin{problem}[3.7.14]{IMO 1998/3}
+Determine all positive integers $k$ such that \[\dfrac{\tau(n^2)}{\tau(n)} = k\] for some $n \in \mathbb{N}$.
+\end{problem}
+
+\begin{problem}[3.7.15]{ISL 2004/N2}
+The function $f: \mathbb{N} \mapsto \mathbb{N}$ is defined by the equality \[f(n) = \sum_{k=1}^n \gcd(k, n), \qquad n \in \mathbb{N}.\]
+\begin{enumerate}
+\item Prove that $f$ is multiplicative
+\item Prove that for each $a \in \mathbb{N}$, the equation $f(x) = ax$ has a solution.
+\item Find all $a \in \mathbb{N}$ such that the equation $f(x) = ax$ has a unique solution.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[3.7.16]{ISL 2011/N1}
+For any integer $d > 0$, let $f(d)$ be the smallest possible integer that has exactly $d$ positive divisors (so for example we have $f(1) = 1$, $f(5) = 16$, and $f(6) = 12$). Prove that for every integer $k \ge 0$ the number $f\left(2^k\right)$ divides $f\left(2^{k+1}\right)$.
+\end{problem}
+
+Consider the following grid of numbers:
+\[\begin{bmatrix}
+2^1 & 3^1 & 5^1 & 7^1 & \dots \\
+2^2 & 3^2 & 5^2 & 7^2 & \dots \\
+2^4 & 3^4 & 5^4 & 7^4 & \dots \\
+2^8 & 3^8 & 5^8 & 7^8 & \dots \\
+\vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}\]
+
+We make the claim that the number formed by selecting the $k$ smallest numbers in this grid and multiplying them together gives $f\left(2^k\right)$.
+
+We start by showing that it indeed creates a number with $2^k$ divisors. Clearly, since $\tau$ is multiplicative, it suffices to notice that we are just selecting $x_0$ numbers from the first column, $x_1$ numbers from the second and so on so that $x_0+x_1+\dots = k$, and the total number of divisors will just be \[2^{x_0}\cdot 2^{x_1}\dots = 2^k\] as required.
+
+We now show that no smaller number satisfies this property. Clearly, for a number $n = 2^{e_1}3^{e_2}5^{e_3}\dots$ to have $2^k$ divisors, we need for $e_i+1$ to be a power of $2$ over all positive integers $i$ (where power is a number of the form $2^m$ for non-negative integer $m$). As a result, it suffices to decompose $e_i$ into its binary representation, noting that all the digits must be $1$. Then, $n$ is analogous to selecting some prefix product of each column and multiplying all of the products, such that the total length of each prefix is $k$. Hence, the minimum is clearly when we select all the smallest numbers.
+
+Thus, having shown sufficiency and necessity, we are done. $\square$
+
+\begin{problem}[3.7.17]{ELMO 2017/4}
+An integer $n > 2$ is called \emph{tasty} if for every ordered pair of positive integers $(a, b)$ with $a+b = n$, at least one of $\tfrac{a}{b}$ and $\tfrac{b}{a}$ is a terminating decimal. Do there exist infinitely many tasty integers?
+\end{problem}
+
+\begin{problem}[3.7.18]{USA TSTST 2016/4}
+Suppose that $n$ and $k$ are positive integers such that \[1 = \underbrace{\phi(\phi(\cdots \phi(}_{k\text{ times}}n)\cdots)).\] Prove that $n \le 3^k$.
+\end{problem}
+
+\begin{problem}[3.7.19]{ISL 2016/N2}
+Let $\tau_1(n)$ be the number of positive divisors of $n$ which have remainders $1$ when divided by $3$. Find all positive integral values of the fraction $\tfrac{\tau(10n)}{\tau_1(10n)}$.
+\end{problem}
+
+\begin{problem}[3.7.20]{China 2017/5}
+Let $D_n$ be the set of divisors of $n$. Find all natural $n$ such that it is possible to split $D_n$ into two disjoint sets $A$ and $G$, both containing at least three elements each, such that the elements in $A$ form an arithmetic progression while the elements in $G$ form a geometric progression.
+\end{problem}
+
+\begin{problem}[3.7.21]{China TST 2015/3/6}
+For all natural numbers $n$, define $f(n) = \tau(n!) - \tau((n - 1)!)$. Prove that there exist infinitely many composite $n$, such that for all naturals $m < n$, we have $f(m) < f(n)$.
 \end{problem}
 \end{document}
