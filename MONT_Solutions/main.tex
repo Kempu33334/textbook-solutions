@@ -998,6 +998,8 @@ Now, assume that $n \ge 2$. We will show that it cannot work.
 Prove that the sequence $\tau(n^2+1)$ does not become monotonic from any given point onwards.
 \end{problem}
 
+Clearly, it cannot be monotonically decreasing, so suppose it is monotonically increasing, such that there exists $N$ where for any $n \ge N$, \[\tau((n+1)^2+1) \ge \tau(n^2+1)+2.\] Now, notice that for any $n > N$, \[2\sqrt{n^2+1} \ge \tau(n^2+1) \ge \tau((n-1)^2+1)+2 \ge \cdots \ge \tau(N^2+1)+2(n-N).\] Expanding, we find that \[4n^2+4 \ge 4n^2-8nN+4N^2+4(n-N)\tau(N^2+1)+\tau(N^2+1)^2.\] Let $c = \tau(N^2+1)$ be a constant. Then, we know that \[4 \ge (4c-8N)n+4N^2-4Nc+c^2.\] Thus, in order for this to hold, $4c \le 8N$ is a necessary condition, so \[c \le 2N.\]
+
 \begin{problem}[3.7.14]{IMO 1998/3}
 Determine all positive integers $k$ such that \[\dfrac{\tau(n^2)}{\tau(n)} = k\] for some $n \in \mathbb{N}$.
 \end{problem}
