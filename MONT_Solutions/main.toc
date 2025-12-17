@@ -26,11 +26,11 @@
 \contentsline {subsection}{\numberline {2.12}Extra Results as Problems}{19}{subsection.2.12}%
 \contentsline {subsection}{\numberline {2.13}Example Problems}{19}{subsection.2.13}%
 \contentsline {subsection}{\numberline {2.14}Practice Problems}{20}{subsection.2.14}%
-\contentsline {section}{\numberline {3}Arithmetic Functions}{28}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Number of Divisors}{28}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Sum of Divisors}{28}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Euler's Totient Function}{28}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Multiplicative Functions}{30}{subsection.3.4}%
+\contentsline {section}{\numberline {3}Arithmetic Functions}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Number of Divisors}{29}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Sum of Divisors}{29}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Euler's Totient Function}{29}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Multiplicative Functions}{31}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Floor and Ceiling Functions}{33}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Example Problems}{34}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Example Problems}{35}{subsection.3.6}%
 \contentsline {subsection}{\numberline {3.7}Practice Problems}{35}{subsection.3.7}%
