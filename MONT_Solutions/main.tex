@@ -998,7 +998,7 @@ Now, assume that $n \ge 2$. We will show that it cannot work.
 Prove that the sequence $\tau(n^2+1)$ does not become monotonic from any given point onwards.
 \end{problem}
 
-Clearly, it cannot be monotonically decreasing, so suppose it is monotonically increasing, such that there exists $N$ where for any $n \ge N$, \[\tau((n+1)^2+1) \ge \tau(n^2+1)+2.\] Now, notice that for any $n > N$, \[2\sqrt{n^2+1} \ge \tau(n^2+1) \ge \tau((n-1)^2+1)+2 \ge \cdots \ge \tau(N^2+1)+2(n-N).\] Expanding, we find that \[4n^2+4 \ge 4n^2-8nN+4N^2+4(n-N)\tau(N^2+1)+\tau(N^2+1)^2.\] Let $c = \tau(N^2+1)$ be a constant. Then, we know that \[4 \ge (4c-8N)n+4N^2-4Nc+c^2.\] Thus, in order for this to hold, $4c \le 8N$ is a necessary condition, so \[c \le 2N.\]
+Clearly, it cannot be monotonically decreasing, so suppose it is monotonically increasing, such that there exists $N$ where for any $n \ge N$, \[\tau((n+1)^2+1) \ge \tau(n^2+1)+2.\] Now, notice that for any $n > N$, \[\tau(n^2+1) \ge \tau((n-1)^2+1)+2 \ge \cdots \ge \tau(N^2+1)+2(n-N).\] Now, for sufficiently large $n$, we find that \[\tau(n^2+1) \ge \tau(N^2+1)+2(n-N) \ge n.\] Now, if $n$ is even, then notice that there are at most $2 \floor{n/2}$ divisors of $n^2+1$, so we have the required conclusion, as it cannot hold. $\square$
 
 \begin{problem}[3.7.14]{IMO 1998/3}
 Determine all positive integers $k$ such that \[\dfrac{\tau(n^2)}{\tau(n)} = k\] for some $n \in \mathbb{N}$.
@@ -1021,7 +1021,7 @@ We begin with the first part. Notice that \[f(n) = \sum_{d \mid n} d\cdot\phi\le
 
 We continue with the second part. Notice that if $n = p^k$ where $p$ is prime, \[f(p^k) = \sum_{i=0}^k p^i \phi(p^{k-i}) = p^k + \sum_{i=0}^{k-1} p^i(p^{k-i}-p^{k-i-1}) = (1+k)p^k - kp^{k-1}.\] Hence, if $n = p_1^{e_1}p_2^{e_2}\cdots p_{\ell}^{e_{\ell}}$, then \[\dfrac{f(n)}{n} = \prod_{i=1}^{\ell} \left(1+e_i-\dfrac{e_i}{p_i}\right).\] Let $a = q_1^{f_1}q_2^{f_2}\cdots q_m^{f_m}$. Now, notice that if we set $\ell = m$, and \[1+e_i-\dfrac{e_i}{q_i} = q_i^{f_i} \implies e_i = \dfrac{q_i(q_i^{f_i}-1)}{q_i-1}\] then there clearly exists integer $e_i$ that satisfies this since the RHS is an integer. Hence, by setting $p_i = q_i$, we can make $a$, as required.
 
-We finish with the last part. 
+We finish with the last part. Notice that we also have that $f(2^{2a-2}) = a\cdot 2^{2a-2}$. Hence, $a$ must be a power of two, which clearly satisfies the given constraint, and has exactly one solution. $\square$
 
 \begin{problem}[3.7.16]{ISL 2011/N1}
 For any integer $d > 0$, let $f(d)$ be the smallest possible integer that has exactly $d$ positive divisors (so for example we have $f(1) = 1$, $f(5) = 16$, and $f(6) = 12$). Prove that for every integer $k \ge 0$ the number $f\left(2^k\right)$ divides $f\left(2^{k+1}\right)$.
