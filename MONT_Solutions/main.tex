@@ -1081,6 +1081,8 @@ Let $n = 3^{\alpha}p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}q_1^{f_1}q_2^{f_2}\cdots q_
 Let $D_n$ be the set of divisors of $n$. Find all natural $n$ such that it is possible to split $D_n$ into two disjoint sets $A$ and $G$, both containing at least three elements each, such that the elements in $A$ form an arithmetic progression while the elements in $G$ form a geometric progression.
 \end{problem}
 
+Suppose $n \in A$. Then, the next largest element, call it $a$, must divide $n$, so it will be impossible to get any non-multiple of $a$ in $A$, and this is clearly a contradiction since $1$ must be in $G$. Thus, $n \in G$. 
+
 \begin{problem}[3.7.21]{China TST 2015/3/6}
 For all natural numbers $n$, define $f(n) = \tau(n!) - \tau((n - 1)!)$. Prove that there exist infinitely many composite $n$, such that for all naturals $m < n$, we have $f(m) < f(n)$.
 \end{problem}
