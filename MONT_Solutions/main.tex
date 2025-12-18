@@ -992,7 +992,7 @@ Find all positive integers $n$ for which all positive divisors of $n$ can be put
 
 We claim that $n = \boxed{1}$ is the only solution, which clearly works.
 
-Now, assume that $n \ge 2$. We will show that it cannot work.
+Now, assume that $n \ge 2$. We will show that it cannot work. Let the table have $a$ rows and $b$ columns such that $a \le b$. Then, let WLOG let $n$ go in the upper-left box. Notice that for each other column, there must exist some divisor of $n$ that is greater $\tfrac{n}{a}$. However, there are at most $a-1$ divisors satisfying this and $a-1 < b$. Hence, there cannot exist a good configuration for $n \ge 2$, as required. $\square$
 
 \begin{problem}[3.7.13]{St. Petersburg 1998}
 Prove that the sequence $\tau(n^2+1)$ does not become monotonic from any given point onwards.
