@@ -1068,6 +1068,8 @@ Let $\tau_1(n)$ be the number of positive divisors of $n$ which have remainders 
 Let $D_n$ be the set of divisors of $n$. Find all natural $n$ such that it is possible to split $D_n$ into two disjoint sets $A$ and $G$, both containing at least three elements each, such that the elements in $A$ form an arithmetic progression while the elements in $G$ form a geometric progression.
 \end{problem}
 
+Suppose that $n = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ is in $G$ such that the $p$ are ordered increasingly. Furthermore, notice that $k = 1$ doesn't work, so we know that $k \ge 2$. Now, if $n \in G$, then clearly the smallest element of $A$ must be $p_1$, and the second smallest must be either $p_1^2$ or $p_2$. If it is $p_1^2$, then the progression will never hit any non-multiple of $p_1$, so it must be $p_2$. Now, 
+
 \begin{problem}[3.7.21]{China TST 2015/3/6}
 For all natural numbers $n$, define $f(n) = \tau(n!) - \tau((n - 1)!)$. Prove that there exist infinitely many composite $n$, such that for all naturals $m < n$, we have $f(m) < f(n)$.
 \end{problem}
