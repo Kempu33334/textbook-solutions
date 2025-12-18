@@ -1060,6 +1060,15 @@ If $e = 0$, then we know that $n$ is of the form $n = 5^f+6$. Furthermore, from 
 Suppose that $n$ and $k$ are positive integers such that \[1 = \underbrace{\phi(\phi(\cdots \phi(}_{k\text{ times}}n)\cdots)).\] Prove that $n \le 3^k$.
 \end{problem}
 
+Let $n = 2^kp_1^{e_1}p_2^{e_2}\cdots p_{\ell}^{e_{\ell}}$. Let $f(n)$ denote the number of operations $\phi$ on $n$ necessary to reach $2$. We then make a claim.
+\begin{claim*}
+If $k \ge 1$, then $f(n) = k-1+e_1f(p_1)+e_2f(p_2)+\cdots+e_{\ell}f(p_{\ell})$. Otherwise, $f(n) = e_1f(p_1)+e_2f(p_2)+\cdots+e_{\ell}f(p_{\ell})$.
+\end{claim*}
+\begin{proof}
+We do this by noting that $f(2b) = f(b)+1$ if $b$ is even, and $f(ap) = f(a)+f(p)$ if $a$ and $p$ are odd and $p$ is a prime. Both of these conclusions are clear, and directly lead to the desired claim.
+\end{proof}
+Thus, it suffices to show that if $k = 0$, then \[p_1^{e_1}p_2^{e_2}\cdots p_{\ell}^{e_{\ell}} \le 3^{e_1f(p_1)+e_2f(p_2)+\cdots+e_{\ell}f(p_{\ell})+1}.\] Taking the log base $3$ of both sides, \[e_1\log_3(p_1)+e_2\log_3(p_2)+\cdots+e_{\ell}\log_3(p_{\ell}) \le e_1f(p_1)+e_2f(p_2)+\cdots+e_{\ell}f(p_{\ell})+1\] but this is clear, since $\log_3(p_1) \le f(p_1)$. Similarly, we are able to find a similar conclusion when $k \ge 1$, so we are done. $\square$
+
 \begin{problem}[3.7.19]{ISL 2016/N2}
 Let $\tau_1(n)$ be the number of positive divisors of $n$ which have remainders $1$ when divided by $3$. Find all positive integral values of the fraction $\tfrac{\tau(10n)}{\tau_1(10n)}$.
 \end{problem}
@@ -1067,8 +1076,6 @@ Let $\tau_1(n)$ be the number of positive divisors of $n$ which have remainders 
 \begin{problem}[3.7.20]{China 2017/5}
 Let $D_n$ be the set of divisors of $n$. Find all natural $n$ such that it is possible to split $D_n$ into two disjoint sets $A$ and $G$, both containing at least three elements each, such that the elements in $A$ form an arithmetic progression while the elements in $G$ form a geometric progression.
 \end{problem}
-
-Suppose that $n = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ is in $G$ such that the $p$ are ordered increasingly. Furthermore, notice that $k = 1$ doesn't work, so we know that $k \ge 2$. Now, if $n \in G$, then clearly the smallest element of $A$ must be $p_1$, and the second smallest must be either $p_1^2$ or $p_2$. If it is $p_1^2$, then the progression will never hit any non-multiple of $p_1$, so it must be $p_2$. Now, 
 
 \begin{problem}[3.7.21]{China TST 2015/3/6}
 For all natural numbers $n$, define $f(n) = \tau(n!) - \tau((n - 1)!)$. Prove that there exist infinitely many composite $n$, such that for all naturals $m < n$, we have $f(m) < f(n)$.
