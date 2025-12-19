@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1766066627.73386 "main.tex" "main.pdf" "main" 1766066631.17691 0
-  "c:/Users/aatmi/.texlive2025/texmf-config/tex/latex/kempu.sty" 1753896020 4758 8349be4e58560330e9cdb104fa4885d1 ""
+["pdflatex"] 1766178103.32557 "main.tex" "main.pdf" "main" 1766178106.93994 0
+  "c:/Users/aatmi/texmf/tex/latex/kempu.sty" 1766177895 4776 7d2f884644567c314ebd64e514b69edd ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1761613107 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1761613107 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1761613107 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -27,7 +27,6 @@
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm" 1761613107 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm" 1761613107 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm" 1761613107 17148 9556e1b5f936b77a796f68d2d559ba99 ""
-  "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm" 1761613107 11176 53ebf7a171df1f9447b387b178768bb5 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmex10.tfm" 1761613107 992 ce925c9346c7613270a79afbee98c070 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm" 1761613107 1528 6d36b2385e0ca062a654de6ac59cb34f ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm" 1761613107 1524 753b192b18f2991794f9d41a8228510b ""
@@ -199,7 +198,6 @@
   "c:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd" 1761613108 568 a5494d810f2680caf10205cd1226c76c ""
   "c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd" 1761613108 1882 28c08db1407ebff35a658fd141753d16 ""
   "c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd" 1761613108 1867 996fe743d88a01aca041ed22cc10e1bb ""
-  "c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd" 1761613108 1641 f48673bce41ac279099d0c9523459753 ""
   "c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd" 1761613108 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
   "c:/texlive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty" 1761613616 62711 3b0ed1d68b598a75677c10d16646d5e5 ""
   "c:/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1761613616 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
@@ -262,11 +260,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761618814 5574153 af86687748baf417d9e7d549313527be ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761618925 3629597 ac58ee2cfc104b250d0293d40de1dcae ""
   "c:/texlive/2025/texmf.cnf" 1761618790 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1766066630 15008 98ee41ed51c5f23c0a51aa7a68f1039c "pdflatex"
-  "main.out" 1766066630 5720 591ef8de67ca603f91a6edb7cfcd6afa "pdflatex"
-  "main.pre" 1766066628 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1766066626 81507 fdf5b9295b95bb60eeedb52a47ffcd16 ""
-  "main.toc" 1766066630 3086 d3aa74cd04a2a4dc9ae068a7434520ec "pdflatex"
+  "main.aux" 1766178106 15008 87d00fc68006bceb1dbc7b3c0185b9e5 "pdflatex"
+  "main.out" 1766178106 5720 591ef8de67ca603f91a6edb7cfcd6afa "pdflatex"
+  "main.pre" 1766178104 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1766178102 86468 db02faeb7e5444a3833e817fda56e01f ""
+  "main.toc" 1766178106 3086 d3aa74cd04a2a4dc9ae068a7434520ec "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -1,8 +1,6 @@
 \documentclass{article}
 \usepackage{kempu}
 
-\newcommand{\lcm}{\operatorname{lcm}}
-\newcommand{\id}{\operatorname{id}}
 \newcommand{\noproblems}{\emph{No problems.}}
 
 \title{EGMO Solutions}
@@ -1006,7 +1004,7 @@ Determine all positive integers $k$ such that \[\dfrac{\tau(n^2)}{\tau(n)} = k\]
 
 We claim the only answer is all odd $k$. Let $n = p_1^{e_1}p_2^{e_2}\cdots p_{\ell}^{e_{\ell}}$. Then, the equation is equivalent to \[\dfrac{(2e_1+1)(2e_2+1)\cdots(2e_{\ell}+1)}{(e_1+1)(e_2+1)\cdots(e_{\ell}+1)} = k.\] Now, since the numerator is odd, we know that $2 \mid e_i$ over all $i$, so take the map $e_i \mapsto 2e_i$, transforming the equation into \[\dfrac{(4e_1+1)(4e_2+1)\cdots(4e_{\ell}+1)}{(2e_1+1)(2e_2+1)\cdots(2e_{\ell}+1)} = k.\] Clearly, this cannot be even, so we set to constructing odd $k$.
 
-Notice that it suffices to prove the statement for all primes due to prime factorizations. We do this using strong induction. For the base case, notice that $\tfrac{9}{5} \cdot \tfrac{5}{3} = 3$. Then, assume it works for all primes less than $p$, where $p$ is also a prime. Then, we will show that it also works for $p$. If $p \equiv 1 \pmod{4}$, then \[\dfrac{4\left(\tfrac{p-1}{4}\right)+1}{2\left(\tfrac{p-1}{4}\right)+1} \cdot \left(2\left(\tfrac{p-1}{4}\right)+1\right) = p.\] However, since \[2\left(\tfrac{p-1}{4}\right)+1 < p\] it must be representable, so $p$ works. If $p \equiv 3 \pmod{8}$, then let $p = 8a+3$ and notice that \[\dfrac{24a+9}{12a+5}\cdot \dfrac{12a+5}{6a+3} \cdot 2a+1 = p.\] However, since $2a+1 < 8a+3$, we are able to represent $a$, so we are done. Finally, if $p \equiv 5 \pmod{8}$, then let $p = 8a+7$ and notice that \[\dfrac{56a+49}{28a+25}\cdot \dfrac{28a+25}{14a+13}\cdot \dfrac{14a+13}{7a+7} \cdot a+1 = p\] and since $a+1 < p$, it can be represented in the necessary form. Thus, having exhausted all cases, we are done. $\square$
+Notice that it suffices to prove the statement for all primes due to prime factorizations. We do this using strong induction. For the base case, notice that $\tfrac{9}{5} \cdot \tfrac{5}{3} = 3$. Then, assume it works for all primes less than $p$, where $p$ is also a prime. Then, we will show that it also works for $p$. If $p \equiv 1 \pmod{4}$, then \[\dfrac{4\left(\tfrac{p-1}{4}\right)+1}{2\left(\tfrac{p-1}{4}\right)+1} \cdot \left(2\left(\tfrac{p-1}{4}\right)+1\right) = p.\] However, since \[2\left(\tfrac{p-1}{4}\right)+1 < p\] it must be representable, so $p$ works. If $p \equiv 3 \pmod{8}$, then let $p = 8a+3$ and notice that \[\dfrac{24a+9}{12a+5}\cdot \dfrac{12a+5}{6a+3} \cdot (2a+1) = p.\] However, since $2a+1 < 8a+3$, we are able to represent $a$, so we are done. Finally, if $p \equiv 7 \pmod{8}$, then let $p = 8a+7$ and notice that \[\dfrac{56a+49}{28a+25}\cdot \dfrac{28a+25}{14a+13}\cdot \dfrac{14a+13}{7a+7} \cdot (a+1) = p\] and since $a+1 < p$, it can be represented in the necessary form. Thus, having exhausted all cases, we are done. $\square$
 
 \begin{problem}[3.7.15]{ISL 2004/N2}
 The function $f: \mathbb{N} \mapsto \mathbb{N}$ is defined by the equality \[f(n) = \sum_{k=1}^n \gcd(k, n), \qquad n \in \mathbb{N}.\]
@@ -1075,15 +1073,37 @@ Let $\tau_1(n)$ be the number of positive divisors of $n$ which have remainders 
 
 We claim the answer is all composite numbers of the form $ab$ where $a$, $b \ge \mathbb{Z}_{>1}$ and $2$.
 
-Let $n = 3^{\alpha}p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}q_1^{f_1}q_2^{f_2}\cdots q_{\ell}^{f_{\ell}}$ such that all the $p$ are congruent to $1 \pmod{3}$ and all the $q$ are congruent to $2 \pmod{3}$. Then, clearly \[\tau_1(n) = \ceil{\dfrac{1}{2}\prod_{i=1}^{\ell} (f_i+1)}\prod_{i=1}^k (e_i+1).\] Now, notice that \[\dfrac{\tau(n)}{\tau_1(n)} = \dfrac{(\alpha+1)\prod_{i=1}^{\ell} (f_i+1)}{\ceil{\dfrac{1}{2}\prod_{i=1}^{\ell} (f_i+1)}}.\] Now, if at least one of the $f_i$ are odd, then the ceiling is irrelavent, the value will be of the value $2(\alpha+1)$ which generates all even numbers. Now, if all the $f_i$ are even, then this is equal to \[\dfrac{\tau(n)}{\tau_1(n)} = \dfrac{2(\alpha+1)\prod_{i=1}^{\ell} (f_i+1)}{1+\prod_{i=1}^{\ell} (f_i+1)} = 2(\alpha+1)-\dfrac{2(\alpha+1)}{1+\prod_{i=1}^{\ell} (f_i+1)}.\] Now, notice that all numbers $x$ that are not $1$ or prime are representable by $\prod_{i=1}^{\ell} (f_i+1)$ since we are actually computing $\tfrac{\tau(10n)}{\tau_1(10n)}$. Hence, if $2\alpha+1$ is not prime or $1$, then let \[\prod_{i=1}^{\ell} (f_i+1) = 2\alpha+1.\] Then, it becomes \[2(\alpha+1)-\dfrac{2(\alpha+1)}{1+\prod_{i=1}^{\ell} (f_i+1)} = 2(\alpha+1)-1 = 2\alpha+1\] so this generates all composite numbers. Finally, we must show that all odd primes are not possible. Let $p$ be a prime. Then, \[(2\alpha+2-p)\prod_{i=1}^{\ell} (f_i+1) = p.\] Clearly, the second term on the RHS must equal $p$ and the first term $1$. However, since $\ell \ge 2$, this is not allowed, contradiction. Thus, we are done. $\square$
+Let $n = 3^{\alpha}p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}q_1^{f_1}q_2^{f_2}\cdots q_{\ell}^{f_{\ell}}$ such that all the $p$ are congruent to $1 \pmod{3}$ and all the $q$ are congruent to $2 \pmod{3}$. Then, clearly \[\tau_1(n) = \ceil{\dfrac{1}{2}\prod_{i=1}^{\ell} (f_i+1)}\prod_{i=1}^k (e_i+1).\] Now, notice that \[\dfrac{\tau(n)}{\tau_1(n)} = \dfrac{(\alpha+1)\prod_{i=1}^{\ell} (f_i+1)}{\ceil{\dfrac{1}{2}\prod_{i=1}^{\ell} (f_i+1)}}.\] Now, if at least one of the $f_i$ are odd, then the ceiling is irrelevant, the value will be of the value $2(\alpha+1)$ which generates all even numbers. Now, if all the $f_i$ are even, then this is equal to \[\dfrac{\tau(n)}{\tau_1(n)} = \dfrac{2(\alpha+1)\prod_{i=1}^{\ell} (f_i+1)}{1+\prod_{i=1}^{\ell} (f_i+1)} = 2(\alpha+1)-\dfrac{2(\alpha+1)}{1+\prod_{i=1}^{\ell} (f_i+1)}.\] Now, notice that all numbers $x$ that are not $1$ or prime are representable by $\prod_{i=1}^{\ell} (f_i+1)$ since we are actually computing $\tfrac{\tau(10n)}{\tau_1(10n)}$. Hence, if $2\alpha+1$ is not prime or $1$, then let \[\prod_{i=1}^{\ell} (f_i+1) = 2\alpha+1.\] Then, it becomes \[2(\alpha+1)-\dfrac{2(\alpha+1)}{1+\prod_{i=1}^{\ell} (f_i+1)} = 2(\alpha+1)-1 = 2\alpha+1\] so this generates all composite numbers. Finally, we must show that all odd primes are not possible. Let $p$ be a prime. Then, \[(2\alpha+2-p)\prod_{i=1}^{\ell} (f_i+1) = p.\] Clearly, the second term on the RHS must equal $p$ and the first term $1$. However, since $\ell \ge 2$, this is not allowed, contradiction. Thus, we are done. $\square$
 
 \begin{problem}[3.7.20]{China 2017/5}
 Let $D_n$ be the set of divisors of $n$. Find all natural $n$ such that it is possible to split $D_n$ into two disjoint sets $A$ and $G$, both containing at least three elements each, such that the elements in $A$ form an arithmetic progression while the elements in $G$ form a geometric progression.
 \end{problem}
 
-Suppose $n \in A$. Then, the next largest element, call it $a$, must divide $n$, so it will be impossible to get any non-multiple of $a$ in $A$, and this is clearly a contradiction since $1$ must be in $G$. Thus, $n \in G$. 
+We claim that no $n$ work.
+
+Suppose $n \in A$. Then, the next largest element, call it $a$, must divide $n$, so it will be impossible to get any non-multiple of $a$ in $A$, and this is clearly a contradiction since $1$ must be in $G$. Therefore, $n \in G$, and let $n = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$. Notice that clearly, $k \ge 2$. Now, notice that at most one of $1$, $p_1$, and $p_2$ can be in $G$ for obvious reasons, and similarly, at most one of $\tfrac{n}{p_1}$ and $\tfrac{n}{p_2}$ can be in $G$. We now case.
+
+\begin{itemize}
+\item If $1 \in G$, then notice that $p_1$, $p_2$, $\tfrac{n}{p_1}$ and $\tfrac{n}{p_2}$ must be in $A$. However, this implies that \[p_2-p_1 = \dfrac{n}{p_1}-\dfrac{n}{p_2} \implies n = p_1p_2\] which is a contradiction, since $\tau(n) \ge 6$.
+\item If $p_1 \in G$, then $1$, $p_2$ and $\tfrac{n}{p_1}$ are all in $A$. Now, the common difference must be at most $p_1^2-1$, so \[n-\tfrac{n}{p_1} \le p_1^2-1 \implies n \le p_1^2+p_1.\] However, we may write that \[n \le p_1^2+p_1 = p_1(p_1+1) \le p_1p_2\] which is a contradiction.
+\item If $p_2 \in G$, then $1$, $p_1$, and $\tfrac{n}{p_2}$ are all in $A$. Thus, the common difference must be $p_1-1$, so \[n-\dfrac{n}{p_1} \le p_1-1 \implies n \le p_1\] which is clealy a contradiction.
+\item Finally, if none of $1$, $p_1$, or $p_2$ are in $G$, then we know that the common difference is at most $p_1-1$, so we reach the same conclusion as in the previous case.
+\end{itemize}
+
+Thus, having exhausted all cases, we find that no $n$ work. $\square$
 
 \begin{problem}[3.7.21]{China TST 2015/3/6}
 For all natural numbers $n$, define $f(n) = \tau(n!) - \tau((n - 1)!)$. Prove that there exist infinitely many composite $n$, such that for all naturals $m < n$, we have $f(m) < f(n)$.
 \end{problem}
+
+Start by noticing that $f(p) = \dfrac{\tau(p!)}{2}$ where $p \neq 2$ is a prime, and that $n = 6$ works. We now make a claim.
+
+\begin{claim*}
+Let $p \neq 2$ be a prime. Then, \[f(2p) > \dfrac{\tau((2p-1)!)}{2}.\]
+\end{claim*}
+\begin{proof}
+Notice that \[f(2p) = \tau((2p)!)-\tau((2p-1)!)\] by definition. Now, the only powers the $(2p)!$ and $(2p-1)!$ will differ on is the power of $2$ and the power of $p$. The power of $p$ in the first term in the RHS will be $2$, while the power of $p$ in the second term will be $1$. Furthermore, we know that $\nu_2((2p)!) = \nu_2((2p-1)!)+1 > 2$, so the required conclusion is immediate.
+\end{proof}
+
+We now show that it is possible to generate more $n$ from a single satisfactory one. Let $\ell$ be a working number. Then, we know that $f(m) < f(\ell)$ over all $m < \ell$. However, we also know that $f(\ell) < \tau(\ell!)$. Hence, let $p$ be the smallest prime such that $2p > n$. Then, if $2p$ works, we are done. If not, then there must exist some composite number $c$, such that \[f(c) \ge f(2p).\] In that case, select $c$ such that $c$ is the greatest such composite number less than $2p$, which then clearly works. Hence, we are done. $\square$
 \end{document}

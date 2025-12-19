@@ -9,8 +9,8 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
-INPUT c:/Users/aatmi/.texlive2025/texmf-config/tex/latex/kempu.sty
-INPUT c:/Users/aatmi/.texlive2025/texmf-config/tex/latex/kempu.sty
+INPUT c:/Users/aatmi/texmf/tex/latex/kempu.sty
+INPUT c:/Users/aatmi/texmf/tex/latex/kempu.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -347,10 +347,6 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/thmtools/thm-restate.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/thmtools/thm-restate.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
-INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
-INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd

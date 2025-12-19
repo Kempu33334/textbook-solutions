@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  18 DEC 2025 08:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  19 DEC 2025 15:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 )
-(c:/Users/aatmi/.texlive2025/texmf-config/tex/latex/kempu.sty
+(c:/Users/aatmi/texmf/tex/latex/kempu.sty
 (c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
@@ -1015,18 +1015,12 @@ Package: thm-restate 2023/05/04 v0.76
 Package: thm-amsthm 2023/05/04 v0.76
 \thmt@style@headstyle=\toks51
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
-6.
-
-(c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 \c@tcb@cnt@theorem=\count370
 \c@tcb@cnt@claim=\count371
 \c@tcb@cnt@definition=\count372
 \c@tcb@cnt@remark=\count373
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 12
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
 .
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -1034,32 +1028,32 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 12.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 12
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 10.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 10
 .
 
 (c:/texlive/2025/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1122,47 +1116,47 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 12.
+Package hyperref Info: Link coloring OFF on input line 10.
 (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-5.
+3.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-5.
+3.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-15.
+13.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-15.
+13.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 15.
+(Font)              <12> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 15.
+(Font)              <8> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 15.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+(Font)              <6> on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1201,7 +1195,7 @@ dvips/lm/lm-mathsy.enc}]
 
 [8]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-35.
+33.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1274,7 +1268,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [42]
 
-[43] (./main.aux)
+[43]
+
+[44]
+
+[45] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-24>
@@ -1283,13 +1281,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 591EF8DE67CA603F91A6EDB7CFCD6AFA;5720.
  ) 
 Here is how much of TeX's memory you used:
- 33198 strings out of 467747
- 654026 string characters out of 5431120
- 1095096 words of memory out of 5000000
- 61050 multiletter control sequences out of 15000+600000
- 699003 words of font info for 91 fonts, out of 8000000 for 9000
+ 33167 strings out of 467747
+ 653322 string characters out of 5431120
+ 1095002 words of memory out of 5000000
+ 61021 multiletter control sequences out of 15000+600000
+ 696233 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,10n,135p,1247b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,10n,135p,1621b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/
 type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lm
@@ -1304,10 +1302,10 @@ texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2025/texmf-
 dist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (43 pages, 424329 bytes).
+Output written on main.pdf (45 pages, 433050 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 608 compressed objects within 7 object streams
- 233 named destinations out of 1000 (max. 500000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
+ 235 named destinations out of 1000 (max. 500000)
  445 words of extra memory for PDF output out of 10000 (max. 10000000)
 
