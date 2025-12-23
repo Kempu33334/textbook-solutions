@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  19 DEC 2025 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  22 DEC 2025 20:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1168,41 +1168,41 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
-)
-\tf@toc=\write7
-\openout7 = `main.toc'.
-
 
 
 [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/
-texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+\tf@toc=\write7
+\openout7 = `main.toc'.
 
-[2{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025
+
+
+[2]
+
+[3{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025
 /texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/
 dvips/lm/lm-mathsy.enc}]
 
-[3]
-
 [4]
 
-[5{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[5]
 
-[6]
+[6{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [7]
 
 [8]
+
+[9]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 33.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[9{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-[10]
+[10{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [11]
 
@@ -1272,19 +1272,33 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [44]
 
-[45] (./main.aux)
+[45]
+
+[46]
+
+[47]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-24>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 591EF8DE67CA603F91A6EDB7CFCD6AFA;5720.
+(rerunfilecheck)             Checksum: 201B8A9E4BA7EA18E3205D3B9F11E7D0;7161.
  ) 
 Here is how much of TeX's memory you used:
- 33167 strings out of 467747
- 653322 string characters out of 5431120
- 1095002 words of memory out of 5000000
- 61021 multiletter control sequences out of 15000+600000
+ 33231 strings out of 467747
+ 654170 string characters out of 5431120
+ 1095656 words of memory out of 5000000
+ 61056 multiletter control sequences out of 15000+600000
  696233 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,10n,135p,1621b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1302,10 +1316,10 @@ texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2025/texmf-
 dist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (45 pages, 433050 bytes).
+Output written on main.pdf (52 pages, 455055 bytes).
 PDF statistics:
- 731 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 235 named destinations out of 1000 (max. 500000)
- 445 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 829 PDF objects out of 1000 (max. 8388607)
+ 705 compressed objects within 8 object streams
+ 264 named destinations out of 1000 (max. 500000)
+ 525 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1106,4 +1106,131 @@ Notice that \[f(2p) = \tau((2p)!)-\tau((2p-1)!)\] by definition. Now, the only p
 \end{proof}
 
 We now show that it is possible to generate more $n$ from a single satisfactory one. Let $\ell$ be a working number. Then, we know that $f(m) < f(\ell)$ over all $m < \ell$. However, we also know that $f(\ell) < \tau(\ell!)$. Hence, let $p$ be the smallest prime such that $2p > n$. Then, if $2p$ works, we are done. If not, then there must exist some composite number $c$, such that \[f(c) \ge f(2p).\] In that case, select $c$ such that $c$ is the greatest such composite number less than $2p$, which then clearly works. Hence, we are done. $\square$
+
+\newpage
+
+\section{Diophantine Equations}
+
+\subsection{Parity}
+
+\noproblems
+
+\subsection{Factoring Equations}
+
+\noproblems
+
+\subsection{Using Inequalities}
+
+\noproblems
+
+\subsection{Modular Contradictions}
+
+\noproblems
+
+\subsection{Fermat's Last Theorem}
+
+\noproblems
+
+\subsection{Infinite Descent}
+
+\noproblems
+
+\subsection{Vieta Jumping}
+
+\begin{problem}[4.7.1]{Korea MO}
+Prove that $x^2+y^2+z^2 = 2xyz$ has no solutions in integers $x$, $y$, $z$ except $(0, 0, 0)$.
+\end{problem}
+
+We proceed by Vieta Jumping. Start by notice that if any one of the variables are zero, then they all must be zero. In addition, of $x$, $y$, and $z$, all of them are positive or two are negative. However, these two cases are identical, so assume that $x$, $y$, $z > 0$ henceforth.
+
+\begin{claim*}
+No two variables are equal.
+\end{claim*}
+\begin{proof}
+If two variables are equal then WLOG let them be $y$ and $z$. Then, we know that \[x^2+2z^2 = 2xz^2\] so $z \mid x$. Then, write $x = z\ell$, so that the equation becomes \[z^2\ell^2 + 2z^2 = 2\ell z^3 \implies \ell^2+2 = 2\ell z.\] Then, we know that $\ell \mid 2$, so if $\ell = 1$, then there are no solutions, and if $\ell = 2$, then we don't find any solutions either. Thus, we cannot have two variables equal, as required.
+\end{proof}
+
+Now, WLOG let $x > y > z$ where $x+y+z$ is minimized, and define \[f(t) = t^2-2tyz+y^2+z^2.\] Clearly, one of the roots of $f$ is $x$, and the other root, must be a positive integer (due to Vieta's formulae), call it $w$. Then, notice that \[f(y) = 2y^2-2y^2z+z^2 < y^2(3-2z).\] Now, if $z = 1$, then it suffices to solve \[x^2+y^2+1 = 2xy \implies (x-y)^2 = -1\] which is impossible. Thus, $z \ge 2$, so $f(y)$ is negative and lies between $x$ and $w$. Now, since $x > y$, we know that $y > w$, so $x > w$. Thus, the triplet $(x, y, z)$ is not minimal, contradiction. $\square$
+
+\begin{problem}[4.7.2]{Strong IMO 1988/6}
+Show that if $ab + 1$ divides $a^2 + b^2$ for positive integers $a$, $b$, then \[\dfrac{a^2+b^2}{ab+1} = \gcd(a, b)^2.\]
+\end{problem}
+
+We wish to solve for $k$ in the equation \[\dfrac{a^2+b^2}{ab+1} = k.\] WLOG let $a > b$, since if $a = b$, $a^2 + 1\nmid 2a^2$. Then, rearranging, let \[f(t) = t^2-kbt+b^2-k.\] Then, one root of this is $a$, so the let the other root be $w$. Notice that by Vieta's formulae, $w$ is a positive integer, and \[\gcd(a, b) = \gcd(kb-a, b) = \gcd(w, b)\] so the greatest common divisor is invariant across this operation. Finally, we wish to show that $w < b$, so \[w = \dfrac{b^2-k}{a} \le \dfrac{b^2}{a} < b\] as required. Then, reversing the roles of $w$ and $b$, we can continuously repeat this operation until one of them is zero. Then, we find that the $\gcd$ is still invariant, and plugging in $b = 0$ reveals that the value is the gcd squared. $\square$ 
+
+\begin{problem}[4.7.3]{Generalized IMO 1988/6}
+If $a$, $b$, $c$ are positive integers such that \[0 < a^2 + b^2 - abc \le c\] show that $a^2+b^2-abc$ is a perfect square.
+\end{problem}
+
+We proceed by Vieta Jumping. WLOG let $a > b$, since if $a = b$, then the conclusion is immediate. In addition, let \[a^2+b^2-abc = k\] and define \[f(t) = t^2-bct+b^2-k.\] We know that one root of $f$ is $a$, and the other root (call it $w$) must be a positive integer by Vieta's formulae. We claim that $w < b$. Indeed, \[w = \dfrac{b^2-k}{a} \le \dfrac{b^2}{a} < b.\] Thus, we have a method of reducing the solution, and continually reducing will give that the pair contains $0$, at which point we are done. $\square$
+
+\begin{problem}[4.7.4]{}
+Let $x_1, x_2, \dots, x_n$ be $n$ integers. If $k > n$ is an integer, prove that the only solution to \[x_1^2 + x_2^2 + \cdots + x_n^2 = kx_1x_2\cdots x_n\] is $x_1 = x_2 = \cdots = x_n = 0$.
+\end{problem}
+
+We proceed by Vieta Jumping. Notice that the conclusion is clear for $n = 1$, so assume that $n \ge 2$. Furthermore, there must be an even number of negative $x$, so we may assume that they are all positive (as negating any two is equivalent). Hence, assume that they are all non-zero, since if any one of them is zero, then they all must be zero as well, so assume $1 \le x_1 \le x_2 \le \cdots \le x_n$, and $x_1+x_2+\cdots+x_n$ is minimized. Then, let \[f(t) = t^2-kx_1x_2\cdots x_{n-1}t+x_1^2+x_2^2+\cdots+x_{n-1}^2.\] Clearly, one root of this is $x_n$, so let the other root be $w$. We know that $w$ is a positive integer by Vieta's formulae. Furthermore, notice that \[f(x_{n-1}) = x_1^2+x_2^2+\cdots+2x_{n-1}^2-kx_1x_2\cdots x_{n-1}^2\] is negative, since \[x_1^2+x_2^2+\cdots+2x_{n-1}^2 \le nx_{n-1}^2 < kx_{n-1}^2 \le kx_1x_2\cdots x_{n-1}^2.\] Thus, since $x_n > x_{n-1}$ (they cannot be equal, since $f(x_n)$ and $f(x_{n-1})$ are distinct), we know that $x_{n-1} > w$, so the solution is not minimal, contradiction. Thus, we are done. $\square$
+
+\subsection{Pell's Equations}
+
+\begin{problem}[4.8.1]{}
+Show that $\ol{zw} = \ol{z}\cdot\ol{w}$, i.e conjugation is multiplicative.
+\end{problem}
+
+Let $z = a+\sqrt{b}$ and $w = c+\sqrt{d}$. Then, \[\ol{zw} = \ol{ac+a\sqrt{d}+c\sqrt{b}+\sqrt{bd}} = ac-a\sqrt{d}-c\sqrt{b}+\sqrt{bd} = \ol{z}\cdot\ol{w}\] as required. $\square$
+
+\newpage
+
+\begin{problem}[4.8.2]{}
+Let $x^2-dy^2 = 1$ be a Pell's equation with fundemental solution $(x_0, y_0)$. Let $(x_{n-1}, y_{n-1})$ be the $n$th solution. Then, show that \[x_{n-1} = \dfrac{1}{2}\left((x_0+y_0\sqrt{d})^n+(x_0-y_0\sqrt{d})^n\right) \qquad y_{n-1} = \dfrac{1}{2\sqrt{d}}\left((x_0+y_0\sqrt{d})^n-(x_0-y_0\sqrt{d})^n\right).\]
+\end{problem}
+
+We know that the $n$th solution, can be generated by $(x_0+y_0\sqrt{d})^{n+1}$, and in order to extract the integer part, we can just add the conjugate to it, and divide by two, since this will get rid of the irrational part. This directly gives the first part. Now, in order to extract the irrational part, we can subtract the conjugate, which elimates the integer term, and doubles the irrational part. Thus, by dividing by $2\sqrt{d}$, we find the required result. $\square$
+
+\begin{problem}[4.8.3]{}
+Using the Binomial Theorem, show that the terms in \refproblem{4.8.2} are integers.
+\end{problem}
+
+We begin with the first term. Notice that all the terms with a square root part are negated in the second term, and by adding them together, they annihilate, leaving an integer. Now, it suffices to show that the term inside the paranthesis is divisible by two, however this is clear, since it will be doubled between the terms.
+
+We finish with the second term. Notice that all the integer terms drop in the subtraction, leaving only the terms with a $\sqrt{d}$. As a result, when we divide by $\sqrt{d}$, we are left with an integer. Furthermore, the term is divisible by two, since it is doubled between the terms, so the end result will be an integer, as required. $\square$
+
+\subsection{Practice Problems}
+
+\begin{problem}[4.9.1]{}
+Solve in positive integers the equation \[x^2y+y^2z+z^2x = 3xyz.\]
+\end{problem}
+
+We claim the only solution arises at $(x, x, x)$ for a positive integer $x$, which clearly works.
+
+We now show that this is the only solution. By AM-GM, we know that \[x^2y+y^2z+z^2x \ge 3xyz\] with equality when $x^2y = y^2z = z^2x$. This then results in $x^2 = yz$ and all cyclic permutations. Solving, we then get that $x = y = z$, which clearly always works. Thus, we are done. $\square$
+
+\begin{problem}[4.9.2]{}
+Find all triples of positive integers $(x, y, z)$ such that \[x^3+y^3+z^3-3xyz = p\] for a prime $p$.
+\end{problem}
+
+We claim the only solutions are $(x, x, x+1)$, where $3x+1$ is a prime, $(x, x, x-1)$, where $3x-1$ is a prime, and all permutations, which we can check to work. We now proceed by showing that these are the only ones.
+
+The LHS factors as \[x^3+y^3+z^3-3xyz = (x+y+z)(x^2+y^2+z^2-xy-xz-yz).\] Thus, in order for this to be a prime, one of the terms must be $1$ or $-1$. Clearly, the first term can be neither of those, since $x$, $y$, $z \ge 1$. Furthermore, the second term cannot be $-1$, since \[x^2+y^2+z^2 \ge xy+xz+yz\] by AM-GM. Thus, we wish to solve \[x^2+y^2+z^2-xy-xz-yz = 1 \implies (x-y)^2+(y-z)^2+(z-x)^2 = 2.\] Thus, two of the terms must be $1$, while the other must be zero. Thus, WLOG assume that $x = y$, so that $z = x \pm 1$. If $z = x+1$, then expanding the equation yields that $3x+1$ is prime, and similarly, if $z = x-1$, then expanding the equation gives that $3x-1$ is prime. Thus, we are clearly done. $\square$
+
+\begin{problem}[4.9.3]{USAMTS 29/3/2}
+Let $q$ be a real number. Suppose there are three distinct positive integers $a$, $b$, $c$ such that $q + a$, $q + b$, $q + c$ is a geometric progression. Show that $q$ is rational.
+\end{problem}
+
+Since it is a geometric progression, we know that \[(q+b)^2 = (q+a)(q+c) \implies 2bq+b^2 = (a+c)q+ac \implies q = \dfrac{ac-b^2}{2b-a-c}\] which is clearly rational, as required. 
+
+Now, if $a+c = 2b$, then we know that $b^2 = ac$, so \[\dfrac{a+c}{2} = \sqrt{ac}.\] Now, by AM-GM, this implies that $a = c$, so $a = b = c$, which is a degenerate geometric progression, which is not desired. Thus, we are done. $\square$
+
+\begin{problem}[4.9.4]{IMO 2006/4}
+Determine all pairs $(x, y) \in \mathbb{Z}_{\ge 0}^2$ such that \[1 + 2^x + 2^{2x+1} = y^2.\]
+\end{problem}
+
+We claim the only solutions are $\boxed{(0, 4)}$ and $\boxed{(4, 23)}$, which we may check to be true.
+
+If $y$ is even, then the only solution is $(0, 4)$. If not, substitute $y = 2n-1$ for some positive integer $n$. Then, we get after simplification that \[2^{x-2}(2^{x+1}+1) = n(n-1).\] So, either $n = a\cdot2^{x-2}$ or $n = a\cdot2^{x-2}+1$ for some positive integer $a$. Substituting the former in gives that \[2^{x+1}+1 = a(a\cdot2^{x-2}-1).\] Thus, due to size constraints, we must have $a = 3$. We get a similar result for the former. Now, we check both solutions. If $n = 3\cdot 2^{x-2}$, then \[2^{x+1}+1=9\cdot 2^{x-2}-3\] which gives the solution $(4, 23)$. If $n = 3\cdot 2^{x-2}+1$, then we get no solutions. $\square$
+
+\begin{problem}[4.9.5]{INMO 2017/6}
+Let $n \ge 1$ be an integer and consider the sum \[x = \sum_{k \ge 0} \binom{n}{2k}2^{n-2k}3^k = \binom{n}{0}2^n+\binom{n}{2}2^{n-2}\cdot 3 + \binom{n}{4}2^{n-k}\cdot 3^2 + \cdots.\] Show that $2x-1$, $2x$, and $2x+1$ form the sides of a triangle whose area and inradius are also integers.
+\end{problem}
+
+We rewrite the sum to be \[x = \sum_{k \ge 0} \binom{n}{2k}2^{n-2k}\sqrt{3}^k = \dfrac{1}{2}\left((2+\sqrt{3})^n+(2-\sqrt{3})^n\right).\] Now, for the first part, it suffices to show 
 \end{document}
