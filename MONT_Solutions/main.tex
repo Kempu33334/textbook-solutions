@@ -1232,5 +1232,58 @@ If $y$ is even, then the only solution is $(0, 4)$. If not, substitute $y = 2n-1
 Let $n \ge 1$ be an integer and consider the sum \[x = \sum_{k \ge 0} \binom{n}{2k}2^{n-2k}3^k = \binom{n}{0}2^n+\binom{n}{2}2^{n-2}\cdot 3 + \binom{n}{4}2^{n-k}\cdot 3^2 + \cdots.\] Show that $2x-1$, $2x$, and $2x+1$ form the sides of a triangle whose area and inradius are also integers.
 \end{problem}
 
-We rewrite the sum to be \[x = \sum_{k \ge 0} \binom{n}{2k}2^{n-2k}\sqrt{3}^k = \dfrac{1}{2}\left((2+\sqrt{3})^n+(2-\sqrt{3})^n\right).\] Now, for the first part, it suffices to show 
+We rewrite the sum to be \[x = \sum_{k \ge 0} \binom{n}{2k}2^{n-2k}\sqrt{3}^k = \dfrac{1}{2}\left((2+\sqrt{3})^n+(2-\sqrt{3})^n\right).\] Now, for the first part, it suffices to show that $x\sqrt{3(x^2-1)}$ is an integer. In other words, we requre $\tfrac{x^2-1}{3}$ to be a perfect square, say $y^2$. Rearranging, we find that \[x^2-3y^2 = 1\] which is a Pell equation. Now, we know that integer solutions to this will be of the form
+\begin{align*}
+x &= \dfrac{1}{2}\left((2+\sqrt{3})^n+(2-\sqrt{3})^n\right) \\
+y &= \dfrac{1}{2\sqrt{3}}\left((2+\sqrt{3})^n-(2-\sqrt{3})^n\right)
+\end{align*}
+so $y$ is an integer, as required. Furthermore, since $x$ is an integer, the area is also an integer. Finally, we wish to show that $r = \tfrac{A}{3x}$ is an integer, by this is clear by the same logic, as we require $\sqrt{\tfrac{x^2-1}{3}}$ to be an integer, so the term inside must be a perfect square, as desired. $\square$
+
+\begin{problem}[4.9.6]{}
+Find all $(x, y, n) \in \mathbb{N}^3$ such that $\gcd(x, n + 1) = 1$ and $x^n + 1 = y^{n+1}$.
+\end{problem}
+
+By Catalan's Conjecture, it suffices to just check the case when $n = 1$. Then, we have that $x+1 = y^2$ for odd $x$. Hence, the answer is just $(4y^2-1, 2y, 1)$ which clearly works. $\square$
+
+\begin{problem}[4.9.7]{USAMO 1987/1}
+Solve the following equation in nonzero integers $x$, $y$: \[(x^2+y)(x+y^2)= (x - y)^3.\]
+\end{problem}
+
+We claim all the solutions are $\{(9, -21), (9, -6), (-1, -1), (8, -10)\}$ which all work.
+
+We now show that there exist no other solutions. Expand to find that \[x^2y^2+x^3+y^3+xy = x^3-3x^2y+3xy^2-y^3 \implies x^2y^2+2y^3+xy+3x^2y-3xy^2 = 0.\] Now, since $y \neq 0$, we may divide by $y$, to get that \[x^2y+2y^2+x+3x^2-3xy = 0.\] Treating this as a quadratic in $y$, we find that \[2y^2+(x^2-3x)y+3x^2+x = 0.\] Solving for $y$, we find that \[\dfrac{-x^2+3x\pm\sqrt{(x^2-3x)^2-8(3x^2+x)}}{4} = \dfrac{-x^2+3x\pm|x+1|\sqrt{x(x-8)}}{4}.\] Now, we require for $x(x-8)$ to be a perfect square, say $z^2$. Then, \[x^2-8x = z^2 \implies (x-4)^2 = z^2+16.\] Hence, \[(x-z-4)(x+z-4) = 16.\] Notice that the sum of the two terms must be even, so neither of them can be $1$ or $-1$. Thus, it suffices to check the cases $\{2, 8\}$, $\{8, 2\}$, $\{-2, -8\}$, $\{-8, -2\}$, $\{4, 4\}$, $\{-4, -4\}$. We now consider each of these separately.
+\begin{itemize}
+\item For the case when the terms are $\{2, 8\}$, we find that $x = 9$, giving the pairs $(9, -21)$ and $(9, -6)$, which both work.
+\item If the terms are $\{8, 2\}$, then we find that $x = 9$, so this case is the same as above.
+\item If the terms are $\{-2, -8\}$, then $x = -1$, which gives the solution $(-1, -1)$, which works.
+\item If the terms are $\{-8, -2\}$, then the case is identical to the above solution.
+\item If the terms are $\{4, 4\}$, then we know that $x = 8$, for which we find that $(8, -10)$ works.
+\item If the terms are $\{-4, -4\}$, then we find that $x = z = 0$, which is undesirable.
+\end{itemize}
+
+Thus, having exhausted all cases, we are done. $\square$
+
+\begin{problem}[4.9.8]{}
+Find all positive integers $m$ and $n$ for which \[1! + 2! + 3! + \cdots + n! = m^2.\]
+\end{problem}
+
+We claim that the only solutions are $(m, n) \in \{(1, 1), (3, 3)\}$ which clearly works.
+
+Suppose that $n \ge 5$. Then, taking the equation modulo $5$, we find that \[1!+2!+3!+4! \equiv 3 \equiv m^2 \pmod{5}.\] However, squares modulo $5$ are $\{0, 1, 4\}$. Thus, we must have $n \le 4$. Trying all such $n$, we find that the only solutions are $(m, n) \in \{(1, 1), (3, 3)\}$, which clearly work. $\square$
+
+\begin{problem}[4.9.9]{EGMO 2013/4}
+Find all positive integers $a$ and $b$ for which there are three consecutive integers at which the polynomial \[P(n) = \dfrac{n^5+a}{b}\] takes integer values.
+\end{problem}
+
+We claim that the only solutions are $\boxed{(a, b) \in \{(x, 1), (y, 11)\}}$ where $x \in \mathbb{Z}^+$ and $11 \mid y\pm 1$, which we may verify explicitly.
+
+Start by noticing that $b$ must be odd, since if it is even, then there cannot exist consecutive values where $b$ divides $n^5+a$. Then, suppose that there exists $n$ such that $P(n-1)$, $P(n)$, and $P(n+1)$ are all integers. Then, we know that \[P(n-1)+P(n+1)-2P(n) = \dfrac{20n^3+10n}{b}\] is also an integer, so \[b \mid 10n^3+5n.\] Now, since $P(n+1)-P(n-1)$ is also an integer, we know that \[b \mid 10 n^4 + 20 n^2 + 2.\] Now, in conjunction with the other dividing condition, we know that \[b \mid 15n^2+2.\] Furthermore, we know that \[b \mid 3(10n^3+5n)-2n(15n^2+2) = 11n.\] We can now case.
+\begin{itemize}
+\item If $b = 1$, then clearly, any $a$ works, so the solutions are $(a, 1)$.
+\item If $b = n$, then $n \mid a$, so write $a = kn$ for some positive integer $k$. Then, we know that $\tfrac{(n+1)^5+kn}{n}$ must be an integer, so $n = \pm 1$. If $n = 1$, then the conclusion is the same as the above. On the other hand, if $n = -1$, then $b = -1$, which is not allowed. Thus, there are no solutions here.
+\item If $b = 11$, then we must have that $11 \mid 15n^2+2$, so \[n^2 \equiv 5 \pmod{11} \implies n \equiv \{4, 7\} \pmod{11}.\] Now, we require for $n^5$, $(n-1)^5$, and $(n+1)^5$ to all leave the same residue modulo $11$, but notice that \[3^5 \equiv 4^5 \equiv 5^5 \equiv 1 \pmod{11} \quad \text{and} \quad 6^5\equiv 7^5\equiv 8^5 \equiv 10 \pmod{11}\] so this works. Thus, the solutions here are $(a, 11)$, where $11 \mid a \pm 1$.
+\item If $b = 11n$, then $n \mid a$, so write $a = kn$ for positive integer $k$. Then, $\tfrac{(n+1)^5+kn}{11n}$ must be an integer, so $n \mid (n+1)^5$ implying that $n = \pm 1$. Checking both possibilities, we find no solutions or that they are equivalent to other cases. Thus, we disregard this case.
+\end{itemize}
+
+Thus, having exhausted all cases, we are done. $\square$
 \end{document}
