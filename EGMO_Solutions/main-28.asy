@@ -8,7 +8,7 @@ settings.embed=true;
 settings.toolbar=false;
 viewportmargin=(2,2);
 
-size(8cm); // set a reasonable default
+size(8cm);
 usepackage("amsmath");
 usepackage("amssymb");
 settings.tex="pdflatex";

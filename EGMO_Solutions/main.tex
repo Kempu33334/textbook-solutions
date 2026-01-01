@@ -6,7 +6,7 @@
 \date{\today}
 
 \begin{asydef}
-size(8cm); // set a reasonable default
+size(8cm);
 usepackage("amsmath");
 usepackage("amssymb");
 settings.tex="pdflatex";
@@ -144,6 +144,7 @@ draw(circumcircle(A,B,C));
 \end{asy}
 \end{center}
 \end{problem}
+
 We start with part (a). Let the foot of the altitude from $A$ be $D$, from $B$ be $E$, and the foot from $C$ be $F$. Then, we can write the following equations:
 \begin{align*}
 \angle A + \angle BXC &= \angle A + \angle BHC \\
@@ -166,6 +167,7 @@ The complex number proof can be found as \refproblem{6.14}.
 \begin{problem}[1.28]{}
 We claimed that $\dangle FKD + \dangle DKE + \dangle EKF = 0$ in the above proof. Verify this.
 \end{problem}
+
 Let $P$ be a point that is collinear with $D$ and $K$. Then, we know that \[\dangle DKE + \dangle EKP = 0\] and \[\dangle PKF + \dangle FKD = 0.\] Adding these gives the desired conclusion. $\square$
 
 \begin{remark*}
@@ -175,6 +177,7 @@ Throughout this text, we will use $\dangle$ to denote directed angles.
 \begin{problem}[1.29]{}
 Show that for any distinct points $A$, $B$, $C$, $D$ we have $\dangle ABC + \dangle BCD + \dangle CDA + \dangle DAB = 0$.
 \end{problem}
+
 We know that:
 \begin{align*}
 \dangle BAD + \dangle ADB + \dangle DBA &= 0 \\
@@ -185,6 +188,7 @@ Adding these gives that \[\dangle BAD + (\dangle ADB +\dangle BDC) + (\dangle DB
 \begin{problem}[1.30]{}
 Points $A$, $B$, $C$ lie on a circle with center $O$. Show that $\dangle OAC = 90^\circ - \dangle CBA$.
 \end{problem}
+
 Let $A'$ be the reflection of $A$ across $O$. Then, we know that since $AA'$ is a diameter, \[\dangle ACA' = 90^\circ.\] This implies the following:
 \begin{align*}
 \dangle ABC &= \dangle AA'C \\
@@ -199,6 +203,7 @@ This implies that \[\dangle OAC = 90+\dangle ABC\] as desired. $\square$
 \begin{problem}[1.33]{}
 Let $ABC$ be a triangle and let ray $AO$ meet $\ol{BC}$ at $D$. Point $K$ is selected so that $\ol{KA}$ is tangent to $(ABC)$ and $\angle KCB = 90^\circ$. Prove that $\ol{KD} \parallel \ol{AB}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import geometry;
@@ -241,11 +246,13 @@ Let $K'$ be the intersection of the angle bisector of $\angle A$ and $(ABC)$ not
 \begin{problem}[1.36]{}
 Let $ABCDE$ be a convex pentagon such that $BCDE$ is a square with center $O$ and $\angle A = 90^\circ$. Prove that $\ol{AO}$ bisects $\angle BAE$.
 \end{problem}
+
 Clearly, $ABOE$ is cyclic since $\angle BOE = 90^\circ$. This means that \[\angle BAO = \angle BEO = 45^\circ.\] So, $\ol{AO}$ bisects $\angle BAE$ as desired. $\square$
 
 \begin{problem}[1.37]{BAMO 1999/2}
 Let $O = (0, 0)$, $A = (0, a)$, and $B = (0, b)$, where $0<a<b$ are reals. Let $\Gamma$ be a circle with diameter $\ol{AB}$ and let $P$ be any other point on $\Gamma$. Line $\ol{PA}$ meets the x-axis again at $Q$. Prove that $\angle BQP = \angle BOP$.
 \end{problem}
+
 We wish to show that quadrilateral $BPOQ$ is cyclic. We can write the following:
 \begin{align*}
 \dangle PQO &= \dangle AQO \\
@@ -259,6 +266,7 @@ so $BPOQ$ is indeed cyclic. This implies that \[\dangle BQP = \dangle BOP\] as d
 \begin{problem}[1.38]{}
 In cyclic quadrilateral $ABCD$, let $I_1$ and $I_2$ denote the incenters of $ABC$ and $DBC$, respectively. Prove that $I_1I_2BC$ is cyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -344,6 +352,7 @@ We know that $AEID$ is cyclic since \[\angle AEI + \angle ADI = 180^\circ.\] In 
 \begin{problem}[1.40]{Canada 1991/3}
 Let $P$ be a point inside circle $\omega$. Consider the set of chords of $\omega$ that contain $P$. Prove that their midpoints all lie on a circle. 
 \end{problem}
+
 We claim that all the midpoints lie on the circle with diameter $\ol{OP}$.
 
 Let $M$ be any one of these midpoints. We must show that $\angle OMP = 90^\circ$ for any $M$. Let $A$ be one endpoint of the chord, and $B$, the other. Then, we know that \[\triangle OMA \sim \triangle OMB\] since all the corresponding sides are equal ($OA = OB$ as well). Thus, this means that \[\angle OMA = \angle OMB = 90^\circ\] as desired. $\square$
@@ -400,6 +409,7 @@ Thus, $ABCD$ is cyclic. This implies that \[\angle BAC = \angle CDB\] which impl
 \begin{problem}[1.42]{}
 Let $ABC$ be an acute triangle inscribed in circle $\Omega$. Let $X$ be the midpoint of the arc $\arc{BC}$ not containing $A$ and define $Y$, $Z$ similarly. Show that the orthocenter of $\triangle XYZ$ is the incenter $I$ of $\triangle ABC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -458,6 +468,7 @@ Points $A$, $B$, $C$, $D$, $E$ lie on a circle $\omega$ and point $P$ lies outsi
 \end{enumerate}
 Prove that $\ol{BE}$ bisects $\ol{AC}$. 
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -489,6 +500,7 @@ For a projective solution, refer to \refproblem{9.16}
 Let $ABC$ be an acute triangle. Let $\ol{BE}$ and $\ol{CF}$ be altitudes of $\triangle ABC$, and denote by $M$ the midpoint of $\ol{BC}$. Prove that $\ol{ME}$, $\ol{MF}$, and the
 line through $A$ parallel to $\ol{BC}$ are all tangents to $(AEF)$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -556,6 +568,7 @@ The incircle of $\triangle ABC$ is tangent to $\ol{BC}$, $\ol{CA}$, $\ol{AB}$ at
     \item  Show $K$ lies on line $MN$.
 \end{enumerate}
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -615,6 +628,7 @@ We proceed with the second part. All we must show is that \[\angle KMC = \angle 
 \begin{problem}[1.46]{Canada 1997/4}
 The point $O$ is situated inside the parallelogram $ABCD$ such that $\angle AOB + \angle COD = 180^\circ$. Prove that $\angle OBC = \angle ODC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -668,6 +682,7 @@ and since $\angle B = \angle D$ this implies that \[\angle OBC = \angle OBA\] as
 \begin{problem}[1.47]{IMO 2006/1}
 Let $ABC$ be a triangle with incenter $I$. A point $P$ in the interior of the triangle satisfies $\angle PBA+\angle PCA=\angle PBC+\angle PCB$. Show that $AP \ge AI$ and that equality holds if and only if $P = I$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -702,6 +717,7 @@ It is well known that the minimum distance from any point to a circle can be fou
 \begin{problem}[1.48]{Simson Line}
 Let $ABC$ be a triangle and $P$ be any point on $(ABC)$. Let $X$, $Y$, $Z$ be the feet of the perpendiculars from $P$ onto lines $BC$, $CA$, and $AB$. Prove that points $X$, $Y$, $Z$ are collinear.
 \end{problem}
+
 It suffices to show that \[\dangle PYX = \dangle PYZ.\] We can establish that $PYXC$ is cyclic since \[\dangle PYC = \dangle PXC = 90^\circ.\] Similarly, we know that $PZAY$ is cyclic since \[\dangle PYA = \dangle PZA = 90^\circ.\] Then, we can say that 
 \begin{align*}
 \dangle PYX &= \dangle PCX \\
@@ -719,6 +735,7 @@ A proof by complex numbers can be found as part (a) of \refproblem{6.22}.
 \begin{problem}[1.49]{USAMO 2010/1}
 Let $AXYZB$ be a convex pentagon inscribed in a semicircle of diameter $\ol{AB}$. Denote by $P$, $Q$, $R$, $S$ the feet of the perpendiculars from $Y$ onto lines $AX$, $BX$, $AZ$, $BZ$, respectively. Prove that the acute angle formed by lines $PQ$ and $RS$ is half the size of $\angle XOZ$, where $O$ is the midpoint of segment $\ol{AB}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import geometry;
@@ -790,6 +807,7 @@ as required. $\square$
 \begin{problem}[1.50]{IMO 2013/4}
 Let $ABC$ be an acute triangle with orthocenter $H$, and let $W$ be a point on the side $\ol{BC}$, between $B$ and $C$. The points $M$ and $N$ are the feet of the altitudes drawn from $B$ and $C$, respectively. $\omega_1$ is the circumcircle of triangle $BWN$ and $X$ is a point such that $\ol{WX}$ is a diameter of $\omega_1$. Similarly, $\omega_2$ is the circumcircle of triangle $CWM$ and $Y$ is a point such that $\ol{WY}$ is a diameter of $\omega_2$. Show that the points $X$, $Y$, and $H$ are collinear.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -872,6 +890,7 @@ as required. Now, we can say that \[\angle APH = \angle XPW = 90^\circ\] so $X$,
 \begin{problem}[1.51]{IMO 1985/1}
 A circle has center on the side $\ol{AB}$ of the cyclic quadrilateral $ABCD$. The other three sides are tangent to the circle. Prove that $AD + BC = AB$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -930,6 +949,7 @@ Prove the following (Theorem 2.3): Consider a circle $\omega$ and an arbitrary p
 \item If $P$ is outside $\omega$ and $\ol{PA}$ is a tangent to $\omega$ at a point $A$ on $\omega$, then \[PA^2 =\Pow_{\omega}(P).\]
 \end{enumerate}
 \end{problem}
+
 For completeness, we define $\Pow$.
 \begin{definition*}
 Let $O$ be the center of $\omega$. We define $\Pow_\omega(P)$ as the quantity $OP^2-r^2$ if $r$ is the radius of $\omega$.
@@ -945,6 +965,7 @@ We finish with part (c). We already know that \[PA \cdot PB = PX \cdot PY.\] Now
 \begin{problem}[2.6]{}
 Let $ABC$ be a right triangle with $\angle ACB = 90^\circ$. Give a proof of the Pythagorean theorem.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 unitsize(4cm);
@@ -972,6 +993,7 @@ which is equivalent to the Pythagorean Theorem in the given diagram.
 \begin{problem}[2.11]{}
 Let $ABC$ be a triangle and consider a point $P$ in its interior. Suppose that $\ol{BC}$ is tangent to the circumcircles of triangles $ABP$ and $ACP$. Prove that ray $AP$ bisects $\ol{BC}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 unitsize(4cm);
@@ -1010,16 +1032,19 @@ We know that the midpoint of $\ol{BC}$ (which we call $M$) lies on the radical a
 \begin{problem}[2.12]{}
 Show that the orthocenter of a triangle exists using radical axes. That is, if $\ol{AD}$, $\ol{BE}$, and $\ol{CF}$ are altitudes of a triangle $ABC$, show that the altitudes are concurrent.
 \end{problem}
+
 Consider the circles with diameters $\ol{AB}$, $\ol{AC}$, and $\ol{BC}$. These circles' common chords (considered pairwise) are the aforementioned altitudes. Thus, since the radical center exists, so does the orthocenter. $\square$
 
 \begin{problem}[2.18]{}
 Let the external angle bisectors of $B$ and $C$ in a triangle $ABC$ intersect at $I_A$. Show that $I_A$ is the center of a circle tangent to $\ol{BC}$, the extension of $\ol{AB}$ through $B$, and the extension of $\ol{AC}$ through $C$. Furthermore, show that $I_A$ lies on ray $AI$.
 \end{problem}
+
 Clearly, the circle tangent to $\ol{BC}$, the extension of $\ol{AB}$ through $B$, and the extension of $\ol{AC}$ through $C$ exists. Now, since this circle is tangent to $\ol{BC}$ and the the extension of $\ol{AB}$ through $B$, we know that the center lies on the external angle bisector of $B$. Similarly, the center also lies on the external angle bisector of $C$, as desired. Finally, by the Incenter-Excenter Lemma, $A$, $I$, and $I_A$ are collinear. $\square$
 
 \begin{problem}[2.19]{}
 Prove that the A-exradius has length \[r_a = \dfrac{s}{s-a}r.\]
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1095,6 +1120,7 @@ Clearly, $\triangle AFI \sim \triangle AB_1I_A$. Thus, we have that \[\dfrac{AB_
 \begin{problem}[2.20]{}
 Let $ABC$ be a triangle. Suppose its incircle and $A$-excircle are tangent to $\ol{BC}$ at $X$ and $D$, respectively. Show that $BX = CD$ and $BD = CX$.
 \end{problem}
+
 Refer to the diagram in Problem 2.19.
 
 We will show the former, and that will imply the latter. We know that:
@@ -1109,6 +1135,7 @@ as required. $\square$
 \begin{problem}[2.24]{}
 Let $ABC$ be a triangle with $I_A$, $I_B$, and $I_C$ as excenters. Prove that triangle $I_AI_BI_C$ has orthocenter $I$ and that triangle $ABC$ is its orthic triangle.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1166,11 +1193,13 @@ as claimed. $\square$
 \begin{problem}[2.25]{Pitot's Theorem}
 Let $ABCD$ be a quadrilateral. If a circle can be inscribed in it, prove that $AB+CD = BC+DA$.
 \end{problem}
+
 We leave many details to the reader, as this proof is relatively elementary. The circle tangent to $ABCD$ will divide up the sides into two parts, each of which will have a corresponding congruent side on the side adjacent to it. Adding up the opposite sides, will then result in equality.
 
 \begin{problem}[2.26]{USAMO 1990/5}
 An acute-angled triangle $ABC$ is given in the plane. The circle with diameter $\ol{AB}$ intersects altitude $\ol{CC'}$ and its extension at points $M$ and $N$, and the circle with diameter $\ol{AC}$ intersects altitude $\ol{BB'}$ and its extensions at $P$ and $Q$. Prove that the points $M$, $N$, $P$, $Q$ lie on a common circle.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import geometry;
@@ -1268,6 +1297,7 @@ Given a segment $\ol{AB}$ in the plane, choose on it a point $M$ different from 
 \item Prove that no matter where one chooses the point $M$ along segment $\ol{AB}$, all lines $MN$ will pass through some fixed point $K$ in the plane.
 \end{enumerate}
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import geometry;
@@ -1337,6 +1367,7 @@ We can show something similar for the other circle as well. Thus, $\ol{AK}$ is t
 \begin{problem}[2.28]{JMO 2012/1}
 Given a triangle $ABC$, let $P$ and $Q$ be points on segments $\ol{AB}$ and $\ol{AC}$, respectively, such that $AP = AQ$. Let $S$ and $R$ be distinct points on segment $\ol{BC}$ such that $S$ lies between $B$ and $R$, $\angle BPS = \angle PRS$, and $\angle CQR = \angle QSR$. Prove that $P$, $Q$, $R$, $S$ are concyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph; 
@@ -1386,6 +1417,7 @@ Assume for the sake of contradiction that the circumcircles $(PRS)$ and $(QRS)$ 
 \begin{problem}[2.29]{IMO 2008/1}
 Let $H$ be the orthocenter of an acute-angled triangle $ABC$. The circle $\Gamma_A$ centered at the midpoint of $\ol{BC}$ and passing through $H$ intersects the sideline $BC$ at points $A_1$ and $A_2$. Similarly, define the points $B_1$, $B_2$, $C_1$, and $C_2$. Prove that six points $A_1$, $A_2$, $B_1$, $B_2$, $C_1$, and $C_2$ are concyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import geometry;
@@ -1449,6 +1481,7 @@ The center of the circle through $A_1$, $A_2$, $B_1$, $B_2$, $C_1$, and $C_2$ is
 \begin{problem}[2.30]{USAMO 1997/2}
 Let $ABC$ be a triangle. Take points $D$, $E$, $F$ on the perpendicular bisectors of $\ol{BC}$, $\ol{CA}$, $\ol{AB}$ respectively. Show that the lines through $A$, $B$, $C$ perpendicular to $\ol{EF}$, $\ol{FD}$, $\ol{DE}$ respectively are concurrent.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1528,6 +1561,7 @@ Clearly, since $D$ is on the perpendicular bisector of $\ol{BC}$ and similarly f
 \begin{problem}[2.31]{IMO 1995/1}
 Let $A$, $B$, $C$, $D$ be four distinct points on a line, in that order. The circles with diameters $\ol{AC}$ and $\ol{BD}$ intersect at $X$ and $Y$. The line $XY$ meets $\ol{BC}$ at $Z$. Let $P$ be a point on the line $XY$ other than $Z$. The line $CP$ intersects the circle with diameter $\ol{AC}$ at $C$ and $M$, and the line $BP$ intersects the circle with diameter $\ol{BD}$ at $B$ and $N$. Prove that the lines $AM$, $DN$, $XY$ are concurrent.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 unitsize(1cm);
@@ -1591,6 +1625,7 @@ as required. So, $E$ lies on the radical axis of the two circles, and hence lies
 \begin{problem}[2.32]{USAMO 1998/2}
 Let $\mathcal{C}_1$ and $\mathcal{C}_2$ be concentric circles, with $\mathcal{C}_2$ in the interior of $\mathcal{C}_1$. From a point $A$ on $\mathcal{C}_1$ one draws the tangent $\ol{AB}$ to $\mathcal{C}_2$ ($B \in \mathcal{C}_2$). Let $C$ be the second point of intersection of ray $AB$ and $\mathcal{C}_1$, and let $D$ be the midpoint of $\ol{AB}$. A line passing through $A$ intersects $\mathcal{C}_2$ at $E$ and $F$ in such a way that the perpendicular bisectors of $\ol{DE}$ and $\ol{CF}$ intersect at a point $M$ on $AB$. Find, with proof, the ratio $\frac{AM}{MC}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1666,6 +1701,7 @@ as required. $\square$
 \begin{problem}[2.33]{IMO 2000/1}
 Two circles $G_1$ and $G_2$ intersect at two points $M$ and $N$. Let $AB$ be the line tangent to these circles at $A$ and $B$, respectively, so that $M$ lies closer to $AB$ than $N$. Let $CD$ be the line parallel to $AB$ and passing through the point $M$, with $C$ on $G_1$ and $D$ on $G_2$. Lines $AC$ and $BD$ meet at $E$; lines $AN$ and $CD$ meet at $P$; lines $BN$ and $CD$ meet at $Q$. Show that $EP = EQ$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1729,6 +1765,7 @@ Because of $\ol{AB}$ is tangent to the two circles, we know that line $MN$ bisec
 \begin{problem}[2.34]{Canada 1990/3}
 Let $ABCD$ be a cyclic quadrilateral whose diagonals meet at $P$. Let $W$, $X$, $Y$, $Z$ be the feet of $P$ onto $\ol{AB}$, $\ol{BC}$, $\ol{CD}$, $\ol{DA}$, respectively. Show that $WX+YZ=XY+WZ$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1793,6 +1830,7 @@ so $P$ does indeed lie on the angle bisector of $\angle Y$, as desired. $\square
 \begin{problem}[2.35]{IMO 2009/2, synthetic}
 Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $\ol{CA}$ and $\ol{AB}$, respectively. Let $K$, $L$, and $M$ be the midpoints of the segments $\ol{BP}$, $\ol{CQ}$, and $\ol{PQ}$, respectively, and let be the circle passing through $K$, $L$, and $M$. Suppose that the line $PQ$ is tangent to the circle. Prove that $OP=OQ$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -1850,6 +1888,7 @@ A solution by complex numbers can be found as \refproblem{6.41}.
 \begin{problem}[2.36]{}
 Let $\ol{AD}$, $\ol{BE}$, $\ol{CF}$ be the altitudes of a scalene triangle $ABC$ with circumcenter $O$. Prove that $(AOD)$, $(BOE)$, and $(COF)$ intersect at point $X$ other than $O$.
 \end{problem}
+
 \begin{claim*}
 The circles $(AOD)$, $(BOE)$, and $(COF)$ are coaxial.
 \end{claim*}
@@ -1871,6 +1910,7 @@ Let the incircle of triangle $ABC$ touch sides $BC$, $CA$ and $AB$ at $D$, $E$ a
 \item Show that lines $PD$, $QE$ and $RF$ are concurrent.
 \end{enumerate}
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(12cm);
@@ -1950,6 +1990,7 @@ The point $H$ is actually the orthocenter of $\triangle ABC$.
 \begin{problem}[2.38]{Iran TST 2011/1}
 In acute triangle $ABC$, $\angle B$ is greater than $\angle C$. Let $M$ be the midpoint of $\ol{BC}$ and let $E$ and $F$ be the feet of the altitudes from $B$ and $C$, respectively. Let $K$ and $L$ be the midpoints of $\ol{ME}$ and $\ol{MF}$, respectively, and let $T$ be on line $KL$ such that $\ol{TA} \parallel \ol{BC}$. Prove that $TA= TM$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(12cm);
@@ -2005,6 +2046,7 @@ By the Law of Sines, we know that \[\dfrac{BD}{\sin(\angle BAD)} = \dfrac{AB}{\s
 \begin{problem}[3.5]{}
 Show the trigonometric form of Ceva holds.
 \end{problem}
+
 We state Ceva's Theorem for completeness.
 \begin{theorem*}[Ceva's Theorem]
 Let $\ol{AX}$, $\ol{BY}$, and $\ol{CZ}$ be cevians of $\triangle ABC$. They concur if and only if \[\dfrac{BX}{XC}\cdot\dfrac{CY}{YA}\cdot\dfrac{AZ}{ZB} = 1.\]
@@ -2020,6 +2062,7 @@ as required. $\square$
 \begin{problem}[3.6]{}
 Let $\ol{AM}$, $\ol{BE}$, and $\ol{CF}$ be concurrent cevians of a triangle $ABC$. Show that $\ol{EF}\parallel\ol{BC}$ if and only if $BM=MC$.
 \end{problem}
+
 We start by showing the if direction. Since $BM = MC$, by Ceva's Theorem, we know that \[\dfrac{AF}{FB}\cdot\dfrac{CE}{EA} = 1\] so \[\dfrac{AF}{AE} = \dfrac{FB}{CE} = \dfrac{AF+FB}{AE+CE} = \dfrac{AB}{AC}.\] Thus, we know that \[\triangle FAE \sim \triangle BAC.\] Hence, $\angle AFE = \angle ABC$, so $\ol{EF}\parallel\ol{BC}$, as desired.
 
 Now we show the only if direction. Since $\ol{EF}\parallel\ol{BC}$, we know that \[\triangle FAE \sim \triangle BAC.\] Hence, \[\dfrac{AF}{AE} = \dfrac{FB}{CE}.\] Thus, by Ceva's Theorem, \[\dfrac{BM}{MC} = 1\] and so $BM = MC$, as required. $\square$
@@ -2027,11 +2070,13 @@ Now we show the only if direction. Since $\ol{EF}\parallel\ol{BC}$, we know that
 \begin{problem}[3.12]{}
 Prove, by taking a negative homothety that the centroid of a triangle divides the median into a $2:1$ ratio.
 \end{problem}
+
 Let there exist a triangle $\triangle ABC$, which has medians $\ol{AD}$, $\ol{BE}$, and $\ol{CF}$. Then, take a homothety centered at $G$ with scale factor $-2$. Then, we know that $\triangle DEF$ maps to $\triangle ABC$, so we know that \[\dfrac{GD}{GA} = \dfrac{GE}{GB} = \dfrac{GF}{GC} = \dfrac{1}{2}\] as desired. $\square$
 
 \begin{problem}[3.13]{Euler Line}
 In triangle $ABC$, prove that $O$, $G$, $H$ (with their usual meanings) are collinear and that $G$ divides $OH$ in a $2:1$ ratio.
 \end{problem}
+
 We begin with the following claim:
 \begin{claim*}
 Let there exist a triangle $ABC$. The orthocenter of the medial triangle of $\triangle ABC$ is the circumcenter of $\triangle ABC$.
@@ -2045,11 +2090,13 @@ Thus, taking a homothety centered at $G$ with scale factor $-\tfrac{1}{2}$, $\tr
 \begin{problem}[3.16]{Gergonne point}
 Let $ABC$ be a triangle with contact triangle $DEF$. Prove that $\ol{AD}$, $\ol{BE}$, $\ol{CF}$ concur. The point of concurrency is the Gergonne point of triangle $ABC$.
 \end{problem}
+
 We can write that \[\dfrac{AF}{FC}\cdot \dfrac{CD}{DB}\cdot\dfrac{BE}{EA} = \dfrac{AF}{FC}\cdot\dfrac{FC}{BD}\cdot\dfrac{BD}{AF} = 1.\] Thus, by Ceva's Theorem, we know that they are concurrent, so we are done. $\square$
 
 \begin{problem}[3.17]{}
 In cyclic quadrilateral $ABCD$, points $X$ and $Y$ are the orthocenters of $\triangle ABC$ and $\triangle BCD$. Show that $AXYD$ is a parallelogram.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2101,11 +2148,13 @@ Now, by the claim, we know that \[AD = X'Y' = XY.\] In addition, we know that $X
 \begin{problem}[3.18]{}
 Let $\ol{AD}$, $\ol{BE}$, $\ol{CF}$ be concurrent cevians in a triangle, meeting at $P$. Prove that \[\dfrac{PD}{AD}+\dfrac{PE}{BE}+\dfrac{PF}{CF}=1.\]
 \end{problem}
+
 We can write that: \[\dfrac{PD}{AD} = \dfrac{[PBD]}{[PBA]} = \dfrac{[PCD]}{[PCA]} = \dfrac{[PBC]}{[ABC]}\] where the last equality is by the identity $\frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$. In fact, we can write similar statements for the other ratios as well. Hence, we get that \[\dfrac{PD}{AD}+\dfrac{PE}{BE}+\dfrac{PF}{CF} = \dfrac{[PBC]}{[ABC]}+\dfrac{[PAC]}{[ABC]}+\dfrac{[PAB]}{[ABC]} = 1\] as required. $\square$
 
 \begin{problem}[3.19]{ISL 2006/G3}
 Let $ABCDE$ be a convex pentagon such that \[\angle BAC = \angle CAD = \angle DAE\qquad \text{and}\qquad \angle ABC = \angle ACD = \angle ADE.\] The diagonals $BD$ and $CE$ meet at $P$.  Prove that the line $AP$ bisects the side $CD$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(7cm);
@@ -2155,6 +2204,7 @@ Let $M$ be the point at which ray $AP$ intersects $\ol{CD}$. By Ceva's Theorem, 
 \begin{problem}[3.20]{BAMO 2013/3}
 Let $H$ be the orthocenter of an acute triangle $ABC$. Consider the circumcenters of triangles $ABH$, $BCH$, and $CAH$. Prove that they are the vertices of a triangle that is congruent to $ABC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2207,6 +2257,7 @@ Triangle $O_AO_BO_C$ is infact a rotation of $\triangle ABC$ around $N_9$.
 \begin{problem}[3.21]{USAMO 2003/4}
 Let $ABC$ be a triangle. A circle passing through $A$ and $B$ intersects segments $AC$ and $BC$ at $D$ and $E$, respectively. Lines $AB$ and $DE$ intersect at $F$, while lines $BD$ and $CF$ intersect at $M$. Prove that $MF = MC$ if and only if $MB\cdot MD = MC^2$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -2273,6 +2324,7 @@ Multiplying these equations gives that: \[\dfrac{\sin(\angle ZAD)}{\sin(\angle Y
 \begin{problem}[3.24]{}
 Let $ABC$ be an acute triangle and suppose $X$ is a point on $(ABC)$ with $\ol{AX}\parallel \ol{BC}$ and $X\neq A$. Denote by $G$ the centroid of triangle $ABC$, and by $K$ the foot of the altitude from $A$ to $\ol{BC}$. Prove that $K$, $G$, $X$ are collinear.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2337,6 +2389,7 @@ These two claims in conjunction, show that $h(X) = K$, so $K$, $G$, and $X$ are 
 \begin{problem}[3.25]{USAMO 1993/2}
 Let $ABCD$ be a quadrilateral whose diagonals $\ol{AC}$ and $\ol{BD}$ are perpendicular and intersect at $E$. Prove that the reflections of $E$ across $\ol{AB}$, $\ol{BC}$, $\ol{CD}$, $\ol{DA}$ are concyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2397,6 +2450,7 @@ where the second line is due to the fact that the quadrilateral $EE'_DAE'_A$ is 
 \begin{problem}[3.26]{EGMO 2013/1, synthetic}
 The side $BC$ of the triangle $ABC$ is extended beyond $C$ to $D$ so that $CD = BC$. The side $CA$ is extended beyond $A$ to $E$ so that $AE = 2CA$. Prove that if $AD = BE$ then the triangle $ABC$ is right-angled.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2435,6 +2489,7 @@ For a computational method, look to \refproblem{5.19} and for a barycentric bash
 \begin{problem}[3.27]{APMO 2004/4}
 Let $O$ be the circumcenter and $H$ the orthocenter of an acute triangle $ABC$. Prove that the area of one of the triangles $AOH$, $BOH$, and $COH$ is equal to the sum of the areas of the other two.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(7cm);
@@ -2495,9 +2550,10 @@ For each of the $A_1$, $B_1$, and $C_1$, take a homothety centered at its respec
 
 \newpage
 
-\begin{problem}[3.29]{TSTST 2011/4}
+\begin{problem}[3.29]{USA TSTST 2011/4}
 Acute triangle $ABC$ is inscribed in circle $\omega$. Let $H$ and $O$ denote its orthocenter and circumcenter, respectively. Let $M$ and $N$ be the midpoints of sides $\ol{AB}$ and $\ol{AC}$, respectively. Rays $MH$ and $NH$ meet $\omega$ at $P$ and $Q$, respectively. Lines $MN$ and $PQ$ meet at $R$. Prove that $\ol{OA}\perp \ol{RA}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2561,6 +2617,7 @@ Now, consider the circles $(ABC)$, $(AMN)$, and $(MNPQ)$. Clearly, the radical c
 \begin{problem}[3.30]{USAMO 2015/2, synthetic}
 Quadrilateral $APBQ$ is inscribed in circle $\omega$ with $\angle P = \angle Q = 90^\circ$ and $AP = AQ < BP$. Let $X$ be a variable point on segment $\ol{PQ}$. Line $AX$ meets $\omega$ again at $S$ (other than $A$). Point $T$ lies on arc $AQB$ of $\omega$ such that $XT$ is perpendicular to $AX$. Let $M$ denote the midpoint of chord $\ol{ST}$. As $X$ varies on segment $\ol{PQ}$, show that $M$ moves along a circle.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2625,6 +2682,7 @@ A complex bash can be found as \refproblem{6.35}.
 \begin{problem}[4.1]{}
 Prove that the Simson line is parallel to $\ol{AK}$ in the notation of the figure below.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -2690,11 +2748,13 @@ We have that \[LH = LA+AH = XK+K'P = XK'+K'P = XP\] and $LH \parallel PX$ so we 
 \begin{problem}[4.5]{}
 Check $\angle IAI_B = 90^\circ$ and $\angle IAI_C = 90^\circ$ where $I_B$ denotes the $B$-excenter and similarly for $I_C$.
 \end{problem}
+
 Since $I_CA$ bisects the external angle at $A$, we know that \[\angle IAI_C = \angle I_CAB + \angle BAI = 90-\dfrac{\angle A}{2}+\dfrac{A}{2} = 90^\circ.\] A similar computation gives the result for $I_B$, as required. $\square$
 
 \begin{problem}[4.8]{}
 Prove that $A$, $E$, and $X$ are collinear and that $\ol{DE}$ is a diameter of the incircle.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2767,6 +2827,7 @@ Obviously, there exists a homothety of scale factor $2$ centered at $D$ taking $
 \begin{problem}[4.12]{}
 In the diagram below, prove that points $X$, $I$, $M$ are collinear, if $M$ is the midpoint of the altitude $\ol{AK}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2832,6 +2893,7 @@ There exists a homothety centered at $D$ sending $\triangle AKD$ to $\triangle Y
 \begin{problem}[4.15]{}
 Show that $I$ must lie on $(AB'C')$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -2893,6 +2955,7 @@ Since $XB'FI$ and $XEC'I$ are cyclic, we can say that \[\dangle IB'X = \dangle I
 \begin{problem}[4.19]{}
 Show that if two of the angle relations below hold, then so does the third: \[\dangle BAP = \dangle P^*AC, \quad \dangle CBP = \dangle P^*BA, \quad \dangle ACP = \dangle P^*CB.\]
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -2993,6 +3056,7 @@ Clearly, we have that \[\dfrac{BK}{KC} = \dfrac{BA}{AC}\] and there can only be 
 \begin{problem}[4.31]{}
 Show that the homothety centered at $T$ taking $P$ to $O$, also takes $K$ to $M$, and in particular that $T$ , $K$, and $M$ are collinear.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(160);
@@ -3043,6 +3107,7 @@ Clearly, they share an angle, and we know that $\angle KBM = \angle BTM$ because
 \begin{problem}[4.34]{}
 Prove that the points $C$, $L$, $I$, $T$ are concyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(160);
@@ -3106,6 +3171,7 @@ Because of the tangency, we know that \[\triangle KIA \sim \triangle LIA.\] Henc
 \begin{problem}[4.38]{}
 Prove that $\angle ATK = \angle LTI$ in the diagram below.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(200);
@@ -3154,6 +3220,7 @@ We know from Problem 4.34 that $BKIT$ is cyclic, and so is $CLIT$. Hence, \[\dan
 \begin{problem}[4.41]{Hong Kong 1998}
 Let $PQRS$ be a cyclic quadrilateral with $\angle PSR = 90^\circ$ and let $H$ and $K$ be the feet of the altitudes from $Q$ to lines $PR$ and $PS$. Prove that $\ol{HK}$ bisects $\ol{QS}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -3189,6 +3256,7 @@ Since $\triangle PSR$ is right, we know that $S$ is its orthocenter. Now since $
 \begin{problem}[4.42]{USAMO 1988/4}
 Suppose $ABC$ is a triangle with incenter $I$. Show that the circumcenters of $\triangle IAB$, $\triangle IBC$, and $\triangle ICA$ lie on a circle whose center is the circumcenter of $\triangle ABC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(7cm);
@@ -3232,6 +3300,7 @@ Let the centers of the aforementioned circumcircles be denoted $O_1$, $O_2$, and
 \begin{problem}[4.43]{USAMO 1995/3}
 Given a nonisosceles, nonright triangle $ABC$, let $O$ denote its circumcenter, and let $A_1$, $B_1$, and $C_1$ be the midpoints of sides $\ol{BC}$, $\ol{CA}$, and $\ol{AB}$, respectively. Point $A_2$ is located on the ray $\ray{OA_1}$ so that $\triangle OAA_1$ is similar to $\triangle OA_2A$. Points $B_2$ and $C_2$ on rays $\ray{OB_1}$ and $\ray{OC_1}$, respectively, are defined similarly. Prove that lines $AA_2$, $BB_2$, and $CC_2$ are concurrent.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -3291,6 +3360,7 @@ We know that the symmedians concur at the symmedian point, so the existence of t
 Let $ABC$ be an acute triangle and let $X$ be a variable interior point on the minor arc $\arc{BC}$. Let $P$ and $Q$ be the feet of the perpendiculars from $X$ to lines $CA$ and $CB$, respectively. Let $R$ be the intersection of line $PQ$ and the perpendicular from $B$ to $\ol{AC}$. Let $\ell$ be the line through $P$ parallel to $XR$. Prove that as $X$ varies along
 minor arc $\arc{BC}$, the line $\ell$ always passes through a fixed point.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -3342,6 +3412,7 @@ Clearly, we have shown the existence of the fixed point by declaring what it is,
 \begin{problem}[4.45]{USA TST 2011/1}
 In an acute scalene triangle $ABC$, points $D,E,F$ lie on sides $BC$, $CA$, $AB$, respectively, such that $AD \perp BC$, $BE \perp CA$, $CF \perp AB$. Altitudes $AD$, $BE$, $CF$ meet at orthocenter $H$. Points $P$ and $Q$ lie on segment $EF$ such that $AP \perp EF$ and $HQ \perp EF$. Lines $DP$ and $QH$ intersect at point $R$. Compute $HQ/HR$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(7cm);
@@ -3386,9 +3457,10 @@ We claim that $\frac{HQ}{HR} = 1$. Note that $H$ is the incenter of $\triangle D
 
 \newpage
 
-\begin{problem}[4.46]{ELMO Shortlist 2012/G4}
+\begin{problem}[4.46]{ELMO SL 2012/G4}
 Circles $\Omega$ and $\omega$ are internally tangent at point $C$. Chord $AB$ of $\Omega$ is tangent to $\omega$ at $E$, where $E$ is the midpoint of $AB$. Another circle, $\omega_1$ is tangent to $\Omega, \omega,$ and $AB$ at $D,Z,$ and $F$ respectively. Rays $CD$ and $AB$ meet at $P$. If $M$ is the midpoint of major arc $AB$, show that \[\tan \angle ZEP = \frac{PE}{CM}.\]
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -3438,6 +3510,7 @@ Suppose that $AB$ is not parallel to $CD$. Then, let $R$ be the intersection of 
 \begin{problem}[4.48]{Japan Olympiad 2009}
 Triangle $ABC$ is inscribed in circle $\omega$. A circle with center $O$ is drawn, tangent to side $\ol{BC}$ at a point $P$, and internally tangent to the arc $BC$ not containing $A$ at a point $Q$. Show that if $\angle BAO = \angle CAO$ then $\angle PAO = \angle QAO$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(7cm);
@@ -3488,6 +3561,7 @@ This implies that because $OP = OQ$, we have the desired result. $\square$
 \begin{problem}[4.49]{}
 Let $ABC$ be a triangle and let its incircle touch $\ol{BC}$ at $D$. Let $T$ be the tangency point of the $A$-mixtilinear incircle with $(ABC)$. Prove that $\angle BTA = \angle CTD$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -3542,6 +3616,7 @@ Let $I$ be the incenter of $\triangle ABC$, $E$ be a point on $\ol{BC}$ such tha
 \begin{problem}[4.50]{Vietnam TST 2003/2}
 Given a triangle $ABC$. Let $O$ be the circumcenter of this triangle $ABC$. Let $H$, $K$, $L$ be the feet of the altitudes of triangle $ABC$ from the vertices $A$, $B$, $C$, respectively. Denote by $A_{0}$, $B_{0}$, $C_{0}$ the midpoints of these altitudes $AH$, $BK$, $CL$, respectively. The incircle of triangle $ABC$ has center $I$ and touches the sides $BC$, $CA$, $AB$ at the points $D$, $E$, $F$, respectively. Prove that the four lines $A_{0}D$, $B_{0}E$, $C_{0}F$ and $OI$ are concurrent.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -3594,6 +3669,7 @@ We know that the line $A_0D$ passes through $I_A$ (and likewise for the others),
 \begin{problem}[4.51]{Sharygin 2013}
 The incircle of triangle $ABC$ touches $\ol{BC}$, $\ol{CA}$, $\ol{AB}$ at points $A_1$, $B_1$, $C_1$, respectively.  The perpendicular from the incenter $I$ to the median from vertex $C$ meets the line $A_1B_1$ in point $K$. Prove that $CK \parallel AB$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -3635,6 +3711,7 @@ Let $H = CM \cap B_1K$. Then, we know that $H$ is the orthocenter of $\triangle 
 \begin{problem}[4.52]{APMO 2012/4}
 Let $ABC$ be an acute triangle. Denote by $D$ the foot of the perpendicular line drawn from the point $A$ to the side $\ol{BC}$, by $M$ the midpoint of $\ol{BC}$, and by $H$ the orthocenter of $\triangle ABC$. Let $E$ be the point of intersection of the circumcircle $\Gamma$ of the triangle $ABC$ and the half line $MH$, and $F \neq E$ be the point of intersection of the line $ED$ and the circle $\Gamma$. Prove that $\tfrac{BF}{CF} = \tfrac{AB}{AC}$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -3684,6 +3761,7 @@ Because of this, we may now write that \[\dangle AMC = \dangle AMD = \dangle AED
 \begin{problem}[4.53]{ISL 2002/G7}
 The incircle $\Omega$ of the acute-angled triangle $ABC$ is tangent to its side $\ol{BC}$ at a point $K$. Let $\ol{AD}$ be an altitude of triangle $ABC$, and let $M$ be the midpoint of the segment $\ol{AD}$. If $N \neq K$ is the common point of the circle $\Omega$ and the line $KM$, then prove that the incircle $\Omega$ and $(BCN)$ are tangent to each other at the point $N$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -3798,6 +3876,7 @@ where the angle equalities follow from the fact that $AO$ and $AH$ (the orthocen
 \begin{problem}[5.19]{EGMO 2013/1, computational}
 The side $BC$ of the triangle $ABC$ is extended beyond $C$ to $D$ so that $CD = BC$. The side $CA$ is extended beyond $A$ to $E$ so that $AE = 2CA$. Prove that if $AD = BE$ then the triangle $ABC$ is right-angled.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -3882,6 +3961,7 @@ Hence, $BC = R$, implying that $\angle BOC = 60^\circ$ if $O$ is the circumcente
 \begin{problem}[5.23]{CGMO 2002/4}
 Circles $O_1$ and $O_2$ intersect at two points $B$ and $C$, and $\ol{BC}$ is the diameter of circle $O_1$. Construct a tangent line of circle $O_1$ at $C$ and intersecting circle $O_2$ at another point $A$. We join $AB$ to intersect circle $O_1$ at point $E$, then join $CE$ and extend it to intersect circle $O_2$ at point $F$. Assume $H$ is an arbitrary point on line segment $AF$. We join $HE$ and extend it to intersect circle $O_1$ at point $G$, and then join $BG$ and extend it to intersect the extend line of $AC$ at point $D$. Prove that \[\frac{AH}{HF} = \frac{AC}{CD}.\]
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -3926,6 +4006,7 @@ We can write that \[\dfrac{AH}{HF} = \dfrac{AE\sin(\angle AEH)}{EF\sin(\angle FE
 \begin{problem}[5.24]{IMO 2007/4}
 In triangle $ABC$ the bisector of angle $BCA$ intersects the circumcircle again at $R$, the perpendicular bisector of $\ol{BC}$ at $P$, and the perpendicular bisector of $\ol{AC}$ at $Q$. The midpoint of $\ol{BC}$ is $K$ and the midpoint of $\ol{AC}$ is $L$. Prove that the triangles $RPK$ and $RQL$ have the same area.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(8cm);
@@ -3967,6 +4048,7 @@ dot("$L$", L, dir(L));
 \end{center}
 
 We can write that \[\dfrac{[RPK]}{[RQL]} = \dfrac{\tfrac{1}{2}\cdot RP\cdot PK\sin(\angle RPK)}{\tfrac{1}{2}\cdot RQ\cdot QL\sin(\angle RQL)} = \dfrac{RP\cdot PK}{RQ\cdot QL} = \dfrac{RP\cdot BC}{RQ\cdot AC}.\] Now, since $\triangle ARB$ is isosceles, we know that \[RA = \dfrac{AB}{2\cos\left(\tfrac{\angle C}{2}\right)}.\] Hence, by Ptolemy, we have that \[RA\cdot BC+RB\cdot AC = RA(BC+AC) = RC\cdot AB.\] So, \[RC = \dfrac{BC+AC}{2\cos\left(\tfrac{\angle C}{2}\right)}.\] Finally, 
+{\allowdisplaybreaks
 \begin{align*}
 \dfrac{RP}{RQ} &= \dfrac{RC-PC}{RC-QC} \\[0.5em]
 &= \dfrac{\dfrac{BC+AC}{2\cos\left(\tfrac{\angle C}{2}\right)}-\dfrac{KC}{\cos\left(\tfrac{\angle C}{2}\right)}}{\dfrac{BC+AC}{2\cos\left(\tfrac{\angle C}{2}\right)}-\dfrac{LC}{\cos\left(\tfrac{\angle C}{2}\right)}} \\[0.5em]
@@ -3974,6 +4056,7 @@ We can write that \[\dfrac{[RPK]}{[RQL]} = \dfrac{\tfrac{1}{2}\cdot RP\cdot PK\s
 &= \dfrac{\dfrac{AC}{2\cos\left(\tfrac{\angle C}{2}\right)}}{\dfrac{BC}{2\cos\left(\tfrac{\angle C}{2}\right)}} \\[0.5em]
 &= \dfrac{AC}{BC}.
 \end{align*}
+}
 
 Hence, \[\dfrac{[RPK]}{[RQL]} = \dfrac{RP\cdot BC}{RQ\cdot AC} = \dfrac{AC\cdot BC}{BC\cdot AC} = 1\] so we are done. $\square$
 
@@ -4002,6 +4085,7 @@ as required. $\square$
 \begin{problem}[5.26]{CGMO 2007/5}
 Point $D$ lies inside triangle $ABC$ such that $\angle DAC = \angle DCA = 30^\circ$ and $\angle DBA = 60^\circ$. Point $E$ is the midpoint of segment $\ol{BC}$. Point $F$ lies on segment $\ol{AC}$ with $AF = 2FC$. Prove that $\ol{DE} \perp \ol{EF}$. 
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4051,6 +4135,7 @@ Hence, since $G$ is the midpoint of $DF$ and $OC$, we know that $GE = \tfrac{BO}
 \begin{problem}[5.27]{ISL 2011/G1}
 Let $ABC$ be an acute triangle. Let $\omega$ be a circle whose center $L$ lies on the side $\ol{BC}$. Suppose that $\omega$ is tangent to $\ol{AB}$ at $B'$ and $\ol{AC}$ at $C'$. Suppose also that the circumcenter $O$ of triangle $ABC$ lies on the shorter arc $BC$ of $\omega$. Prove that the circumcircle of $\triangle ABC$ and $\omega$ meet at two points.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4205,6 +4290,7 @@ It is stated in the EGMO errata that this is supposed to be the correct statemen
 \begin{problem}[6.21]{}
 Show that if $a$, $b$, $c$ are complex numbers, then the signed area of triangle $ABC$ is given by \[\dfrac{i}{4}\begin{vmatrix}a&\ol{a}&1\\b&\ol{b}&1\\c&\ol{c}&1\\\end{vmatrix}.\]
 \end{problem}
+
 We may write that:
 \begin{align*}
 \dfrac{i}{4}\begin{vmatrix}a&\ol{a}&1\\b&\ol{b}&1\\c&\ol{c}&1\\\end{vmatrix} &= \dfrac{i}{4}\begin{vmatrix}2\Re(a)&\ol{a}&1\\2\Re(b)&\ol{b}&1\\2\Re(c)&\ol{c}&1\\\end{vmatrix} \\
@@ -4448,6 +4534,7 @@ Consider angles $A$, $B$, $C$ in the open interval $(-90^\circ, 90^\circ)$.
 \item Generalize to multiple variables.
 \end{enumerate}
 \end{problem}
+
 We solve both problems at once by immediately generalizing to $k$ variables. Let \[a_n = 1+\tan(r_n)i\] for $1 \le n \le k$. Now let $e_n$ denote the $n$th elementary symmetric sum (of $k$ variables/tangents in this case). Then, note that 
 \begin{align*}
 \arg(a_1a_2\dots a_k) &= \arg((1+\tan(r_1)i)(1+\tan(r_2)i)\dots(1+\tan(r_k)i)) \\
@@ -4464,11 +4551,13 @@ so we are done. $\square$
 \begin{problem}[6.40]{Schiffler Point}
 Let $ABC$ be a triangle with incenter $I$. Prove that the Euler lines of triangles $AIB$, $BIC$, $CIA$, and $ABC$ are concurrent (called the Schiffler point of $ABC$).
 \end{problem}
+
 Toss onto the complex plane, with $(ABC)$ as the unit circle. Denote $A = a^2$, and analogously for $B$ and $C$. Then, we know by the Incenter-Excenter Lemma, that the circumcenter of $\triangle AIB$ is the midpoint of arc $AB$ not containing $C$, or $-ab$. In addition, the centroid of $\triangle AIB$ is \[\tfrac{a^2+b^2-ab-bc-ac}{3}\] Now, we are trying to find the intersection of the line through $0$ and $a+b+c$, and the former two points. We omit the routine (but very annoying) calculation using the intersection of lines formula, and state the result as a symmetric polynomial in $a$, $b$, $c$. Hence, we have the required result. $\square$
 
 \begin{problem}[6.41]{IMO 2009/2, complex}
 Let $ABC$ be a triangle with circumcenter $O$. The points $P$ and $Q$ are interior points of the sides $CA$ and $AB$, respectively. Let $K$, $L$, and $M$ be the midpoints of the segments $BP$, $CQ$, and $PQ$, respectively, and let $\Gamma$ be the circle passing through $K$, $L$, and $M$. Suppose that the line $PQ$ is tangent to the circle $\Gamma$. Prove that $OP = OQ$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -4539,6 +4628,7 @@ A synthetic solution can be found as \refproblem{2.35}.
 \begin{problem}[6.42]{APMO 2010/4}
 Let $ABC$ be an acute triangle with $AB > BC$ and $AC > BC$. Denote by $O$ and $H$ the circumcenter and orthocenter of $ABC$. Suppose that the circumcircle of triangle $AHC$ intersects the line $AB$ at $M \neq A$, and the circumcircle of triangle $AHB$ intersects the line $AC$ at $N \neq A$. Prove that the circumcenter of triangle $MNH$ lies on line $OH$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4602,6 +4692,7 @@ Now, we can write that: \[\ol{\left(\tfrac{bc}{b^2+bc+c^2}\right)} = \tfrac{\tfr
 \begin{problem}[6.43]{ISL 2006/G9}
 Points $ A_{1}$, $ B_{1}$, $ C_{1}$ are chosen on the sides $ BC$, $ CA$, $ AB$ of a triangle $ ABC$ respectively. The circumcircles of triangles $ AB_{1}C_{1}$, $ BC_{1}A_{1}$, $ CA_{1}B_{1}$ intersect the circumcircle of triangle $ ABC$ again at points $ A_{2}$, $ B_{2}$, $ C_{2}$ respectively  ($ A_{2}\neq A, B_{2}\neq B, C_{2}\neq C$).  Points $ A_{3}$, $ B_{3}$, $ C_{3}$ are symmetric to $ A_{1}$, $ B_{1}$, $ C_{1}$ with respect to the midpoints of the sides $ BC$, $ CA$, $ AB$ respectively. Prove that the triangles $ A_{2}B_{2}C_{2}$ and $ A_{3}B_{3}C_{3}$ are similar.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4666,6 +4757,7 @@ as required. $\square$
 \begin{problem}[6.44]{MOP 2006}
 Given a cyclic quadrilateral $ABCD$ with circumcenter $O$ and a point $P$ on the plane, let $O_1$, $O_2$, $O_3$, $O_4$ denote the circumcenters of triangles $PAB$, $PBC$, $PCD$, $PDA$ respectively. Prove that the midpoints of segments $\ol{O_1O_3}$, $\ol{O_2O_4}$, and $\ol{OP}$ are collinear.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4755,7 +4847,7 @@ Similarly, \[m_2 = \dfrac{ad(p\ol{p}-1)}{2(ad\ol{p}-a-d+p)}+\dfrac{bc(p\ol{p}-1)
 \end{align*}
 We omit the calculation, but state the result that the conjugate of the penultimate expression and last expression are equal, implying that the quantity is real. $\square$
 
-\begin{problem}[6.45]{Shortlist 1998/G6}
+\begin{problem}[6.45]{ISL 1998/G6}
 Let $ABCDEF$ be a convex hexagon such that $\angle B+\angle D+\angle F=360^\circ$ and \[\frac{AB}{BC} \cdot \frac{CD}{DE} \cdot \frac{EF}{FA} = 1.\] Prove that \[\frac{BC}{CA} \cdot \frac{AE}{EF} \cdot \frac{FD}{DB} = 1.\]
 \end{problem}
 
@@ -4764,6 +4856,7 @@ Toss onto the complex plane so that $(ABCDEF)$ is the unit circle. Then, we can 
 \begin{problem}[6.46]{ELMO SL 2013}
 Let $ABC$ be a triangle inscribed in circle $\omega$, and let the medians from $B$ and $C$ intersect $\omega$ at $D$ and $E$ respectively. Let $O_1$ be the center of the circle through $D$ tangent to $AC$ at $C$, and let $O_2$ be the center of the circle through $E$ tangent to $AB$ at $B$. Prove that $O_1$, $O_2$, and the nine-point center of $\triangle ABC$ are collinear.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4854,11 +4947,13 @@ It turns out that $N_9$ is the midpoint of $\ol{O_1O_2}$.
 \begin{problem}[7.5]{}
 Find the barycentric coordinates for the midpoint of $\ol{AB}$.
 \end{problem}
+
 It is clearly $\boxed{\left(\tfrac{1}{2}, \tfrac{1}{2}, 0\right)}$.
 
 \begin{problem}[7.6]{Barycentric Coordinates}
 Let $P = (x : y : z)$ be a point with $x$, $y$, $z \neq 0$. Show that the isogonal conjugate of $P$ is given by \[P^* =	\left(\dfrac{a^2}{x}:\dfrac{b^2}{y}:\dfrac{c^2}{z}\right)\] and the isotomic conjugate is given by \[P^t = \left(\dfrac{1}{x}:\dfrac{1}{y}:\dfrac{1}{z}\right).\]
 \end{problem}
+
 We begin with the first problem. Denote $A'$ as the intersection of $AP$ with $BC$ and similarly for $B'$ and $C'$. Then, we have that \[A' = (0 : y : z), \quad B' = (x : 0 : z), \quad C' = (x : y : 0).\] Now, let $A^*$ be on $BC$ so that $AA'$ is isogonal to $AA^*$. Then, by \refproblem{4.22} we know that \[\dfrac{BA'}{A'C}\cdot \dfrac{BA^*}{A^*C} = \left(\dfrac{AB}{AC}\right)^2.\] However, we have that $\tfrac{BA'}{A'C} = \tfrac{z}{y}$. Hence, we must have that \[\dfrac{BA^*}{A^*C} = \left(\dfrac{c}{b}\right)^2\cdot \dfrac{y}{z} \implies A^* = \left(0: b^2z: c^2y\right).\] We find similar equations for $B^*$ and $C^*$. Hence, we find that the point \[\left(\dfrac{a^2}{x}:\dfrac{b^2}{y}:\dfrac{c^2}{z}\right)\] can be scaled further by $yz$, $xz$, and $xy$ to show that it lies on $AA^*$, $BB^*$, and $CC^*$, respectively, so we have the required point.
 
 Now, we will find the isotomic conjugate. Denote $A'$, $B'$, and $C'$ as in the last problem. Then, let $A^t$ be a point on $BC$ such that $AA'$ and $AA^t$ are isotomic to each other, and define $B^t$ and $C^t$ respectively. Then, note that \[A^t = (0 : z : y), \quad B^t = (z : 0 : x), \quad C^t = (y : x : 0).\] Hence, we find the point that lies on all of these is the given point, $\left(\tfrac{1}{x}:\tfrac{1}{y}:\tfrac{1}{z}\right)$ so we are done. $\square$
@@ -4868,21 +4963,25 @@ Now, we will find the isotomic conjugate. Denote $A'$, $B'$, and $C'$ as in the 
 \begin{problem}[7.8]{}
 Using the areal definition, show that $I = (a : b : c)$. Deduce the angle bisector theorem.
 \end{problem}
+
 We have that \[[PBC] : [PAC] : [PAB] = a : b : c\] due to the base and height formula for the area of a triangle. Hence, we have the first part. The second part follows because the points on the sides are of the form $(ua : vb : wc)$ where $(u, v, w)$ is some permutation of $(0, 1, 1)$. $\square$
 
 \begin{problem}[7.9]{}
 Find the barycentric coordinates for the intersection of the symmedian from $A$ and the median from $B$.
 \end{problem}
+
 Let the point be $P = (x : y : z)$. Then, we have that \[y : z = b^2 : c^2\] and \[x : z = 1 : 1.\] Hence, the point is \[P = \boxed{(c^2 : b^2 : c^2)}\] as required. $\square$
 
 \begin{problem}[7.17]{Barycentric Circumcircle}
 The circumcircle $(ABC)$ of the reference triangle has equation \[a^2yz + b^2zx + c^2xy = 0.\]
 \end{problem}
+
 The equation for any circle is \[-a^2yz-b^2zx-c^2xy+(ux+vy+wz)(x+y+z) = 0\] for some reals $u$, $v$, and $w$. Now, we have that the circle must pass through $(1, 0, 0)$, $(0, 1, 0)$, and $(0, 0, 1)$. Hence, plugging these in, we find that $u = v = w = 0$, implying the necessary conclusion. $\square$
 
 \begin{problem}[7.18]{}
 Consider a displacement vector $\overrightarrow{PQ} = (x_1, y_1, z_1)$. Show that $PQ \perp BC$ if and only if \[0 = a^2(z_1 - y_1) + x_1(c^2 - b^2).\]
 \end{problem}
+
 The displacement vector $\overrightarrow{BC}$ is $(0, -1, 1)$. Hence, plugging this into the criteria for perpendicular displacement vectors, we have that: \[0 = a^2(y_1-z_1)+b^2x_1-c^2x_1\] which is precisely the necessary statement. $\square$
 
 \begin{problem}[7.19]{Barycentric Perpendicular Bisector}
@@ -4894,6 +4993,7 @@ Let $P = (x, y, z)$, and $M = \left(0, \tfrac{1}{2}, \tfrac{1}{2}\right)$ be the
 \begin{problem}[7.31]{}
 Let $ABC$ be a triangle with altitude $\ol{AL}$ and let $M$ be the midpoint of $\ol{AL}$. If $K$ is the symmedian point of triangle $ABC$, prove that $\ol{KM}$ bisects $\ol{BC}$.
 \end{problem}
+
 We know that if $L = (L_x, L_y, L_z)$, then \[0 = a^2(L_y-L_z)+(L_x-1)(b^2-c^2).\] However, we know that $L_x = 0$. Hence, \[0 = a^2(L_y-L_z)-(b^2-c^2) \implies L_y-L_z = \dfrac{b^2-c^2}{a^2}.\] Now, since $L_y + L_z = 1$, we can solve for both of them, getting that
 \begin{align*}
 L_z &= \dfrac{a^2+b^2-c^2}{2a^2} \\
@@ -4911,11 +5011,13 @@ Thus, $v = -1$, which implies the required conclusion. $\square$
 \begin{problem}[7.32]{}
 Let $I$ and $G$ denote the incenter and centroid of a triangle $ABC$ and let $N$ denote the Nagel point; this is the intersection of the cevians that join $A$ to the contact point of the $A$-excircle on $BC$, and similarly for $B$ and $C$. Prove that $I$, $G$, $N$ are collinear and that $NG = 2GI$.
 \end{problem}
+
 Call the contact point of the $A$-excircle with $BC$ as $A' = (0, A'_y, 1-A'_y)$. Then, since $I_A = \left(\tfrac{-a}{b+c-a}, \tfrac{b}{b+c-a}, \tfrac{c}{b+c-a}\right)$, we know that $\overrightarrow{I_AA'} = \left(\tfrac{a}{b+c-a}, A'_y-\tfrac{b}{b+c-a}, 1-A'_y-\tfrac{c}{b+c-a}\right)$. Hence, \[0 = a^2\left(2A_y'-1+\tfrac{c-b}{b+c-a}\right)+\tfrac{a}{b+c-a}\left(b^2-c^2\right).\] Hence, \[A_y' = \dfrac{a-b+c}{2a}\] and we get similar equations for $B'$ and $C'$. After solving a quick system of ratios, we find that \[N = (b+c-a : a+c-b : a+b-c) = \left(1-\tfrac{2a}{a+b+c}, 1-\tfrac{2b}{a+b+c}, 1-\tfrac{2c}{a+b+c}\right).\] After more computations, we then can find the required conclusion since $I = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a+b+c}, \tfrac{c}{a+b+c}\right)$ and $G = \left(\tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3}\right)$. $\square$
 
 \begin{problem}[7.33]{IMO 2014/4}
 Let $P$ and $Q$ be on segment $\ol{BC}$ of an acute triangle $ABC$ such that $\angle PAB = \angle BCA$ and $\angle CAQ = \angle ABC$. Let $M$ and $N$ be the points on $AP$ and $AQ$, respectively, such that $P$ is the midpoint of $\ol{AM}$ and $Q$ is the midpoint of $\ol{AN}$. Prove that the intersection of $BM$ and $CN$ is on the circumference of triangle $ABC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -4980,6 +5082,7 @@ The symmedian point $K$ lies on $AD$.
 \begin{problem}[7.34]{EGMO 2013/1, barycentric}
 The side $BC$ of the triangle $ABC$ is extended beyond $C$ to $D$ so that $CD = BC$. The side $CA$ is extended beyond $A$ to $E$ so that $AE = 2CA$. Prove that if $AD = BE$ then the triangle $ABC$ is right-angled.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(10cm);
@@ -5016,6 +5119,7 @@ For a complex bash, look to \refproblem{5.19}, and for a synthetic method, look 
 \begin{problem}[7.35]{ELMO SL 2013/G3}
 In $\triangle ABC$, a point $D$ lies on line $BC$. The $(ABD)$ meets $AC$ at $F \neq A$, and $(ADC)$ meets $AB$ at $E \neq A$. Prove that as $D$ varies, $(AEF)$ always passes through a fixed point other than $A$, and that this point lies on the $A$-median.
 \end{problem}
+
 Denote $D = (0, d, 1-d)$. Then, we have that \[(ABD): -a^2yz-b^2zx-c^2xy + wz(x+y+z) = 0.\] Now, it also passes through $D$, so \[-a^2d(1-d)+w(1-d) = 0.\] Since $D \neq B$, we can divide out $1-d$ to get that $w = a^2d$. Hence, \[(ABD): -a^2yz-b^2zx-c^2xy + a^2dz(x+y+z) = 0.\] Then, let $F = (f, 0, 1-f)$ and since it lies on $(ABD)$, we have that \[-b^2f(1-f)+a^2d(1-f) = 0 \implies f = \tfrac{a^2d}{b^2}.\] Now, let \[(ADC): -a^2yz-b^2zx-c^2xy + vy(x+y+z) = 0.\] Since it passes through $D$, we then have that \[-a^2d(1-d)+vd = 0 \implies v = a^2(1-d).\] Hence, \[(ADC): -a^2yz-b^2zx-c^2xy + a^2y(1-d)(x+y+z) = 0.\] Since $E = (e, 1-e, 0)$ lies on $(ADC)$, we find that \[-c^2e(1-e)+a^2(1-e)(1-d) = 0 \implies e = \tfrac{a^2(1-d)}{c^2}.\] Now, note that \[(AEF) : -a^2yz-b^2zx-c^2xy+(my+nz)(x+y+z) = 0\] and since it passes through $E$ and $F$, we have that
 \begin{align*}
 -c^2e(1-e)+m(1-e) &= 0 \implies m = c^2e \\
@@ -5036,6 +5140,7 @@ which does not depend on $D$, as required. $\square$
 \begin{problem}[7.36]{IMO 2012/1}
 Given triangle $ABC$, the point $J$ is the center of the excircle opposite the vertex $A$. This excircle is tangent to side $\ol{BC}$ at $M$, and to lines $AB$ and $AC$ at $K$ and $L$, respectively. Lines $LM$ and $BJ$ meet at $F$, and lines $KM$ and $CJ$ meet at $G$. Let $S$ be the point of intersection of lines $AF$ and $BC$, and let $T$ be the point of intersection of lines $AG$ and $BC$. Prove that $M$ is the midpoint of $\ol{ST}$ .
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5088,6 +5193,7 @@ We have that $M = (0, m, 1-m)$. Then, since $J = \left(\tfrac{-a}{b+c-a}, \tfrac
 \begin{problem}[7.38]{USA TST 2008/7}
 Let $ABC$ be a triangle with $G$ as its centroid. Let $P$ be a variable point on $\ol{BC}$. Points $Q$ and $R$ lie on sides $AC$ and $AB$ respectively, such that $PQ \parallel AB$ and $PR \parallel AC$. Prove that, as $P$ varies along $\ol{BC}$, $(AQR)$ passes through a fixed point $X$ such that $\angle BAG = \angle CAX$. 
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5142,6 +5248,7 @@ Now, define $P = (0, p, 1-p)$. Then, we clearly have that \[BR = \dfrac{AB\cdot 
 \begin{problem}[7.39]{USAMO 2001/2}
 Let $ABC$ be a triangle and let $\omega$ be its incircle. Denote $D_1$ and $E_1$ as the points where $\omega$ is tangent to $\ol{BC}$ and $\ol{AC}$, respectively. Denote $D_2$ and $E_2$ as the points on $\ol{BC}$ and $\ol{AC}$, respectively, such that $CD_2 = BD_1$ and $CE_2 = AE_1$, and denote $P$ as the point of intersection of $\ol{AD_2}$ and $\ol{BE_2}$. Circle $\omega$ intersects segment $AD_2$ at two points, the closer of which to the vertex $A$ is denoted by $Q$. Prove that $AQ = D_2P$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5189,6 +5296,7 @@ We let $D_1 = (0, d, 1-d)$. Then, since $I = \left(\tfrac{a}{a+b+c}, \tfrac{b}{a
 \begin{problem}[7.40]{USA TSTST 2012/7}
 Let there be a triangle $ABC$ such that the angle bisector of angle $A$ intersects $\ol{BC}$ and $(ABC)$ at $D$ and $L \neq A$, respectively. Let $M$ be the midpoint of $\ol{BC}$, and $(ADM)$ intersect $\ol{AB}$ and $\ol{AC}$ again at $Q$ and $P \neq A$, respectively. In addition, let $N$ be the midpoint of $\ol{PQ}$, and let $H$ be the foot of the perpendicular from $L$ to line $ND$. Prove that line $ML$ is tangent to $(HMN)$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5247,11 +5355,13 @@ Now, since $\angle DML + \angle DHL = 90 + 90 = 180$, we know that $DMLH$ is cyc
 \begin{problem}[7.41]{}
 Let $ABC$ be a triangle with incenter $I$. Let $P$ and $Q$ denote the reflections of $B$ and $C$ across $CI$ and $BI$, respectively. Show that $PQ \perp OI$ , where $O$ is the circumcenter of $ABC$.
 \end{problem}
+
 Due to the definition of the angle bisector, $P$ is the point on $\overrightarrow{CA}$ such that $BC = BP$. Similarly, $Q$ is the point on $\overrightarrow{BA}$ such that $BQ = BC$. Hence, $P = (a : 0 : b-a) = \left(\tfrac{a}{b}, 0, 1-\tfrac{a}{b}\right)$ and $Q = \left(\frac{a}{c}, 1-\tfrac{a}{c}, 0\right)$. We have the displacement vector \[\overrightarrow{PQ} = \left(\tfrac{a}{c}-\tfrac{a}{b}, 1-\tfrac{a}{c}, \tfrac{a}{b}-1\right) = \left(\tfrac{a}{c}-\tfrac{a}{b}\right)\overrightarrow{A}+\left(1-\tfrac{a}{c}\right)\overrightarrow{B}+\left(\tfrac{a}{b}-1\right)\overrightarrow{C}\] and the psuedo-displacment vector \[\overrightarrow{OI} = \overrightarrow{I}-\overrightarrow{O} = a\overrightarrow{A}+b\overrightarrow{B}+c\overrightarrow{C}\] after scaling. Now, the quantity that we need to check is: \[a^2\left(c\left(1-\tfrac{a}{c}\right)+b\left(\tfrac{a}{b}-1\right)\right)+b^2\left(c\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(\tfrac{a}{b}-1\right)\right)+c^2\left(b\left(\tfrac{a}{c}-\tfrac{a}{b}\right)+a\left(1-\tfrac{a}{c}\right)\right)\] which is indeed equal to zero after expanding. $\square$
 
 \begin{problem}[7.42]{}
 Let $ABC$ be a triangle with circumcircle $\Omega$ and let $T_A$ denote the tangency points of the $A$-mixtilinear incircle to $\Omega$. Define $T_B$ and $T_C$ similarly. Prove that lines $AT_A$, $BT_B$, $CT_C$, $IO$ are concurrent, where $I$ and $O$ denote the incenter and circumcenter of $\triangle ABC$. 
 \end{problem}
+
 We know that all of the lines $AT_A$, $BT_B$, and $CT_C$ pass through the isogonal conjugate of the Nagel Point since $AT_A$ is isogonal to the cevian through $A$ and the contact point of the $A$-excircle and likewise for the other lines. Hence, all we have to show is that $IO$ passes through this point as well. The Nagel Point is just $\left(s-a : s-b : s-c\right)$. The isogonal conjugate of this point is \[\left(\tfrac{a^2}{s-a} : \tfrac{b^2}{s-b} : \tfrac{c^2}{s-c}\right).\] Thus, all we have to show is that the determinant \[\begin{vmatrix}a&b&c\\a^2S_a&b^2S_b&c^2S_c\\\tfrac{a^2}{s-a}&\tfrac{b^2}{s-b}&\tfrac{c^2}{s-c}\end{vmatrix}\] is zero. If it is zero, then we divide each of the columns by their $\gcd$ to get the determinant \[\begin{vmatrix}1&1&1\\aS_a&bS_b&cS_c\\\tfrac{a}{s-a}&\tfrac{b}{s-b}&\tfrac{c}{s-c}\end{vmatrix}.\] Expanding, we have that:
 \begin{align*}
 \begin{vmatrix}1&1&1\\aS_a&bS_b&cS_c\\\tfrac{a}{s-a}&\tfrac{b}{s-b}&\tfrac{c}{s-c}\end{vmatrix} &= \dfrac{bcS_b}{s-c}-\dfrac{bcS_c}{s-b}-\dfrac{acS_a}{s-c}+\dfrac{acS_c}{s-a}+\dfrac{abS_a}{s-b}-\dfrac{abS_b}{s-a} \\
@@ -5271,6 +5381,7 @@ so they are indeed collinear. $\square$
 \begin{problem}[7.43]{USA December TST for IMO 2012}
 In acute triangle $ABC$, $\angle A < \angle B$ and $\angle A < \angle C$. Let $P$ be a variable point on $\ol{BC}$. Points $D$ and $E$ lie on $\ol{AB}$ and $\ol{AC}$, respectively, such that $BP = PD$ and $CP = PE$. Prove that as $P$ moves along $\ol{BC}$, the $(ADE)$ passes through a fixed point other than $A$.
 \end{problem}
+
 We claim this fixed point is the orthocenter $H$.
 
 Since $PB = PD$, \[BD = 2BP\sin\left(\tfrac{\angle BPD}{2}\right) = 2BP\sin(90-B) = 2BP\cos(B)\] and similarly \[CE = 2CP\cos(C) = 2a\cos(C)-2BP\cos(C).\] Hence, \[D = (2BP\cos(B): c-2BP\cos(B) : 0)\] and \[E = (2a\cos(C)-2BP\cos(C) : 0 : b-2a\cos(C)+2BP\cos(C)).\] Now, since $(ADE)$ passes through $A$, we know that \[(ADE) : -a^2yz-b^2xz-c^2xy+(vy+wz)(x+y+z) = 0.\] Since it passes through $D$, \[-c^2(2BP\cos(B))(c-2BP\cos(B))+cv(c-2BP\cos(B)) = 0\] implying that \[v = 2cBP\cos(B).\] In addition, since it passes through $E$, \[-b^2(2a\cos(C)-2BP\cos(C))(b-2a\cos(C)+2BP\cos(C))+bw(b-2a\cos(C)+2BP\cos(C)) = 0\] implying \[w = b(2a\cos(C)-2BP\cos(C)) = 2ab\cos(C)-2bBP\cos(C).\] Hence, \[(ADE) : -a^2yz-b^2xz-c^2xy+((2cBP\cos(B))y+(2ab\cos(C)-2bBP\cos(C))z)(x+y+z) = 0.\] Now, since $H = (\tan(A), \tan(B), \tan(C))$,
@@ -5340,56 +5451,67 @@ as required. $\square$
 \begin{problem}[8.9]{Inverting an Orthocenter}
 Let $ABC$ be a triangle with orthocenter $H$ and altitudes $\ol{AD}$, $\ol{BE}$, $\ol{CF}$. Perform an inversion around $C$ with radius $\sqrt{CH \cdot CF}$. Where do the six points each go?
 \end{problem}
+
 The points $H$ and $F$ swap places, as do $A$ and $E$, as do $C$ and $F$ by Power of a Point. $\square$
 
 \begin{problem}[8.10]{Inverting a Circumcenter}
 Let $ABC$ be a triangle with circumcenter $O$. Invert around $C$ with radius $1$. What is the relation between $O^*$, $C$, $A^*$, and $B^*$?
 \end{problem}
+
 We claim that $A^*B^*$ has the property that $C$ and $O^*$ are reflections about this line. Clearly, $\angle CA^*B^* = \angle CBA$ and \[\angle O^*A^*B^* = \angle CA^*O^* - \angle CA^*B^* = \angle COA - \angle CBA = \angle CBA\] as required. We can get similar results for the other set of angles ($\angle CB^*A^*$ and $\angle O^*B^*A^*$), so we are done. $\square$
 
 \begin{problem}[8.11]{Inverting an Incircle}
 Let $ABC$ be a triangle with circumcircle $\Gamma$ and contact triangle $DEF$. Consider an inversion with respect to the incircle of triangle $ABC$. Show that $\Gamma$ is sent to the nine-point circle of triangle $DEF$.
 \end{problem}
+
 Since $AE$ and $AF$ are tangent to the incircle, we know that $A^*$ is just the midpoint of $\ol{EF}$ and similarly for $B^*$ and $C^*$. Hence, the circumcircle of these points is just the nine-point circle, as required. $\square$
 
 \begin{problem}[8.17]{Force-Overlayed Inversion}
 Let $ABC$ be a triangle. Consider the transformation consisting of an inversion about $A$ with radius $\sqrt{AB \cdot AC}$, followed by a reflection around the angle bisector of $\angle BAC$. Show that this transformation fixes $B$ and $C$.
 \end{problem}
+
 Clearly, the distance $AB^* = AC$ and since $B^*$ lies on $AB$, we know that $B^*$ and $C$ are reflections about the angle bisector of $\angle BAC$. A similar argument suffices for $C^*$. $\square$
 
 \begin{problem}[8.19]{Inversion Distance Formula}
 Let $A$ and $B$ be points other than $O$ and consider an inversion about $O$ with radius $r$. Then show that: \[A^*B^* = \dfrac{r^2}{OA \cdot OB} \cdot AB.\]
 \end{problem}
+
 We know that \[OA\cdot OA^* = r^2\] and \[\dfrac{AB}{A^*B^*} = \dfrac{OB}{OA^*}\] by similar triangles. Hence, \[\dfrac{r^2}{OA \cdot OB} \cdot AB = \dfrac{OA^*}{OB} \cdot AB = A^*B^*\] as required. $\square$
 
 \begin{problem}[8.20]{Ptolemy's Inequality}
 For any four distinct points $A$, $B$, $C$, and $D$ in a plane, no three collinear, prove that \[AB \cdot CD + BC \cdot DA \ge AC \cdot BD.\] Moreover, show that equality holds if and only if $A$, $B$, $C$, $D$ lie on a circle in that order.
 \end{problem}
+
 Invert about a circle centered at $D$ with radius $DA$. Then, by the triangle inequality, \[A^*B^*+B^*C^*\ge A^*C^*\] with equality if and only if the points are collinear. Now applying the inversion distance formula, \[\dfrac{DA^2}{DA\cdot DB}\cdot AB + \dfrac{DA^2}{DB\cdot DC}\cdot BC \ge \dfrac{DA^2}{DA\cdot DC}\cdot AC.\] Simplifying, \[\dfrac{1}{DB}\cdot AB + \dfrac{DA}{DB\cdot DC}\cdot BC \ge \dfrac{1}{DC}\cdot AC\] and multiplying both sides by $DB\cdot DC$, we find that \[DC\cdot AB + DA\cdot BC \ge DB\cdot AC\] as required. $\square$
 
 \begin{problem}[8.23]{}
 Let $ABC$ be a right triangle with $\angle C = 90^\circ$ and let $X$ and $Y$ be points in the interiors of $\ol{CA}$ and $\ol{CB}$, respectively. Construct four circles passing through $C$, centered at $A$, $B$, $X$, $Y$. Prove that the four points lying on at exactly two of these four circles are concyclic.
 \end{problem}
+
 Consider inverting about a circle with radius $1$, centered at $C$. Then, all of the circles will be sent to lines perpendicular to the side that they are on. This means that the required intersections just make a rectangle, which is indeed cyclic. $\square$
 
 \begin{problem}[8.24]{}
 Let $\omega_1$, $\omega_2$, $\omega_3$, $\omega_4$ be circles with consecutive pairs tangent at $A$, $B$, $C$, $D$. Prove that quadrilateral $ABCD$ is cyclic.
 \end{problem}
+
 Consider an inversion about $A$. Then, the conclusion is clear by noticing the similar triangles. $\square$
 
 \begin{problem}[8.25]{}
 Let $A$, $B$, $C$ be three collinear points and $P$ be a point not on this line. Prove that the circumcenters of $\triangle PAB$, $\triangle PBC$, and $\triangle PCA$ lie on a circle passing through $P$.
 \end{problem}
+
 Inverting about $P$, it suffices to show by \refproblem{8.10}, that the reflections of $P$ across $A^*B^*$, $B^*C^*$, and $A^*C^*$ are collinear, where $A^*$, $B^*$, $C^*$, and $P$ are concyclic. Then, by the existence of the Simson Line, we can just consider a homothety of scale factor $2$ centered at $P$, which takes the Simson Line to the necessary points, so we are done. $\square$
 
 \begin{problem}[8.26]{BAMO 2008/6}
 A point $D$ lies inside triangle $ABC$. Let $A_1$, $B_1$, $C_1$ be the second intersection points of the lines $AD$, $BD$, and $CD$ with $(BDC)$, $(CDA)$, and $(ADB)$, respectively. Prove that \[\dfrac{AD}{AA_1}+\dfrac{BD}{BB_1}+\dfrac{CD}{CC_1} = 1.\]
 \end{problem}
+
 Inverting about $D$ with a radius of $1$, we find that \[\dfrac{AD}{AA_1} = \dfrac{\tfrac{1}{A^*D}}{\tfrac{A^*B^*}{DA^*\cdot DB^*}} = \dfrac{DB^*}{A^*B^*}\] by the distance formula. So, the problem is in fact equivalent to \refproblem{3.18}, and we are done. $\square$
 
 \begin{problem}[8.27]{Iran Olympiad 1996}
 Consider a semicircle with center $O$ and diameter $\ol{AB}$. A line intersects line $AB$ at $M$ and the semicircle at $C$ and $D$ such that $MC > MD$ and $MB < MA$. Suppose $(AOC)$ and $(BOD)$ meet at a point $K \neq O$. Prove that $\angle MKO = 90^\circ$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5462,21 +5584,25 @@ However, notice that since $C$ is the foot of the $B$-altitude of $\triangle ABK
 \begin{problem}[8.28]{ISL 2003/G4}
 Let $\Gamma_1$, $\Gamma_2$, $\Gamma_3$, $\Gamma_4$ be distinct circles such that $\Gamma_1$, $\Gamma_3$ are externally tangent at $P$, and $\Gamma_2$, $\Gamma_4$ are externally tangent at the same point $P$. Suppose that $\Gamma_1$ and $\Gamma_2$; $\Gamma_2$ and $\Gamma_3$; $\Gamma_3$ and $\Gamma_4$; $\Gamma_4$ and $\Gamma_1$ meet at $A$, $B$, $C$, $D$, respectively, and that all these points are different from $P$. Prove that \[\frac{AB\cdot BC}{AD\cdot DC}=\frac{PB^2}{PD^2}.\]
 \end{problem}
+
 Invert about $P$. Then, $A^*B^*C^*D^*$ is a parallelogram. Hence, by \refproblem{8.19}, we have that \[\frac{AB}{PA \cdot PB} = \frac{CD}{PC \cdot PD}\] and \[\frac{AD}{PA \cdot PD} = \frac{BC}{PB \cdot PD}.\] Taking the quotient suffices. $\square$
 
 \begin{problem}[8.29]{}
 Let $ABC$ be a triangle with incenter $I$ and circumcenter $O$. Prove that line $IO$ passes through the centroid $G_1$ of the contact triangle.
 \end{problem}
+
 Consider an inversion about its incircle. We know that $O$, $I$, and $O^*$ are collinear. However, by \refproblem{8.11}, $O^*$ is the nine-point center of the contact triangle. Hence, by the properties of the Euler line, we know that $I$, $G_1$ and $O^*$ are also collinear, which implies the necessary conclusion. $\square$
 
 \begin{problem}[8.30]{}
 Let $ABC$ be a triangle and let $Q$ be a point such that $AB \perp QB$ and $AC \perp QC$. The incircle of $\triangle ABC$ is tangent to $BC$, $CA$, and $AB$ at points $D$, $E$, and $F$, respectively. If $\overrightarrow{QI}$ intersects $EF$ at $P$, prove that $DP \perp EF$.
 \end{problem}
+
 Let $X$ be the intersection of $\overrightarrow{QI}$ with $(ABC)$. Then, an inversion about the incircle sends $(ABC)$ to the nine-point circle of $\triangle DEF$, and $\triangle ABC$ to the medial triangle of $\triangle DEF$. However, since \[90^\circ = \angle QXA = \angle IXA = \angle IA^*X^*\] we know that $X \neq A$ gets sent to the intersection of the nine-point circle with $EF$, which is the foot of the altitude from $D$ to $EF$, as required. $\square$
 
 \begin{problem}[8.31]{EGMO 2013/5}
 There exists a triangle $ABC$ such that the circle $\omega$ is tangent to the sides $AC$ and $BC$, and it is internally tangent to $(ABC)$ at the point $P$. A line parallel to $AB$ intersecting the interior of $\triangle ABC$ is tangent to $\omega$ at $Q$. Prove that $\angle ACP = \angle QCB$. 
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5521,6 +5647,7 @@ Consider a $\sqrt{ab}$ inversion about $C$ follow by a reflection about the angl
 \begin{problem}[8.32]{Russian Olympiad 2009}
 In triangle $ABC$, the internal angle bisector of $\angle A$ intersects $\ol{BC}$ at $D$ and $(ABC)$ again at E. The circle with diameter $\ol{DE}$ meets $(ABC)$ again at $F$. Prove that $\ol{AF}$ is a symmedian of $\triangle ABC$.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5561,11 +5688,13 @@ Consider a force-overlay inversion $\Psi$ about $A$ (a $\sqrt{bc}$ inversion fol
 \begin{problem}[8.33]{ISL 1997/9}
 Let $A_1A_2A_3$ be a scalene triangle with incenter $I$. Let $C_i$, $i = 1$, $2$, $3$, be the smaller circle through $I$ tangent to $A_iA_{i+1}$ and $A_iA_{i+2}$ (taken modulo $3$). Let $B_i$, $i = 1$, $2$, $3$, be the second point of intersection of $C_{i+1}$ and $C_{i+2}$. Prove that the circumcenters of the triangles $A_1B_1I$, $A_2B_2I$, $A_3B_3I$ are collinear.
 \end{problem}
+
 By an inversion about the incircle of $\triangle A_1B_1C_1$, it suffices to show that $\triangle A_1'A_2'A_3'$ and $\triangle B_1'B_2'B_3'$ are homothetic where $X'$ is the image of point $X$ after the inversion. We know that $\triangle A_1'A_2'A_3'$ is the medial triangle of the contact triangle of $\triangle A_1A_2A_3$. In addition, because of perpendicularity, we know that $\triangle B_1'B_2'B_3'$ is homothetic to the contact triangle. Thus, $\triangle A_1'A_2'A_3'$ and $\triangle B_1'B_2'B_3'$ are homothetic, which implies the required conclusion. $\square$
 
 \begin{problem}[8.34]{IMO 1993/2}
 Let $A$, $B$, $C$, $D$ be four points in the plane, with $C$ and $D$ on the same side of the line $AB$, such that $AC \cdot BD = AD \cdot BC$ and $\angle ADB = 90^\circ + \angle ACB$. Find the ratio $\tfrac{AB\cdot CD}{AC \cdot BD}$, and prove that $(ACD)$ and $(BCD)$ are orthogonal.
 \end{problem}
+
 Invert about $A$ with radius $r$. Then, the conditions change to $B^*D^*\perp B^*C^*$ and $B^*D^* = B^*C^*$.
 
 We start with the first part. We note that \[\dfrac{AB\cdot CD}{AC \cdot BD} = \dfrac{AC^* \cdot CD}{AB^* \cdot BD} = \dfrac{AC^* \cdot AB^* \cdot C^*D^*}{AB^* \cdot AC^*\cdot B^*D^*} = \dfrac{C^*D^*}{B^*D^*} = \sqrt{2}\] as required. $\square$
@@ -5575,11 +5704,13 @@ We finish with the second part. We wish to show that the line $C^*D^*$ passes th
 \begin{problem}[8.35]{IMO 1996/2}
 Let $P$ be a point inside $\triangle ABC$ such that \[\angle APB - \angle ACB = \angle APC - \angle ABC.\] Let $D$, $E$ be the incenters of triangles $APB$, $APC$, respectively. Show that the lines $AP$, $BD$, $CE$ concur.
 \end{problem}
+
 Invert about $A$ with a radius of $r$. Then, the angle condition translates to $\angle C^*B^*P^* = \angle B^*C^*P^*$, so $B^*P^* = C^*P^*$. Hence, \[\dfrac{r^2}{AB \cdot AP}\cdot BP = \dfrac{r^2}{AC \cdot AP}\cdot CP \implies \dfrac{BP}{AB} = \dfrac{CP}{AC}.\] Hence, the angle bisectors of $\angle ABP$ and $\angle ACP$ concur at the same point on $AP$, by the Angle Bisector Theorem, so we are done. $\square$
 
 \begin{problem}[8.36]{IMO 2015/3}
 Let $ABC$ be an acute triangle with $AB > AC$. Let $H$ be its orthocenter, and $F$ the foot of the altitude from $A$. Let $M$ be the midpoint of $\ol{BC}$. Let $Q$ be the point on $(ABC)$ such that $\angle HQA = 90^\circ$ and let $K$ be the point on $(ABC)$ such that $\angle HKQ = 90^\circ$. Assume that the points $A$, $B$, $C$, $K$, and $Q$ are all different and lie on $(ABC)$ in this order. Prove that $(KQH)$ and $(FKM)$ are tangent to each other.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5622,6 +5753,7 @@ Consider a negative inversion $\Phi$ taking the nine-point circle to $(ABC)$. Th
 \begin{problem}[8.37]{ELMO SL 2013}
 Let $\omega_1$ and $\omega_2$ be two orthogonal circles, and let the center of $\omega_1$ be $O$. Diameter $\ol{AB}$ of $\omega_1$ is selected so that $B$ lies strictly inside $\omega_2$. The two circles tangent to $\omega_2$ through both $O$ and $A$ touch $\omega_2$ at $F$ and $G$. Prove that quadrilateral $FOGB$ is cyclic.
 \end{problem}
+
 \begin{center}
 \begin{asy}
 import graph;
@@ -5675,6 +5807,7 @@ We wish to show that $\angle OGB = \angle OFB = 90^\circ$. Consider an inversion
 \begin{problem}[9.3]{}
 Check that \[(A,B;X,Y) = (B,A;X,Y)^{-1}=(A,B;Y,X)^{-1} = (X,Y;A,B)\] for any four distinct, collinear points $A$, $B$, $X$, $Y$.
 \end{problem}
+
 We may write the corresponding equations:
 \begin{align*}
 (A,B;X,Y) &= \dfrac{XA}{XB}\div \dfrac{YA}{YB} \\
@@ -5687,16 +5820,19 @@ as desired. $\square$
 \begin{problem}[9.4]{}
 Let $A$, $B$, $X$ be distinct collinear points and $k$ a real number. Prove that there is exactly one point $Y$ (possibly the point at infinity) such that $(A, B; X, Y ) = k$.
 \end{problem}
+
 Plop onto the number line, from which, the finish is trivial. $\square$
 
 \begin{problem}[9.5]{}
 If the points $A$, $X$, $B$, $Y$ are collinear in that order, is $P(A, B; X, Y)$ positive or negative?
 \end{problem}
+
 Negative, since neither segment is contained within the other, and they are not disjoint. $\square$
 
 \begin{problem}[9.6]{}
 Let $A$, $B$, $X$ be collinear points and $P_{\infty}$ a point at infinity along their common line. What is $(A, B; X, P_{\infty})$?
 \end{problem}
+
 We may evaulate as follows: \[(A, B; X, P_{\infty}) = \dfrac{XA}{XB} \div \dfrac{P_{\infty}A}{P_{\infty}B} = \dfrac{XA}{XB}\] as required. $\square$
 
 \newpage
@@ -5704,11 +5840,13 @@ We may evaulate as follows: \[(A, B; X, P_{\infty}) = \dfrac{XA}{XB} \div \dfrac
 \begin{problem}[9.7]{}
 Let $A$, $B$, $X$, $Y$ be concyclic. Prove that if $P$ is any point on its circumcircle, then $P(A, B; X, Y)$ does not depend on $P$. Moreover, \[P(A, B; X, Y ) = \pm\dfrac{XA}{XB} \div \dfrac{YA}{YB}\] where the sign is positive if $AB$ and $XY$ do not intersect, and negative otherwise.
 \end{problem}
+
 Let the line $PA$ be denoted $a$ and similarly for $PB$, $PX$, and $PY$. Then, notice that: \[P(A, B; X, Y ) = \dfrac{\sin(\angle(x, a))}{\sin(\angle(x, b))}\div \dfrac{\sin(\angle(y, a))}{\sin(\angle(y, b))}.\] Now, we know that \[\dfrac{\sin(\angle(x, a))}{XA} = \dfrac{\sin(\angle PAX)}{PX} = \dfrac{\sin(\angle(x, b))}{XB}\] and applying similar logic to the other ratio finishes. $\square$
 
 \begin{problem}[9.14]{}
 Let $ABC$ be a triangle with concurrent cevians $AD$, $BE$, $CF$ (possibly on the extensions of the sides). Line $EF$ meets $BC$ at $X$ (possibly at a point at infinity). Show that $(X, D;B,C)$ is a harmonic bundle.
 \end{problem}
+
 Clearly, it is negative, so it suffices to show that \[\dfrac{BX}{BD}\cdot \dfrac{CD}{CX} = 1.\] However, we may get that
 \begin{align*}
 \dfrac{BX}{CX}\cdot\dfrac{FA}{BF}\cdot\dfrac{EC}{AE} &= 1 \\
@@ -5718,6 +5856,7 @@ where the first is by undirected Menalaus' and the second by Ceva. These two cle
 \begin{problem}[9.15]{}
 In the coordinate plane, the points $A = (-1, 0)$, $B = (1, 0)$, $X = \left(\tfrac{1}{100}, 0\right)$ and $Y = (m, 0)$ form a harmonic bundle $(A, B; X, Y ) = -1$. What is $m$?
 \end{problem}
+
 We write the required equation: \[\dfrac{XA}{XB}\div\dfrac{YA}{YB} = -\dfrac{\tfrac{101}{100}}{\tfrac{99}{100}}\div\dfrac{m+1}{m-1} = -1.\] Solving, we find that $m = 100$. $\square$
 
 \begin{problem}[9.16]{JMO 2011/5}
@@ -5729,6 +5868,7 @@ Points $A$, $B$, $C$, $D$, $E$ lie on a circle $\omega$ and point $P$ lies outsi
 \end{enumerate}
 Prove that $\ol{BE}$ bisects $\ol{AC}$. 
 \end{problem}
+
 \begin{center}
 \begin{asy}
 size(6cm);
@@ -5746,22 +5886,229 @@ For a synthetic solution, refer to \refproblem{1.43}.
 \begin{problem}[9.17]{Midpoint Lengths}
 Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = -1$. Let $M$ be the midpoint of $\overline{AB}$. Show that $MX \cdot MP = \tfrac{1}{4}AB^2$ and $P X \cdot PM = P A \cdot P B$. 
 \end{problem}
-Construct the circle with diameter $\ol{AB}$. Then, let $N$ be a point of tangency from $P$ to the circle. We then find that $\triangle MXN \sim \triangle MNP$, so we have the ratio \[\dfrac{MX}{MN} = \dfrac{MN}{MP} \implies MX\cdot MP = MN^2 = \tfrac{1}{4}AB^2$ as required. Furthermore, we know that $\triangle NXP \sim \triangle MNP$, so we may write \[\dfrac{PX}{PN} = \dfrac{PN}{PM} \implies PX\cdot PM = PN^2 = PA\cdot PB\] where the last equation is by Power of a Point. $\square$
+
+Construct the circle with diameter $\ol{AB}$. Then, let $N$ be a point of tangency from $P$ to the circle. We then find that $\triangle MXN \sim \triangle MNP$, so we have the ratio \[\dfrac{MX}{MN} = \dfrac{MN}{MP} \implies MX\cdot MP = MN^2 = \tfrac{1}{4}AB^2\] as required. Furthermore, we know that $\triangle NXP \sim \triangle MNP$, so we may write \[\dfrac{PX}{PN} = \dfrac{PN}{PM} \implies PX\cdot PM = PN^2 = PA\cdot PB\] where the last equation is by Power of a Point. $\square$
 
 \newpage
 
 \begin{problem}[9.20]{}
 Let $\ol{AB}$ be a line segment and $\Omega$ the set of all points $P$ satisfying $\tfrac{PA}{PB} = k$. Let the intersection of $\Omega$ with $AB$ outside $\ol{AB}$ be $X$, and the other intersection $Y$ so that $(A,B;X,Y)$ is a harmonic bundle. What is the Apollonian circle of $\ol{XY}$ through $A$?
 \end{problem}
+
 We claim it is the circle with diameter $\ol{AB}$. Notice that $(X,Y;A,B)$ is also a harmonic bundle from \refproblem{9.3}. As a result, we know that the Apollonian circle with respect to $\ol{XY}$ through $A$ also passes through $B$, and since they are collinear, we have the required conclusion. $\square$
 
 \begin{problem}[9.21]{}
 Let $P$ be a point such that $\tfrac{PA}{PB} = k$, and let $\Omega$ be the set of all points satisfying this (a circle). Check that as $k$ varies, the $\Omega$ are all coaxial.
 \end{problem}
+
 We prove the stronger condition that the radical axis of the pencil is the perpendicular bisector of $\ol{AB}$. Now, let $M$ be the midpoint of $\ol{AB}$. By \refproblem{9.17}, the power of $M$ to any $\Omega$ is just $\tfrac{1}{4}AB^2$, which is constant. In addition, since all the centers are collinear, we know that all points on the perpendicular bisector of $\ol{AB}$ also have the same property, so we have the required conclusion (as they share a radical axis). $\square$
 
 \begin{problem}[9.22]{Harmonic Bundles on the Bisector}
 Let $ABC$ be a triangle with incenter $I$ and $A$-excenter $I_A$. In addition, let $AI \cap BC = D$. Prove that \[(I,I_A; A, D) = -1.\]
 \end{problem}
+
 Notice that since $CI$ bisects $\angle ACD$, and $\angle ICI_A$ is right, $(I,I_A; A, D) = -1$ is a harmonic bundle, as required. $\square$
+
+\begin{problem}[9.26]{La Hire's Theorem}
+A point $X$ lies on the polar of a point $Y$ if and only if $Y$ lies on the polar of $X$.
+\end{problem}
+
+If a point $X$ lies on the polar of a point $Y$, then let $X'$ be the inverse of $X$. Furthermore, let $Y'$ be the point such that $Y$ is projected onto the line through $X$ parallel to $X'Y$. We know that $Y'$ is also the inverse of $Y$, so we are done. $\square$
+
+\begin{problem}[9.27]{Self-Polar Orthogonality}
+Let $\omega$ be a circle and suppose $P$ and $Q$ are points such that $P$ lies on the pole of $Q$ (and hence $Q$ lies on the pole of $P$). Prove that the
+circle $\gamma$ with diameter $\ol{PQ}$ is orthogonal to $\omega$. 
+\end{problem}
+
+Let the center of $\omega$ be $A$, and the center of $\gamma$, $M$. Furthermore, let the radius of $\omega$ be $r$. Then, notice that the orthogonality is equivalent to \[\Pow_{\gamma}(A) = r^2.\] Now, let the intersection of $AP$ with $\gamma$ be $F \neq P$. Then, we know that \[\Pow_{\gamma}(A) = AP\cdot AF.\] Hence, we wish to show that $F$ and $P$ are inverses. However, $F$ lies on the polar of $P$, and $\angle QFP = 90^\circ$, so we have the required conclusion. Thus, we are done. $\square$
+
+\begin{problem}[9.28]{}
+Let $ABC$ be an acute scalene triangle, and let $H$ be a point inside it such that $AH \perp BC$. Rays $BH$ and $CH$ meet $AC$ and $AB$ at $E$, $F$. Prove that if quadrilateral $BFEC$ is cyclic then $H$ is in fact the orthocenter of $ABC$. 
+\end{problem}
+
+By Brocard's Theorem, $P = EF \cap BC$ is the pole of $AH$. Now, since $AH \perp BC$, we know that the center of $(BCFE)$ must lie on $BC$. Thus, $BC$ is a diameter of $(BCFE)$, and $\angle BFC = \angle BEC$ are right, as required. $\square$
+
+\begin{problem}[9.31]{}
+Let $ABC$ be a triangle with circumcircle $\Gamma$. Let $X$ be the intersection of line $BC$ with the tangent to $\Gamma$ at $A$. Define $Y$ and $Z$ similarly. Show that $X$, $Y$, $Z$ are collinear.
+\end{problem}
+
+Follows from Pascal's Theorem on hexagon $AABBCC$. $\square$
+
+\begin{problem}[9.32]{}
+Let $ABCD$ be a cyclic quadrilateral and apply Pascal's theorem to $AABCCD$ and $ABBCDD$. What do we discover?
+\end{problem}
+
+The intersection of the tangents at $A$ and $C$, the intersection of the tangents at $B$ and $D$, $BC \cap AD$, and $AB \cap CD$ are all collinear. $\square$
+
+\begin{problem}[9.36]{}
+Let $\omega$ be a circle and let $P$ be a point outside it. Let $PX$ and $PY$ be tangents to $\omega$. Take a line through $P$ intersecting $\omega$ again at $A$ and $B$. Then show using projective transformations that
+\begin{enumerate}[label=(\alph*)]
+\item $AXBY$ is a harmonic quadrilateral.
+\item If $Q = AB \cap XY$, then $(A, B; Q, P)$ is a harmonic bundle.
+\end{enumerate}
+\end{problem}
+
+Take a projective transformation taking $Q$ to the center of $\omega$. Then, $P$ is a point at infinity along $AB$, so the conclusion is clear. $\square$
+
+\begin{problem}[9.37]{}
+Let $ABC$ be a triangle with concurrent cevians $\ol{AD}$, $\ol{BE}$, $\ol{CF}$ (possibly on the extensions of the sides). Line $EF$ meets $BC$
+at $X$ (possibly at a point at infinity). Then show using projective transformations that $(X, D;B,C)$ is a harmonic bundle.
+\end{problem}
+
+Take a projective transformation making $\triangle ABC$ equilateral and $P$ as its center. Then, the conclusion is clear. $\square$
+
+\newpage
+
+\begin{problem}[9.40]{Incircle Polars}
+Let $ABC$ be a triangle with contact triangle $DEF$ and incenter $I$. Lines $EF$ and $BC$ meet at $K$. Prove that $IK \perp AD$.
+\end{problem}
+
+Let $X \neq D$ be the intersection of $AD$ with the incircle. Then, since $AF$ and $AE$ are the tangents to the incircle, $XFDE$ is harmonic. Thus, $K$ is the intersection of the tangent to the incircle at $D$ and at $X$, and this shows that $K$ is the pole of $XD$, as required. $\square$
+
+\begin{problem}[9.41]{Desargues' Theorem}
+Let $ABC$ and $XYZ$ be triangles in the projective plane. We say that the two triangles are \emph{perspective from a point} if lines $AX$, $BY$, and
+$CZ$ concur (possibly at infinity), and we say they are \emph{perspective from a line} if the points $AB \cap XY$, $BC \cap YZ$, $CA \cap ZX$ are collinear. Prove that these two conditions are equivalent.
+\end{problem}
+
+Notice that the problem is purely projective, so we send the points $AB \cap XY$ and $BC \cap YZ$ to infinity (so $AB \parallel XY$ and $BC \parallel YZ$). Now, suppose that $CA \cap ZX$ is also at infinity, so that they form the line at infinity. Then, the triangles will be homothetic, so they will concur at a point,  required. Now, if the lines concur, then we know that they must be homothetic as well, due to the parallel condition. Thus, we are done. $\square$
+
+\begin{problem}[9.42]{USA TSTST 2012/4}
+In scalene triangle $ABC$, let the feet of the perpendiculars from $A$ to $\ol{BC}$, $B$ to $\ol{CA}$, $C$ to $\ol{AB}$ be $A_1$, $B_1$, $C_1$, respectively. Denote by $A_2$ the intersection of lines $BC$ and $B_1C_1$. Define $B_2$ and $C_2$ analogously. Let $D$, $E$, $F$ be the respective midpoints of sides $\ol{BC}$, $\ol{CA}$, $\ol{AB}$. Show that the perpendiculars from $D$ to $AA_2$, $E$ to $BB_2$, and $F$ to $CC_2$ are concurrent.
+\end{problem}
+
+Call the point of concurrency $H$. Notice that by Brocard's Theorem on $BC_1B_1C$, $H$ is the pole of $AA_2$, and $D$ is the orthocenter of $AA_2H$. As a result, $H$ is the orthocenter of $AA_2D$, and we are done. $\square$
+
+\begin{remark*}
+The orthocenter of triangle $ABC$ is actually $H$.
+\end{remark*}
+
+\newpage
+
+\begin{problem}[9.43]{Singapore TST}
+Let $\omega$ and $O$ be the circumcircle and circumcenter of right triangle $ABC$ with $\angle B = 90^\circ$. Let $P \neq A$ be any point on the tangent to $\omega$ at $A$ and suppose ray $PB$ intersects $\omega$ again at $D$. Point $E$ lies on line $CD$ such that $AE\parallel BC$. Prove that $P$, $O$, and $E$ are collinear. 
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -14.989140962992112, xmax = 13.392216934972977, ymin = -8.982430722864256, ymax = 8.061204568341731;
+pen ffttww = rgb(1,0.2,0.4); pen zzwwff = rgb(0.6,0.4,1); pen wwzzff = rgb(0.4,0.6,1); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (-8.640569965533299,3.364855165018686);
+pair B = (-8.596063114257976,-4.067788997960112);
+pair C = (4.711008272978479,-3.988105935761091);
+pair O = (-1.9647808462774101,-0.3116253853712023);
+pair P = (-12.181624111991955,-3.065025373617022);
+pair D = (1.755885893444752,-6.96288907087456);
+pair E = (12.138978701221554,3.4892836001489544);
+pair Q = (4.666501421703156,3.4445382272177074);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((-1.96478084627741,-0.3116253853712024), 7.621198698509995), zzwwff);
+draw(P--D, wwzzff);
+draw(P--E, wwqqcc);
+draw(P--A, wwzzff);
+draw(D--E, wwqqcc);
+draw(A--E, wwqqcc);
+draw(B--Q, ffttww+dashed);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$O$", O, N);
+dot("$P$", P, W);
+dot("$D$", D, S);
+dot("$E$", E, NE);
+dot("$Q$", Q, NE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $Q = AE \cap \omega \neq A$. Then, the result follows from Pascal's Theorem on hexagon $AAQBDC$. $\square$
+
+\begin{problem}[9.44]{Canada 1994/5}
+Let $ABC$ be an acute triangle. Let $AD$ be the altitude on $BC$, and let $H$ be any interior point on $AD$. Lines $BH$ and $CH$, when extended, intersect
+$AC$, $AB$ at $E$ and $F$ respectively. Prove that $\angle EDH = \angle FDH$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -15.619014441145383, xmax = 12.7623434568197, ymin = -8.315505863643153, ymax = 8.728129427562834;
+pen ffttww = rgb(1,0.2,0.4); pen ccwwff = rgb(0.8,0.4,1); pen wwzzff = rgb(0.4,0.6,1);
+
+pair A = (-5.170524980014633,4.837734415439729);
+pair B = (-7.72707,-3.49883);
+pair C = (3.61065,-3.49883);
+pair D = (-5.1705249800146325,-3.49883);
+pair H = (-5.1705249800146325,-1.5351031282285972);
+pair E = (-1.4599617303039418,1.3150452970496749);
+pair F = (-6.999434892296064,-1.1261055226723826);
+pair P = (-3.879425641624649,-1.8238306015670762);
+pair Q = (-12.383634613497483,-3.49883);
+
+draw(A--B--C--cycle, ffttww);
+draw(A--D, ccwwff);
+draw(B--E, ccwwff);
+draw(F--C, ccwwff);
+draw(F--D, wwzzff);
+draw(D--E, wwzzff);
+draw(Q--E, ffttww);
+draw(Q--C, ffttww);
+
+dot("$A$", A, N);
+dot("$B$", B, S);
+dot("$C$", C, SE);
+dot("$D$", D, S);
+dot("$H$", H, S);
+dot("$E$", E, NE);
+dot("$F$", F, NW);
+dot("$P$", P, S);
+dot("$Q$", Q, W);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We wish to show that $DH$ bisects $\angle EDF$. Let $P = DE \cap CF$ and $Q = EF \cap BC$. Then, it is equivalent to show that $(F,P:H,C)$ is a harmonic bundle. However, notice that \[-1 = (Q,D;B,C) \stackrel{E}{=} (F,P;H,C)\] as required. $\square$
+
+\newpage
+
+\begin{problem}[9.45]{Bulgaria 2001}
+Let $ABC$ be a triangle and let $k$ be a circle through $C$ tangent to $\ol{AB}$ at $B$. Side $\ol{AC}$ and the $C$-median of $ABC$ intersect $k$ again at $D$ and $E$, respectively. Prove that if the intersecting point of the tangents to $k$ through $C$ and $E$ lies on the line $BD$ then $\angle ABC = 90^{\circ}$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -19.809015272476206, xmax = 14.935361094028092, ymin = -10.267864509229835, ymax = 11.504068461947517;
+pen ffttww = rgb(1,0.2,0.4); pen zzwwff = rgb(0.6,0.4,1); pen wwqqcc = rgb(0.4,0,0.8); pen qqzzff = rgb(0,0.6,1);
+
+pair A = (-7.72707,9.03827);
+pair B = (-7.72707,-3.49883);
+pair C = (3.61065,-3.49883);
+pair D = (-1.490079916520107,2.1414893090325244);
+pair E = (-5.072659835925073,1.3021142702755153);
+pair P = (3.61065,6.754250441122755);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((-2.05821,-3.49883), 5.66886), zzwwff);
+draw(C--(-7.72707,2.76972), wwqqcc);
+draw(B--P, qqzzff);
+draw(E--P, qqzzff);
+draw(C--P, qqzzff);
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", D, N);
+dot("$E$", E, N);
+dot("$P$", P, N);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Clearly, $BEDC$ is harmonic. Furthermore, we require that \[(B,D;E,C) = (B,A;EC\cap AB, P_{\infty}) = -1\] and a projection at $C$ gives that $C$ must go to that point at infinity. Thus, the line tangent to $C$ at $k$ is parallel to $AB$. Thus, $BC$ is a diameter of $k$, and we are done. $\square$
 \end{document}
