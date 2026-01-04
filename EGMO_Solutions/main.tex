@@ -4853,7 +4853,7 @@ Let $ABCDEF$ be a convex hexagon such that $\angle B+\angle D+\angle F=360^\circ
 
 Toss onto the complex plane so that $(ABCDEF)$ is the unit circle. Then, we can encompass the two conditions above in the single condition: \[\dfrac{b-a}{b-c}\cdot\dfrac{d-c}{d-e}\cdot\dfrac{f-e}{f-a} = 1.\] Now, this implies that \[-ace+acf+ade-adf+bce-bcf-bde+bdf = -abd+abe+acd-ace+bdf-bef-cdf+cef\] by expansion. Moving around terms, we have that \[-abe+abf+ade-adf+bce-bcf-cde+cdf = -abd+abf+acd-acf+bde-bef-cde+cef\] which directly implies \[\dfrac{b-c}{a-c}\cdot\dfrac{a-e}{f-e}\cdot\dfrac{f-d}{b-d} = 1\] as required. $\square$
 
-\begin{problem}[6.46]{ELMO SL 2013}
+\begin{problem}[6.46]{ELMO SL 2013/G7}
 Let $ABC$ be a triangle inscribed in circle $\omega$, and let the medians from $B$ and $C$ intersect $\omega$ at $D$ and $E$ respectively. Let $O_1$ be the center of the circle through $D$ tangent to $AC$ at $C$, and let $O_2$ be the center of the circle through $E$ tangent to $AB$ at $B$. Prove that $O_1$, $O_2$, and the nine-point center of $\triangle ABC$ are collinear.
 \end{problem}
 
@@ -5075,8 +5075,13 @@ By similar triangles, we have that \[\dfrac{BP}{AB} = \dfrac{AB}{BC} \implies BP
 =& 0
 \end{align*}
 as desired. $\square$
+
 \begin{remark*}
 The symmedian point $K$ lies on $AD$.
+\end{remark*}
+
+\begin{remark*}
+For a projective solution, look to \refproblem{9.47}.
 \end{remark*}
 
 \begin{problem}[7.34]{EGMO 2013/1, barycentric}
@@ -5750,7 +5755,7 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 
 Consider a negative inversion $\Phi$ taking the nine-point circle to $(ABC)$. Then, notice that $\Phi(F) = A$ and $\Phi(M) = Q$. As a result, \[\Phi((KQH)) = K^*M \qquad \Phi((FKM)) = (AK^*Q).\] Thus, we wish to show that $K^*M$ is tangent to $(AK^*Q)$. Now, we know that $\angle QKH = \angle K^*MH = 90^\circ$, and we know that $AQ \perp QM$, so as a result, $AQ \parallel K^*M$. Thus, we wish to show that $K^*A = K^*Q$. Now, notice that the midpoints of $\ol{AH}$ and $\ol{QH}$ both lie on the nine-point circle, and the midpoint of $\ol{AH}$ is the antipode of $M$. Thus, the angle with $K^*$, the midpoint of $\ol{AH}$, and the midpoint of $\ol{QH}$ form a right angle, and so $K^*$ lies on the perpendicular bisector of $\ol{AQ}$ as required. $\square$
 
-\begin{problem}[8.37]{ELMO SL 2013}
+\begin{problem}[8.37]{ELMO SL 2013/G5}
 Let $\omega_1$ and $\omega_2$ be two orthogonal circles, and let the center of $\omega_1$ be $O$. Diameter $\ol{AB}$ of $\omega_1$ is selected so that $B$ lies strictly inside $\omega_2$. The two circles tangent to $\omega_2$ through both $O$ and $A$ touch $\omega_2$ at $F$ and $G$. Prove that quadrilateral $FOGB$ is cyclic.
 \end{problem}
 
@@ -5884,7 +5889,7 @@ Start by noticing that quadrilateral $ABCD$ is harmonic. Now, taking perspectivi
 For a synthetic solution, refer to \refproblem{1.43}.
 \end{remark*}
 \begin{problem}[9.17]{Midpoint Lengths}
-Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = -1$. Let $M$ be the midpoint of $\overline{AB}$. Show that $MX \cdot MP = \tfrac{1}{4}AB^2$ and $P X \cdot PM = P A \cdot P B$. 
+Points $A$, $X$, $B$, $P$ lie on a line in that order, and $(A, B; X, P) = -1$. Let $M$ be the midpoint of $\ol{AB}$. Show that $MX \cdot MP = \tfrac{1}{4}AB^2$ and $P X \cdot PM = P A \cdot P B$. 
 \end{problem}
 
 Construct the circle with diameter $\ol{AB}$. Then, let $N$ be a point of tangency from $P$ to the circle. We then find that $\triangle MXN \sim \triangle MNP$, so we have the ratio \[\dfrac{MX}{MN} = \dfrac{MN}{MP} \implies MX\cdot MP = MN^2 = \tfrac{1}{4}AB^2\] as required. Furthermore, we know that $\triangle NXP \sim \triangle MNP$, so we may write \[\dfrac{PX}{PN} = \dfrac{PN}{PM} \implies PX\cdot PM = PN^2 = PA\cdot PB\] where the last equation is by Power of a Point. $\square$
@@ -5976,7 +5981,7 @@ Notice that the problem is purely projective, so we send the points $AB \cap XY$
 In scalene triangle $ABC$, let the feet of the perpendiculars from $A$ to $\ol{BC}$, $B$ to $\ol{CA}$, $C$ to $\ol{AB}$ be $A_1$, $B_1$, $C_1$, respectively. Denote by $A_2$ the intersection of lines $BC$ and $B_1C_1$. Define $B_2$ and $C_2$ analogously. Let $D$, $E$, $F$ be the respective midpoints of sides $\ol{BC}$, $\ol{CA}$, $\ol{AB}$. Show that the perpendiculars from $D$ to $AA_2$, $E$ to $BB_2$, and $F$ to $CC_2$ are concurrent.
 \end{problem}
 
-Call the point of concurrency $H$. Notice that by Brocard's Theorem on $BC_1B_1C$, $H$ is the pole of $AA_2$, and $D$ is the orthocenter of $AA_2H$. As a result, $H$ is the orthocenter of $AA_2D$, and we are done. $\square$
+Call the point of concurrency $H$. Notice that by Brocard's Theorem on $BC_1B_1C$, $H$ is the pole of $AA_2$, and $D$ is the orthocenter of $AA_2H$. As a result, $H$ is the orthocenter of $AA_2D$. $\square$
 
 \begin{remark*}
 The orthocenter of triangle $ABC$ is actually $H$.
@@ -6111,4 +6116,396 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{center}
 
 Clearly, $BEDC$ is harmonic. Furthermore, we require that \[(B,D;E,C) = (B,A;EC\cap AB, P_{\infty}) = -1\] and a projection at $C$ gives that $C$ must go to that point at infinity. Thus, the line tangent to $C$ at $k$ is parallel to $AB$. Thus, $BC$ is a diameter of $k$, and we are done. $\square$
+
+\begin{problem}[9.46]{ELMO SL 2012/G3}
+Let $ABC$ be a triangle with incenter $I$. The foot of the perpendicular from $I$ to $BC$ is $D$, and the foot of the perpendicular from $I$ to $AD$ is $P$. Prove that $\angle BPD = \angle DPC$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -15.694531306669717, xmax = 5.667162098277674, ymin = -5.446236927044979, ymax = 7.939680611303118;
+pen ffttww = rgb(1,0.2,0.4); pen qqzzff = rgb(0,0.6,1); pen wwqqcc = rgb(0.4,0,0.8); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-9.168896506724952,5.987567636960687);
+pair B = (-7.72707,-3.49883);
+pair C = (3.61065,-3.49883);
+pair I = (-5.218373551470239,-0.5800289390151371);
+pair D = (-5.218373551470239,-3.49883);
+pair P = (-6.25423862047516,-1.0114054098586613);
+pair Q = (-12.227295610980175,-3.49883);
+pair E = (-3.478647380684786,1.7636332559887737);
+pair F = (-8.104034631114123,-1.0186173189739016);
+pair X = (-7.290103689480081,1.4760191802826774);
+
+draw(A--B--C--cycle, ffttww);
+draw(F--D--E--X--cycle, ffzztt);
+draw(circle(I, 2.9188010609848623), qqzzff);
+draw(A--D, wwqqcc);
+draw(B--P, wwqqcc);
+draw(P--C, wwqqcc);
+draw(Q--C, ffttww);
+draw(Q--I, wwqqcc);
+draw(F--D, ffzztt);
+draw(D--E, ffzztt);
+draw(E--X, ffzztt);
+draw(X--F, ffzztt);
+
+dot("$A$", A, N);
+dot("$B$", B, S);
+dot("$C$", C, SE);
+dot("$I$", I, NE);
+dot("$D$", D, S);
+dot("$P$", P, dir(60));
+dot("$Q$", Q, SW);
+dot("$E$", E, NE);
+dot("$F$", F, W);
+dot("$X$", X, NE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $E$ be the contact point of the incircle with $\ol{AC}$ and similarly for $F$, and let $X \neq D$ be the second intersection point of $AD$ with the incircle. Furthermore, let $Q = PI \cap BC$. Then, by \refproblem{9.40}, the line formed with $I$ and $EF \cap BC$ is perpendicular to $AD$, and thus, $Q' = Q$. As a result, $(Q, D; B, C)$ is harmonic, and as $\angle QPD = 90^{\circ}$, this finishes. $\square$
+
+\begin{problem}[9.47]{IMO 2014/4}
+Let $P$ and $Q$ be on segment $\ol{BC}$ of an acute triangle $ABC$ such that $\angle PAB = \angle BCA$ and $\angle CAQ = \angle ABC$. Let $M$ and $N$ be the points on $AP$ and $AQ$, respectively, such that $P$ is the midpoint of $\ol{AM}$ and $Q$ is the midpoint of $\ol{AN}$. Prove that the intersection of $BM$ and $CN$ is on the circumference of triangle $ABC$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -8.755517809416997, xmax = 13.833992128854836, ymin = -8.714661141915444, ymax = 6.0464950446791335;
+pen zzttqq = rgb(0.6,0.2,0); pen ffqqtt = rgb(1,0,0.2); pen qqwwzz = rgb(0,0.4,0.6); pen wwzzff = rgb(0.4,0.6,1); pen ccwwff = rgb(0.8,0.4,1); pen ttttff = rgb(0.2,0.2,1);
+
+pair A = (0.42,3.8);
+pair B = (-2.34,-1.52);
+pair C = (6.5,-1.74);
+pair P = (1.7208333120188253,-1.6210614625163058);
+pair Q = (-1.1488825229557265,-1.549643195130061);
+pair M = (3.0216666240376506,-7.042122925032611);
+pair N = (-2.717765045911453,-6.899286390260122);
+pair D = (0.9109588871140336,-4.868248941548673);
+
+draw(A--B--C--cycle, zzttqq);
+draw(B--P--A--cycle, ffqqtt);
+draw(A--Q--C--cycle, qqwwzz);
+
+draw(A--B, zzttqq);
+draw(B--C, zzttqq);
+draw(C--A, zzttqq);
+draw(B--P, ffqqtt);
+draw(P--A, ffqqtt);
+draw(A--B, ffqqtt);
+draw(A--Q, qqwwzz);
+draw(Q--C, qqwwzz);
+draw(C--A, qqwwzz);
+draw(P--M, wwzzff);
+draw(Q--N, wwzzff);
+draw(B--M, ccwwff);
+draw(N--C, ccwwff);
+draw(circle((2.1093080863212696,-0.45234780418171117), 4.5756118343058185), dotted + ttttff);
+draw(A--D, linetype("2 2"));
+
+dot("$A$", A, dir(90));
+dot("$B$", B, W);
+dot("$C$", C, E);
+dot("$P$", P, NE);
+dot("$Q$", Q, NE);
+dot("$M$", M, SE);
+dot("$N$", N, SW);
+dot("$D$", D, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Notice that the tangent at $B$ to $(ABC)$ is parallel to $AM$. Thus, \[-1 = (A,M;P,P_{\infty}) = (A,X;C,B)\] where $X = BM \cap (ABC) \neq B$, so $ACXB$ is harmonic. In addition, if $Y = CN \cap (ABC) \neq C$, then $ACYB$ is also harmonic by similar logic, so $X = Y$, and we are done. $\square$
+
+\begin{remark*}
+For a barycentric solution, look to \refproblem{7.33}.
+\end{remark*}
+
+\newpage
+
+\begin{problem}[9.48]{ISL 2004/G8}
+Given a cyclic quadrilateral $ABCD$, let $M$ be the midpoint of the side $\ol{CD}$, and let $N$ be a point on $(ABM)$. Assume that the point $N \neq M$ and satisfies \[\dfrac{AN}{BN} = \dfrac{AM}{BM}.\] Prove that the points $E$, $F$, $N$ are collinear, where $E = AC \cap BD$ and $F = BC \cap DA$. 
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -17.366023594835035, xmax = 3.832267010905154, ymin = -7.238829507204166, ymax = 7;
+pen qqzzff = rgb(0,0.6,1); pen ffttww = rgb(1,0.2,0.4); pen ccwwff = rgb(0.8,0.4,1); pen zzwwff = rgb(0.6,0.4,1);
+
+pair A = (-7.889266664418778,3.1218963438728107);
+pair B = (-7.72707,-3.49883);
+pair C = (2.39255632763439,-1.7406501664227279);
+pair D = (-6.264670028158667,4.73290657785438);
+pair M = (C + D)/2;
+pair N = (-9.55565568200308,0.2214161678487756);
+pair F = (-16.018533040382554,-4.939385474725683);
+pair E = (-6.654605095875252,2.5379921756958708);
+pair H = (-5.046570316705129,3.8220562340828503);
+pair G = intersectionpoint(A--2*A-B,C--2*D-C);
+pair O = (-3.109663657332503,-0.07336136282618348);
+
+draw(A--B--C--D--cycle, ffttww);
+draw(circle(O, 5.74928488749405), qqzzff);
+draw(G--B, ffttww);
+draw(B--C, ffttww);
+draw(C--G, ffttww);
+draw(D--A, ffttww);
+draw(circle((-5.579792433701486,-0.13387536497681857), 3.9917064825075586), qqzzff);
+draw(C--A, ccwwff);
+draw(B--D, ccwwff);
+draw(F--D, ffttww);
+draw(F--C, ffttww);
+draw(F--H, zzwwff);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, dir(0));
+dot("$D$", D, dir(90));
+dot("$M$", M, NE);
+dot("$N$", N, dir(-120));
+dot("$F$", F, W);
+dot("$E$", E, dir(-70));
+dot("$H$", H, NE);
+dot("$G$", G, dir(90));
+dot("$O$", O, W);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Clearly, $NAMB$ is harmonic. Now, let $G = AB \cap CD$ and $H = EF \cap BC$.
+
+\begin{claim*}
+Point $H$ lies on $(ABM)$.
+\end{claim*}
+\begin{proof}
+Notice that in $\triangle CDF$, we have cevians $CA$, $DB$, and $FH$, which concur at $E$. Thus, $(C,D;H,G)$ is a harmonic bundle. Now, by \refproblem{9.17}, we know that \[GH\cdot GM = GC\cdot GD = GA \cdot GB\] so we have the required conclusion.
+\end{proof}
+
+Now, notice that \[-1 = (C,D;H,G) \stackrel{F}{=} (B,A;AB \cap EF, G)\] and \[-1 = (B,A;N,M) \stackrel{H}{=} (B,A; NH\cap AB, G)\] so $N$ must lie on $EF$, and we are done. $\square$
+
+\newpage
+
+\begin{problem}[9.49]{Sharygin 2013/1/16}
+The incircle of triangle $ABC$ touches $BC$, $CA$, and $AB$ at points $A'$, $B'$, and $C'$ respectively. The perpendicular from the incenter $I$ to the $C$-median meets the line $A'B'$ at $K$. Prove that $CK\parallel AB$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -22.93296404192154, xmax = 3.7044333078138414, ymin = -7.814623479516631, ymax = 8.87721820177956;
+pen ffttww = rgb(1,0.2,0.4); pen ccwwff = rgb(0.8,0.4,1); pen qqzzff = rgb(0,0.6,1); pen ffzzqq = rgb(1,0.6,0); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255);
+
+pair A = (-17.628567859561258,6.4134688335943215);
+pair B = (-13.57468,-4.11167);
+pair C = (-4.60831,-4.11167);
+pair I = (-11.823233573917346,-1.560209456242414);
+pair A1 = (-11.823233573917346,-4.11167);
+pair B1 = (-10.219246904522814,0.42402280605864906);
+pair C1 = (-14.204191403963925,-2.477264916883493);
+pair M = (-15.60162392978063,1.1508994167971607);
+pair K = (-8.369708676279739,5.654077018129606);
+pair D = (-10.778665978408492,-1.157881281681098);
+pair E = (-11.471798427319529,-0.8260743624274294);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle(I, 2.551460543757586), ccwwff);
+draw(M--C, ccwwff);
+draw(A1--K, qqzzff);
+draw(I--K, ffzzqq);
+draw(K--C, qqzzff);
+draw(circle((-8.215771786958673,-2.8359397281212066), 3.8263910243145562), yqqqyq+dashed);
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$I$", I, NW);
+dot("$A'$", A1, S);
+dot("$B'$", B1, dir(30));
+dot("$C'$", C1, W);
+dot("$M$", M, W);
+dot("$K'$", K, N);
+dot("$D$", D, NE);
+dot("$E$", E, N);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $M$ be the midpoint of $\ol{AB}$, $D = CM \cap A'B'$, and $K'$ be the intersection of $A'B'$ and the line parallel to $AB$ through $C$. In addition, $E$ be the foot of $I$ to $CM$. We wish to show that $\angle K'ED$ is right. Notice that \[-1 = (A,B;P_{\infty},M) \stackrel{C}{=} (B', A'; K', D)\] so it is a harmonic bundle. Now, notice that \[\angle A'ED = \angle A'B'C = \angle B'A'C = \angle B'ED\] and since $(B', A';K',D)$ is a harmonic bundle, we are done. $\square$
+
+\newpage
+
+\begin{problem}[9.50]{ISL 2004/G2}
+Let $\Gamma$ be a circle and let $d$ be a line such that $\Gamma$ and $d$ have no common points. Further, let $\ol{AB}$ be a diameter of the circle $\Gamma$ such that $AB \perp d$, and the point $B$ is nearer to $d$ than $A$. Let $C \not\in \{A, B\}$ be an arbitrary point on $\Gamma$ and let $D = AC \cap d$. One of the two tangents at $D$ to the circle $\Gamma$ touches it at a point $E$ where $B$ and $E$ are on the same side of $AC$. Furthermore, let $F = BE \cap d$. Finally, let $G = AF \cap \Gamma \neq A$. Prove that the reflection of $G$ over $AB$ lies on $CF$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(12cm);
+real xmin = -21, xmax = 2.2500125831189157, ymin = -8.019013174935774, ymax = 12.214175054835977;
+pen ffqqtt = rgb(1,0,0.2); pen wwqqcc = rgb(0.4,0,0.8); pen wwzzff = rgb(0.4,0.6,1); pen cczzff = rgb(0.8,0.6,1); pen ttttff = rgb(0.2,0.2,1); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-19.51505300234463,-2.4678316778012928);
+pair B = (-7.294346997655373,0.9570916778012921);
+pair C = (-8.083736031378045,2.7024156000375266);
+pair D = (-5.374131622768526,3.9279371084704136);
+pair E = (-7.326643277016389,-2.5791477505479423);
+pair F = (-7.207469803561276,10.469597924905866);
+pair G = (-11.999077781834828,5.432777137148601);
+pair G1 = (-8.987864903828532,-5.311739886700151);
+
+draw(circle((-13.4047,-0.75537), 6.345781182108314), ffqqtt);
+draw((xmin, -3.5681691926618697*xmin-15.247873785202179)--(xmax, -3.5681691926618697*xmax-15.247873785202179), ffqqtt);
+draw(A--B, wwqqcc);
+draw(A--D, wwzzff);
+draw(D--E, cczzff);
+draw(F--E, ttttff);
+draw(A--F, ttttff);
+draw(G1--F, ffzztt+dashed);
+draw(G--D, cczzff);
+
+dot("$A$", A, W);
+dot("$B$", B, NE);
+dot("$C$", C, NE);
+dot("$D$", D, NE);
+dot("$E$", E, NE);
+dot("$F$", F, NE);
+dot("$G$", G, N);
+dot("$G'$", G1, SE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+By Pascal's Theorem on $AGEEBC$, $GE \cap BC$ lies on $d$. Furthermore, by Pascal's Theorem on $CG'GEBB$, we know that $GE \cap BC$, $G'G \cap BB = P_{\infty}$, and $CG' \cap EB$ are all collinear. Thus, the line through $GE \cap BC$ and $CG' \cap EB$ is parallel to $GG'$, so it is perpendicular to $AB$, and so it is parallel to $d$. However, since $GE \cap BC \in d$, we know that $CG' \cap EB$ lies on $d$, and we are done. $\square$
+
+\newpage
+
+\begin{problem}[9.51]{USA January TST for IMO 2013}
+Let $ABC$ be an acute triangle. Circle $\omega_1$, with diameter $\ol{AC}$, intersects side $\ol{BC}$ at $F \neq C$. Circle $\omega_2$, with diameter $\ol{BC}$, intersects $\ol{AC}$ at $E \neq C$. Ray $AF$ intersects $\omega_2$ at $K$ and $M$ with $AK < AM$. Ray $BE$ intersects $\omega_1$ at $L$ and $N$ with $BL < BN$. Prove that lines $AB$, $ML$, $NK$ are concurrent.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(9.5cm);
+real xmin = -25, xmax = -5, ymin = -9.524081138609665, ymax = 12.430126144609881;
+pen ffttww = rgb(1,0.2,0.4); pen qqzzff = rgb(0,0.6,1); pen ccwwff = rgb(0.8,0.4,1); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-18.968031606990486,9.545368945295053);
+pair B = (-21.69259,-2.53919);
+pair C = (-9.59483,-2.53919);
+pair F = (-18.968031606990486,-2.53919);
+pair E = (-14.139085882374353,3.3195688718993384);
+pair K = (-18.968031606990486,2.514307314503706);
+pair M = (-18.968031606990486,-7.592687314503707);
+pair L = (-20.178577699959565,-1.3648697299774462);
+pair N = (-8.099594064789141,8.004007473776124);
+pair P = (-20.75696265032431,1.610709626668262);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((-14.281430803495244,3.5030894726475266), 7.646788104616207), qqzzff);
+draw(circle((-15.64371,-2.53919), 6.04888), qqzzff);
+draw(circumcircle(K, M, N), qqzzff + dotted);
+draw(A--M, ccwwff);
+draw(B--N, ccwwff);
+draw(P--M, ffzztt+dashed);
+draw(P--N, ffzztt+dashed);
+
+dot("$A$", A, dir(90));
+dot("$B$", B, W);
+dot("$C$", C, SE);
+dot("$F$", F, NE);
+dot("$E$", E, S);
+dot("$K$", K, dir(60));
+dot("$M$", M, S);
+dot("$L$", L, NE);
+dot("$N$", N, NE);
+dot("$P$", P, NW);
+dot("$H$", intersectionpoint(B--N, A--M), dir(60));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We begin with a claim.
+
+\begin{claim*}
+The quadrilateral $MLKN$ is cyclic with center $C$.
+\end{claim*}
+\begin{proof}
+Notice that $KM$ and $LN$ intersect at $H$, the orthocenter of $\triangle ABC$. Thus, $KM \cap LN$ lies on the radical axis of $\omega_1$ and $\omega_2$, and we are done. It remains to show that the center is $C$. However, this is clear, since the perpendicular bisectors of $\ol{KM}$ and $\ol{LN}$ intersect at $C$.
+\end{proof}
+
+\begin{claim*}
+The polar of $H$ with respect to $(MLKN)$ is $AB$.
+\end{claim*}
+\begin{proof}
+Notice that the distance from $C$ to $AB$ is $BC\sin(B)$. Furthermore, \[\dfrac{CH}{BC} = \dfrac{FC}{BC\sin(B)} \implies CH = \dfrac{BC \cdot FC}{BC \sin(B)}.\] Thus, the product of these two is just $BC\cdot FC$. On the other hand, $CM^2 = BC \cdot FC$ by similar triangles. Thus, this is indeed true.
+\end{proof}
+
+As a result, by Brocard's Theorem, $KL \cap MN$ and $LM \cap KN = P$ must form the line $AB$, so we have the required conclusion. $\square$
+
+\begin{problem}[9.52]{Brazil 2011/5}
+Let $ABC$ be an acute triangle with orthocenter $H$ and altitudes $\ol{BD}$ and $\ol{CE}$. The circle $(ADE)$ cuts $(ABC)$ at $F \neq A$. Prove that the angle bisectors of $\angle BFC$ and $\angle BHC$ concur at a point on $BC$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(8cm);
+real xmin = -28.021658713109268, xmax = -2.215572665559474, ymin = -6, ymax = 10.482286615632948;
+pen ffttww = rgb(1,0.2,0.4); pen qqzzff = rgb(0,0.6,1); pen ccwwff = rgb(0.8,0.4,1); pen wwqqcc = rgb(0.4,0,0.8); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-18.214850328063324,9.180151224113565);
+pair B = (-21.69259,-2.53919);
+pair C = (-9.59483,-2.53919);
+pair H = (-18.214850328063324,0.018819541195343906);
+pair H1 = (-18.214850328063324,-5.0971995412);
+pair D = (-13.84208144131003,3.2351570445508124);
+pair E = (-20.713462774471257,0.7602881496686739);
+pair F = (-22.795456128720122,4.576032235751239);
+pair P = (-17.768233112194448,-2.53919);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((-15.64371,2.041475841459112), 7.5875851761618), qqzzff);
+draw(circle((-18.214850328063324,4.599485382654454), 4.580665841459111), qqzzff);
+draw(B--D, ccwwff);
+draw(C--E, ccwwff);
+draw(F--B, wwqqcc);
+draw(F--C, wwqqcc);
+draw(F--P, ffzztt+dashed);
+draw(H--P, ffzztt+dashed);
+draw(B--H1--C, ccwwff+dashed);
+draw(H1--P, ffzztt+dashed);
+
+dot("$A$", A, N);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$H$", H, N);
+dot("$H'$", H1, SW);
+dot("$D$", D, NE);
+dot("$E$", E, NW);
+dot("$F$", F, NW);
+dot("$P$", P, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let the reflection of $H$ over $BC$ be $H'$.
+
+\begin{claim*}
+Quadrilateral $FBH'C$ is harmonic.
+\end{claim*}
+\begin{proof}
+Notice that by the Radical Axis Theorem on $(AFED)$, $(AFBC)$ and $(BEDC)$, $AF$, $ED$, and $BC$ all concur. Thus, \[-1 = (ED \cap BC, AH \cap BC; B, C) = (AF \cap BC, AH \cap BC; B, C) \stackrel{A}{=} (F, H; E, D) \stackrel{A}{=} (F, H'; B, C)\] as required.
+\end{proof}
+
+Thus, \[\dfrac{BF}{BH'} = \dfrac{CF}{CH'} \implies \dfrac{BF}{CF} = \dfrac{BH'}{CH'}\] and we are done. $\square$
 \end{document}
