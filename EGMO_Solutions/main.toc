@@ -5,5 +5,5 @@
 \contentsline {section}{\numberline {5}Computational Geometry}{71}{section.5}%
 \contentsline {section}{\numberline {6}Complex Numbers}{82}{section.6}%
 \contentsline {section}{\numberline {7}Barycentric Coordinates}{100}{section.7}%
-\contentsline {section}{\numberline {8}Inversion}{116}{section.8}%
-\contentsline {section}{\numberline {9}Projective Geometry}{124}{section.9}%
+\contentsline {section}{\numberline {8}Inversion}{117}{section.8}%
+\contentsline {section}{\numberline {9}Projective Geometry}{125}{section.9}%
