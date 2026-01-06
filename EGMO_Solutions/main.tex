@@ -6533,7 +6533,7 @@ In $\triangle ABC$, a point $D$ lies on line $BC$. The $(ABD)$ meets $AC$ at $F 
 \begin{center}
 \begin{asy}
 import graph;
-size(12cm);
+size(7.5cm);
 real xmin = -38.08212638231978, xmax = -3.4984231833123896, ymin = -8.07977894806316, ymax = 13.591471098312134;
 pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen ffzztt = rgb(1,0.6,0.2); pen ccwwff = rgb(0.8,0.4,1); pen ffwwzz = rgb(1,0.4,0.6);
 
@@ -6569,9 +6569,116 @@ clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
 \end{asy}
 \end{center}
 
-Let $M$ be the midpoint of $\ol{BC}$ and $P$ the foot of the the altitude from $H$ to $AM$. Then, we wish to show that $AFPE$ is cyclic. Inverting about $A$, we get a new problem:
+Let $M$ be the midpoint of $\ol{BC}$ and $P$ the foot of the the altitude from $H$ to $AM$. Then, we wish to show that $AFPE$ is cyclic. Now, consider a force-overlay inversion about $A$, call it $\Phi$. Then, the new problem is as follows:
+
+Let $ABCD$ be a cyclic quadrilateral, and let $E = BD \cap AC$ and $F = AB \cap CD$. Then, show that $EF$ passes through a fixed point lying on the $A$-symmedian.
+
+\begin{center}
+\begin{asy}
+import graph;
+size(7cm);
+real xmin = -46.050673523763216, xmax = 21.716782756101985, ymin = -23.585542700689306, ymax = 17.847409843476914;
+pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen zzwwff = rgb(0.6,0.4,1); pen ffzztt = rgb(1,0.6,0.2); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (-22.765176685635975,11.035852069846012);
+pair B = (-21.69259,-2.53919);
+pair C = (-8.201881338838602,-4.871747462809504);
+pair D = (-2.846750624460082,1.5658708074778183);
+pair F = (-20.354040902595354,-19.48034781331771);
+pair E = (-12.225255421580687,-0.47698500319893666);
+pair T = (-15.856998647097685,-8.96722432725054);
+
+draw(A--B--C--D--cycle, ffttww);
+draw(C--D, ffttww);
+draw(D--A, ffttww);
+draw(circle((-13.452114288685415,4.9417981771925135), 11.129718058246569), wwzzff);
+draw(B--D, zzwwff);
+draw(C--A, zzwwff);
+draw(F--E, ffzztt+dashed);
+draw(A--T, wwqqcc);
+draw(A--F, ffttww);
+draw(F--D, ffttww);
+draw(B--T, wwqqcc);
+draw(T--C, wwqqcc);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", D, dir(0));
+dot("$F$", F, S);
+dot("$E$", E, N);
+dot("$T$", T, dir(-60));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We claim that this point is the intersection of the tangents at $B$ and $C$ (call it $T$). By Brocard's Theorem, the pole of $EF$ is $AD \cap BC$, so the polar of $T$ must pass through $AD \cap BC$. However, the polar of $T$ is just $BC$, so we are done. $\square$
 
 \begin{remark*}
 A barycenteric solution can be found as \refproblem{7.35}.
 \end{remark*}
+
+\begin{problem}[9.54]{APMO 2008/3}
+Let $ABC$ be a triangle. A circle passing through points $A$ and $C$ meets the sides $\ol{BC}$ and $\ol{AB}$ at $D$ and $E$, respectively. The lines $AD$ and $CE$ meet $(ABC)$ again at $G$ and $H$, respectively. The tangent lines to $(ABC)$ at $A$ and $C$ meet the line $DE$ at $L$ and $M$, respectively. Prove that the lines $LH$ and $MG$ meet at $(ABC)$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -7.916540161446352, xmax = 10.404569724248793, ymin = -5.21816154348399, ymax = 5.9833460550239455;
+pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen wwqqcc = rgb(0.4,0,0.8); pen ttttff = rgb(0.2,0.2,1); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-2.4,3.18);
+pair B = (-3.5,-2.34);
+pair C = (2.94,-2.34);
+pair D = (-0.42,-2.34);
+pair E = (-2.8112864736556356,1.1160896958371778);
+pair H = (-3.7586790320233723,1.6854012183783875);
+pair G = (0.17581702083115314,-4.001065633832305);
+pair L = (-3.6723833940355695,2.360619879246222);
+pair M = (1.26,-4.768078255354445);
+pair P1 = (-4.098927708431797,-0.9768684050181313);
+pair P = (-2.4,-1.2758695652173913);
+
+draw(A--B--C--cycle, ffttww);
+draw(circle((1.26,1.3777173913043481), 4.079684130126597), wwzzff+dotted);
+draw(circle((-0.28,-0.11206521739130437), 3.9156217125199495), wwzzff);
+draw(A--G, wwqqcc);
+draw(C--H, wwqqcc);
+draw(A--L--M--C, ttttff);
+draw(L--P1--M, ffzztt+dashed);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", D, SW);
+dot("$E$", E, NE);
+dot("$H$", H, NW);
+dot("$G$", G, S);
+dot("$L$", L, NW);
+dot("$M$", M, S);
+dot("$P'$", P1, W);
+dot("$P$", P, S);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We solve the problem without the condition that $AEDC$ is cyclic. Then, notice that the problem is purely projective, so send $C$ such that $AC$ is a diameter, and $D$ such that the line through $B$ and $AD \cap CE$ passes through the center of the circle. Then, $ALMC$ is a rectangle, $ALHE$ is cyclic, and $CMGD$ is also cyclic. Thus,
+\begin{align*}
+\angle HP'G &= \angle LP'M \\
+&= 180 - \angle HLE - \angle DMG \\
+&= 180 - \angle HAE - \angle DCG \\
+&= 180 - \angle HCB - \angle BCG \\
+&= 180 - \angle HCG
+\end{align*}
+and we are done. $\square$
+
+\newpage
+
+\begin{problem}[9.55]{Brianchon's Theorem}
+Let $ABCDEF$ be a hexagon circumscribed about a circle $\omega$. Prove that $AD$, $BE$, $CF$ are concurrent.
+\end{problem}
+
+Let $A'$ be the tangency point of $AB$ with the circle and so on. Then, notice that $A'B' \cap D'E'$ is the intersection of the polar of $A$ and the polar of $D$, so the polar of $A'B' \cap D'E'$ is $AD$. Now, by Pascal's Theorem, $A'B' \cap D'E'$, $B'C' \cap E'F'$, and $C'D' \cap A'F'$ are all collinear, so the pole of the line through this is the required collinearity point. $\square$
 \end{document}

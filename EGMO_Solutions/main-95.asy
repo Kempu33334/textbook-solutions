@@ -20,7 +20,7 @@ pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
 
 import graph;
-size(12cm);
+size(7.5cm);
 real xmin = -38.08212638231978, xmax = -3.4984231833123896, ymin = -8.07977894806316, ymax = 13.591471098312134;
 pen ffttww = rgb(1,0.2,0.4); pen wwzzff = rgb(0.4,0.6,1); pen ffzztt = rgb(1,0.6,0.2); pen ccwwff = rgb(0.8,0.4,1); pen ffwwzz = rgb(1,0.4,0.6);
 

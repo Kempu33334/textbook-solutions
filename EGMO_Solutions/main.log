@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  4 JAN 2026 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.27)  5 JAN 2026 14:46
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2200,14 +2200,33 @@ Package pdftex.def Info: main-94.pdf  used on input line 6513.
 [138 <./main-94.pdf>]
 \openout4 = `main-95.asy'.
 
-<main-95.pdf, id=2004, 341.93448pt x 255.72037pt>
+<main-95.pdf, id=2004, 217.65717pt x 163.75578pt>
 File: main-95.pdf Graphic file (type pdf)
 <use main-95.pdf>
 Package pdftex.def Info: main-95.pdf  used on input line 6569.
-(pdftex.def)             Requested size: 341.93364pt x 255.71973pt.
+(pdftex.def)             Requested size: 217.65662pt x 163.75537pt.
+\openout4 = `main-96.asy'.
+
+<main-96.pdf, id=2005, 139.64471pt x 212.73277pt>
+File: main-96.pdf Graphic file (type pdf)
+<use main-96.pdf>
+Package pdftex.def Info: main-96.pdf  used on input line 6612.
+(pdftex.def)             Requested size: 139.64436pt x 212.73224pt.
 
 
-[139 <./main-95.pdf>] (./main.aux)
+[139 <./main-95.pdf> <./main-96.pdf>]
+\openout4 = `main-97.asy'.
+
+<main-97.pdf, id=2028, 280.0071pt x 297.30173pt>
+File: main-97.pdf Graphic file (type pdf)
+<use main-97.pdf>
+Package pdftex.def Info: main-97.pdf  used on input line 6664.
+(pdftex.def)             Requested size: 280.00641pt x 297.301pt.
+
+
+[140 <./main-97.pdf>]
+
+[141] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-24>
@@ -2216,10 +2235,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4DC4D440D7146B519CF827C7590CD1B1;1156.
  ) 
 Here is how much of TeX's memory you used:
- 34555 strings out of 467747
- 677119 string characters out of 5431120
- 1135503 words of memory out of 5000000
- 62156 multiletter control sequences out of 15000+600000
+ 34585 strings out of 467747
+ 677645 string characters out of 5431120
+ 1135619 words of memory out of 5000000
+ 62180 multiletter control sequences out of 15000+600000
  684049 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,16n,135p,1801b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2243,10 +2262,10 @@ e1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy1
 025/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2025/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb>
-Output written on main.pdf (139 pages, 1055429 bytes).
+Output written on main.pdf (141 pages, 1064608 bytes).
 PDF statistics:
- 2196 PDF objects out of 2487 (max. 8388607)
- 1645 compressed objects within 17 object streams
- 400 named destinations out of 1000 (max. 500000)
- 704 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2229 PDF objects out of 2487 (max. 8388607)
+ 1669 compressed objects within 17 object streams
+ 404 named destinations out of 1000 (max. 500000)
+ 714 words of extra memory for PDF output out of 10000 (max. 10000000)
 
