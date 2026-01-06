@@ -1317,13 +1317,25 @@ Expanding, we find that \[\dfrac{8 x^2}{9} + \dfrac{8 y^2}{9} + \dfrac{7 x y}{9}
 Find all triples $(x, y, z)$ of positive integers such that $x \le y \le z$ and \[x^3(y^3+z^3) = 2012(xyz+2).\]
 \end{problem}
 
-Taking modulo $x$, we find that \[4024 \equiv 0 \pmod{x}\] so $x \mid 2^3 \cdot 503 = 4024$. Now, if $503 \mid x$, then we know that $\nu_{503}(x^3(y^3+z^3)) \ge 3$ and $\nu_{503}(2012(xyz+3)) = 1$. Thus, $503 \nmid x$, so $x \mid 8$. We now case.
+Taking modulo $x$, we find that \[4024 \equiv 0 \pmod{x}\] so $x \mid 2^3 \cdot 503 = 4024$. Now, if $503 \mid x$, then we know that $\nu_{503}(x^3(y^3+z^3)) \ge 3$ and $\nu_{503}(2012(xyz+3)) = 1$. Thus, $503 \nmid x$, so $x \mid 8$. We now present a claim.
+
+\begin{claim*}
+If $y^3+z^3 \equiv 0 \pmod{503}$, then $y+z \equiv 0 \pmod{503}$.
+\end{claim*}
+\begin{proof}
+Suppose that $503 \nmid y$, $z$, since the conclusion is clearly true if so. Then, notice that \[y^3 \equiv -z^3 \equiv 0 \pmod{503} \implies \left(\dfrac{y}{z}\right)^3 \equiv -1 \pmod{503}.\] Thus, \[\left(\dfrac{y}{z}\right)^6 \equiv 1 \pmod{503}\] so the order of $\tfrac{y}{z}$ divides $6$. Clearly, if it is $1$ or $3$ then we reach a contradiction. If it is $2$, then \[\left(\dfrac{y}{z}\right)^2 \equiv -1 \pmod{503}\] so $\tfrac{y}{z}$ is congruent to $-1$ and we are done. Thus, assume the order is $6$. Then, we must have that $6 \mid (503-1)$, however this is not true, contradiction. Hence, we are done.
+\end{proof}
+
+We now case.
 
 \begin{itemize}
 \item If $x = 8$, then we have the equation \[2^9(y^3+z^3) = 2^2\cdot 5(8xyz+2)\] but the $2$-adic valuation of both sides clearly don't match.
 \item If $x = 4$, then we have the equation \[2^6(y^3+z^3) = 2^2\cdot 5(4xyz+2)\] but the $2$-adic valuation of both sides clearly don't match.
-\item If $x = 2$, then we have that \[y^3+z^3 = 503yz+503\] so $503 \mid y^3+z^3$. Now, we know that \[y^3+z^3 \equiv 0 \pmod{503}.\]
+\item If $x = 2$, then we have that \[y^3+z^3 = 503yz+503\] so $y^3+z^3 \equiv 0 \pmod{503}$. Now, by the claim, $y+z \equiv 0 \pmod{503}$. It cannot equal to $0$, so \[\left(\dfrac{y+z}{503}\right)(y^2-yz+z^2) = yz+1 \implies yz+1 \ge y^2-yz+z^2\] so $1 \ge (y-z)^2$. Now if $y = z$, then $2y^3 = 503y^2+503$, so $503 \mid y$, but this then yields a contradiction. If $y = z-1$, then we use RRT to get a solution: $(x, y, z) = \boxed{(2, 251, 252)}$ which we may check to work. Having exhausted all cases, we move on.
+\item If $x = 1$, then we have that \[y^3+z^3 = 2012yz+4024.\] Now, since $y^3+z^3 \equiv 0 \pmod{503}$, we can apply the claim to get that $y+z \equiv 0 \pmod{503}$. Since $y+z \ge 503$, \[\left(\dfrac{y+z}{503}\right)(y^2-yz+z^2) = 4yz+8 \implies 8 \ge y^2-5yz+z^2 \ge (y-z)^2.\] A finite case check then yields no solutions.
 \end{itemize}
+
+Thus, we are done. $\square$
 
 \begin{problem}[4.9.15]{Vietnam 2002/5}
 Find all positive integers $n$ for which the equation \[a+b+c+d = n\sqrt{abcd}\] has a solution in positive integers $a$, $b$, $c$, and $d$.
