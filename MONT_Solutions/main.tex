@@ -1314,8 +1314,16 @@ We claim that the only solutions are $\boxed{(1, -1)}$ and $\boxed{(-1, 1)}$ whi
 Expanding, we find that \[\dfrac{8 x^2}{9} + \dfrac{8 y^2}{9} + \dfrac{7 x y}{9} - \dfrac{2 x}{3} - \dfrac{2 y}{3} - 1 = 0.\] Treating this as a quadratic in $x$, we have that \[\dfrac{8}{9}x^2+\left(\dfrac{7y}{9}-\dfrac{2}{3}\right)x+\dfrac{8y^2}{9}-\dfrac{2y}{3}-1 = 0.\] In order for this to have real solutions, the discriminant must be non-negative, so \[\left(\dfrac{7y}{9}-\dfrac{2}{3}\right)^2-\dfrac{32}{9}\left(\dfrac{8y^2}{9}-\dfrac{2y}{3}-1\right) -\dfrac{1}{9} (23 y^2 - 12 y - 36) \ge 0.\] Solving this, we find that $|y| < 2$. Now, since the equation is symmetric in $x$ and $y$, we also have that $|x| < 2$. Thus, the equation reduces to a manual case check, from which, we discern the solutions $(1, -1)$ and $(-1, 1)$, as required. $\square$
 
 \begin{problem}[4.9.14]{ISL 2012/N2}
-Find all triples $(x, y, z)$ of positive integers such that $x \le y \le z$ and \[x^3(y^3+z^3) = 2012(xyz+3).\]
+Find all triples $(x, y, z)$ of positive integers such that $x \le y \le z$ and \[x^3(y^3+z^3) = 2012(xyz+2).\]
 \end{problem}
+
+Taking modulo $x$, we find that \[4024 \equiv 0 \pmod{x}\] so $x \mid 2^3 \cdot 503 = 4024$. Now, if $503 \mid x$, then we know that $\nu_{503}(x^3(y^3+z^3)) \ge 3$ and $\nu_{503}(2012(xyz+3)) = 1$. Thus, $503 \nmid x$, so $x \mid 8$. We now case.
+
+\begin{itemize}
+\item If $x = 8$, then we have the equation \[2^9(y^3+z^3) = 2^2\cdot 5(8xyz+2)\] but the $2$-adic valuation of both sides clearly don't match.
+\item If $x = 4$, then we have the equation \[2^6(y^3+z^3) = 2^2\cdot 5(4xyz+2)\] but the $2$-adic valuation of both sides clearly don't match.
+\item If $x = 2$, then we have that \[y^3+z^3 = 503yz+503\] so $503 \mid y^3+z^3$. Now, we know that \[y^3+z^3 \equiv 0 \pmod{503}.\]
+\end{itemize}
 
 \begin{problem}[4.9.15]{Vietnam 2002/5}
 Find all positive integers $n$ for which the equation \[a+b+c+d = n\sqrt{abcd}\] has a solution in positive integers $a$, $b$, $c$, and $d$.
