@@ -1299,6 +1299,8 @@ We proceed by induction. For the base case, notice that $n = 1$ clearly works by
 Assume that $k$ and $n$ are two positive integers. Prove that there exist positive integers $m_1$, $\dots$, $m_k$ such that \[1+\dfrac{2^k-1}{n} = \left(1+\dfrac{1}{m_1}\right)\cdots\left(1+\dfrac{1}{m_k}\right).\]
 \end{problem}
 
+We proceed by induction. Clearly, the statement is true for $k = 1$, so assume it is true for some $k$. Then, we show it works for $k+1$. If $n$ is even, then \[1+\dfrac{2^{k+1}-1}{n} = \left(1+\dfrac{2^k-1}{n/2}\right)\left(1+\dfrac{1}{n+2^{k+1}-2}\right).\] On the other hand, if $n$ is odd, \[1+\dfrac{2^{k+1}-1}{n} = \left(1+\dfrac{1}{n}\right)\left(1+\dfrac{2^k-1}{(n+1)/2}\right)\] so the induction is complete. $\square$
+
 \begin{problem}[4.9.12]{}
 Show that the equation \[a^2+b^2+c^2+d^2 = abcd\] has infinitely many solutions in positive integers $a$, $b$, $c$, $d$.
 \end{problem}
@@ -1344,6 +1346,10 @@ Find all positive integers $n$ for which the equation \[a+b+c+d = n\sqrt{abcd}\]
 \begin{problem}[4.9.16]{HMMT 2017/A8}
 Suppose $a$ and $b$ are positive integers such that \[c = \dfrac{(a+b)(a+b+1)}{ab}\] is an integer. Find all possible values of $c$.
 \end{problem}
+
+We claim that $c \in \{5, 6\}$, where if $c = 5$, then $(a, b) = (2, 2)$ and if $c = 6$, then $(a, b) = (1, 1)$ works. We now show that they are the only solution.
+
+We proceed by Vieta Jumping. Suppose that $a \ge b \ge 1$, $(a, b)$ is an integer, and $a+b$ is minimized. Define \[f(t) = t^2+t(1-b(c-2))+b^2+b\] Then, notice that $a$ is a root of $f$, so let $w$ be the other root. If $(b, w)$ were to be smaller, then this would contradict minimality, so we must have that \[b^2+b \ge a^2\] so $a = b$. Substituting this, we find that \[c = \dfrac{2a(2a+1)}{a^2} = \dfrac{4a+2}{a} = 4+\dfrac{2}{a} \in \{5, 6\}\] which both clearly work. $\square$
 
 \begin{problem}[4.9.17]{ISL 2008/N1}
 Let $n$ be a positive integer and let $p$ be a prime number. Prove that if $a$, $b$, $c$ are integers (not necessarily positive) satisfying the equations \[a^n+pb = b^n+pc=c^n+pa\] then $a = b = c$.
