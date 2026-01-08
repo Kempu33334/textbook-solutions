@@ -1339,15 +1339,19 @@ We now case.
 
 Thus, we are done. $\square$
 
+\newpage
+
 \begin{problem}[4.9.15]{Vietnam 2002/5}
 Find all positive integers $n$ for which the equation \[a+b+c+d = n\sqrt{abcd}\] has a solution in positive integers $a$, $b$, $c$, and $d$.
 \end{problem}
+
+Suppose that $n$ works, and the solution $(a, b, c, d)$ is the smallest such solution (meaning it minimizes $a+b+c+d$ over all solutions). Then, WLOG $a \ge b \ge c \ge d \ge 1$ and define \[f(t) = t^2+t(2b+2c+2d-n^2bcd)+(b+c+d)^2\] to be an integer quadratic in $t$. Then, notice that $a$ is a root of $f$, so let $w$ be the other root. Since $(b+c+d)^2$ is positive, we know that $w \ge 1$. Furthermore, since the two roots add to $n^2bcd-2b-2c-2d$, we know that $w$ is an integer. Thus, $w \in \mathbb{N}$. Then, in order for $(a, b, c, d)$ to be minimal, we must have that $b+c+d \ge a$.
 
 \begin{problem}[4.9.16]{HMMT 2017/A8}
 Suppose $a$ and $b$ are positive integers such that \[c = \dfrac{(a+b)(a+b+1)}{ab}\] is an integer. Find all possible values of $c$.
 \end{problem}
 
-We claim that $c \in \{5, 6\}$, where if $c = 5$, then $(a, b) = (2, 2)$ and if $c = 6$, then $(a, b) = (1, 1)$ works. We now show that they are the only solution.
+We claim that $c \in \boxed{\{5, 6\}}$, where if $c = 5$, then $(a, b) = (2, 2)$ and if $c = 6$, then $(a, b) = (1, 1)$ works. We now show that they are the only solution.
 
 We proceed by Vieta Jumping. Suppose that $a \ge b \ge 1$, $(a, b)$ is an integer, and $a+b$ is minimized. Define \[f(t) = t^2+t(1-b(c-2))+b^2+b\] Then, notice that $a$ is a root of $f$, so let $w$ be the other root. If $(b, w)$ were to be smaller, then this would contradict minimality, so we must have that \[b^2+b \ge a^2\] so $a = b$. Substituting this, we find that \[c = \dfrac{2a(2a+1)}{a^2} = \dfrac{4a+2}{a} = 4+\dfrac{2}{a} \in \{5, 6\}\] which both clearly work. $\square$
 
