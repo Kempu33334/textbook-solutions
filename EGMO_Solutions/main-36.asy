@@ -55,5 +55,5 @@ dot("$X$", X, dir(90));
 dot("$G$", G, dir(90));
 dot("$K$", K, dir(-90));
 dot("$D$", D, dir(-90));
-dot("$E$", E, dir(135));
+dot("$E$", E, dir(45));
 dot("$F$", F, dir(135));

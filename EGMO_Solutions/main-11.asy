@@ -40,5 +40,5 @@ dot("$A$", A, SW);
 dot("$B$", B, SE);
 dot("$C$", C, NE);
 dot("$D$", D, NW);
-dot("$O$", O, dir(90));
+dot("$O$", O, dir(60));
 dot("$O'$", O_shifted, dir(270));

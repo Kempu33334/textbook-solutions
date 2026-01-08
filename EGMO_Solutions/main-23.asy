@@ -65,4 +65,4 @@ dot("$A_2$", A2, S);
 dot("$B_1$", B1, dir(B1));
 dot("$B_2$", B2, dir(B2));
 dot("$C_1$", C1, NW);
-dot("$C_2$", C2, dir(C2));
+dot("$C_2$", C2, W);

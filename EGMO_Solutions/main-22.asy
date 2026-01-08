@@ -48,9 +48,9 @@ label("$P$", P, dir(135));
 dot(Q,dotstyle);
 label("$Q$", Q, dir(45));
 dot(R,dotstyle);
-label("$R$", R, dir(45));
+label("$R$", R, dir(-45));
 dot(S,dotstyle);
-label("$S$", S, dir(135));
+label("$S$", S, dir(-135));
 
 draw(S--P--R, blue+dashed);
 draw(R--Q--S, deepblue+dashed);

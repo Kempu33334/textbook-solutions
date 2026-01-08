@@ -75,7 +75,7 @@ draw(R--F, dashed+darkgreen);
 dot("$A$", A, dir(90));
 dot("$B$", B, dir(210));
 dot("$C$", C, dir(330));
-dot("$D$", D, dir(D));
+dot("$D$", D, dir(-90));
 dot("$E$", E, dir(E));
 dot("$F$", F, dir(F));
 dot("$P$", P, dir(P));

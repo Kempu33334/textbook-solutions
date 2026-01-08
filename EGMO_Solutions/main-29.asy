@@ -27,7 +27,7 @@ pair C = dir(-150);
 
 pair O = circumcenter(A,B,C);
 draw(circumcircle(A,B,C), gray);
-dot("$O$", O, dir(90));
+dot("$O$", O, dir(-135));
 
 draw(A--B--C--cycle);
 

@@ -62,4 +62,4 @@ dot("$M$", M, S);
 dot("$C$", C, NW);
 dot("$D$", D, NE);
 dot("$K$", K, S);
-dot("$N$", N, dir(N));
+dot("$N$", N, dir(90));

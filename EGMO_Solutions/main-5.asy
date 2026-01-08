@@ -47,7 +47,7 @@ dot("$B$", B, SE);
 dot("$C$", C, N);
 dot("$I$", I, dir(180));
 dot("$D$", D, S);
-dot("$E$", E, NE);
+dot("$E$", E, NW);
 dot("$O$", O, dir(90));
 draw(O--D, red);
 draw(D--B, red);

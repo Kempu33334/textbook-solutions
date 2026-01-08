@@ -336,7 +336,7 @@ dot("$B$", B, SE);
 dot("$C$", C, N);
 dot("$I$", I, dir(180));
 dot("$D$", D, S);
-dot("$E$", E, NE);
+dot("$E$", E, NW);
 dot("$O$", O, dir(90));
 draw(O--D, red);
 draw(D--B, red);
@@ -652,7 +652,7 @@ dot("$A$", A, SW);
 dot("$B$", B, SE);
 dot("$C$", C, NE);
 dot("$D$", D, NW);
-dot("$O$", O, dir(90));
+dot("$O$", O, dir(60));
 dot("$O'$", O_shifted, dir(270));
 \end{asy}
 \end{center}
@@ -1343,7 +1343,7 @@ dot("$M$", M, S);
 dot("$C$", C, NW);
 dot("$D$", D, NE);
 dot("$K$", K, S);
-dot("$N$", N, dir(N));
+dot("$N$", N, dir(90));
 \end{asy}
 \end{center}
 
@@ -1399,9 +1399,9 @@ label("$P$", P, dir(135));
 dot(Q,dotstyle);
 label("$Q$", Q, dir(45));
 dot(R,dotstyle);
-label("$R$", R, dir(45));
+label("$R$", R, dir(-45));
 dot(S,dotstyle);
-label("$S$", S, dir(135));
+label("$S$", S, dir(-135));
 
 draw(S--P--R, blue+dashed);
 draw(R--Q--S, deepblue+dashed);
@@ -1466,7 +1466,7 @@ dot("$A_2$", A2, S);
 dot("$B_1$", B1, dir(B1));
 dot("$B_2$", B2, dir(B2));
 dot("$C_1$", C1, NW);
-dot("$C_2$", C2, dir(C2));
+dot("$C_2$", C2, W);
 \end{asy}
 \end{center}
 
@@ -1841,7 +1841,7 @@ pair C = dir(-150);
 
 pair O = circumcenter(A,B,C);
 draw(circumcircle(A,B,C), gray);
-dot("$O$", O, dir(90));
+dot("$O$", O, dir(-135));
 
 draw(A--B--C--cycle);
 
@@ -1969,7 +1969,7 @@ draw(R--F, dashed+darkgreen);
 dot("$A$", A, dir(90));
 dot("$B$", B, dir(210));
 dot("$C$", C, dir(330));
-dot("$D$", D, dir(D));
+dot("$D$", D, dir(-90));
 dot("$E$", E, dir(E));
 dot("$F$", F, dir(F));
 dot("$P$", P, dir(P));
@@ -2234,9 +2234,9 @@ dot("$A$", A, dir(-90));
 dot("$B$", B, dir(-90));
 dot("$C$", C, dir(90));
 dot("$H$", H, dir(90));
-dot("$O_A$", O_A, dir(90));
-dot("$O_B$", O_B, dir(90));
-dot("$O_C$", O_C, dir(90));
+dot("$O_A$", O_A, dir(45));
+dot("$O_B$", O_B, dir(135));
+dot("$O_C$", O_C, dir(-90));
 \end{asy}
 \end{center}
 
@@ -2363,7 +2363,7 @@ dot("$X$", X, dir(90));
 dot("$G$", G, dir(90));
 dot("$K$", K, dir(-90));
 dot("$D$", D, dir(-90));
-dot("$E$", E, dir(135));
+dot("$E$", E, dir(45));
 dot("$F$", F, dir(135));
 \end{asy}
 \end{center}
