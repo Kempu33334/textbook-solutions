@@ -1355,6 +1355,20 @@ We proceed by Vieta Jumping. Suppose that $a \ge b \ge 1$, $(a, b)$ is an intege
 Let $n$ be a positive integer and let $p$ be a prime number. Prove that if $a$, $b$, $c$ are integers (not necessarily positive) satisfying the equations \[a^n+pb = b^n+pc=c^n+pa\] then $a = b = c$.
 \end{problem}
 
+Clearly, if two of them are equal, then so is the last, so assume that they are all distinct.
+
+We can retrieve the following relations:
+\begin{align*}
+a^n^b^n &= p(c-b) \\
+b^n-c^n &= p(a-c) \\
+c^n-a^n &= p(b-a)
+\end{align*}
+so \[\dfrac{a^n-b^n}{a-b}\cdot \dfrac{b^n-c^n}{b-c}\cdot \dfrac{c^n-a^n}{c-a} = -p^3.\] Now, if $n$ were to be odd, then all the terms would be positive, which is not good. Thus, assume that $n = 2k$ for $k \in \mathbb{N}$.
+
+Now, if $p = 2$, then taking the original equation modulo $2$, we find that $a \equiv b \equiv c \pmod{2}$. Furthermore, we require solutions to \[\left((a^k+b^k) \cdot \dfrac{a^k-b^k}{a-b}\right)\cdot \left((b^k+c^k) \cdot \dfrac{b^k-c^k}{b-c}\right)\left((c^k+a^k) \cdot \dfrac{c^k-a^k}{c-a}\right) = -8.\] Thus, we find that $a^k+b^k = \pm 2$ and similarly for the others, so we find no solutions.
+
+Now, if $p$ is odd, then all of the terms must be odd.
+
 \begin{problem}[4.9.18]{ISL 2017/N6}
 Find the smallest positive integer $n$ or show that no such $n$ exists, with the following property: there are infinitely many distinct $n$-tuples of postive rational numbers $(a_1, a_2, \cdots, a_n)$ such that both \[a_1+a_2+\cdots+a_n \quad \text{and} \quad \dfrac{1}{a_1}+\dfrac{1}{a_2}+\cdots+\dfrac{1}{a_n}\] are integers.
 \end{problem}
