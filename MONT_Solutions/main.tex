@@ -1375,6 +1375,14 @@ Thus, there are only solution if the values are all equal, as required. $\square
 Find the smallest positive integer $n$ or show that no such $n$ exists, with the following property: there are infinitely many distinct $n$-tuples of postive rational numbers $(a_1, a_2, \cdots, a_n)$ such that both \[a_1+a_2+\cdots+a_n \quad \text{and} \quad \dfrac{1}{a_1}+\dfrac{1}{a_2}+\cdots+\dfrac{1}{a_n}\] are integers.
 \end{problem}
 
+We claim that the answer is $n = \boxed{3}$.
+
+If $n = 1$, then we find no solution, which is clear.
+
+If $n = 2$, then suppose that there exist infinitely many numbers $a_1$, $a_2 \in \mathbb{Q}$ such that $a_1+a_2$ and $a_1^{-1}+a_2^{-1}$ are integers. Then, $\tfrac{a_1}{a_2}+\tfrac{a_2}{a_1}$ must be an integer, but this is only true when $a_1 = a_2$, which is not allowed.
+
+Thus, it suffices to show that there exist infinitely many solutions for $n = 3$.
+
 \begin{problem}[4.9.19]{ISL 2019/N8}
 Let $a$ and $b$ be two positive integers. Prove that the integer \[a^2+\ceil{\dfrac{4a^2}{b}}\] is not a square.
 \end{problem}
