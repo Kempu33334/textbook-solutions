@@ -1397,9 +1397,20 @@ If $n = 2$, then suppose that there exist infinitely many numbers $a_1$, $a_2 \i
 
 Thus, it suffices to show that there exist infinitely many solutions for $n = 3$.
 
+\begin{claim*}
+There are infinitely many $x$, $y \in \mathbb{N}$ such that $\tfrac{x+1}{y}+\tfrac{y+1}{x}$ is a positive integer.
+\end{claim*}
+\begin{proof}
+We proceed by Vieta Jumping. Let $n$ be a positive integer, then it suffices to find that there exist infinitely many triplets $(x, y, n) \in \mathbb{N}^3$ such that \[x^2+x+y^2+y = nxy \implies x^2+(1-ny)x+y^2+y = 0.\] Suppose that $(x, y)$ is a solution such that $x \le y$. Then, notice that $\left(\tfrac{y^2+y}{x}, y\right)$ is also a solution, but has larger sum, since $y^2+y > x$. Thus, we can repeat this process to get infinitely many such pairs $(x, y)$.
+\end{proof}
+
+Now, due to the Claim, we may just take \[a_1 = \dfrac{1}{x+y+1}, a_2 = \dfrac{x}{x+y+1}, a_3 = \dfrac{y}{x+y+1}\] for any solution $(x, y)$, which indeed gives the required conclusion. Thus, we are done. $\square$
+
 \begin{problem}[4.9.19]{ISL 2019/N8}
 Let $a$ and $b$ be two positive integers. Prove that the integer \[a^2+\ceil{\dfrac{4a^2}{b}}\] is not a square.
 \end{problem}
+
+Let $r$ be an positive integer $0 \le r < b$ such that $\tfrac{4a^2+r}{b}$ is an integer. Then, suppose for the sake of contradiction that the given expression is equal to some square $n^2$. Then, we have that \[a^2b+4a^2+r = n^2b \implies b(a^2-n^2)+4a^2+r = 0.\] Letting $a = \tfrac{x-y}{2}$ and $n = \tfrac{x+y}{2}$, we find that \[(b+2)xy+x^2+y^2+r = 0.\] WLOG let $x > y$. Then, let \[f(t) = t^2+(b+2)yt+y^2+r.\] We know that one of the roots of this is $x$, so let the other root be $w$. Clearly, $w$ is a integer, and it must be non-negative. We claim that $w < x$.
 
 \begin{problem}[4.9.20]{China TST 2018/3/6}
 Find all pairs of positive integers $(x, y)$ such that $(xy + 1)(xy + x + 2)$ be a perfect square.
