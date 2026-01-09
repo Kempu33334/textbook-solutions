@@ -1410,7 +1410,18 @@ Now, due to the Claim, we may just take \[a_1 = \dfrac{1}{x+y+1}, a_2 = \dfrac{x
 Let $a$ and $b$ be two positive integers. Prove that the integer \[a^2+\ceil{\dfrac{4a^2}{b}}\] is not a square.
 \end{problem}
 
-Let $r$ be an positive integer $0 \le r < b$ such that $\tfrac{4a^2+r}{b}$ is an integer. Then, suppose for the sake of contradiction that the given expression is equal to some square $n^2$. Then, we have that \[a^2b+4a^2+r = n^2b \implies b(a^2-n^2)+4a^2+r = 0.\] Letting $a = \tfrac{x-y}{2}$ and $n = \tfrac{x+y}{2}$, we find that \[(b+2)xy+x^2+y^2+r = 0.\] WLOG let $x > y$. Then, let \[f(t) = t^2+(b+2)yt+y^2+r.\] We know that one of the roots of this is $x$, so let the other root be $w$. Clearly, $w$ is a integer, and it must be non-negative. We claim that $w < x$.
+Start by noticing that $a = b$ doesn't work, so assume that they are distinct.
+
+Let $r$ be an positive integer $0 \le r < b$ such that $\tfrac{4a^2+r}{b}$ is an integer. Then, suppose for the sake of contradiction that the given expression is equal to some square $n^2$. Then, we have that \[a^2b+4a^2+r = n^2b \implies b(a^2-n^2)+4a^2+r = 0.\] Letting $a = \tfrac{x-y}{2}$ and $n = \tfrac{x+y}{2}$, we find that \[-(b+2)xy+x^2+y^2+r = 0.\] WLOG let $x > y > 0$. Then, let \[f(t) = t^2-(b+2)yt+y^2+r.\] We know that one of the roots of this is $x$, so let the other root be $w$. Clearly, $w$ is a integer, and it must be non-negative.
+
+\begin{claim*}
+We claim that $w < y$.
+\end{claim*}
+\begin{proof}
+Notice that $f(y) = r-by^2$ is less than $0$, so we have the required conclusion.
+\end{proof}
+
+Thus, we can continue the process until one of $x$ or $y$ is zero. If $x = 0$, then $a$ is negative, so this is not allowed. If $y = 0$, then $a = n$, but the ceiling function given is at least $1$, so this cannot happen. Thus, we are done. $\square$
 
 \begin{problem}[4.9.20]{China TST 2018/3/6}
 Find all pairs of positive integers $(x, y)$ such that $(xy + 1)(xy + x + 2)$ be a perfect square.
