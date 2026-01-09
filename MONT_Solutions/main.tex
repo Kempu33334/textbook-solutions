@@ -1345,7 +1345,17 @@ Thus, we are done. $\square$
 Find all positive integers $n$ for which the equation \[a+b+c+d = n\sqrt{abcd}\] has a solution in positive integers $a$, $b$, $c$, and $d$.
 \end{problem}
 
-Suppose that $n$ works, and the solution $(a, b, c, d)$ is the smallest such solution (meaning it minimizes $a+b+c+d$ over all solutions). Then, WLOG $a \ge b \ge c \ge d \ge 1$ and define \[f(t) = t^2+t(2b+2c+2d-n^2bcd)+(b+c+d)^2\] to be an integer quadratic in $t$. Then, notice that $a$ is a root of $f$, so let $w$ be the other root. Since $(b+c+d)^2$ is positive, we know that $w \ge 1$. Furthermore, since the two roots add to $n^2bcd-2b-2c-2d$, we know that $w$ is an integer. Thus, $w \in \mathbb{N}$. Then, in order for $(a, b, c, d)$ to be minimal, we must have that $b+c+d \ge a$.
+We claim that the only solutions are $n \in \boxed{\{1, 2, 3, 4\}}$ which respectively each have the solutions $(a, b, c, d) \in \{(4, 4, 4, 4), (2, 2, 2, 2), (2, 2, 1, 1), (1, 1, 1, 1)\}$. We now show that $n \ge 5$ does not work.
+
+Suppose that $n$ works, and the solution $(a, b, c, d)$ is the smallest such solution (meaning it minimizes $a+b+c+d$ over all solutions). Then, WLOG $a \ge b \ge c \ge d \ge 1$ and define \[f(t) = t^2+t(2b+2c+2d-n^2bcd)+(b+c+d)^2\] to be an integer quadratic in $t$. Then, notice that $a$ is a root of $f$, so let $w$ be the other root. Since $(b+c+d)^2$ is positive, we know that $w \ge 1$. Furthermore, since the two roots add to $n^2bcd-2b-2c-2d$, we know that $w$ is an integer. Thus, $w \in \mathbb{N}$. Then, in order for $(a, b, c, d)$ to be minimal, we must have that $b+c+d \ge a$. Now, notice that \[n = \dfrac{a+b+c+d}{\sqrt{abcd}} \le \dfrac{2(b+c+d)}{b\sqrt{cd}} = \dfrac{2}{\sqrt{cd}}+\dfrac{2c}{b\sqrt{cd}}+\dfrac{2d}{b\sqrt{cd}} \le 6.\] Thus, it suffices to show that there exists no solutions for $n = 5$ and $n = 6$. For $n = 6$, we require for $a = b$, $c = d = 1$, $b = 1$, (in order for all the equality cases to hold in the previous inequality) but this doesn't work.
+
+Thus, we now need solutions to $a+b+c+d = 5\sqrt{abcd}$. Notice that if $f(b)$ is negative, then $(a, b, c, d)$ is not minimal, contradiction. Thus, we require for it to be non-negative. However,
+\begin{align*}
+4b^2+c^2+d^2+4bc+4bd+2cd-25b^2cd &= (2b+c+d)^2-25b^2cd\\
+&\le 16b^2-25b^2 \\
+&<0
+\end{align*}
+as reqired. Thus, there are no solutions for $n = 5$ and we finish. $\square$
 
 \begin{problem}[4.9.16]{HMMT 2017/A8}
 Suppose $a$ and $b$ are positive integers such that \[c = \dfrac{(a+b)(a+b+1)}{ab}\] is an integer. Find all possible values of $c$.
