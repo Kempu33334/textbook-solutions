@@ -1293,7 +1293,7 @@ Thus, having exhausted all cases, we are done. $\square$
 Show that the Diophantine equation \[\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}+\dfrac{1}{x_1x_2\cdots x_n} = 1\] has at least one solution for every positive integers $n$.
 \end{problem}
 
-We proceed by induction. For the base case, notice that $n = 1$ clearly works by taking $x_1 = 2$. Now, assume it works for some $n$. We will show it to be true for $n+1$. Say that there exist $\{x\}$ where \[\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}+\dfrac{1}{x_1x_2\cdots x_n} = 1.\] Then, we claim that \[\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}+\dfrac{1}{x_1x_2\cdots x_n+1}+\dfrac{x_1x_2\cdots x_n(x_1x_2\cdots x_n+1)} = 1.\] However, this is clear, since the last two terms combine into $\tfrac{1}{x_1x_2\cdots x_n}$, and from the inductive hypothesis, this is indeed $1$. Thus, we are done. $\square$
+We proceed by induction. For the base case, notice that $n = 1$ clearly works by taking $x_1 = 2$. Now, assume it works for some $n$. We will show it to be true for $n+1$. Say that there exist $\{x\}$ where \[\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}+\dfrac{1}{x_1x_2\cdots x_n} = 1.\] Then, we claim that \[\dfrac{1}{x_1}+\dfrac{1}{x_2}+\cdots+\dfrac{1}{x_n}+\dfrac{1}{x_1x_2\cdots x_n+1}+\dfrac{1}{x_1x_2\cdots x_n(x_1x_2\cdots x_n+1)} = 1.\] However, this is clear, since the last two terms combine into $\tfrac{1}{x_1x_2\cdots x_n}$, and from the inductive hypothesis, this is indeed $1$. Thus, we are done. $\square$
 
 \begin{problem}[4.9.11]{IMO 2013/1}
 Assume that $k$ and $n$ are two positive integers. Prove that there exist positive integers $m_1$, $\dots$, $m_k$ such that \[1+\dfrac{2^k-1}{n} = \left(1+\dfrac{1}{m_1}\right)\cdots\left(1+\dfrac{1}{m_k}\right).\]
@@ -1308,12 +1308,12 @@ Show that the equation \[a^2+b^2+c^2+d^2 = abcd\] has infinitely many solutions 
 We show that from one solution, we can generate infinitely many. Assume that there exists some solution $(a, b, c, d)$ where $a \le b \le c \le d$ and define \[f(t) = t^2-bcdt+b^2+c^2+d^2.\] Then, clearly one root of this is $a$, so call the other root $w$. By Vieta's formulae, $w$ is also a positive integer. Furthermore, notice that \[b^2+c^2+2d^2 \le 4d^2 < bcd^2\] so \[f(d) = b^2+c^2+2d^2-bcd^2 < 0.\] As a result, $a < d \le w$, and since $w$ also works, we have generated another distinct solution, with greater total sum. Repeating the process, we can generate infinitely many solutions, as required. Now, it suffices to give a single starting solution, so take $(2, 2, 2, 2)$ which clearly works. $\square$
 
 \begin{problem}[4.9.13]{USAMO 2015/1}
-Solve in integers the equation \[x^2+xy+y^2 = \left(\dfrac{x+y}{3}+1\right)^2.\]
+Solve in integers the equation \[x^2+xy+y^2 = \left(\dfrac{x+y}{3}+1\right)^3.\]
 \end{problem}
 
-We claim that the only solutions are $\boxed{(1, -1)}$ and $\boxed{(-1, 1)}$ which clearly work.
+We claim that the answer is \[x = a^3+3a-1 \qquad y = -a^3+3a+1\] and permutations for all $a \in \mathbb{Z}$, which we may verify.
 
-Expanding, we find that \[\dfrac{8 x^2}{9} + \dfrac{8 y^2}{9} + \dfrac{7 x y}{9} - \dfrac{2 x}{3} - \dfrac{2 y}{3} - 1 = 0.\] Treating this as a quadratic in $x$, we have that \[\dfrac{8}{9}x^2+\left(\dfrac{7y}{9}-\dfrac{2}{3}\right)x+\dfrac{8y^2}{9}-\dfrac{2y}{3}-1 = 0.\] In order for this to have real solutions, the discriminant must be non-negative, so \[\left(\dfrac{7y}{9}-\dfrac{2}{3}\right)^2-\dfrac{32}{9}\left(\dfrac{8y^2}{9}-\dfrac{2y}{3}-1\right) -\dfrac{1}{9} (23 y^2 - 12 y - 36) \ge 0.\] Solving this, we find that $|y| < 2$. Now, since the equation is symmetric in $x$ and $y$, we also have that $|x| < 2$. Thus, the equation reduces to a manual case check, from which, we discern the solutions $(1, -1)$ and $(-1, 1)$, as required. $\square$
+Notice that $3 \mid x+y$, so let $x+y = 3k$ so that \[9k^2-x(3k-x) = (k+1)^3 \implies 9k^2-3kx+x^2 = k^3+3k^2+3k+1\] which simplifies to \[x^2-3kx-(k^3-6k^2+3k+1) = 0.\] Since the discriminant must be a perfect square, we find that \[9k^2+4(k^3-6k^2+3k+1) = (k - 2)^2 (4 k + 1)\] is a perfect square, implying that $4k+1$ is a square. Substituting $k = \tfrac{(2a+1)^2-1}{4} = a^2+a$ for some integer $a$, we know that \[x = \dfrac{3k \pm \sqrt{(k-2)^2(4k+1)}}{2} = \dfrac{3(a^2+a) \pm (2a+1)(a^2+a-2)}{2}\] which is one of $\{a^3+3a-1, -a^3+3a+1\}$. Thus, the final answer follows. $\square$
 
 \begin{problem}[4.9.14]{ISL 2012/N2}
 Find all triples $(x, y, z)$ of positive integers such that $x \le y \le z$ and \[x^3(y^3+z^3) = 2012(xyz+2).\]
