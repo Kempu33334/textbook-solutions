@@ -1426,4 +1426,15 @@ Thus, we can continue the process until one of $x$ or $y$ is zero. If $x = 0$, t
 \begin{problem}[4.9.20]{China TST 2018/3/6}
 Find all pairs of positive integers $(x, y)$ such that $(xy + 1)(xy + x + 2)$ be a perfect square.
 \end{problem}
+
+We claim that there exists no solutions.
+
+Notice that the gcd of the two terms is $d = \gcd(x+1, y-1)$, so if $(xy+1)(xy+x+2)$ is a perfect square, then so is \[\left(\dfrac{xy+1}{d}\right)\left(\dfrac{xy+x+2}{d}\right)\] but since the two terms are relatively prime, both of them must be perfect squares, so let:
+\begin{align*}
+xy+1 &= du^2 \\
+xy+x+2 &= dv^2
+\end{align*}
+and $x+1 = da$ while $y-1 = db$. Then, we find that \[x+1 = da = d(v^2-u^2) \implies a = v^2-u^2.\] Now, solving for $b$, we find that \[du^2 = xy+1 = (da-1)(db+1)+1 = d^2ab-db+da\] so \[u^2 = (db+1)a-b = (db+1)(v^2-u^2)-b = dbv^2-dbu^2+v^2-u^2-b\] and we get \[-b = (db+2)u^2-(db+1)v^2.\] Now, substituting $u = \tfrac{X-Y}{2}$ and $v = \tfrac{X+Y}{2}$ since $u < v$ gives that \[(db+2)(X^2-2XY+Y^2)-(db+1)(X^2+2XY+Y^2) = -4b.\] Expanding and collecting terms, \[X^2-(4db+6)XY+Y^2+4b = 0.\] 
+
+We may now Vieta Jump. Suppose that there exists a solution $(X, Y)$ to this which is the one with smallest total sum. Then, $\left(\tfrac{Y^2+4b}{X}, Y\right)$ is also a positive integer solution. If it were to be that $X^2 = Y^2+4b$, then, \[2X^2-(4db+6)XY = 0 \implies X=(2db+3)Y.\] However, then we can't have that $X^2 = Y^2+4b$ which is a contradiction. Hence, one of them must be smaller than the other; let it be such that $(X_1, Y)$ and $(X_2, Y)$ are solutions such that $X_1 > X_2 \ge Y$. By Vieta's formulas, we must have that $X_1+X_2 = (4db+6)Y$ and $X_1X_2 = Y^2+4b$. Now, notice that the minimum value of $X_1X_2$ is $(4db+5)Y^2$ which is still greater than $Y^2+4b$, contradiction. Thus, there exist no solutions, as required. $\square$
 \end{document}
