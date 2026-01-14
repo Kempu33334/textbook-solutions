@@ -6681,4 +6681,74 @@ Let $ABCDEF$ be a hexagon circumscribed about a circle $\omega$. Prove that $AD$
 \end{problem}
 
 Let $A'$ be the tangency point of $AB$ with the circle and so on. Then, notice that $A'B' \cap D'E'$ is the intersection of the polar of $A$ and the polar of $D$, so the polar of $A'B' \cap D'E'$ is $AD$. Now, by Pascal's Theorem, $A'B' \cap D'E'$, $B'C' \cap E'F'$, and $C'D' \cap A'F'$ are all collinear, so the pole of the line through this is the required collinearity point. $\square$
+
+\begin{problem}[9.56]{ELMO SL 2014/2}
+Suppose that $ABCD$ is a cyclic quadrilateral. Let $E = AB \cap CD$ and $F = AD \cap BC$. In addition, let $G \neq A$ be the intersection of $(ABCD)$ with $(AEF)$ and $H \neq C$ be the intersection of $(ABCD)$ with $(CEF)$. Show that $AC$, $BD$, and $GH$ are concurrent.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(11cm);
+real xmin = -9.657672187345451, xmax = 9.160739993916891, ymin = -5.2, ymax = 6.738666680248742;
+pen zzwwff = rgb(0.6,0.4,1); pen ffttww = rgb(1,0.2,0.4); pen wwqqcc = rgb(0.4,0,0.8); pen qqzzff = rgb(0,0.6,1); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-5.150478318017022,-0.10506398501918311);
+pair B = (-6.41771,-2.59168);
+pair C = (-1.69286,-2.59168);
+pair D = (-2.1688509392046047,-0.761874601048858);
+pair E = (-3.2895861180597916,3.546457999757625);
+pair F = (6.137649811941913,-2.59168);
+pair G = (-3.7295827139866535,-4.597153032046367);
+pair H = (-3.3506207248652253,0.05439008854969875);
+pair K = (-7.087728825759214,6.019454778000761);
+
+draw(A--B--C--D--cycle, ffttww);
+draw(circle((-4.055285,-2.2294094044780146), 2.3900401387853), zzwwff);
+draw(A--B, ffttww);
+draw(B--C, ffttww);
+draw(C--D, ffttww);
+draw(D--A, ffttww);
+draw(B--E, ffttww);
+draw(E--C, ffttww);
+draw(B--F, ffttww);
+draw(A--F, ffttww);
+draw(circle((0.6256687879111631,-0.7487738715929458), 5.8119048346816005), wwqqcc);
+draw(circle((2.2223949059709565,1.7035518713505677), 5.811904834681599), wwqqcc);
+draw(A--C, qqzzff);
+draw(B--D, qqzzff);
+draw(H--G, qqzzff+dashed);
+draw(K--C, ffzztt);
+draw(K--G, ffzztt);
+draw(K--F, ffzztt);
+
+dot("$A$", A, NE);
+dot("$B$", B, SW);
+dot("$C$", C, S);
+dot("$D$", D, NE);
+dot("$E$", E, dir(110));
+dot("$F$", F, dir(0));
+dot("$G$", G, SW);
+dot("$H$", H, NE);
+dot("$K$", K, N);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $K$ be the radical center of $(ABCD)$, $(AEFG)$ and $(CEFH)$. Then, by Brocard's on $ABCD$, we know that the pole of $EF$ is $AC \cap BD$, so the polar of $K$ passes through $AC \cap BD$. As a result, by Brocard's Theorem on $AGCH$, we know that $GH$ passes through $AC \cap BD$, as required. $\square$
+
+\newpage
+
+\begin{problem}[9.57]{ELMO SL 2014/4}
+Let $ABCD$ be a cyclic quadrilateral. The tangent to $(ABCD)$ at $A$ intersects lines $CD$ and $BC$ at $E$ and $F$. Lines $BE$ and $DF$
+meet $(ABCD)$ again $G$ and $I$, and $H = BE \cap AD$, $J = DF \cap AB$. Prove that $GI$, $HJ$, and the $B$-symmedian of $ABC$ are concurrent. 
+\end{problem}
+
+Take a projective transformation sending $AC \cap BD$ to the center of the circle so that $ABCD$ becomes a rectangle. Then, the tangent at $A$, $GI$, $HJ$ and the tangent at $C$ concur at the point at infinity, so we are done (this can be easily checked by angle chasing). $\square$
+
+\begin{problem}[9.58]{ISL 2005/G6}
+Let $ABC$ be a triangle, and $M$ the midpoint of its $\ol{BC}$. Let $\gamma$ be the incircle of triangle $ABC$. The median $AM$ of triangle $ABC$ intersects $\gamma$ at two points $K$ and $L$. Let the lines passing through $K$ and $L$, parallel to $BC$, intersect $\gamma$ again in two points $X$ and $Y$. Let the lines $AX$ and $AY$ intersect $BC$ again at the points $P$ and $Q$. Prove that $BP = CQ$.
+\end{problem}
+
+Let $G = EF \cap KL \cap XY$ and $D$, $E$, $F$ be the contact points of the incircle with $\triangle ABC$. We know that they concur because it is well known that $DI$, $EF$, and $AM$ concur, and $KYLX$ is isosceles. Furthermore, let $A'$ be the reflection of $A$ across $DI$. Then, \[-1 = (A,G;K,L) \stackrel{\infty}{=} (A', G; X, Y) \stackrel{A}{=} (\infty, M; P, Q)\] where $\infty = BC \cap YL$. Thus, we are done. $\square$
 \end{document}

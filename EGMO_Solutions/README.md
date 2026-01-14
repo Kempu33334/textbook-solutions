@@ -8,7 +8,8 @@ The following chapters have completed solutions:
 - **Chapter 5**: Computational Geometry
 - **Chapter 6**: Complex Numbers
 - **Chapter 8**: Inversion
+- **Chapter 9**: Projective Geometry
 
 The following chapters are in progress:
 - **Chapter 7**: Barycentric Coordinates
-- **Chapter 9**: Projective Geometry
+- **Chapter 10**: Complete Quadrilaterals
