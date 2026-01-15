@@ -1437,4 +1437,75 @@ xy+x+2 &= dv^2
 and $x+1 = da$ while $y-1 = db$. Then, we find that \[x+1 = da = d(v^2-u^2) \implies a = v^2-u^2.\] Now, solving for $b$, we find that \[du^2 = xy+1 = (da-1)(db+1)+1 = d^2ab-db+da\] so \[u^2 = (db+1)a-b = (db+1)(v^2-u^2)-b = dbv^2-dbu^2+v^2-u^2-b\] and we get \[-b = (db+2)u^2-(db+1)v^2.\] Now, substituting $u = \tfrac{X-Y}{2}$ and $v = \tfrac{X+Y}{2}$ since $u < v$ gives that \[(db+2)(X^2-2XY+Y^2)-(db+1)(X^2+2XY+Y^2) = -4b.\] Expanding and collecting terms, \[X^2-(4db+6)XY+Y^2+4b = 0.\] 
 
 We may now Vieta Jump. Suppose that there exists a solution $(X, Y)$ to this which is the one with smallest total sum. Then, $\left(\tfrac{Y^2+4b}{X}, Y\right)$ is also a positive integer solution. If it were to be that $X^2 = Y^2+4b$, then, \[2X^2-(4db+6)XY = 0 \implies X=(2db+3)Y.\] However, then we can't have that $X^2 = Y^2+4b$ which is a contradiction. Hence, one of them must be smaller than the other; let it be such that $(X_1, Y)$ and $(X_2, Y)$ are solutions such that $X_1 > X_2 \ge Y$. By Vieta's formulas, we must have that $X_1+X_2 = (4db+6)Y$ and $X_1X_2 = Y^2+4b$. Now, notice that the minimum value of $X_1X_2$ is $(4db+5)Y^2$ which is still greater than $Y^2+4b$, contradiction. Thus, there exist no solutions, as required. $\square$
+
+\section{Modular Arithmetic Advanced}
+
+\subsection{Solving Equations}
+
+\noproblems
+
+\subsection{Quadratic Residues}
+
+\noproblems
+
+\subsection{Square Root of $-1$}
+
+\noproblems
+
+\subsection{Orders}
+
+\noproblems
+
+\subsection{Primitive Roots}
+
+\begin{problem}[5.5.1]{}
+Let $g$ be a primitive root modulo an odd prime p. If $p = 2m+1$, then show that \[g^m \equiv -1 \pmod{p}.\]
+\end{problem}
+
+Notice that \[g^{2m} \equiv 1 \pmod{p} \implies (g^m-1)(g^m+1) \equiv 0 \pmod{p}\] so suppose that $g^m \equiv 1 \pmod{p}$. Then, we must have that $m \ge 2m$, since the order of $g$ is $2m$ so $m = 0$, but $p = 1$ is not a prime, so we are done. $\square$
+
+\begin{problem}[5.5.2]{}
+Prove that if $r$ is a primitive root modulo $m$, then so is the inverse of $r$ modulo $m$.
+\end{problem}
+
+Notice that \[r^{\phi(m)} \equiv 1 \pmod{m}\] and since it is a primitive root, $\phi(m)$ is the smallest non-zero exponent that gives a residue of $1$ when divided by $m$. Thus, if \[r^{-k} \equiv 1 \pmod{m} \implies 1 \equiv r^k \pmod{m}\] the smallest allowed $k$ is $\phi(m)$, as required. $\square$
+
+\begin{problem}[5.5.3]{}
+Show that there are exactly $\phi(p - 1)$ primitive roots modulo $p$.
+\end{problem}
+
+Let $g$ be a generator modulo $p$. Then, notice that for any $a = g^k$, the order of $a$ is $\tfrac{p-1}{\gcd(p-1, k)}$, so for it to be $p-1$, the denominator must be $1$. Thus, the number of $k$ is the number of integers less than or equal to $p-1$ relatively prime to it, or $\phi(p-1)$, as desired. $\square$
+
+\begin{problem}[5.5.4]{}
+Show that for any prime $p$, the quadratic residues mod $p$ are exactly the
+numbers $g^0$, $g^2$, $g^4$, $\cdots$ for a primitive roots $g$ modulo $p$.
+\end{problem}
+
+Notice that it iterates over all $(g^k)^2 = a^2$, so it must iterate over all quadratic residues (since it hits every possible $a$). $\square$
+
+\subsection{Some More Applications}
+
+\begin{problem}[5.6.1]{Generating numbers with orders}
+Let $p$ be a prime and $d$ be any divisor of $p - 1$. Show that there exists an integer $a$ such that $\ord_p(a) = d$.
+\end{problem}
+
+The number $g^{(p-1)/d}$ where $g$ is a primitive root modulo $p$ suffices. $\square$
+
+\subsection{General Orders and Primitive Roots}
+
+\begin{problem}[5.7.1]{}
+Show that \[a^{\tfrac{\phi\left(2^k\right)}{2}} \equiv 1 \pmod{2^k}\] for every odd $a$ and integer $k \ge 3$.
+\end{problem}
+
+We show it by induction. Clearly, it is true for $k = 3$, since $a \in \{1, 3, 5, 7\}$ gives that $a^2 \equiv 1 \pmod{8}$. Now, suppose it is true for some $k$. We show it for $k+1$. It suffices to prove that \[a^{2^{k-1}} \equiv 1 \pmod{2^{k+1}} \implies (a^{2^{k-2}}-1)(a^{2^{k-2}}+1) \equiv 0 \pmod{2^{k+1}}.\] Now the $2$-adic valuation of the first term is $\slantgeq k$ by the inductive hypothesis, and since $a$ is odd, the second term has $2$-adic valuation $\slantgeq 1$, so we are done. $\square$
+
+\begin{problem}[5.7.2]{}
+Show that there are $\phi(\phi(n))$ primitive roots.
+\end{problem}
+
+Let $g$ be a primitive root modulo $n$. Then, the number $g^k$ has order $\tfrac{\phi(n)}{\gcd(\phi(n), k)}$ so the conclusion follows. $\square$
+
+\subsection{Example Problems}
+
+\noproblems
 \end{document}
