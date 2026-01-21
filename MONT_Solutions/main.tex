@@ -1452,7 +1452,7 @@ We may now Vieta Jump. Suppose that there exists a solution $(X, Y)$ to this whi
 
 \noproblems
 
-\subsection{Square Root of $-1$}
+\subsection{Square Root of -1}
 
 \noproblems
 
@@ -1501,7 +1501,7 @@ The number $g^{(p-1)/d}$ where $g$ is a primitive root modulo $p$ suffices. $\sq
 Show that \[a^{\tfrac{\phi\left(2^k\right)}{2}} \equiv 1 \pmod{2^k}\] for every odd $a$ and integer $k \ge 3$.
 \end{problem}
 
-We show it by induction. Clearly, it is true for $k = 3$, since $a \in \{1, 3, 5, 7\}$ gives that $a^2 \equiv 1 \pmod{8}$. Now, suppose it is true for some $k$. We show it for $k+1$. It suffices to prove that \[a^{2^{k-1}} \equiv 1 \pmod{2^{k+1}} \implies (a^{2^{k-2}}-1)(a^{2^{k-2}}+1) \equiv 0 \pmod{2^{k+1}}.\] Now the $2$-adic valuation of the first term is $\slantgeq k$ by the inductive hypothesis, and since $a$ is odd, the second term has $2$-adic valuation $\slantgeq 1$, so we are done. $\square$
+We show it by induction. Clearly, it is true for $k = 3$, since $a \in \{1, 3, 5, 7\}$ gives that $a^2 \equiv 1 \pmod{8}$. Now, suppose it is true for some $k$. We show it for $k+1$. It suffices to prove that \[a^{2^{k-1}} \equiv 1 \pmod{2^{k+1}} \implies (a^{2^{k-2}}-1)(a^{2^{k-2}}+1) \equiv 0 \pmod{2^{k+1}}.\] Now the $2$-adic valuation of the first term is $\geqslant k$ by the inductive hypothesis, and since $a$ is odd, the second term has $2$-adic valuation $\geqslant 1$, so we are done. $\square$
 
 \begin{problem}[5.7.2]{}
 Show that there are $\phi(\phi(n))$ primitive roots.
@@ -1512,6 +1512,8 @@ Let $g$ be a primitive root modulo $n$. Then, the number $g^k$ has order $\tfrac
 \subsection{Example Problems}
 
 \noproblems
+
+\newpage
 
 \subsection{Practice Problems}
 
@@ -1539,6 +1541,17 @@ We proceed by CRT. Taking this expression modulo $2$, we find that it is odd, so
 For $x \in (0, 1)$ let $y \in (0, 1)$ be the number whose $n$-th digit after the decimal point is the $2^n$-th digit after the decimal point of $x$. Show that if $x$ is rational then so is $y$.
 \end{problem}
 
+Clearly, if $x$ is not repeating, then $y$ also terminates, so assume otherwise. Since $x$ is repeating, let $x$ have a period of $p$.
+
+\begin{claim*}
+If $p$ is odd, the number $y$ is periodic with period $p-1$.
+\end{claim*}
+\begin{proof}
+If $y$ is periodic with period $p$, then notice that for any $k$, we must have that the $k$th decimal is the same as the $k+p-1$th decimal. However, we know that the $2^k$th and $2^{k+p-1}$th digits of $x$ are the same, since \[2^{k+p-1} \equiv 2^k \pmod{p}\] by FLT, so we have the required conclusion. 
+\end{proof}
+
+If $p$ is even, then clearly the digits of $y$ will be constant for sufficiently far decimal places, so it is rational, as required. $\square$
+
 \begin{problem}[5.9.5]{}
 Suppose that $k \ge 2$ and $n_1, n_2, \cdots, n_k \ge 1$ be natural numbers having the property \[n_2 \mid 2^{n_1} - 1, n_3 \mid 2^{n_2} - 1, \cdots, n_k \mid 2^{n_{k-1}} - 1, n_1 \mid 2^{n_k}-1.\] Show that $n_1 = n_2 = \cdots = n_k = 1$.
 \end{problem}
@@ -1556,7 +1569,7 @@ We first show that there exists at most one $r$. Assume there exist at least two
 (r_1-r_2)n &\equiv 0 \pmod{p-1} \\
 (r_1-r_2)m &\equiv 0 \pmod{p-1}.
 \end{align*}
-Now, multiplying the first equation by $b$ and the second by $a$ and adding, we find that \[r_1 \equiv r_2 \pmod{p-1}\] so we have the required conclusion.
+Now, multiplying the first equation by $b$ and the second by $a$ and adding, we find that $r_1 \equiv r_2 \pmod{p-1}$ so we have the required conclusion.
 
 We now show that there exists an $r$. We claim that $r = \ell a + kb$ works. Observe: \[k \equiv \ell an + kbn \equiv kam + kbn \equiv k \pmod{p-1}\] and similarly for the other one, as required. $\square$
 
