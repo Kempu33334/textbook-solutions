@@ -7,3 +7,4 @@
 \contentsline {section}{\numberline {7}Barycentric Coordinates}{100}{section.7}%
 \contentsline {section}{\numberline {8}Inversion}{117}{section.8}%
 \contentsline {section}{\numberline {9}Projective Geometry}{125}{section.9}%
+\contentsline {section}{\numberline {10}Complete Quadrilaterals}{143}{section.10}%

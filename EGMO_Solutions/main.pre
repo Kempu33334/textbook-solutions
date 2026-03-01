@@ -96,3 +96,5 @@
 \InputIfFileExists {\jobname -96.pre}{}{}
 \InputIfFileExists {\jobname -97.pre}{}{}
 \InputIfFileExists {\jobname -98.pre}{}{}
+\InputIfFileExists {\jobname -99.pre}{}{}
+\InputIfFileExists {\jobname -100.pre}{}{}
