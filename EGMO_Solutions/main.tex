@@ -6927,4 +6927,331 @@ We show that $H_1$ has equal power, since $H_2$ follows by symmetry. Let $\omega
 \end{proof}
 
 Thus, $H_1H_2$ is the radical axis of $\omega_1$ and $\omega_2$, so we are done. $\square$
+
+\newpage
+
+\begin{problem}[1.20]{USA TST 2007/1}
+Circles $\omega_1$ and $\omega_2$ meet at $P$ and $Q$. Segments $AC$ and $BD$ are chords of $\omega_1$ and $\omega_2$ respectively, such that segment $AB$ and ray $CD$ meet at $P$. Ray $BD$ and segment $AC$ meet at $X$. Point $Y$ lies on $\omega_1$ such that $PY\parallel BD$. Point $Z$ lies on $\omega_2$ such that $PZ\parallel AC$. Prove that points $Q$, $X$, $Y$, $Z$ are collinear.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -15.9944687659554, xmax = 18.043151381248187, ymin = -7.987180674963583, ymax = 12.808649911056115;
+pen ffqqtt = rgb(1,0,0.2); pen wwqqcc = rgb(0.4,0,0.8); pen qqzzff = rgb(0,0.6,1); pen ffwwqq = rgb(1,0.4,0); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen newcolor = rgb(0.4, 0.6, 1);
+
+pair A = (-7.916086052889812,3.4783046508282225);
+pair C = (2.3247352385394753,9.262629543888165);
+pair B = (1.8859964298727578,6.181994493571158);
+pair D = (7.8502926236372685,4.119158573717387);
+pair P = (4.7774323851178115,6.979533795743456);
+pair Q = (4.912765170321544,-0.32937191034121793);
+pair X = (-1.2246217152413856,7.257845630776387);
+pair Y = (-3.2435496430258905,9.753703505399173);
+pair Z = (0.8122089070587095,4.739855920505206);
+
+draw(circle((-1.0142693277289683,3.2165880113195935), 6.906777085378218), ffqqtt);
+draw(circle((4.232850258803973,3.3137444580570854), 3.706019584486243), ffqqtt);
+draw(X--D, wwqqcc);
+draw(Y--P, wwqqcc);
+draw(A--C, qqzzff);
+draw(Y--Q, ffwwqq+dashed);
+draw(Z--P, qqzzff);
+draw(circle((-1.8206198626849714,0.4998259963415375), 6.7842496395079035), yqqqyq+dotted);
+draw(circle((2.815252537344694,4.249836104380978), 5.036735578486672), yqqqyq+dotted);
+draw(A--P, newcolor+opacity(0.3));
+draw(C--D, newcolor+opacity(0.3));
+
+dot("$A$", A, W);
+dot("$C$", C, NE);
+dot("$B$", B, N);
+dot("$D$", D, E);
+dot("$P$", P, NE);
+dot("$Q$", Q, SE);
+dot("$X$", X, N);
+dot("$Y$", Y, NW);
+dot("$Z$", Z, dir(210));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We start by making a claim.
+
+\begin{claim*}
+Quadrilaterals $CXQD$ and $AXBQ$ are cyclic.
+\end{claim*}
+\begin{proof}
+Notice that $Q$ is the Miquel Point for quadrilateral $CXBP$ (which is complete), so the result follows.
+\end{proof}
+
+As a result, \[\angle BQX = \angle BAX = \angle PAC = \angle APZ = \angle BPZ = \angle BQZ\] so $X$, $Z$, and $Q$ are collinear. Applying similar logic to $Y$, we find that $Y$, $Z$, and $Q$ are collinear. Thus, we have the required conclusion. $\square$
+
+\newpage
+
+\begin{problem}[10.21]{USAMO 2013/6}
+Let $ABC$ be a triangle. Find all points $P$ on segment $BC$ satisfying the following property: If $X$ and $Y$ are the intersections of line $PA$ with the
+common external tangent lines of the circumcircles of triangles $PAB$ and $PAC$, then \[\left(\dfrac{PA}{XY}\right)^2+\dfrac{PB\cdot PC}{AB\cdot AC} = 1.\]
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(14cm);
+real xmin = -22.7, xmax = 6.392949132493202, ymin = -6.211327746425079, ymax = 11.479794076376661;
+pen ffqqtt = rgb(1,0,0.2); pen qqzzff = rgb(0,0.6,1); pen ttttff = rgb(0.2,0.2,1); pen ffwwqq = rgb(1,0.4,0); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (-8.26898980323787,8.585120841324207);
+pair B = (-11.166834038661097,-1.9433097898281955);
+pair C = (5.2539459613389,-1.9433097898281955);
+pair P = (-4.775954180205028,-1.9433097898281952);
+pair X = (-8.676381773350723,9.813049371093266);
+pair Y = (-4.368562210092178,-3.1712383195972516);
+pair OB = (-7.971394109433062,2.8401941310989747);
+pair OC = (0.238995890566936,5.564169408490674);
+pair D = (-22.38979194581583,-1.9434226332574827);
+pair E = (-8.36242359856085,-2.8991300487555596);
+pair F = (-0.3747008216235048,-3.443346590438933);
+pair M = (-6.522471991721449,3.3209055257480067);
+
+draw(A--B--C--cycle, ffqqtt);
+draw(circle(OB, 5.752629494659853), qqzzff);
+draw(circle(OC, 9.028397871467908), qqzzff);
+draw(D--(xmax, -0.06813162610683883*xmax-3.4688755667197175), ttttff);
+draw(D--(xmax, 0.8572974815524985*xmax + 17.25128961437484), ttttff);
+draw(X--Y, ffwwqq);
+draw(D--OC, wwqqcc);
+draw(OB--E, wwqqcc);
+draw(OC--F, wwqqcc);
+
+dot("$A$", A, NE);
+dot("$B$", B, dir(210));
+dot("$C$", C, SE);
+dot("$P$", P, S);
+dot("$X$", X, NW);
+dot("$Y$", Y, S);
+dot("$O_B$", OB, dir(75));
+dot("$O_C$", OC, N);
+dot("$D$", D, S);
+dot("$E$", E, S);
+dot("$F$", F, S);
+dot("$M$", M, dir(60));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $D$ be the intersection of these external tangents, $E$ the contact point of the tangent closer to $B$ to $(ABP)$ and $F$ the contact point of the same tangent with $(ACP)$. In addition, let $O_B$ be the center of $(ABP)$, $O_C$ the center of $(ACP)$, and $M = AP \cap DO_C$. Start by noticing that the tangents from $X$ to $(ABP)$ and $(ACP)$ have equal length since it lies on the radical axis of them. Similarly, we have the same conclusion for $Y$. As a result, $X$ is the midpoint of the contact points of one of the tangent lines, and $Y$ is the midpoint of the contact points of the other tangent line (in this case, $Y$ is the midpoint of $E$ and $F$). We now make a claim.
+
+\begin{claim*}
+We claim that $\triangle AO_BO_C \sim \triangle ABC$.
+\end{claim*}
+\begin{proof}
+This follows because \[\angle AO_BO_C = 90 - \angle O_BAP = \dfrac{\angle AO_BP}{2} = \angle ABP = \angle ABC\] as required, and the other angle follows similarly.
+\end{proof}
+
+We follow with another claim.
+
+\begin{claim*}
+The value of $\left(\tfrac{PA}{XY}\right)^2 = 1-\tfrac{BC^2}{(AB+AC)^2}$ over all choices of $P$.
+\end{claim*}
+\begin{proof}
+Let $\alpha = YP$ and $\beta = PX$ where $\alpha < \beta$. Then, notice that \[EY^2 = YP\cdot YA = \alpha\beta.\] In addition, we know that $\alpha+\beta = XY$, so we must show that $\tfrac{\beta-\alpha}{\beta+\alpha}$ is constant. Using the two equations to solve for $\alpha$ and $\beta$, we find that $\beta^2-XY\beta+EY^2 = 0$ so \[\beta = \dfrac{XY\pm\sqrt{XY^2-4EY^2}}{2}.\] Now, since $\beta$ is the greater of $\alpha$ and $\beta$, we know that it must be the plus, so: \[(\alpha, \beta) = \left(\dfrac{XY-\sqrt{XY^2-4EY^2}}{2},\dfrac{XY+\sqrt{XY^2-4EY^2}}{2}\right).\] As a result, the quantity which must be constant is $\tfrac{\sqrt{XY^2-4EY^2}}{XY} = \tfrac{\sqrt{XY^2-EF^2}}{XY}$. In addition,
+\begin{align*}
+EF^2 &= O_BO_C^2-(O_CA-O_BA)^2 \\
+&= O_BO_C^2-O_CA^2-O_BA^2+2O_CA\cdot O_BA \\
+&= 2O_CA\cdot O_BA(1-\cos(\angle BAC)) \\
+&= O_CA\cdot O_BA\left(\tfrac{BC^2-(AC-AB)^2}{AB\cdot AC}\right).
+\end{align*}
+We also know that
+\begin{align*}
+XY^2 &= 4MY^2 \\
+&= 4(O_BE^2+EY^2-O_BM^2) \\
+&= 4(O_BE^2+EY^2-O_BP^2+MP^2) \\
+&= 4(EY^2+MP^2) \\
+&= EF^2+AP^2 \\
+&= O_CA\cdot O_BA\left(\tfrac{BC^2-(AC-AB)^2}{AB\cdot AC}\right)+4O_BA^2(1-\cos^2(\angle ABC)) \\
+&= O_CA\cdot O_BA\left(\tfrac{BC^2-(AC-AB)^2}{AB\cdot AC}\right)+O_BA^2\left(\tfrac{AC^2-(BC-AB)^2}{AB\cdot BC}\right)\left(\tfrac{(AB+BC)^2-AC^2}{AB\cdot BC}\right).
+\end{align*}
+Now, solving for $\tfrac{EF^2}{XY^2}$ using the fact that $\tfrac{O_CA}{O_BA} = \tfrac{AC}{AB}$, we find that:
+\begin{align*}
+\dfrac{EF^2}{XY^2} &= \dfrac{O_CA\cdot O_BA\left(\tfrac{BC^2-(AC-AB)^2}{AB\cdot AC}\right)}{O_CA\cdot O_BA\left(\tfrac{BC^2-(AC-AB)^2}{AB\cdot AC}\right)+O_BA^2\left(\tfrac{AC^2-(BC-AB)^2}{AB\cdot BC}\right)\left(\tfrac{(AB+BC)^2-AC^2}{AB\cdot BC}\right)} \\
+&= \dfrac{O_CA\left(\tfrac{1}{AB\cdot AC}\right)}{O_CA\left(\tfrac{1}{AB\cdot AC}\right)+O_BA\left(\tfrac{AB+AC-BC}{AB\cdot BC}\right)\left(\tfrac{AB+AC+BC}{AB\cdot BC}\right)} \\
+&= \dfrac{O_CA\cdot AB\cdot BC^2}{O_CA\cdot AB\cdot BC^2+O_BA\cdot AC(AB+AC-BC)(AB+AC+BC)} \\
+&= \dfrac{BC^2}{BC^2+(AB+AC-BC)(AB+AC+BC)} \\
+&= \dfrac{BC^2}{(AB+AC)^2}
+\end{align*}
+so the conclusion follows.
+\end{proof}
+
+Thus, it suffices to find all points $P$ such that \[\dfrac{PB\cdot PC}{AB\cdot AC} = \dfrac{BC^2}{(AB+AC)^2}.\] Firstly, notice that since the LHS is a quadratic (because $PB+PC = BC$ which is constant), there are at most two solutions to this. We claim that these two solutions are the intersection of the $A$-bisector with $BC$ and the reflection of that across the midpoint of $\ol{BC}$. Let $P$ be the former of the two. Then, $\tfrac{PB}{AB} = \tfrac{PC}{AC}$, so \[\dfrac{PB\cdot PC}{AB\cdot AC} = \dfrac{PB^2}{AB^2}\] so we need to show that \[\dfrac{PB}{AB} = \dfrac{PB+PC}{AB+AC}\] which is clear. The other point's proof also follows similarly, so we finish. $\square$
+
+\begin{problem}[10.22]{USA TST 2007/5}
+Acute triangle $ABC$ is inscribed in circle $\omega$. The tangent lines to $\omega$ at $B$ and $C$ meet at $T$. Point $S$ lies on ray $BC$ such that $\ol{AS} \perp \ol{AT}$. Points $B_1$ and $C_1$ lie on ray $ST$ (with $C_1$ in between $B_1$ and $S$) such that $B_1T = BT = C_1T$. Prove that triangles $ABC$ and $AB_1C_1$ are similar.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(14cm);
+real xmin = -22, xmax = 70.31297961882436, ymin = -33, ymax = 20.223006112303406;
+pen ffqqtt = rgb(1,0,0.2); pen qqzzff = rgb(0,0.6,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ccwwff = rgb(0.8,0.4,1); pen ffwwqq = rgb(1,0.4,0); pen wwqqcc = rgb(0.4,0,0.8); pen ttttff = rgb(0.2,0.2,1);
+
+pair A = (4.306757866031473,12.48972280416653);
+pair B = (-11.16683,-1.94331);
+pair C = (6.753945961338895,-1.9433097898281955);
+pair T = (-2.206441859862778,-15.540691602518985);
+pair S = (66.4212149940218,-1.943309090060639);
+pair B1 = (-18.1801894806756,-18.705613246574345);
+pair C1 = (13.767305760950048,-12.375769958463625);
+pair A1 = intersectionpoint(B--3*B-2*B1, C--3*C-2*C1);
+
+draw(A--B--C--cycle, ffqqtt);
+draw(A--B1--C1--cycle, ffwwqq);
+draw(circle((-2.206442088579947,3.9613969442872223), 10.730988566811371), qqzzff);
+draw(T--A, yqqqyq);
+draw(A--S, yqqqyq);
+draw(C--S, ffqqtt);
+draw(circle(T, 16.284266703368424), ccwwff);
+draw(B--T, wwqqcc);
+draw(T--C, wwqqcc);
+draw(C1--S, ffwwqq);
+draw(B1--A1--C1, ttttff+dashed);
+
+dot("$A$", A, N);
+dot("$B$", B, W);
+dot("$C$", C, dir(270));
+dot("$T$", T, dir(270));
+dot("$S$", S, E);
+dot("$A'$", A1, N);
+dot("$B_1$", B1, W);
+dot("$C_1$", C1, SE);
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $A' = BB_1\cap CC_1$.
+
+\begin{claim*}
+We claim that $A'$ lies on $(ABC)$.
+\end{claim*}
+\begin{proof}
+Notice that \[\angle BA'C = \dfrac{180 - \angle BTC}{2} = \angle BCT = \angle BAC\] as required.
+\end{proof}
+
+Now, notice that the Miquel point $M$ of $BB_1C_1C$ must be lie on $(A'BC)$ and the circle with diameter $\ol{ST}$. There are two intersections of these two circles. One is $A$, the other we denote $M'$. On one hand, $A$ is the Miquel point of $BB_1CC_1$, but $M'$ is the Miquel point of $BC_1B_1C$. Thus, we there are two cases, both of which give a similarity (one of them is a direct similarity, the other is an opposite similarity). $\square$
+
+\begin{problem}[10.23]{IMO 2005/5}
+Let $ABCD$ be a fixed convex quadrilateral with $BC = DA$ and $BC \cap DA \neq \infty$. Let points $E$ and $F$ lie of the sides $BC$ and $DA$, respectively, and satisfy $BE = DF$. The lines $AC$ and $BD$ meet at $P$, the lines $BD$ and $EF$ meet at $Q$, the lines $EF$ and $AC$ meet at $R$. Prove that the circumcircles of the triangles $PQR$, as $E$ and $F$ vary, have a common point other than $P$. 
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -16.30238043953256, xmax = 30.413114039432763, ymin = -24.703320959370334, ymax = 4.5700959465084985;
+pen ffttww = rgb(1,0.2,0.4); pen qqzzff = rgb(0,0.6,1); pen wwqqcc = rgb(0.4,0,0.8); pen ffwwqq = rgb(1,0.4,0); pen ttttff = rgb(0.2,0.2,1);
+
+pair A = (13.287,-2.71633);
+pair B = (-7.87369,1.39825);
+pair C = (-7.52101,-17.88149);
+pair D = (24.966892628578385,-18.05950000606068);
+pair E = (-7.661979428632627,-10.175201205666319);
+pair F = (17.95556014047047,-8.849135685515572);
+pair P = (6.91228613765296,-7.362307951601851);
+pair Q = (10.107405289988117,-9.255387328689782);
+pair R = (3.8719307049993654,-9.578160240843397);
+pair M = (5.363707797340579,-13.70267868389062);
+
+draw(A--B--C--D--cycle, ffttww);
+draw(C--D, ffttww);
+draw(D--A, ffttww);
+draw(A--C, qqzzff);
+draw(B--D, qqzzff);
+draw(F--E, wwqqcc);
+draw(circle((7.059067049281271,-10.757456374133056), 3.398319797640383), ffwwqq);
+draw(circle((-3.552034131382946,-8.165790657874854), 10.495121874101104), ttttff+dotted);
+draw(circle((15.828028066376485,-12.899195977617618), 10.4951218741011), ttttff+dotted);
+
+dot("$A$", A, N);
+dot("$B$", B, NW);
+dot("$C$", C, SW);
+dot("$D$", D, SE);
+dot("$E$", E, W);
+dot("$F$", F, NE);
+dot("$P$", P, N);
+dot("$Q$", Q, NE);
+dot("$R$", R, NW);
+dot("$M$", M, dir(250));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+We claim that the Miquel point $M$ of $ADBC$ is the required common point. Now, since $\tfrac{AF}{AD} = \tfrac{CE}{CB}$, $M$ is the center of a spiral similarity sending $\ol{CE}$ to $\ol{AF}$. Thus, $FARM$ is cyclic, and as a result, \[\angle MPQ = \angle MPD = \angle MAD = \angle MAF = \angle MRF = \angle MRQ\] so $PRMQ$ is cyclic, and we are done. $\square$
+
+\begin{problem}[10.24]{USAMO 2006/6}
+Let $ABCD$ be a quadrilateral, and let $E$ and $F$ be points on sides $\ol{AD}$ and $\ol{BC}$, respectively, such that $\tfrac{AE}{ED} = \tfrac{BF}{FC}$. Ray $FE$ meets rays $BA$ and $CD$ at $S$ and $T$, respectively. Prove that $(SAE)$, $(SBF)$, $(TCF)$, and $(TDE)$ pass through a common point. 
+\end{problem}
+
+Let $M$ be the Miquel point of $ABCD$. Then, the length condition tells us that it is also the Miquel point for quadrilateral $ABFE$ and quadrilateral $CFED$. Thus, the conclusion follows after noting that $S = AB \cap EF$ and $T = CD \cap EF$.
+
+\newpage
+
+\begin{problem}[10.25]{Balkan Olympiad 2009/2}
+Let $MN$ be a line parallel to the side $\ol{BC}$ of a triangle $ABC$, with $M$ on the side $AB$ and $N$ on the side $AC$. The lines $BN$ and $CM$ meet at point $P$. The circumcircles of triangles $BMP$ and $CNP$ intersect at a point $Q \neq P$. Prove that $\angle BAQ = \angle CAP$. 
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(9cm);
+real xmin = -10.134330452786024, xmax = 14.585999419056483, ymin = -6.286190677119013, ymax = 8.827793389603316;
+pen ffttww = rgb(1,0.2,0.4); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen qqzzff = rgb(0,0.6,1); pen ffzztt = rgb(1,0.6,0.2); pen wwqqcc = rgb(0.4,0,0.8);
+
+pair A = (-2.4140760367776237,6.638027397137153);
+pair B = (-4.80211,-2.76938);
+pair C = (5.50985,-2.76938);
+pair M = (-3.985699124673725,0.4467843535772529);
+pair N = (2.800851932411015,0.4467843535772528);
+pair P = (-0.21683125457031627,-0.8297398724596172);
+pair Q = (-0.7536851626831149,-3.317459057140531);
+
+draw(A--B--C--cycle, ffttww);
+draw(M--N, ffttww);
+draw(B--N, yqqqyq);
+draw(M--C, yqqqyq);
+draw(circle((-2.585250429631419,-1.6204176757158477), 2.4969142511025906), qqzzff);
+draw(circle((2.3466968335000638,-2.6847400393985343), 3.1642853660296173), qqzzff);
+draw(A--Q, ffzztt);
+draw(P--A, ffzztt);
+draw(circle((-2.1539785880278886,1.565202377515724), 5.079488592618677), wwqqcc+dotted);
+draw(circle((1.9154249918965318,2.243903573900834), 6.168703537310212), wwqqcc+dotted);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$M$", M, NW);
+dot("$N$", N, NE);
+dot("$P$", P, dir(90));
+dot("$Q$", Q, dir(250));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Start by noticing that $AP$ is simply a median of $\triangle ABC$, so it suffices to show that $AQ$ is a symmedian. We will do this by showing that the ratio of the length of the altitude from $Q$ to $AB$ to the length of the altitude from $Q$ to $AC$ is just $\tfrac{AB}{AC}$.
+
+\begin{claim*}
+We claim $Q$ lies on $(ABN)$ and $Q$ lies on $(AMC)$.
+\end{claim*}
+\begin{proof}
+This follows from the properties of the Miquel point after noting that $\tfrac{BM}{AM} = \tfrac{CN}{AN}$.
+\end{proof}
+
+\begin{claim*}
+We claim $\triangle BQM \sim \triangle NQC$.
+\end{claim*}
+\begin{proof}
+Notice that \[\angle BMQ = \angle BPQ = \angle NCQ\] and \[\angle MBQ = \angle CPQ = \angle CNQ\] so the conclusion follows.
+\end{proof}
+
+Now, the aforementioned ratio is just \[\dfrac{MB}{NC} = \dfrac{AB}{AC}\] so we are done. $\square$
 \end{document}
