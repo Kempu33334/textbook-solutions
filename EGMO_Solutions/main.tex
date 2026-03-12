@@ -407,7 +407,7 @@ Thus, $ABCD$ is cyclic. This implies that \[\angle BAC = \angle CDB\] which impl
 \newpage
 
 \begin{problem}[1.42]{}
-Let $ABC$ be an acute triangle inscribed in circle $\Omega$. Let $X$ be the midpoint of the arc $\arc{BC}$ not containing $A$ and define $Y$, $Z$ similarly. Show that the orthocenter of $\triangle XYZ$ is the incenter $I$ of $\triangle ABC$.
+Let $ABC$ be an acute triangle inscribed in circle $\Omega$. Let $X$ be the midpoint of the arc $BC$ not containing $A$ and define $Y$, $Z$ similarly. Show that the orthocenter of $\triangle XYZ$ is the incenter $I$ of $\triangle ABC$.
 \end{problem}
 
 \begin{center}
@@ -3212,7 +3212,7 @@ dot("$M_C$", MC, dir(MC));
 We know that line $TA$ is a symmedian of $\triangle KTL$ because of tangents at $K$ and $L$ intersect at $A$. Hence, lines $TA$ and $TI$ are isogonal, since $\ol{TI}$ is a median. This directly implies the necessary result due to the definition of isogonal. $\square$
 
 \begin{problem}[4.39]{}
-Prove that $S$ is the midpoint of the arc $\arc{BC}$ containing $A$ in the diagram above.
+Prove that $S$ is the midpoint of the arc $BC$ containing $A$ in the diagram above.
 \end{problem}
 
 We know from Problem 4.34 that $BKIT$ is cyclic, and so is $CLIT$. Hence, \[\dangle BTS = \dangle BTI = \dangle BKI = \dangle AKI = \dangle ALI = \dangle CLI = \dangle CTI = \dangle CTS.\] Thus, we are done. $\square$
@@ -3357,8 +3357,7 @@ We will show that $AA_2$ is a symmedian. Similar methods can easily show the oth
 We know that the symmedians concur at the symmedian point, so the existence of this point gives the required answer. $\square$
 
 \begin{problem}[4.44]{USA TST 2014/1}
-Let $ABC$ be an acute triangle and let $X$ be a variable interior point on the minor arc $\arc{BC}$. Let $P$ and $Q$ be the feet of the perpendiculars from $X$ to lines $CA$ and $CB$, respectively. Let $R$ be the intersection of line $PQ$ and the perpendicular from $B$ to $\ol{AC}$. Let $\ell$ be the line through $P$ parallel to $XR$. Prove that as $X$ varies along
-minor arc $\arc{BC}$, the line $\ell$ always passes through a fixed point.
+Let $ABC$ be an acute triangle and let $X$ be a variable interior point on the minor arc $BC$. Let $P$ and $Q$ be the feet of the perpendiculars from $X$ to lines $CA$ and $CB$, respectively. Let $R$ be the intersection of line $PQ$ and the perpendicular from $B$ to $\ol{AC}$. Let $\ell$ be the line through $P$ parallel to $XR$. Prove that as $X$ varies along minor arc $BC$, the line $\ell$ always passes through a fixed point.
 \end{problem}
 
 \begin{center}
@@ -5368,6 +5367,10 @@ We clearly have that $M = (0, 0.5, 0.5)$, and $D = (0 : b : c) = \left(0, \tfrac
 
 Now, since $\angle DML + \angle DHL = 90 + 90 = 180$, we know that $DMLH$ is cyclic. Thus, \[\angle HNM \hspace{0.1em}\stackrel{AD \parallel NM}{=} \hspace{0.1em}\angle HDL \hspace{0.1em}\stackrel{(DMLH)}{=} \hspace{0.1em}\angle HML\] implying the tangency, as required. $\square$
 
+\begin{remark*}
+For a solution taking advantage of Miquel points, look to \refproblem{10.26}
+\end{remark*}
+
 \begin{problem}[7.41]{}
 Let $ABC$ be a triangle with incenter $I$. Let $P$ and $Q$ denote the reflections of $B$ and $C$ across $CI$ and $BI$, respectively. Show that $PQ \perp OI$ , where $O$ is the circumcenter of $ABC$.
 \end{problem}
@@ -7254,4 +7257,83 @@ Notice that \[\angle BMQ = \angle BPQ = \angle NCQ\] and \[\angle MBQ = \angle C
 \end{proof}
 
 Now, the aforementioned ratio is just \[\dfrac{MB}{NC} = \dfrac{AB}{AC}\] so we are done. $\square$
+
+\begin{problem}[10.26]{USA TSTST 2012/7}
+Let there be a triangle $ABC$ such that the angle bisector of angle $A$ intersects $\ol{BC}$ and $(ABC)$ at $D$ and $L \neq A$, respectively. Let $M$ be the midpoint of $\ol{BC}$, and $(ADM)$ intersect $\ol{AB}$ and $\ol{AC}$ again at $Q$ and $P \neq A$, respectively. In addition, let $N$ be the midpoint of $\ol{PQ}$, and let $H$ be the foot of the perpendicular from $L$ to line $ND$. Prove that line $ML$ is tangent to $(HMN)$.
+\end{problem}
+
+\begin{center}
+\begin{asy}
+import graph;
+size(10cm);
+real xmin = -9.904273304011298, xmax = 10.49344151335963, ymin = -6.562890034612466, ymax = 7.414560446799067;
+pen ffttww = rgb(1,0.2,0.4); pen qqzzff = rgb(0,0.6,1); pen ffqqtt = rgb(1,0,0.2); pen wwqqcc = rgb(0.4,0,0.8); pen xdxdff = rgb(0.49019607843137253,0.49019607843137253,1); pen yqqqyq = rgb(0.5019607843137255,0,0.5019607843137255); pen ffzztt = rgb(1,0.6,0.2);
+
+pair A = (-3.6339080342083347,5.169747577903832);
+pair B = (-4.80211,-2.76938);
+pair C = (5.50985,-2.76938);
+pair D = (-0.692178396413846,-2.76938);
+pair L = (0.35387,-5.592451014105008);
+pair M = (0.35387,-2.76938);
+pair Q = (-4.417681689060166,-0.15679630772626565);
+pair P = (3.515859889687162,-1.038085075568771);
+pair N = (-0.4509108996865021,-0.5974406916475183);
+pair H = (-0.9892031145851746,-5.443257209733209);
+pair X = (0.35387,6.647361423639995);
+
+draw(A--B--C--cycle, ffttww);
+draw(X--N--M--cycle, ffzztt);
+draw(X--P--C--cycle, ffzztt);
+draw(circle((0.35387,0.5274552047674932), 6.119906218872502), qqzzff);
+draw(A--L, ffqqtt);
+draw(circle((-0.16915419820692493,1.9389907118199963), 4.737331429384516), wwqqcc);
+draw(Q--P, xdxdff);
+draw(H--L, xdxdff);
+draw(circle((-0.16915419820692235,-4.180915507052504), 1.505319500830293), yqqqyq+dotted);
+draw(X--N, ffzztt);
+draw(N--M, ffzztt);
+draw(M--X, ffzztt);
+draw(X--P, ffzztt);
+draw(P--C, ffzztt);
+draw(C--X, ffzztt);
+draw(H--N, xdxdff);
+
+dot("$A$", A, NW);
+dot("$B$", B, SW);
+dot("$C$", C, SE);
+dot("$D$", D, SW);
+dot("$L$", L, S);
+dot("$M$", M, S);
+dot("$Q$", Q, W);
+dot("$P$", P, dir(90));
+dot("$N$", N, NW);
+dot("$H$", H, SW);
+dot("$X$", X, dir(90));
+clip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);
+\end{asy}
+\end{center}
+
+Let $X$ be the antipode of $L$ on $(ABC)$.
+
+\begin{claim*}
+We claim that $X$ is the Miquel point of $BCPQ$.
+\end{claim*}
+\begin{proof}
+It suffices to show that $X$ lies on $(ADM)$. However, notice that \[90^{\circ} = \angle XAL = \angle XAD = \angle XMD\] so this is obvious.
+\end{proof}
+
+Thus, $X$ is the arc midpoint of both arcs $BC$ and $PQ$, and since $D$ is the other arc midpoint of arc $BC$, we know that $D$, $N$, and $X$ are collinear.
+
+\begin{claim*}
+We claim that $AD \parallel MN$.
+\end{claim*}
+\begin{proof}
+Notice that by the properties of the Miquel point, since $N$ is the midpoint of $\ol{PQ}$ and $M$ is the midpoint of $\ol{BC}$, $\triangle XNM \sim \triangle XPC$. Thus, as a result, \[\angle XMN = \angle XCP = \angle XCA = \angle XLA\] so the conclusion follows.
+\end{proof}
+
+Thus, we find that \[\angle HML = \angle HDL = \angle ADN = \angle DNM = \angle HNM\] so we are done. $\square$
+
+\begin{remark*}
+For a barycentric solution, look to \refproblem{7.40}.
+\end{remark*}
 \end{document}

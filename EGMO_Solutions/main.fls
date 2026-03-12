@@ -965,6 +965,11 @@ INPUT ./main-105.pdf
 INPUT ./main-105.pdf
 INPUT ./main-105.pdf
 INPUT ./main-105.pdf
+OUTPUT main-106.asy
+INPUT ./main-106.pdf
+INPUT ./main-106.pdf
+INPUT ./main-106.pdf
+INPUT ./main-106.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
