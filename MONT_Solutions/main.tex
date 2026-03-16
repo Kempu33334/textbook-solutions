@@ -1580,4 +1580,26 @@ The same problem appears as \refproblem{2.14.15}.
 \begin{problem}[5.9.7]{China TST 2006/1/2}
 Find all positive integers $a$ and $n$ such that \[\dfrac{(a+1)^n-a^n}{n}\] is a positive integer.
 \end{problem}
+
+We claim that the answer is all $a$ when $n = 1$, which clearly works.
+
+We now show that these are the only solutions. Let $p$ be the smallest prime factor of $n$. Then, for $p \mid a$, it is clear that this is impossible. But, for $p \nmid a$, \[\left(\dfrac{a+1}{a}\right)^n \equiv 1 \pmod{p}.\] Hence, \[\operatorname{ord}_p\left(\dfrac{a+1}{a}\right) \mid \gcd(p-1, n) = 1.\] As a result, we find that $a+1 \equiv a \pmod{p}$, which is impossible. Thus, we are done. $\square$
+
+\begin{problem}[5.9.8]{}
+Let g be a Fibonacci primitive root modulo $p$. i.e. $g$ is a primitive root modulo $p$ satisfying $g^2 \equiv g+1 \pmod{p}$. Prove that
+\begin{enumerate}
+\item $g - 1$ is also a primitive root modulo $p$.
+\item Show that if $p \equiv 3 \pmod{4}$, then $g - 2$ is also a primitive root modulo $p$.
+\end{enumerate}
+\end{problem}
+
+We begin with the first part. Notice that \[g \equiv 1+g^{-1} \pmod{p} \implies g-1 \equiv g^{-1} \pmod{p}\] so the conclusion is clear.
+
+We finish with the second part. We can write that \[g-2 \equiv \dfrac{1-g}{g} \equiv -g^{-2} \pmod{p}.\] Now, we need to show that \[\ord_p(-g^{-2}) = p-1.\] Suppose that \[(-g^{-2})^k \equiv (-1)^kg^{-2k}\equiv (-1)^kg^{2k} \equiv 1 \pmod{p}.\] Then, \[g^{4k} \equiv 1 \pmod{p} \implies p-1 \mid 4k.\] Now, this means that $\tfrac{p-1}{2} \mid 2k$, and noting that $p \equiv 3 \pmod{4}$, we know that \[\dfrac{p-1}{2} \mid k.\] Now, letting $k = \tfrac{p-1}{2}\cdot j$, we find that the entire expression must be even, so $j$ is even, and we get that $p-1 \mid k$, so we are done. $\square$
+
+\begin{problem}[5.9.9]{Putnam 1976/B6}
+Prove that if $n$ is an integer such that $\sigma(n) = 2n + 1$, then $n$ is the square of an odd integer.
+\end{problem}
+
+It is well known that if the sum of the divisors of a number is odd, $n = 2^k\ell^2$ for some non-negative integers $k$ and $\ell$. Suppose that $\ell$ is odd, so that we wish to show that $k = 0$. Notice that \[(2^{k+1}-1)\sigma(\ell^2) = 2^{k+1}\ell^2+1.\]
 \end{document}
